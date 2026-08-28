@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Задачник — Обрахунок</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ═══ Task page layout ═══ */
+.task-page { max-width: 900px; }
+
+/* ── Topic picker ── */
+.topic-picker {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.5em;
+}
+.topic-picker-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--text);
+  -webkit-user-select: none; user-select: none;
+}
+.topic-picker-header .tp-arrow {
+  font-size: .7rem;
+  transition: transform .2s;
+  color: var(--text-muted);
+}
+.topic-picker.open .tp-arrow { transform: rotate(180deg); }
+.topic-picker-body {
+  display: none;
+  padding: 0 12px 12px;
+}
+.topic-picker.open .topic-picker-body { display: block; }
+
+.tp-section {
+  margin-bottom: 6px;
+}
+.tp-section-title {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px;
+  font-size: .8rem; font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius);
+  -webkit-user-select: none; user-select: none;
+}
+.tp-section-title:hover { background: var(--bg-hover); }
+.tp-section-title .arrow {
+  font-size: .6rem; transition: transform .2s;
+}
+.tp-section.collapsed .arrow { transform: rotate(-90deg); }
+.tp-section.collapsed .tp-items { display: none; }
+
+.tp-chapter {
+  padding: 4px 10px 4px 24px;
+  font-size: .8rem; font-weight: 600;
+  color: var(--heading-accent);
+  margin-top: 4px;
+}
+.tp-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 10px 7px 36px;
+  font-size: .82rem;
+  color: var(--text);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .12s;
+  border-left: 3px solid transparent;
+}
+.tp-item:hover { background: var(--bg-hover); }
+.tp-item.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+  border-left-color: var(--accent);
+}
+.tp-item .tp-count {
+  margin-left: auto;
+  font-size: .7rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+/* ── Theory link ── */
+.theory-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  margin-bottom: 1.2em;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: .875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .15s;
+}
+.theory-link:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── Level filter ── */
+.level-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.2em;
+}
+.level-btn {
+  padding: 6px 14px;
+  font-size: .8rem;
+  font-weight: 500;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all .15s;
+  -webkit-user-select: none; user-select: none;
+}
+.level-btn:hover { border-color: var(--accent); color: var(--accent); }
+.level-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ── Method card ── */
+.method-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+.method-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--heading-accent);
+  -webkit-user-select: none; user-select: none;
+}
+.method-header .m-arrow {
+  font-size: .65rem;
+  transition: transform .2s;
+  color: var(--text-muted);
+}
+.method-card.open .m-arrow { transform: rotate(90deg); }
+.method-body {
+  display: none;
+  padding: 0 16px 14px;
+}
+.method-card.open .method-body { display: block; }
+.method-step {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .85rem;
+}
+.method-step:last-child { border-bottom: none; }
+.method-step .ms-action { color: var(--text); margin-bottom: 4px; }
+.method-step .ms-result {
+  font-weight: 600;
+  color: var(--heading-accent);
+  font-size: .82rem;
+}
+
+/* ── Task card ── */
+.task-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: box-shadow .15s;
+}
+.task-card:hover { box-shadow: 0 2px 8px var(--shadow); }
+
+.task-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+}
+.task-num {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  font-size: .75rem; font-weight: 700;
+  color: #fff;
+}
+.task-num.lv1 { background: #43a047; }
+.task-num.lv2 { background: #1e88e5; }
+.task-num.lv3 { background: #fb8c00; }
+.task-num.lv4 { background: #e53935; }
+.task-num.lv5 { background: #6a1b9a; }
+
+.task-condition {
+  flex: 1;
+  font-size: .9rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 12px;
+}
+.task-btn {
+  padding: 7px 14px;
+  font-size: .8rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all .15s;
+  -webkit-user-select: none; user-select: none;
+}
+.task-btn:hover { border-color: var(--accent); color: var(--accent); }
+.task-btn.active {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Hints ── */
+.task-hints {
+  display: none;
+  padding: 0 16px 12px;
+}
+.task-card.show-hints .task-hints { display: block; }
+.hint-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: var(--block-note-bg);
+  border-left: 3px solid var(--block-note-border);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: .84rem;
+  color: var(--block-note-text);
+}
+.hint-item .hint-icon { flex-shrink: 0; }
+.hint-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: .78rem;
+  color: var(--accent);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.hint-more-btn:hover { text-decoration: underline; }
+
+/* ── Solution ── */
+.task-solution {
+  display: none;
+  padding: 0 16px 14px;
+}
+.task-card.show-solution .task-solution { display: block; }
+
+.solution-step {
+  position: relative;
+  padding: 12px 14px 12px 32px;
+  margin-bottom: 8px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+  font-size: .84rem;
+}
+.solution-step::before {
+  content: attr(data-step);
+  position: absolute;
+  left: 10px;
+  top: 13px;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.sol-action {
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+.sol-why {
+  color: var(--text-muted);
+  font-size: .8rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+}
+.sol-result {
+  font-weight: 600;
+  color: var(--heading-accent);
+  font-size: .82rem;
+}
+
+.task-answer {
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: var(--block-tip-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-weight: 600;
+  font-size: .88rem;
+  color: var(--accent);
+}
+
+/* ── Welcome state ── */
+.task-welcome {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+}
+.task-welcome h2 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text); }
+.task-welcome p { font-size: .9rem; }
+
+/* ── Stats badges ── */
+.topic-stats {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 1em;
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+.topic-stats span {
+  background: var(--bg-secondary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* ── Loading ── */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+/* ═══ Mobile ═══ */
+@media (max-width: 768px) {
+  .topic-picker-header { padding: 12px 14px; font-size: .88rem; }
+  .tp-item { padding: 9px 10px 9px 28px; font-size: .84rem; }
+  .task-top { padding: 12px 14px; gap: 10px; }
+  .task-actions { padding: 0 14px 10px; }
+  .task-hints { padding: 0 14px 10px; }
+  .task-solution { padding: 0 14px 12px; }
+  .solution-step { padding: 10px 12px 10px 28px; font-size: .82rem; }
+  .sol-why { font-size: .78rem; }
+  .theory-link { font-size: .82rem; padding: 9px 14px; width: 100%; justify-content: center; }
+  .level-filter { gap: 5px; }
+  .level-btn { padding: 6px 11px; font-size: .78rem; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html">
+      <span class="icon">∑</span>
+      <span>Обрахунок</span>
+    </a>
+    <div class="topbar-controls">
+      <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+      <button class="menu-toggle" id="menuToggle" title="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="tabbar">
+    <a class="tabbar-btn" href="index.html">Теорія</a>
+    <a class="tabbar-btn" href="formuly.html">Формули</a>
+    <a class="tabbar-btn" href="#">Глосарій</a>
+    <a class="tabbar-btn active" href="zadachnyk.html">Задачник</a>
+    <a class="tabbar-btn" href="#">Обране</a>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-section="algebra">
+<button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="chysla1.html">1. Числа та дії</a>
+<a class="sidebar-topic" href="chysla1.html" style="padding-left:40px;font-size:.75rem">1.1 ЧИСЛА ТА ДІЇ З НИМИ</a>
+<a class="sidebar-topic" href="chysla2.html" style="padding-left:40px;font-size:.75rem">1.2 ДРОБИ</a>
+<a class="sidebar-topic" href="chysla3.html" style="padding-left:40px;font-size:.75rem">1.3 ПОДІЛЬНІСТЬ. НСД І НСК</a>
+<a class="sidebar-topic" href="chysla4.html" style="padding-left:40px;font-size:.75rem">1.4 СТЕПЕНІ ТА КОРЕНІ</a>
+<a class="sidebar-topic" href="chysla5.html" style="padding-left:40px;font-size:.75rem">1.5 ВІДСОТКИ ТА ПРОПОРЦІЇ</a>
+<a class="sidebar-topic" href="vyrazy1.html">2. Вирази та тотожності</a>
+<a class="sidebar-topic" href="vyrazy1.html" style="padding-left:40px;font-size:.75rem">2.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="vyrazy2.html" style="padding-left:40px;font-size:.75rem">2.2 ТРИ ЗАКОНИ АРИФМЕТИКИ</a>
+<a class="sidebar-topic" href="vyrazy3.html" style="padding-left:40px;font-size:.75rem">2.3 ТЕХНІКИ ПЕРЕТВОРЕННЯ ВИРАЗІВ</a>
+<a class="sidebar-topic" href="vyrazy4.html" style="padding-left:40px;font-size:.75rem">2.4 ФОРМУЛИ СКОРОЧЕНОГО МНОЖЕННЯ</a>
+<a class="sidebar-topic" href="vyrazy5.html" style="padding-left:40px;font-size:.75rem">2.5 РОЗКЛАДАННЯ НА МНОЖНИКИ</a>
+<a class="sidebar-topic" href="vyrazy6.html" style="padding-left:40px;font-size:.75rem">2.6 НАСКРІЗНІ ПРИКЛАДИ</a>
+<a class="sidebar-topic" href="nerivnosti1.html">3. Нерівності</a>
+<a class="sidebar-topic" href="nerivnosti1.html" style="padding-left:40px;font-size:.75rem">3.1 ЧИСЛОВІ НЕРІВНОСТІ ТА ЇХ ВЛАСТИВОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti2.html" style="padding-left:40px;font-size:.75rem">3.2 ЛІНІЙНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti3.html" style="padding-left:40px;font-size:.75rem">3.3 КВАДРАТНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti4.html" style="padding-left:40px;font-size:.75rem">3.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="rivnyannya1.html">4. Рівняння та системи</a>
+<a class="sidebar-topic" href="rivnyannya1.html" style="padding-left:40px;font-size:.75rem">4.1 ЩО ТАКЕ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya2.html" style="padding-left:40px;font-size:.75rem">4.2 ЛІНІЙНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya3.html" style="padding-left:40px;font-size:.75rem">4.3 КВАДРАТНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya4.html" style="padding-left:40px;font-size:.75rem">4.4 РАЦІОНАЛЬНІ ТА ІРРАЦІОНАЛЬНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya5.html" style="padding-left:40px;font-size:.75rem">4.5 ПОКАЗНИКОВІ ТА ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya6.html" style="padding-left:40px;font-size:.75rem">4.6 ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya7.html" style="padding-left:40px;font-size:.75rem">4.7 СИСТЕМИ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="rivnyannya8.html" style="padding-left:40px;font-size:.75rem">4.8 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="funktsiyi1.html">5. Функції та їх властивості</a>
+<a class="sidebar-topic" href="funktsiyi1.html" style="padding-left:40px;font-size:.75rem">5.1 ПОНЯТТЯ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="funktsiyi2.html" style="padding-left:40px;font-size:.75rem">5.2 ВЛАСТИВОСТІ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="funktsiyi3.html" style="padding-left:40px;font-size:.75rem">5.3 ОСНОВНІ ФУНКЦІЇ ТА ЇХ ГРАФІКИ</a>
+<a class="sidebar-topic" href="funktsiyi4.html" style="padding-left:40px;font-size:.75rem">5.4 ПЕРЕТВОРЕННЯ ГРАФІКІВ</a>
+<a class="sidebar-topic" href="funktsiyi5.html" style="padding-left:40px;font-size:.75rem">5.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="prohresii1.html">6. Прогресії</a>
+<a class="sidebar-topic" href="prohresii1.html" style="padding-left:40px;font-size:.75rem">6.1 АРИФМЕТИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii2.html" style="padding-left:40px;font-size:.75rem">6.2 ГЕОМЕТРИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii3.html" style="padding-left:40px;font-size:.75rem">6.3 ПОРІВНЯННЯ АП ТА ГП</a>
+<a class="sidebar-topic" href="prohresii4.html" style="padding-left:40px;font-size:.75rem">6.4 ЗАСТОСУВАННЯ</a>
+<a class="sidebar-topic" href="logarythmy1.html">7. Логарифми</a>
+<a class="sidebar-topic" href="logarythmy1.html" style="padding-left:40px;font-size:.75rem">7.1 ЩО ТАКЕ ЛОГАРИФМ?</a>
+<a class="sidebar-topic" href="logarythmy2.html" style="padding-left:40px;font-size:.75rem">7.2 ВЛАСТИВОСТІ ЛОГАРИФМІВ</a>
+<a class="sidebar-topic" href="logarythmy3.html" style="padding-left:40px;font-size:.75rem">7.3 ОБЧИСЛЕННЯ З ЛОГАРИФМАМИ</a>
+<a class="sidebar-topic" href="logarythmy4.html" style="padding-left:40px;font-size:.75rem">7.4 ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="logarythmy5.html" style="padding-left:40px;font-size:.75rem">7.5 ЛОГАРИФМІЧНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="logarythmy6.html" style="padding-left:40px;font-size:.75rem">7.6 ПОКАЗНИКОВІ РІВНЯННЯ ЧЕРЕЗ ЛОГАРИФМ</a>
+</div></div>
+<div class="sidebar-section" data-section="geometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Геометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="geo1_1.html">8. Основи геометрії. Кути та прямі</a>
+<a class="sidebar-topic" href="geo1_1.html" style="padding-left:40px;font-size:.75rem">8.1 ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part2" style="padding-left:40px;font-size:.75rem">8.2 КУТИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part3" style="padding-left:40px;font-size:.75rem">8.3 ПРЯМІ НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="geo1_1.html#part4" style="padding-left:40px;font-size:.75rem">8.4 ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</a>
+<a class="sidebar-topic" href="geo1_1.html#part5" style="padding-left:40px;font-size:.75rem">8.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo2_1.html">9. Трикутники</a>
+<a class="sidebar-topic" href="geo2_1.html" style="padding-left:40px;font-size:.75rem">9.1 ОСНОВИ</a>
+<a class="sidebar-topic" href="geo2_1.html#part2" style="padding-left:40px;font-size:.75rem">9.2 ОЗНАКИ РІВНОСТІ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part3" style="padding-left:40px;font-size:.75rem">9.3 ОСОБЛИВІ ЛІНІЇ ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part4" style="padding-left:40px;font-size:.75rem">9.4 ПОДІБНІСТЬ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part5" style="padding-left:40px;font-size:.75rem">9.5 ТЕОРЕМА ПІФАГОРА</a>
+<a class="sidebar-topic" href="geo2_1.html#part6" style="padding-left:40px;font-size:.75rem">9.6 ТРИГОНОМЕТРІЯ ПРЯМОКУТНОГО ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part7" style="padding-left:40px;font-size:.75rem">9.7 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo3_1.html">10. Чотирикутники та многокутники</a>
+<a class="sidebar-topic" href="geo3_1.html" style="padding-left:40px;font-size:.75rem">10.1 ЗАГАЛЬНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo3_1.html#part2" style="padding-left:40px;font-size:.75rem">10.2 ЧОТИРИКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part3" style="padding-left:40px;font-size:.75rem">10.3 ПРАВИЛЬНІ МНОГОКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part4" style="padding-left:40px;font-size:.75rem">10.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo4_1.html">11. Коло та круг</a>
+<a class="sidebar-topic" href="geo4_1.html" style="padding-left:40px;font-size:.75rem">11.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo4_1.html#part2" style="padding-left:40px;font-size:.75rem">11.2 ВЛАСТИВОСТІ КУТІВ І ХОРД</a>
+<a class="sidebar-topic" href="geo4_1.html#part3" style="padding-left:40px;font-size:.75rem">11.3 ВПИСАНІ ТА ОПИСАНІ КОЛА</a>
+<a class="sidebar-topic" href="geo4_1.html#part4" style="padding-left:40px;font-size:.75rem">11.4 ДОВЖИНА КОЛА І ПЛОЩА КРУГА</a>
+<a class="sidebar-topic" href="geo4_1.html#part5" style="padding-left:40px;font-size:.75rem">11.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo5_1.html">12. Площі фігур</a>
+<a class="sidebar-topic" href="geo5_1.html" style="padding-left:40px;font-size:.75rem">12.1 ПЛОЩА ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo5_1.html#part2" style="padding-left:40px;font-size:.75rem">12.2 ПЛОЩА ЧОТИРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo5_1.html#part3" style="padding-left:40px;font-size:.75rem">12.3 ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</a>
+<a class="sidebar-topic" href="geo5_1.html#part4" style="padding-left:40px;font-size:.75rem">12.4 ЗАДАЧІ НА ПЛОЩУ</a>
+<a class="sidebar-topic" href="geo5_1.html#part5" style="padding-left:40px;font-size:.75rem">12.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+<a class="sidebar-topic" href="geo6_1.html">13. Стереометрія</a>
+<a class="sidebar-topic" href="geo6_1.html" style="padding-left:40px;font-size:.75rem">13.1 ОСНОВИ СТЕРЕОМЕТРІЇ</a>
+<a class="sidebar-topic" href="geo6_1.html#part2" style="padding-left:40px;font-size:.75rem">13.2 МНОГОГРАННИКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part3" style="padding-left:40px;font-size:.75rem">13.3 ТІЛА ОБЕРТАННЯ</a>
+<a class="sidebar-topic" href="geo6_1.html#part4" style="padding-left:40px;font-size:.75rem">13.4 ПЕРЕРІЗИ І РОЗГОРТКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part5" style="padding-left:40px;font-size:.75rem">13.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+</div></div>
+<div class="sidebar-section" data-section="trigonometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Тригонометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="tr1_1.html">14. Одиничне коло</a>
+<a class="sidebar-topic" href="tr1_1.html" style="padding-left:40px;font-size:.75rem">14.1 ЩО ТАКЕ ОДИНИЧНЕ КОЛО</a>
+<a class="sidebar-topic" href="tr1_1.html#part2" style="padding-left:40px;font-size:.75rem">14.2 ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="tr1_1.html#part3" style="padding-left:40px;font-size:.75rem">14.3 ПІДСУМОК</a>
+<a class="sidebar-topic" href="tr2_1.html">15. Формули тригонометрії</a>
+<a class="sidebar-topic" href="tr2_1.html" style="padding-left:40px;font-size:.75rem">15.1 ОСНОВНІ ТОТОЖНОСТІ</a>
+<a class="sidebar-topic" href="tr2_1.html#part2" style="padding-left:40px;font-size:.75rem">15.2 ФОРМУЛИ СУМИ І РІЗНИЦІ КУТІВ</a>
+<a class="sidebar-topic" href="tr2_1.html#part3" style="padding-left:40px;font-size:.75rem">15.3 ФОРМУЛИ ПОДВІЙНОГО КУТА</a>
+<a class="sidebar-topic" href="tr2_1.html#part4" style="padding-left:40px;font-size:.75rem">15.4 ПОНИЖЕННЯ СТЕПЕНЯ ТА ПЕРЕТВОРЕННЯ</a>
+<a class="sidebar-topic" href="tr2_1.html#part5" style="padding-left:40px;font-size:.75rem">15.5 ПІДСУМОК — НАЙВАЖЛИВІШІ ФОРМУЛИ</a>
+<a class="sidebar-topic" href="tr3_1.html">16. Тригонометричні рівняння</a>
+<a class="sidebar-topic" href="tr3_1.html" style="padding-left:40px;font-size:.75rem">16.1 ПРОСТІ ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="tr3_1.html#part2" style="padding-left:40px;font-size:.75rem">16.2 МЕТОДИ РОЗВ&#x27;ЯЗАННЯ СКЛАДНИХ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="tr3_1.html#part3" style="padding-left:40px;font-size:.75rem">16.3 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="tr4_1.html">17. Обернені функції</a>
+<a class="sidebar-topic" href="tr4_1.html" style="padding-left:40px;font-size:.75rem">17.1 ЩО ТАКЕ ОБЕРНЕНА ФУНКЦІЯ</a>
+<a class="sidebar-topic" href="tr4_1.html#part2" style="padding-left:40px;font-size:.75rem">17.2 ОБЕРНЕНІ ТРИГОНОМЕТРИЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part3" style="padding-left:40px;font-size:.75rem">17.3 ОБЕРНЕНІ АЛГЕБРАЇЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part4" style="padding-left:40px;font-size:.75rem">17.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analytic">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналітична геометрія та вектори</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="v5_1.html">18. Вектори</a>
+<a class="sidebar-topic" href="v5_1.html" style="padding-left:40px;font-size:.75rem">18.1 ПОНЯТТЯ ВЕКТОРА</a>
+<a class="sidebar-topic" href="v5_1.html#part2" style="padding-left:40px;font-size:.75rem">18.2 ДІЇ З ВЕКТОРАМИ</a>
+<a class="sidebar-topic" href="v5_1.html#part3" style="padding-left:40px;font-size:.75rem">18.3 СКАЛЯРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part4" style="padding-left:40px;font-size:.75rem">18.4 ВЕКТОРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part5" style="padding-left:40px;font-size:.75rem">18.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v6_1.html">19. Координатна геометрія</a>
+<a class="sidebar-topic" href="v6_1.html" style="padding-left:40px;font-size:.75rem">19.1 ВІДСТАНІ ТА СЕРЕДИНИ</a>
+<a class="sidebar-topic" href="v6_1.html#part2" style="padding-left:40px;font-size:.75rem">19.2 ПРЯМА НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="v6_1.html#part3" style="padding-left:40px;font-size:.75rem">19.3 КОЛО ТА ІНШІ КРИВІ</a>
+<a class="sidebar-topic" href="v6_1.html#part4" style="padding-left:40px;font-size:.75rem">19.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v7_1.html">20. Конічні перерізи</a>
+<a class="sidebar-topic" href="v7_1.html" style="padding-left:40px;font-size:.75rem">20.1 ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</a>
+<a class="sidebar-topic" href="v7_1.html#part2" style="padding-left:40px;font-size:.75rem">20.2 ЕЛІПС</a>
+<a class="sidebar-topic" href="v7_1.html#part3" style="padding-left:40px;font-size:.75rem">20.3 ГІПЕРБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part4" style="padding-left:40px;font-size:.75rem">20.4 ПАРАБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part5" style="padding-left:40px;font-size:.75rem">20.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v8_1.html">21. Координати у просторі</a>
+<a class="sidebar-topic" href="v8_1.html" style="padding-left:40px;font-size:.75rem">21.1 СИСТЕМА КООРДИНАТ У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part2" style="padding-left:40px;font-size:.75rem">21.2 ПРЯМА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part3" style="padding-left:40px;font-size:.75rem">21.3 ПЛОЩИНА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part4" style="padding-left:40px;font-size:.75rem">21.4 ІНШІ СИСТЕМИ КООРДИНАТ</a>
+<a class="sidebar-topic" href="v8_1.html#part5" style="padding-left:40px;font-size:.75rem">21.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analysis">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналіз та дискретна математика</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="m1_1.html">22. Комбінаторика</a>
+<a class="sidebar-topic" href="m1_1.html" style="padding-left:40px;font-size:.75rem">22.1 ПРИНЦИПИ ЛІЧБИ</a>
+<a class="sidebar-topic" href="m1_1.html#part2" style="padding-left:40px;font-size:.75rem">22.2 ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</a>
+<a class="sidebar-topic" href="m1_1.html#part3" style="padding-left:40px;font-size:.75rem">22.3 ВЛАСТИВОСТІ КОМБІНАЦІЙ</a>
+<a class="sidebar-topic" href="m1_1.html#part4" style="padding-left:40px;font-size:.75rem">22.4 БІНІМАЛЬНА ТЕОРЕМА</a>
+<a class="sidebar-topic" href="m1_1.html#part5" style="padding-left:40px;font-size:.75rem">22.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m2_1.html">23. Теорія ймовірностей</a>
+<a class="sidebar-topic" href="m2_1.html" style="padding-left:40px;font-size:.75rem">23.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="m2_1.html#part2" style="padding-left:40px;font-size:.75rem">23.2 ОПЕРАЦІЇ НАД ПОДІЯМИ</a>
+<a class="sidebar-topic" href="m2_1.html#part3" style="padding-left:40px;font-size:.75rem">23.3 УМОВНА ЙМОВІРНІСТЬ</a>
+<a class="sidebar-topic" href="m2_1.html#part4" style="padding-left:40px;font-size:.75rem">23.4 ДИСКРЕТНІ РОЗПОДІЛИ</a>
+<a class="sidebar-topic" href="m2_1.html#part5" style="padding-left:40px;font-size:.75rem">23.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m3_1.html">24. Границі та похідна</a>
+<a class="sidebar-topic" href="m3_1.html" style="padding-left:40px;font-size:.75rem">24.1 ГРАНИЦІ</a>
+<a class="sidebar-topic" href="m3_1.html#part2" style="padding-left:40px;font-size:.75rem">24.2 ПОХІДНА</a>
+<a class="sidebar-topic" href="m3_1.html#part3" style="padding-left:40px;font-size:.75rem">24.3 ЗАСТОСУВАННЯ ПОХІДНОЇ</a>
+<a class="sidebar-topic" href="m3_1.html#part4" style="padding-left:40px;font-size:.75rem">24.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m4_1.html">25. Інтеграл</a>
+<a class="sidebar-topic" href="m4_1.html" style="padding-left:40px;font-size:.75rem">25.1 НЕВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part2" style="padding-left:40px;font-size:.75rem">25.2 МЕТОДИ ІНТЕГРУВАННЯ</a>
+<a class="sidebar-topic" href="m4_1.html#part3" style="padding-left:40px;font-size:.75rem">25.3 ВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part4" style="padding-left:40px;font-size:.75rem">25.4 ЗАСТОСУВАННЯ ІНТЕГРАЛА</a>
+<a class="sidebar-topic" href="m4_1.html#part5" style="padding-left:40px;font-size:.75rem">25.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m5_1.html">26. Ряди та послідовності</a>
+<a class="sidebar-topic" href="m5_1.html" style="padding-left:40px;font-size:.75rem">26.1 ЧИСЛОВІ ПОСЛІДОВНОСТІ</a>
+<a class="sidebar-topic" href="m5_1.html#part2" style="padding-left:40px;font-size:.75rem">26.2 ЧИСЛОВІ РЯДИ</a>
+<a class="sidebar-topic" href="m5_1.html#part3" style="padding-left:40px;font-size:.75rem">26.3 ОЗНАКИ ЗБІЖНОСТІ РЯДІВ</a>
+<a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
+<a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+  </aside>
+
+  <main class="main">
+    <div class="task-page">
+
+      <!-- ── Topic picker ── -->
+      <div class="topic-picker open" id="topicPicker">
+        <div class="topic-picker-header" id="tpToggle">
+          <span id="tpTitle">Оберіть тему</span>
+          <span class="tp-arrow">▼</span>
+        </div>
+        <div class="topic-picker-body" id="tpBody">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <!-- ── Task area ── -->
+      <div id="taskArea">
+        <div class="task-welcome">
+          <h2>📝 Задачник</h2>
+          <p>754 задачі з детальними поясненнями.<br>Оберіть тему вище, щоб розпочати.</p>
+        </div>
+      </div>
+
+    </div>
+  
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span class="footer-version">v 0.5.7</span>
+    <span class="footer-copy">© 2026 Хоменко Олексій Григорович</span>
+    <span class="footer-links">
+      <a href="mailto:itstiamushchy@gmail.com">itstiamushchy@gmail.com</a>
+      <span class="footer-sep">·</span>
+      <span>ITS_tiamushchy</span>
+    </span>
+  </div>
+</footer>
+</main>
+
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+(function(){
+  /* ── Theme ── */
+  const saved = localStorage.getItem('obrahunok-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('obrahunok-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+
+  /* ── Sidebar mobile ── */
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  overlay.addEventListener('click', () => sidebar.classList.remove('open'));
+  document.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
+  });
+
+  /* ═══════════════════════════════════════════
+     TASK DATA — topic tree + lecture mapping
+     ═══════════════════════════════════════════ */
+  const TOPICS = [
+    { section: 'Алгебра', chapters: [
+      { id: 1, name: '1. Числа та дії', subs: [
+        { file: 'topic1_1.json', title: '1.1 Числові множини', lecture: 'chysla1.html', lectureName: '1.1 Числа та дії з ними' },
+        { file: 'topic1_2.json', title: '1.2 Модуль числа', lecture: 'chysla1.html', lectureName: '1.1 Числа та дії з ними' },
+        { file: 'topic1_3.json', title: '1.3 Дужки та порядок дій', lecture: 'chysla1.html', lectureName: '1.1 Числа та дії з ними' },
+        { file: 'topic1_4.json', title: '1.4 Звичайні дроби', lecture: 'chysla2.html', lectureName: '1.2 Дроби' },
+        { file: 'topic1_5.json', title: '1.5 Десяткові дроби', lecture: 'chysla2.html', lectureName: '1.2 Дроби' },
+        { file: 'topic1_6.json', title: '1.6 Подільність', lecture: 'chysla3.html', lectureName: '1.3 Подільність. НСД і НСК' },
+        { file: 'topic1_7.json', title: '1.7 НСД і НСК', lecture: 'chysla3.html', lectureName: '1.3 Подільність. НСД і НСК' },
+        { file: 'topic1_8.json', title: '1.8 Степені та корені', lecture: 'chysla4.html', lectureName: '1.4 Степені та корені' },
+        { file: 'topic1_9.json', title: '1.9 Відсотки та пропорції', lecture: 'chysla5.html', lectureName: '1.5 Відсотки та пропорції' },
+      ]},
+      { id: 2, name: '2. Вирази та тотожності', subs: [
+        { file: 'topic2_1.json', title: '2.1 Числовий і алгебраїчний вираз', lecture: 'vyrazy1.html', lectureName: '2.1 Основні поняття' },
+        { file: 'topic2_2.json', title: '2.2 Рівність, тотожність', lecture: 'vyrazy1.html', lectureName: '2.1 Основні поняття' },
+        { file: 'topic2_3.json', title: '2.3 Три закони алгебри', lecture: 'vyrazy2.html', lectureName: '2.2 Три закони арифметики' },
+        { file: 'topic2_4.json', title: '2.4 Зведення подібних', lecture: 'vyrazy3.html', lectureName: '2.3 Техніки перетворення' },
+        { file: 'topic2_5.json', title: '2.5 Знак перед дужками', lecture: 'vyrazy3.html', lectureName: '2.3 Техніки перетворення' },
+        { file: 'topic2_6.json', title: '2.6 Множення многочленів', lecture: 'vyrazy3.html', lectureName: '2.3 Техніки перетворення' },
+        { file: 'topic2_7.json', title: '2.7 Формули скороченого множення', lecture: 'vyrazy4.html', lectureName: '2.4 ФСМ' },
+        { file: 'topic2_8.json', title: '2.8 Розкладання на множники', lecture: 'vyrazy5.html', lectureName: '2.5 Розкладання на множники' },
+      ]},
+      { id: 3, name: '3. Нерівності', subs: [
+        { file: 'topic3_1.json', title: '3.1 Числові нерівності', lecture: 'nerivnosti1.html', lectureName: '3.1 Числові нерівності' },
+        { file: 'topic3_2.json', title: '3.2 Порівняння чисел', lecture: 'nerivnosti1.html', lectureName: '3.1 Числові нерівності' },
+        { file: 'topic3_3.json', title: '3.3 Техніки порівняння', lecture: 'nerivnosti1.html', lectureName: '3.1 Числові нерівності' },
+        { file: 'topic3_4.json', title: '3.4 Лінійні нерівності', lecture: 'nerivnosti2.html', lectureName: '3.2 Лінійні нерівності' },
+        { file: 'topic3_5.json', title: '3.5 Числові проміжки', lecture: 'nerivnosti2.html', lectureName: '3.2 Лінійні нерівності' },
+        { file: 'topic3_6.json', title: '3.6 Квадратні нерівності', lecture: 'nerivnosti3.html', lectureName: '3.3 Квадратні нерівності' },
+      ]},
+      { id: 4, name: '4. Рівняння та системи', subs: [
+        { file: 'topic4_1.json', title: '4.1 Основні поняття', lecture: 'rivnyannya1.html', lectureName: '4.1 Що таке рівняння' },
+        { file: 'topic4_2.json', title: '4.2 Лінійні рівняння', lecture: 'rivnyannya2.html', lectureName: '4.2 Лінійні рівняння' },
+        { file: 'topic4_3.json', title: '4.3 Квадратні рівняння', lecture: 'rivnyannya3.html', lectureName: '4.3 Квадратні рівняння' },
+        { file: 'topic4_4.json', title: '4.4 Раціональні рівняння', lecture: 'rivnyannya4.html', lectureName: '4.4 Раціональні та ірраціональні' },
+        { file: 'topic4_5.json', title: '4.5 Ірраціональні рівняння', lecture: 'rivnyannya4.html', lectureName: '4.4 Раціональні та ірраціональні' },
+        { file: 'topic4_6.json', title: '4.6 Показникові рівняння', lecture: 'rivnyannya5.html', lectureName: '4.5 Показникові та логарифмічні' },
+        { file: 'topic4_7.json', title: '4.7 Логарифмічні рівняння', lecture: 'rivnyannya5.html', lectureName: '4.5 Показникові та логарифмічні' },
+        { file: 'topic4_8.json', title: '4.8 Тригонометричні рівняння', lecture: 'rivnyannya6.html', lectureName: '4.6 Тригонометричні рівняння' },
+        { file: 'topic4_9.json', title: '4.9 Системи двох рівнянь', lecture: 'rivnyannya7.html', lectureName: '4.7 Системи рівнянь' },
+        { file: 'topic4_10.json', title: '4.10 Системи нелінійних', lecture: 'rivnyannya7.html', lectureName: '4.7 Системи рівнянь' },
+        { file: 'topic4_11.json', title: '4.11 Метод Гауса', lecture: 'rivnyannya7.html', lectureName: '4.7 Системи рівнянь' },
+      ]},
+      { id: 5, name: '5. Функції', subs: [
+        { file: 'topic5_1.json', title: '5.1 Означення функції', lecture: 'funktsiyi1.html', lectureName: '5.1 Поняття функції' },
+        { file: 'topic5_2.json', title: '5.2 Область визначення', lecture: 'funktsiyi1.html', lectureName: '5.1 Поняття функції' },
+        { file: 'topic5_3.json', title: '5.3 Парність і непарність', lecture: 'funktsiyi2.html', lectureName: '5.2 Властивості функцій' },
+        { file: 'topic5_4.json', title: '5.4 Монотонність', lecture: 'funktsiyi2.html', lectureName: '5.2 Властивості функцій' },
+        { file: 'topic5_5.json', title: '5.5 Нулі функції', lecture: 'funktsiyi2.html', lectureName: '5.2 Властивості функцій' },
+        { file: 'topic5_6.json', title: '5.6 Обмеженість', lecture: 'funktsiyi2.html', lectureName: '5.2 Властивості функцій' },
+        { file: 'topic5_7.json', title: '5.7 Неперервність', lecture: 'funktsiyi2.html', lectureName: '5.2 Властивості функцій' },
+        { file: 'topic5_8.json', title: '5.8 Лінійна функція', lecture: 'funktsiyi3.html', lectureName: '5.3 Основні функції' },
+        { file: 'topic5_9.json', title: '5.9 Квадратична функція', lecture: 'funktsiyi3.html', lectureName: '5.3 Основні функції' },
+        { file: 'topic5_10.json', title: '5.10 Гіпербола', lecture: 'funktsiyi3.html', lectureName: '5.3 Основні функції' },
+        { file: 'topic5_11.json', title: '5.11 Степенева функція', lecture: 'funktsiyi3.html', lectureName: '5.3 Основні функції' },
+        { file: 'topic5_12.json', title: '5.12 Показникова функція', lecture: 'funktsiyi3.html', lectureName: '5.3 Основні функції' },
+        { file: 'topic5_13.json', title: '5.13 Логарифмічна функція', lecture: 'funktsiyi3.html', lectureName: '5.3 Основні функції' },
+        { file: 'topic5_14.json', title: '5.14 Тригонометричні функції', lecture: 'funktsiyi3.html', lectureName: '5.3 Основні функції' },
+        { file: 'topic5_15.json', title: '5.15 Перетворення графіків', lecture: 'funktsiyi4.html', lectureName: '5.4 Перетворення графіків' },
+      ]},
+      { id: 6, name: '6. Прогресії', subs: [
+        { file: 'topic6_1.json', title: '6.1 Арифметична прогресія', lecture: 'prohresii1.html', lectureName: '6.1 Арифметична прогресія' },
+      ]},
+    ]}
+  ];
+
+  const LEVEL_NAMES = ['','Початковий','Базовий','Середній','Складний','Олімпіадний'];
+  const LEVEL_COLORS = ['','#43a047','#1e88e5','#fb8c00','#e53935','#6a1b9a'];
+
+  /* ═══ Build topic picker ═══ */
+  const tpBody = document.getElementById('tpBody');
+  let html = '';
+  TOPICS.forEach(sec => {
+    html += `<div class="tp-section">`;
+    html += `<div class="tp-section-title"><span class="arrow">▼</span> ${sec.section}</div>`;
+    html += `<div class="tp-items">`;
+    sec.chapters.forEach(ch => {
+      html += `<div class="tp-chapter">${ch.name}</div>`;
+      ch.subs.forEach(sub => {
+        html += `<div class="tp-item" data-file="${sub.file}" data-lecture="${sub.lecture}" data-lecname="${sub.lectureName}">`;
+        html += `<span>${sub.title}</span>`;
+        html += `</div>`;
+      });
+    });
+    html += `</div></div>`;
+  });
+  tpBody.innerHTML = html;
+
+  /* ── Section collapse ── */
+  tpBody.querySelectorAll('.tp-section-title').forEach(t => {
+    t.addEventListener('click', () => t.closest('.tp-section').classList.toggle('collapsed'));
+  });
+
+  /* ── Picker toggle ── */
+  document.getElementById('tpToggle').addEventListener('click', () => {
+    document.getElementById('topicPicker').classList.toggle('open');
+  });
+
+  /* ═══ Load topic ═══ */
+  let activeLevel = 0; // 0 = all
+  let currentData = null;
+  let currentMeta = null;
+
+  tpBody.querySelectorAll('.tp-item').forEach(item => {
+    item.addEventListener('click', () => {
+      tpBody.querySelectorAll('.tp-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      currentMeta = {
+        file: item.dataset.file,
+        lecture: item.dataset.lecture,
+        lecname: item.dataset.lecname,
+        title: item.querySelector('span').textContent
+      };
+      document.getElementById('tpTitle').textContent = currentMeta.title;
+      // Collapse picker on mobile
+      if (window.innerWidth <= 768) {
+        document.getElementById('topicPicker').classList.remove('open');
+      }
+      loadTopic(currentMeta);
+    });
+  });
+
+  async function loadTopic(meta) {
+    const area = document.getElementById('taskArea');
+    area.innerHTML = '<div class="loading">Завантаження…</div>';
+    try {
+      const res = await fetch('tasks/' + meta.file);
+      if (!res.ok) throw new Error('fetch failed');
+      currentData = await res.json();
+      activeLevel = 0;
+      renderTopic();
+    } catch(e) {
+      area.innerHTML = '<div class="loading">Помилка завантаження. Спробуйте ще раз.</div>';
+    }
+  }
+
+  function renderTopic() {
+    const d = currentData;
+    const m = currentMeta;
+    const area = document.getElementById('taskArea');
+    let h = '';
+
+    /* ── Theory link ── */
+    h += `<a class="theory-link" href="${m.lecture}">📖 Теорія: ${m.lecname}</a>`;
+
+    /* ── Title + stats ── */
+    h += `<h2 style="font-size:1.25rem;color:var(--heading-accent);margin-bottom:.3em">${d.title}</h2>`;
+    const levelCounts = {};
+    d.tasks.forEach(t => { levelCounts[t.level] = (levelCounts[t.level]||0) + 1; });
+    h += `<div class="topic-stats">`;
+    h += `<span>${d.tasks.length} задач</span>`;
+    for (let lv = 1; lv <= 5; lv++) {
+      if (levelCounts[lv]) {
+        h += `<span style="border-left:3px solid ${LEVEL_COLORS[lv]}">${LEVEL_NAMES[lv]}: ${levelCounts[lv]}</span>`;
+      }
+    }
+    h += `</div>`;
+
+    /* ── Level filter ── */
+    h += `<div class="level-filter">`;
+    h += `<button class="level-btn${activeLevel===0?' active':''}" data-lv="0">Усі</button>`;
+    for (let lv = 1; lv <= 5; lv++) {
+      if (levelCounts[lv]) {
+        h += `<button class="level-btn${activeLevel===lv?' active':''}" data-lv="${lv}" style="border-color:${LEVEL_COLORS[lv]}">${LEVEL_NAMES[lv]}</button>`;
+      }
+    }
+    h += `</div>`;
+
+    /* ── Methods ── */
+    if (d.methods && d.methods.length) {
+      d.methods.forEach((met, mi) => {
+        h += `<div class="method-card" data-mi="${mi}">`;
+        h += `<div class="method-header"><span class="m-arrow">▶</span> Метод: ${esc(met.name)}</div>`;
+        h += `<div class="method-body">`;
+        met.steps.forEach(s => {
+          h += `<div class="method-step">`;
+          h += `<div class="ms-action">${esc(s.action)}</div>`;
+          h += `<div class="ms-result">→ ${esc(s.result)}</div>`;
+          h += `</div>`;
+        });
+        h += `</div></div>`;
+      });
+    }
+
+    /* ── Tasks ── */
+    const tasks = d.tasks.filter(t => activeLevel === 0 || t.level === activeLevel);
+    tasks.forEach((t, ti) => {
+      h += `<div class="task-card" data-ti="${ti}">`;
+      h += `<div class="task-top">`;
+      h += `<div class="task-num lv${t.level}" title="${LEVEL_NAMES[t.level]}">${t.level}</div>`;
+      h += `<div class="task-condition">${esc(t.condition)}</div>`;
+      h += `</div>`;
+
+      /* actions */
+      h += `<div class="task-actions">`;
+      if (t.hints && t.hints.length) {
+        h += `<button class="task-btn btn-hint" data-ti="${ti}">💡 Підказка</button>`;
+      }
+      h += `<button class="task-btn btn-solution" data-ti="${ti}">📋 Розв'язок</button>`;
+      h += `</div>`;
+
+      /* hints */
+      if (t.hints && t.hints.length) {
+        h += `<div class="task-hints">`;
+        t.hints.forEach((hint, hi) => {
+          h += `<div class="hint-item" data-hi="${hi}" style="${hi > 0 ? 'display:none' : ''}">`;
+          h += `<span class="hint-icon">💡</span> <span>${esc(hint)}</span>`;
+          h += `</div>`;
+        });
+        if (t.hints.length > 1) {
+          h += `<button class="hint-more-btn" data-ti="${ti}" data-shown="1">Ще підказка ▸</button>`;
+        }
+        h += `</div>`;
+      }
+
+      /* solution */
+      h += `<div class="task-solution">`;
+      t.steps.forEach((s, si) => {
+        h += `<div class="solution-step" data-step="${si+1}">`;
+        h += `<div class="sol-action">${esc(s.action)}</div>`;
+        if (s.why) h += `<div class="sol-why">${esc(s.why)}</div>`;
+        h += `<div class="sol-result">→ ${esc(s.result)}</div>`;
+        h += `</div>`;
+      });
+      h += `<div class="task-answer">Відповідь: ${esc(t.answer)}</div>`;
+      h += `</div>`;
+
+      h += `</div>`;
+    });
+
+    if (tasks.length === 0) {
+      h += `<div class="loading">Немає задач для обраного рівня.</div>`;
+    }
+
+    area.innerHTML = h;
+    attachTaskListeners();
+  }
+
+  function attachTaskListeners() {
+    /* ── Level filter ── */
+    document.querySelectorAll('.level-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        activeLevel = parseInt(b.dataset.lv);
+        renderTopic();
+      });
+    });
+
+    /* ── Method toggle ── */
+    document.querySelectorAll('.method-header').forEach(h => {
+      h.addEventListener('click', () => h.closest('.method-card').classList.toggle('open'));
+    });
+
+    /* ── Hint toggle ── */
+    document.querySelectorAll('.btn-hint').forEach(b => {
+      b.addEventListener('click', () => {
+        const card = b.closest('.task-card');
+        card.classList.toggle('show-hints');
+        b.classList.toggle('active');
+      });
+    });
+
+    /* ── Solution toggle ── */
+    document.querySelectorAll('.btn-solution').forEach(b => {
+      b.addEventListener('click', () => {
+        const card = b.closest('.task-card');
+        card.classList.toggle('show-solution');
+        b.classList.toggle('active');
+      });
+    });
+
+    /* ── More hints ── */
+    document.querySelectorAll('.hint-more-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        const card = b.closest('.task-card');
+        let shown = parseInt(b.dataset.shown);
+        const hints = card.querySelectorAll('.hint-item');
+        if (shown < hints.length) {
+          hints[shown].style.display = '';
+          shown++;
+          b.dataset.shown = shown;
+          if (shown >= hints.length) b.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  /* ── Escape HTML ── */
+  function esc(s) {
+    if (!s) return '';
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+})();
+</script>
+</body>
+</html>

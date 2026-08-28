@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Формули — Обрахунок</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ═══ Formula page ═══ */
+.formula-page { max-width: 900px; }
+
+/* ── Section nav pills ── */
+.section-nav {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 1.2em;
+  position: sticky; top: 0; z-index: 5;
+  background: var(--bg); padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-pill {
+  padding: 7px 14px;
+  font-size: .78rem; font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+  -webkit-user-select: none; user-select: none;
+}
+.section-pill:hover { border-color: var(--accent); color: var(--accent); }
+.section-pill.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ── Search ── */
+.formula-search {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: .88rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  color: var(--text);
+  margin-bottom: 1em;
+  outline: none;
+}
+.formula-search:focus { border-color: var(--accent); }
+.formula-search::placeholder { color: var(--text-muted); }
+
+/* ── Section divider ── */
+.formula-section {
+  margin-bottom: 2em;
+}
+.formula-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--heading-accent);
+  padding: 10px 0 8px;
+  border-bottom: 2px solid var(--heading-accent);
+  margin-bottom: 1em;
+  display: flex; align-items: center; gap: 10px;
+}
+.formula-section-title .fs-icon { font-size: 1.2rem; }
+
+/* ── Formula card ── */
+.f-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: box-shadow .15s;
+}
+.f-card:hover { box-shadow: 0 2px 10px var(--shadow); }
+.f-card.hidden { display: none; }
+
+/* card header: formula display */
+.f-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  -webkit-user-select: none; user-select: none;
+}
+.f-expand {
+  flex-shrink: 0;
+  font-size: .65rem;
+  color: var(--text-muted);
+  transition: transform .2s;
+}
+.f-card.open .f-expand { transform: rotate(90deg); }
+.f-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: .92rem;
+  color: var(--text);
+}
+.f-expr {
+  font-family: "Cambria Math","Times New Roman",serif;
+  font-size: 1.1rem;
+  color: var(--heading-accent);
+  background: var(--formula-bg);
+  padding: 5px 14px;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  letter-spacing: .02em;
+}
+
+/* card body */
+.f-body {
+  display: none;
+  padding: 0 18px 16px;
+}
+.f-card.open .f-body { display: block; }
+
+.f-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .84rem;
+  line-height: 1.55;
+}
+.f-row:last-child { border-bottom: none; }
+.f-label {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem;
+  border-radius: 6px;
+}
+.f-label-section  { background: #e8f0fe; }
+.f-label-defines  { background: #e3eef6; }
+.f-label-usage    { background: #e8f5e9; }
+.f-label-example  { background: #fff8e1; }
+.f-label-tip      { background: #ede7f6; }
+.f-label-warn     { background: #fdecea; }
+.f-text { flex: 1; color: var(--text); }
+.f-text strong { color: var(--heading-accent); }
+
+/* example box inside card */
+.f-example-box {
+  background: var(--block-example-bg);
+  border-left: 3px solid var(--block-example-border);
+  padding: 8px 12px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-family: "Cambria Math","Times New Roman",serif;
+  font-size: .92rem;
+  margin-top: 4px;
+}
+/* warn box */
+.f-warn-box {
+  background: var(--block-warn-body-bg);
+  border-left: 3px solid var(--block-warn-body-border);
+  color: var(--block-warn-body-text);
+  padding: 8px 12px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-top: 4px;
+  font-size: .82rem;
+}
+/* tip box */
+.f-tip-box {
+  background: var(--block-tip-bg);
+  border-left: 3px solid var(--block-tip-border);
+  color: var(--block-tip-text);
+  padding: 8px 12px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-top: 4px;
+  font-size: .82rem;
+}
+
+/* lecture link inside card */
+.f-lecture {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--accent); font-size: .82rem;
+  text-decoration: none; margin-top: 4px;
+}
+.f-lecture:hover { text-decoration: underline; }
+
+/* stats */
+.formula-stats {
+  font-size: .8rem; color: var(--text-muted);
+  margin-bottom: .6em;
+}
+
+/* ═══ Mobile ═══ */
+@media (max-width: 768px) {
+  .section-nav { gap: 5px; padding: 8px 0; }
+  .section-pill { padding: 6px 10px; font-size: .72rem; }
+  .f-head { padding: 12px 14px; gap: 8px; flex-wrap: wrap; }
+  .f-expr { font-size: .95rem; padding: 4px 10px; order: 10; width: 100%; text-align: center; margin-top: 6px; white-space: normal; }
+  .f-body { padding: 0 14px 14px; }
+  .f-row { font-size: .82rem; }
+  .f-label { width: 24px; height: 24px; font-size: .8rem; }
+  .f-title { font-size: .86rem; }
+  .formula-search { font-size: .84rem; padding: 9px 12px; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html">
+      <span class="icon">∑</span>
+      <span>Обрахунок</span>
+    </a>
+    <div class="topbar-controls">
+      <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+      <button class="menu-toggle" id="menuToggle" title="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="tabbar">
+    <a class="tabbar-btn" href="index.html">Теорія</a>
+    <a class="tabbar-btn active" href="formuly.html">Формули</a>
+    <a class="tabbar-btn" href="#">Глосарій</a>
+    <a class="tabbar-btn" href="zadachnyk.html">Задачник</a>
+    <a class="tabbar-btn" href="#">Обране</a>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-section="algebra">
+<button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="chysla1.html">1. Числа та дії</a>
+<a class="sidebar-topic" href="chysla1.html" style="padding-left:40px;font-size:.75rem">1.1 ЧИСЛА ТА ДІЇ З НИМИ</a>
+<a class="sidebar-topic" href="chysla2.html" style="padding-left:40px;font-size:.75rem">1.2 ДРОБИ</a>
+<a class="sidebar-topic" href="chysla3.html" style="padding-left:40px;font-size:.75rem">1.3 ПОДІЛЬНІСТЬ. НСД І НСК</a>
+<a class="sidebar-topic" href="chysla4.html" style="padding-left:40px;font-size:.75rem">1.4 СТЕПЕНІ ТА КОРЕНІ</a>
+<a class="sidebar-topic" href="chysla5.html" style="padding-left:40px;font-size:.75rem">1.5 ВІДСОТКИ ТА ПРОПОРЦІЇ</a>
+<a class="sidebar-topic" href="vyrazy1.html">2. Вирази та тотожності</a>
+<a class="sidebar-topic" href="vyrazy1.html" style="padding-left:40px;font-size:.75rem">2.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="vyrazy2.html" style="padding-left:40px;font-size:.75rem">2.2 ТРИ ЗАКОНИ АРИФМЕТИКИ</a>
+<a class="sidebar-topic" href="vyrazy3.html" style="padding-left:40px;font-size:.75rem">2.3 ТЕХНІКИ ПЕРЕТВОРЕННЯ ВИРАЗІВ</a>
+<a class="sidebar-topic" href="vyrazy4.html" style="padding-left:40px;font-size:.75rem">2.4 ФОРМУЛИ СКОРОЧЕНОГО МНОЖЕННЯ</a>
+<a class="sidebar-topic" href="vyrazy5.html" style="padding-left:40px;font-size:.75rem">2.5 РОЗКЛАДАННЯ НА МНОЖНИКИ</a>
+<a class="sidebar-topic" href="vyrazy6.html" style="padding-left:40px;font-size:.75rem">2.6 НАСКРІЗНІ ПРИКЛАДИ</a>
+<a class="sidebar-topic" href="nerivnosti1.html">3. Нерівності</a>
+<a class="sidebar-topic" href="nerivnosti1.html" style="padding-left:40px;font-size:.75rem">3.1 ЧИСЛОВІ НЕРІВНОСТІ ТА ЇХ ВЛАСТИВОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti2.html" style="padding-left:40px;font-size:.75rem">3.2 ЛІНІЙНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti3.html" style="padding-left:40px;font-size:.75rem">3.3 КВАДРАТНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti4.html" style="padding-left:40px;font-size:.75rem">3.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="rivnyannya1.html">4. Рівняння та системи</a>
+<a class="sidebar-topic" href="rivnyannya1.html" style="padding-left:40px;font-size:.75rem">4.1 ЩО ТАКЕ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya2.html" style="padding-left:40px;font-size:.75rem">4.2 ЛІНІЙНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya3.html" style="padding-left:40px;font-size:.75rem">4.3 КВАДРАТНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya4.html" style="padding-left:40px;font-size:.75rem">4.4 РАЦІОНАЛЬНІ ТА ІРРАЦІОНАЛЬНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya5.html" style="padding-left:40px;font-size:.75rem">4.5 ПОКАЗНИКОВІ ТА ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya6.html" style="padding-left:40px;font-size:.75rem">4.6 ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya7.html" style="padding-left:40px;font-size:.75rem">4.7 СИСТЕМИ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="rivnyannya8.html" style="padding-left:40px;font-size:.75rem">4.8 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="funktsiyi1.html">5. Функції та їх властивості</a>
+<a class="sidebar-topic" href="funktsiyi1.html" style="padding-left:40px;font-size:.75rem">5.1 ПОНЯТТЯ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="funktsiyi2.html" style="padding-left:40px;font-size:.75rem">5.2 ВЛАСТИВОСТІ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="funktsiyi3.html" style="padding-left:40px;font-size:.75rem">5.3 ОСНОВНІ ФУНКЦІЇ ТА ЇХ ГРАФІКИ</a>
+<a class="sidebar-topic" href="funktsiyi4.html" style="padding-left:40px;font-size:.75rem">5.4 ПЕРЕТВОРЕННЯ ГРАФІКІВ</a>
+<a class="sidebar-topic" href="funktsiyi5.html" style="padding-left:40px;font-size:.75rem">5.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="prohresii1.html">6. Прогресії</a>
+<a class="sidebar-topic" href="prohresii1.html" style="padding-left:40px;font-size:.75rem">6.1 АРИФМЕТИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii2.html" style="padding-left:40px;font-size:.75rem">6.2 ГЕОМЕТРИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii3.html" style="padding-left:40px;font-size:.75rem">6.3 ПОРІВНЯННЯ АП ТА ГП</a>
+<a class="sidebar-topic" href="prohresii4.html" style="padding-left:40px;font-size:.75rem">6.4 ЗАСТОСУВАННЯ</a>
+<a class="sidebar-topic" href="logarythmy1.html">7. Логарифми</a>
+<a class="sidebar-topic" href="logarythmy1.html" style="padding-left:40px;font-size:.75rem">7.1 ЩО ТАКЕ ЛОГАРИФМ?</a>
+<a class="sidebar-topic" href="logarythmy2.html" style="padding-left:40px;font-size:.75rem">7.2 ВЛАСТИВОСТІ ЛОГАРИФМІВ</a>
+<a class="sidebar-topic" href="logarythmy3.html" style="padding-left:40px;font-size:.75rem">7.3 ОБЧИСЛЕННЯ З ЛОГАРИФМАМИ</a>
+<a class="sidebar-topic" href="logarythmy4.html" style="padding-left:40px;font-size:.75rem">7.4 ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="logarythmy5.html" style="padding-left:40px;font-size:.75rem">7.5 ЛОГАРИФМІЧНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="logarythmy6.html" style="padding-left:40px;font-size:.75rem">7.6 ПОКАЗНИКОВІ РІВНЯННЯ ЧЕРЕЗ ЛОГАРИФМ</a>
+</div></div>
+<div class="sidebar-section" data-section="geometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Геометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="geo1_1.html">8. Основи геометрії. Кути та прямі</a>
+<a class="sidebar-topic" href="geo1_1.html" style="padding-left:40px;font-size:.75rem">8.1 ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part2" style="padding-left:40px;font-size:.75rem">8.2 КУТИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part3" style="padding-left:40px;font-size:.75rem">8.3 ПРЯМІ НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="geo1_1.html#part4" style="padding-left:40px;font-size:.75rem">8.4 ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</a>
+<a class="sidebar-topic" href="geo1_1.html#part5" style="padding-left:40px;font-size:.75rem">8.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo2_1.html">9. Трикутники</a>
+<a class="sidebar-topic" href="geo2_1.html" style="padding-left:40px;font-size:.75rem">9.1 ОСНОВИ</a>
+<a class="sidebar-topic" href="geo2_1.html#part2" style="padding-left:40px;font-size:.75rem">9.2 ОЗНАКИ РІВНОСТІ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part3" style="padding-left:40px;font-size:.75rem">9.3 ОСОБЛИВІ ЛІНІЇ ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part4" style="padding-left:40px;font-size:.75rem">9.4 ПОДІБНІСТЬ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part5" style="padding-left:40px;font-size:.75rem">9.5 ТЕОРЕМА ПІФАГОРА</a>
+<a class="sidebar-topic" href="geo2_1.html#part6" style="padding-left:40px;font-size:.75rem">9.6 ТРИГОНОМЕТРІЯ ПРЯМОКУТНОГО ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part7" style="padding-left:40px;font-size:.75rem">9.7 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo3_1.html">10. Чотирикутники та многокутники</a>
+<a class="sidebar-topic" href="geo3_1.html" style="padding-left:40px;font-size:.75rem">10.1 ЗАГАЛЬНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo3_1.html#part2" style="padding-left:40px;font-size:.75rem">10.2 ЧОТИРИКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part3" style="padding-left:40px;font-size:.75rem">10.3 ПРАВИЛЬНІ МНОГОКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part4" style="padding-left:40px;font-size:.75rem">10.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo4_1.html">11. Коло та круг</a>
+<a class="sidebar-topic" href="geo4_1.html" style="padding-left:40px;font-size:.75rem">11.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo4_1.html#part2" style="padding-left:40px;font-size:.75rem">11.2 ВЛАСТИВОСТІ КУТІВ І ХОРД</a>
+<a class="sidebar-topic" href="geo4_1.html#part3" style="padding-left:40px;font-size:.75rem">11.3 ВПИСАНІ ТА ОПИСАНІ КОЛА</a>
+<a class="sidebar-topic" href="geo4_1.html#part4" style="padding-left:40px;font-size:.75rem">11.4 ДОВЖИНА КОЛА І ПЛОЩА КРУГА</a>
+<a class="sidebar-topic" href="geo4_1.html#part5" style="padding-left:40px;font-size:.75rem">11.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo5_1.html">12. Площі фігур</a>
+<a class="sidebar-topic" href="geo5_1.html" style="padding-left:40px;font-size:.75rem">12.1 ПЛОЩА ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo5_1.html#part2" style="padding-left:40px;font-size:.75rem">12.2 ПЛОЩА ЧОТИРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo5_1.html#part3" style="padding-left:40px;font-size:.75rem">12.3 ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</a>
+<a class="sidebar-topic" href="geo5_1.html#part4" style="padding-left:40px;font-size:.75rem">12.4 ЗАДАЧІ НА ПЛОЩУ</a>
+<a class="sidebar-topic" href="geo5_1.html#part5" style="padding-left:40px;font-size:.75rem">12.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+<a class="sidebar-topic" href="geo6_1.html">13. Стереометрія</a>
+<a class="sidebar-topic" href="geo6_1.html" style="padding-left:40px;font-size:.75rem">13.1 ОСНОВИ СТЕРЕОМЕТРІЇ</a>
+<a class="sidebar-topic" href="geo6_1.html#part2" style="padding-left:40px;font-size:.75rem">13.2 МНОГОГРАННИКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part3" style="padding-left:40px;font-size:.75rem">13.3 ТІЛА ОБЕРТАННЯ</a>
+<a class="sidebar-topic" href="geo6_1.html#part4" style="padding-left:40px;font-size:.75rem">13.4 ПЕРЕРІЗИ І РОЗГОРТКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part5" style="padding-left:40px;font-size:.75rem">13.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+</div></div>
+<div class="sidebar-section" data-section="trigonometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Тригонометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="tr1_1.html">14. Одиничне коло</a>
+<a class="sidebar-topic" href="tr1_1.html" style="padding-left:40px;font-size:.75rem">14.1 ЩО ТАКЕ ОДИНИЧНЕ КОЛО</a>
+<a class="sidebar-topic" href="tr1_1.html#part2" style="padding-left:40px;font-size:.75rem">14.2 ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="tr1_1.html#part3" style="padding-left:40px;font-size:.75rem">14.3 ПІДСУМОК</a>
+<a class="sidebar-topic" href="tr2_1.html">15. Формули тригонометрії</a>
+<a class="sidebar-topic" href="tr2_1.html" style="padding-left:40px;font-size:.75rem">15.1 ОСНОВНІ ТОТОЖНОСТІ</a>
+<a class="sidebar-topic" href="tr2_1.html#part2" style="padding-left:40px;font-size:.75rem">15.2 ФОРМУЛИ СУМИ І РІЗНИЦІ КУТІВ</a>
+<a class="sidebar-topic" href="tr2_1.html#part3" style="padding-left:40px;font-size:.75rem">15.3 ФОРМУЛИ ПОДВІЙНОГО КУТА</a>
+<a class="sidebar-topic" href="tr2_1.html#part4" style="padding-left:40px;font-size:.75rem">15.4 ПОНИЖЕННЯ СТЕПЕНЯ ТА ПЕРЕТВОРЕННЯ</a>
+<a class="sidebar-topic" href="tr2_1.html#part5" style="padding-left:40px;font-size:.75rem">15.5 ПІДСУМОК — НАЙВАЖЛИВІШІ ФОРМУЛИ</a>
+<a class="sidebar-topic" href="tr3_1.html">16. Тригонометричні рівняння</a>
+<a class="sidebar-topic" href="tr3_1.html" style="padding-left:40px;font-size:.75rem">16.1 ПРОСТІ ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="tr3_1.html#part2" style="padding-left:40px;font-size:.75rem">16.2 МЕТОДИ РОЗВ&#x27;ЯЗАННЯ СКЛАДНИХ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="tr3_1.html#part3" style="padding-left:40px;font-size:.75rem">16.3 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="tr4_1.html">17. Обернені функції</a>
+<a class="sidebar-topic" href="tr4_1.html" style="padding-left:40px;font-size:.75rem">17.1 ЩО ТАКЕ ОБЕРНЕНА ФУНКЦІЯ</a>
+<a class="sidebar-topic" href="tr4_1.html#part2" style="padding-left:40px;font-size:.75rem">17.2 ОБЕРНЕНІ ТРИГОНОМЕТРИЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part3" style="padding-left:40px;font-size:.75rem">17.3 ОБЕРНЕНІ АЛГЕБРАЇЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part4" style="padding-left:40px;font-size:.75rem">17.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analytic">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналітична геометрія та вектори</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="v5_1.html">18. Вектори</a>
+<a class="sidebar-topic" href="v5_1.html" style="padding-left:40px;font-size:.75rem">18.1 ПОНЯТТЯ ВЕКТОРА</a>
+<a class="sidebar-topic" href="v5_1.html#part2" style="padding-left:40px;font-size:.75rem">18.2 ДІЇ З ВЕКТОРАМИ</a>
+<a class="sidebar-topic" href="v5_1.html#part3" style="padding-left:40px;font-size:.75rem">18.3 СКАЛЯРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part4" style="padding-left:40px;font-size:.75rem">18.4 ВЕКТОРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part5" style="padding-left:40px;font-size:.75rem">18.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v6_1.html">19. Координатна геометрія</a>
+<a class="sidebar-topic" href="v6_1.html" style="padding-left:40px;font-size:.75rem">19.1 ВІДСТАНІ ТА СЕРЕДИНИ</a>
+<a class="sidebar-topic" href="v6_1.html#part2" style="padding-left:40px;font-size:.75rem">19.2 ПРЯМА НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="v6_1.html#part3" style="padding-left:40px;font-size:.75rem">19.3 КОЛО ТА ІНШІ КРИВІ</a>
+<a class="sidebar-topic" href="v6_1.html#part4" style="padding-left:40px;font-size:.75rem">19.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v7_1.html">20. Конічні перерізи</a>
+<a class="sidebar-topic" href="v7_1.html" style="padding-left:40px;font-size:.75rem">20.1 ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</a>
+<a class="sidebar-topic" href="v7_1.html#part2" style="padding-left:40px;font-size:.75rem">20.2 ЕЛІПС</a>
+<a class="sidebar-topic" href="v7_1.html#part3" style="padding-left:40px;font-size:.75rem">20.3 ГІПЕРБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part4" style="padding-left:40px;font-size:.75rem">20.4 ПАРАБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part5" style="padding-left:40px;font-size:.75rem">20.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v8_1.html">21. Координати у просторі</a>
+<a class="sidebar-topic" href="v8_1.html" style="padding-left:40px;font-size:.75rem">21.1 СИСТЕМА КООРДИНАТ У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part2" style="padding-left:40px;font-size:.75rem">21.2 ПРЯМА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part3" style="padding-left:40px;font-size:.75rem">21.3 ПЛОЩИНА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part4" style="padding-left:40px;font-size:.75rem">21.4 ІНШІ СИСТЕМИ КООРДИНАТ</a>
+<a class="sidebar-topic" href="v8_1.html#part5" style="padding-left:40px;font-size:.75rem">21.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analysis">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналіз та дискретна математика</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="m1_1.html">22. Комбінаторика</a>
+<a class="sidebar-topic" href="m1_1.html" style="padding-left:40px;font-size:.75rem">22.1 ПРИНЦИПИ ЛІЧБИ</a>
+<a class="sidebar-topic" href="m1_1.html#part2" style="padding-left:40px;font-size:.75rem">22.2 ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</a>
+<a class="sidebar-topic" href="m1_1.html#part3" style="padding-left:40px;font-size:.75rem">22.3 ВЛАСТИВОСТІ КОМБІНАЦІЙ</a>
+<a class="sidebar-topic" href="m1_1.html#part4" style="padding-left:40px;font-size:.75rem">22.4 БІНІМАЛЬНА ТЕОРЕМА</a>
+<a class="sidebar-topic" href="m1_1.html#part5" style="padding-left:40px;font-size:.75rem">22.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m2_1.html">23. Теорія ймовірностей</a>
+<a class="sidebar-topic" href="m2_1.html" style="padding-left:40px;font-size:.75rem">23.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="m2_1.html#part2" style="padding-left:40px;font-size:.75rem">23.2 ОПЕРАЦІЇ НАД ПОДІЯМИ</a>
+<a class="sidebar-topic" href="m2_1.html#part3" style="padding-left:40px;font-size:.75rem">23.3 УМОВНА ЙМОВІРНІСТЬ</a>
+<a class="sidebar-topic" href="m2_1.html#part4" style="padding-left:40px;font-size:.75rem">23.4 ДИСКРЕТНІ РОЗПОДІЛИ</a>
+<a class="sidebar-topic" href="m2_1.html#part5" style="padding-left:40px;font-size:.75rem">23.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m3_1.html">24. Границі та похідна</a>
+<a class="sidebar-topic" href="m3_1.html" style="padding-left:40px;font-size:.75rem">24.1 ГРАНИЦІ</a>
+<a class="sidebar-topic" href="m3_1.html#part2" style="padding-left:40px;font-size:.75rem">24.2 ПОХІДНА</a>
+<a class="sidebar-topic" href="m3_1.html#part3" style="padding-left:40px;font-size:.75rem">24.3 ЗАСТОСУВАННЯ ПОХІДНОЇ</a>
+<a class="sidebar-topic" href="m3_1.html#part4" style="padding-left:40px;font-size:.75rem">24.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m4_1.html">25. Інтеграл</a>
+<a class="sidebar-topic" href="m4_1.html" style="padding-left:40px;font-size:.75rem">25.1 НЕВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part2" style="padding-left:40px;font-size:.75rem">25.2 МЕТОДИ ІНТЕГРУВАННЯ</a>
+<a class="sidebar-topic" href="m4_1.html#part3" style="padding-left:40px;font-size:.75rem">25.3 ВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part4" style="padding-left:40px;font-size:.75rem">25.4 ЗАСТОСУВАННЯ ІНТЕГРАЛА</a>
+<a class="sidebar-topic" href="m4_1.html#part5" style="padding-left:40px;font-size:.75rem">25.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m5_1.html">26. Ряди та послідовності</a>
+<a class="sidebar-topic" href="m5_1.html" style="padding-left:40px;font-size:.75rem">26.1 ЧИСЛОВІ ПОСЛІДОВНОСТІ</a>
+<a class="sidebar-topic" href="m5_1.html#part2" style="padding-left:40px;font-size:.75rem">26.2 ЧИСЛОВІ РЯДИ</a>
+<a class="sidebar-topic" href="m5_1.html#part3" style="padding-left:40px;font-size:.75rem">26.3 ОЗНАКИ ЗБІЖНОСТІ РЯДІВ</a>
+<a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
+<a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+  </aside>
+
+  <main class="main">
+    <div class="formula-page">
+
+      <h2 style="font-size:1.3rem;color:var(--heading-accent);margin-bottom:.2em">📐 Довідник формул</h2>
+      <p class="formula-stats" id="fStats"></p>
+
+      <input class="formula-search" id="fSearch" type="text" placeholder="Пошук формули…">
+
+      <div class="section-nav" id="sectionNav"></div>
+
+      <div id="formulaArea"></div>
+
+    </div>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span class="footer-version">v 0.5.7</span>
+    <span class="footer-copy">© 2026 Хоменко Олексій Григорович</span>
+    <span class="footer-links">
+      <a href="mailto:itstiamushchy@gmail.com">itstiamushchy@gmail.com</a>
+      <span class="footer-sep">·</span>
+      <span>ITS_tiamushchy</span>
+    </span>
+  </div>
+</footer>
+  </main>
+
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+(function(){
+  /* ── Theme ── */
+  const saved = localStorage.getItem('obrahunok-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('obrahunok-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  overlay.addEventListener('click', () => sidebar.classList.remove('open'));
+  document.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
+  });
+
+/* ═══════════════════════════════════════════════
+   FORMULA DATABASE
+   ═══════════════════════════════════════════════ */
+const F = [
+// ━━━━━━━━━ АЛГЕБРА: Числа та дії ━━━━━━━━━
+{s:"Алгебра",icon:"∑",g:"Числа та дії",t:"Модуль числа",f:"|a| = a, якщо a ≥ 0; |a| = −a, якщо a < 0",
+ sec:"Алгебра → Числа та дії",def:"Визначає відстань числа від нуля на числовій прямій. Модуль завжди невід'ємний.",
+ use:"Знаходження відстані між точками, розв'язання рівнянь та нерівностей з модулем, оцінка похибки вимірювань.",
+ ex:"|−5| = −(−5) = 5,  |3| = 3,  |0| = 0",
+ tip:"Модуль «знімає» мінус, але не додає його. Якщо x = −7, то −x = 7 (плюс!).",
+ warn:"Помилка: вважати |−x| = x. Насправді |−x| = |x|, бо мінус перед змінною не означає від'ємне число.",
+ lec:"chysla1.html",ln:"1.1 Числа та дії"},
+
+{s:"Алгебра",icon:"∑",g:"Числа та дії",t:"Степінь з натуральним показником",f:"aⁿ = a · a · … · a  (n разів)",
+ sec:"Алгебра → Степені та корені",def:"Визначає скорочений запис багаторазового множення числа на себе.",
+ use:"Обчислення площ, об'ємів, складних відсотків, зростання популяції, комп'ютерні науки (біти, байти).",
+ ex:"2⁵ = 2·2·2·2·2 = 32,  (−3)² = 9,  (−3)³ = −27",
+ tip:"Парний степінь будь-якого числа — додатний. Непарний степінь зберігає знак основи.",
+ warn:"(−3)² = 9, але −3² = −9. Дужки визначають, чи стосується степінь знака мінус.",
+ lec:"chysla4.html",ln:"1.4 Степені та корені"},
+
+{s:"Алгебра",icon:"∑",g:"Числа та дії",t:"Множення степенів з однаковою основою",f:"aᵐ · aⁿ = aᵐ⁺ⁿ",
+ sec:"Алгебра → Степені та корені",def:"При множенні степенів з однаковою основою показники додаються.",
+ use:"Спрощення алгебраїчних виразів, робота з експоненціальним зростанням, фізичні формули.",
+ ex:"2³ · 2⁴ = 2⁷ = 128,  x² · x⁵ = x⁷",
+ tip:"Правило працює ТІЛЬКИ для однакових основ. 2³ · 3⁴ спростити не можна.",
+ warn:"Не плутайте з додаванням: aᵐ + aⁿ ≠ aᵐ⁺ⁿ. Додавання і множення — різні операції.",
+ lec:"chysla4.html",ln:"1.4 Степені та корені"},
+
+{s:"Алгебра",icon:"∑",g:"Числа та дії",t:"Ділення степенів",f:"aᵐ ÷ aⁿ = aᵐ⁻ⁿ  (a ≠ 0)",
+ sec:"Алгебра → Степені та корені",def:"При діленні степенів з однаковою основою показники віднімаються.",
+ use:"Спрощення дробів зі степенями, наукова нотація, нормалізація даних.",
+ ex:"5⁷ ÷ 5³ = 5⁴ = 625,  x⁸ ÷ x² = x⁶",
+ tip:"Якщо m = n, отримуємо a⁰ = 1. Якщо m < n, отримуємо від'ємний показник.",
+ warn:"Основа a ≠ 0, бо ділення на нуль не визначене. 0⁰ — невизначеність.",
+ lec:"chysla4.html",ln:"1.4 Степені та корені"},
+
+{s:"Алгебра",icon:"∑",g:"Числа та дії",t:"Степінь степеня",f:"(aᵐ)ⁿ = aᵐ·ⁿ",
+ sec:"Алгебра → Степені та корені",def:"При піднесенні степеня до степеня показники перемножуються.",
+ use:"Подвійне масштабування, криптографія (RSA), складні обчислення.",
+ ex:"(2³)⁴ = 2¹² = 4096,  (x²)³ = x⁶",
+ tip:"Не плутайте (aᵐ)ⁿ з aᵐⁿ — перше дає aᵐ·ⁿ, а друге — a піднесене до (mⁿ).",
+ warn:"(2³)² = 2⁶ = 64, але 2^(3²) = 2⁹ = 512. Порядок дій критичний!",
+ lec:"chysla4.html",ln:"1.4 Степені та корені"},
+
+{s:"Алгебра",icon:"∑",g:"Числа та дії",t:"Корінь n-го степеня",f:"ⁿ√a = a^(1/n)",
+ sec:"Алгебра → Степені та корені",def:"Число, яке при піднесенні до степеня n дає a. Обернена операція до піднесення до степеня.",
+ use:"Обчислення сторін фігур за площею/об'ємом, середнє геометричне, формули фінансів.",
+ ex:"√16 = 4, ³√27 = 3, ⁴√81 = 3",
+ tip:"Корінь парного степеня з від'ємного числа — не існує в дійсних числах. Непарний — існує: ³√(−8) = −2.",
+ warn:"√(a²) = |a|, а не просто a. Наприклад, √((−3)²) = √9 = 3, а не −3.",
+ lec:"chysla4.html",ln:"1.4 Степені та корені"},
+
+{s:"Алгебра",icon:"∑",g:"Числа та дії",t:"Відсоток від числа",f:"p% від A = A · p / 100",
+ sec:"Алгебра → Відсотки та пропорції",def:"Визначає частку числа, виражену в сотих частках.",
+ use:"Фінанси (податки, знижки, відсотки по кредиту), статистика, повсякденні розрахунки.",
+ ex:"15% від 200 = 200 · 15/100 = 30",
+ tip:"Для швидкого обчислення: 10% — поділити на 10, 5% — половина від 10%, 1% — поділити на 100.",
+ warn:"«На 20% більше» і «на 20% менше» — не взаємно обернені! 100 + 20% = 120, але 120 − 20% = 96 ≠ 100.",
+ lec:"chysla5.html",ln:"1.5 Відсотки та пропорції"},
+
+{s:"Алгебра",icon:"∑",g:"Числа та дії",t:"Основна пропорція",f:"a/b = c/d  ⟺  a·d = b·c",
+ sec:"Алгебра → Відсотки та пропорції",def:"Рівність двох відношень. Добутки крайніх і середніх членів рівні.",
+ use:"Масштабування рецептів, карт, креслень; задачі на швидкість, концентрацію розчинів.",
+ ex:"3/4 = x/20 ⟹ 3·20 = 4·x ⟹ x = 15",
+ tip:"Пропорцію можна перевірити множенням «хрест-навхрест».",
+ warn:"Пропорція працює лише для прямо пропорційних величин. Для обернено пропорційних: a·b = c·d.",
+ lec:"chysla5.html",ln:"1.5 Відсотки та пропорції"},
+
+// ━━━━━━━━━ АЛГЕБРА: Вирази та ФСМ ━━━━━━━━━
+{s:"Алгебра",icon:"∑",g:"Формули скороченого множення",t:"Квадрат суми",f:"(a + b)² = a² + 2ab + b²",
+ sec:"Алгебра → Вирази та тотожності",def:"Розкриває квадрат суми двох виразів у тричлен.",
+ use:"Спрощення виразів, розв'язання рівнянь, виділення повного квадрата, оптимізація обчислень.",
+ ex:"(x + 3)² = x² + 6x + 9",
+ tip:"Запам'ятайте: «квадрат першого, подвоєний добуток, квадрат другого». Знак подвоєного добутку збігається зі знаком у дужках.",
+ warn:"(a + b)² ≠ a² + b². Забутий середній член 2ab — найпоширеніша помилка.",
+ lec:"vyrazy4.html",ln:"2.4 Формули скороченого множення"},
+
+{s:"Алгебра",icon:"∑",g:"Формули скороченого множення",t:"Квадрат різниці",f:"(a − b)² = a² − 2ab + b²",
+ sec:"Алгебра → Вирази та тотожності",def:"Розкриває квадрат різниці двох виразів у тричлен.",
+ use:"Спрощення виразів, виділення повного квадрата, геометричні задачі на різницю площ.",
+ ex:"(x − 5)² = x² − 10x + 25",
+ tip:"Останній доданок b² завжди додатний, бо (−b)² = b².",
+ warn:"(a − b)² ≠ a² − b². Знову ж, 2ab не можна пропускати.",
+ lec:"vyrazy4.html",ln:"2.4 Формули скороченого множення"},
+
+{s:"Алгебра",icon:"∑",g:"Формули скороченого множення",t:"Різниця квадратів",f:"a² − b² = (a − b)(a + b)",
+ sec:"Алгебра → Вирази та тотожності",def:"Розкладає різницю квадратів двох виразів на добуток суми та різниці.",
+ use:"Розкладання на множники, скорочення дробів, усне множення (101·99 = 10201−1 = 10200−1).",
+ ex:"x² − 9 = (x−3)(x+3),  25a² − 4b² = (5a−2b)(5a+2b)",
+ tip:"Для усного рахунку: 47·53 = (50−3)(50+3) = 2500−9 = 2491.",
+ warn:"a² + b² НЕ розкладається на множники в дійсних числах. Формула працює тільки для різниці.",
+ lec:"vyrazy4.html",ln:"2.4 Формули скороченого множення"},
+
+{s:"Алгебра",icon:"∑",g:"Формули скороченого множення",t:"Куб суми",f:"(a + b)³ = a³ + 3a²b + 3ab² + b³",
+ sec:"Алгебра → Вирази та тотожності",def:"Розкриває куб суми двох виразів у чотиричлен. Коефіцієнти — рядок трикутника Паскаля: 1, 3, 3, 1.",
+ use:"Розкладання многочленів, наближені обчислення, біноміальні задачі.",
+ ex:"(x + 2)³ = x³ + 6x² + 12x + 8",
+ tip:"Степінь a спадає від 3 до 0, степінь b зростає від 0 до 3. Коефіцієнти: 1-3-3-1.",
+ warn:"(a+b)³ ≠ a³+b³. Пропуск середніх доданків — грубіша помилка, ніж у квадраті.",
+ lec:"vyrazy4.html",ln:"2.4 Формули скороченого множення"},
+
+{s:"Алгебра",icon:"∑",g:"Формули скороченого множення",t:"Сума кубів",f:"a³ + b³ = (a + b)(a² − ab + b²)",
+ sec:"Алгебра → Вирази та тотожності",def:"Розкладає суму кубів на добуток двочлена та неповного квадрата різниці.",
+ use:"Розкладання на множники, скорочення алгебраїчних дробів, теорія чисел.",
+ ex:"8x³ + 27 = (2x)³ + 3³ = (2x + 3)(4x² − 6x + 9)",
+ tip:"Мнемоніка: знак у двочленнику такий самий, як між кубами. У тричленнику середній доданок — протилежний.",
+ warn:"Тричлен a² − ab + b² не розкладається далі (дискримінант від'ємний).",
+ lec:"vyrazy4.html",ln:"2.4 Формули скороченого множення"},
+
+{s:"Алгебра",icon:"∑",g:"Формули скороченого множення",t:"Різниця кубів",f:"a³ − b³ = (a − b)(a² + ab + b²)",
+ sec:"Алгебра → Вирази та тотожності",def:"Розкладає різницю кубів на добуток двочлена та неповного квадрата суми.",
+ use:"Розкладання на множники, спрощення виразів з кубічними коренями.",
+ ex:"x³ − 1 = (x − 1)(x² + x + 1)",
+ tip:"Аналогія із сумою кубів, але знаки «дзеркальні».",
+ warn:"Не плутайте з різницею квадратів — тут тричлен НЕ розкладається на лінійні множники.",
+ lec:"vyrazy4.html",ln:"2.4 Формули скороченого множення"},
+
+// ━━━━━━━━━ АЛГЕБРА: Нерівності ━━━━━━━━━
+{s:"Алгебра",icon:"∑",g:"Нерівності",t:"Нерівність Коші (AM ≥ GM)",f:"(a + b)/2 ≥ √(ab)  для a,b ≥ 0",
+ sec:"Алгебра → Нерівності",def:"Середнє арифметичне двох невід'ємних чисел не менше їхнього середнього геометричного.",
+ use:"Знаходження мінімуму/максимуму виразів, оцінка добутків, оптимізаційні задачі.",
+ ex:"a + b ≥ 2√(ab). Якщо a=4, b=9: (4+9)/2 = 6.5 ≥ √36 = 6 ✓",
+ tip:"Рівність досягається тоді і тільки тоді, коли a = b.",
+ warn:"Формула працює ТІЛЬКИ для невід'ємних чисел. Для від'ємних — нерівність хибна.",
+ lec:"nerivnosti1.html",ln:"3.1 Числові нерівності"},
+
+// ━━━━━━━━━ АЛГЕБРА: Рівняння ━━━━━━━━━
+{s:"Алгебра",icon:"∑",g:"Рівняння",t:"Лінійне рівняння",f:"ax + b = 0  ⟹  x = −b/a  (a ≠ 0)",
+ sec:"Алгебра → Рівняння та системи",def:"Рівняння першого степеня. Має рівно один корінь, якщо a ≠ 0.",
+ use:"Базова алгебра, економічні розрахунки, рівняння прямих, задачі на рух.",
+ ex:"3x + 6 = 0 ⟹ x = −6/3 = −2",
+ tip:"Якщо a = 0 і b = 0 — безліч розв'язків (тотожність). Якщо a = 0 і b ≠ 0 — розв'язків немає.",
+ warn:"Перед діленням на a переконайтесь, що a ≠ 0. Ділення на нуль — заборонена операція.",
+ lec:"rivnyannya2.html",ln:"4.2 Лінійні рівняння"},
+
+{s:"Алгебра",icon:"∑",g:"Рівняння",t:"Дискримінант квадратного рівняння",f:"D = b² − 4ac",
+ sec:"Алгебра → Рівняння та системи",def:"Визначає кількість і характер коренів квадратного рівняння ax² + bx + c = 0.",
+ use:"Розв'язання будь-яких квадратних рівнянь, аналіз параболи, інженерні розрахунки.",
+ ex:"x² − 5x + 6 = 0: D = 25 − 24 = 1 > 0 → два різні корені",
+ tip:"D > 0 — два корені, D = 0 — один корінь (кратний), D < 0 — немає дійсних коренів.",
+ warn:"Не забувайте коефіцієнт 4 перед ac. Обчислюйте b² окремо, потім 4ac окремо, потім віднімайте.",
+ lec:"rivnyannya3.html",ln:"4.3 Квадратні рівняння"},
+
+{s:"Алгебра",icon:"∑",g:"Рівняння",t:"Формула коренів квадратного рівняння",f:"x = (−b ± √D) / (2a)",
+ sec:"Алгебра → Рівняння та системи",def:"Дає обидва корені квадратного рівняння ax² + bx + c = 0 через коефіцієнти.",
+ use:"Універсальний метод розв'язання будь-якого квадратного рівняння.",
+ ex:"x² − 5x + 6 = 0: x = (5 ± 1)/2 → x₁ = 3, x₂ = 2",
+ tip:"Якщо b — парне число, використовуйте D/4 = (b/2)² − ac і x = (−b/2 ± √(D/4))/a — менше обчислень.",
+ warn:"Знак ± означає ДВА розв'язки: один з +, інший з −. Не забувайте обчислити обидва.",
+ lec:"rivnyannya3.html",ln:"4.3 Квадратні рівняння"},
+
+{s:"Алгебра",icon:"∑",g:"Рівняння",t:"Теорема Вієта",f:"x₁ + x₂ = −b/a,  x₁ · x₂ = c/a",
+ sec:"Алгебра → Рівняння та системи",def:"Зв'язує корені квадратного рівняння з його коефіцієнтами без обчислення дискримінанта.",
+ use:"Швидка перевірка коренів, складання рівняння за коренями, розкладання тричлена.",
+ ex:"x² − 5x + 6 = 0: x₁+x₂ = 5, x₁·x₂ = 6 → корені 2 і 3",
+ tip:"Для зведеного рівняння (a=1): сума коренів = −b, добуток = c. Підбирайте два числа, що задовольняють обидві умови.",
+ warn:"Теорема Вієта не каже, чи існують корені. Спочатку перевірте D ≥ 0.",
+ lec:"rivnyannya3.html",ln:"4.3 Квадратні рівняння"},
+
+// ━━━━━━━━━ АЛГЕБРА: Логарифми ━━━━━━━━━
+{s:"Алгебра",icon:"∑",g:"Логарифми",t:"Означення логарифма",f:"log_a(b) = c  ⟺  aᶜ = b",
+ sec:"Алгебра → Логарифми",def:"Логарифм числа b за основою a — це показник степеня, до якого потрібно піднести a, щоб отримати b.",
+ use:"Обчислення порядку величин, шкала Ріхтера, децибели, pH, інформатика (двійковий логарифм).",
+ ex:"log₂(8) = 3, бо 2³ = 8.  lg(1000) = 3, бо 10³ = 1000",
+ tip:"log_a(1) = 0 для будь-якої основи, бо a⁰ = 1.  log_a(a) = 1, бо a¹ = a.",
+ warn:"Основа a > 0, a ≠ 1, і аргумент b > 0. Логарифм від нуля, від'ємних чисел або з основою 1 не існує.",
+ lec:"logarythmy1.html",ln:"7.1 Що таке логарифм"},
+
+{s:"Алгебра",icon:"∑",g:"Логарифми",t:"Логарифм добутку",f:"log_a(b·c) = log_a(b) + log_a(c)",
+ sec:"Алгебра → Логарифми",def:"Логарифм добутку дорівнює сумі логарифмів множників.",
+ use:"Спрощення складних виразів, логарифмування рівнянь, обчислення з великими числами.",
+ ex:"log₂(8·4) = log₂(8) + log₂(4) = 3 + 2 = 5",
+ tip:"Працює і в зворотному напрямку: суму логарифмів з однаковою основою можна замінити одним логарифмом добутку.",
+ warn:"log(a + b) ≠ log(a) + log(b). Формула — для добутку, НЕ для суми!",
+ lec:"logarythmy2.html",ln:"7.2 Властивості логарифмів"},
+
+{s:"Алгебра",icon:"∑",g:"Логарифми",t:"Логарифм частки",f:"log_a(b/c) = log_a(b) − log_a(c)",
+ sec:"Алгебра → Логарифми",def:"Логарифм частки дорівнює різниці логарифмів.",
+ use:"Спрощення дробів під логарифмом, порівняння величин різних порядків.",
+ ex:"log₃(27/9) = log₃(27) − log₃(9) = 3 − 2 = 1",
+ tip:"Аналог: при діленні степенів показники віднімаються.",
+ warn:"log(a − b) ≠ log(a) − log(b). Різниця — не частка!",
+ lec:"logarythmy2.html",ln:"7.2 Властивості логарифмів"},
+
+{s:"Алгебра",icon:"∑",g:"Логарифми",t:"Логарифм степеня",f:"log_a(bⁿ) = n · log_a(b)",
+ sec:"Алгебра → Логарифми",def:"Показник степеня виноситься як множник перед логарифмом.",
+ use:"Розв'язання показникових рівнянь логарифмуванням, обчислення зі степенями великих чисел.",
+ ex:"log₂(8⁴) = 4·log₂(8) = 4·3 = 12",
+ tip:"Працює і для дробових показників: log_a(√b) = log_a(b^(1/2)) = ½·log_a(b).",
+ warn:"Показник АРГУМЕНТА виноситься, а не основи. log_(a²)(b) ≠ 2·log_a(b).",
+ lec:"logarythmy2.html",ln:"7.2 Властивості логарифмів"},
+
+{s:"Алгебра",icon:"∑",g:"Логарифми",t:"Перехід до іншої основи",f:"log_a(b) = log_c(b) / log_c(a)",
+ sec:"Алгебра → Логарифми",def:"Дозволяє обчислити логарифм з будь-якою основою через логарифми з іншою (зручною) основою.",
+ use:"Обчислення на калькуляторі (через ln або lg), порівняння логарифмів з різними основами.",
+ ex:"log₅(25) = ln(25)/ln(5) = 2·ln(5)/ln(5) = 2",
+ tip:"Часто переходять до основи 10 (lg) або e (ln), бо вони є на калькуляторі.",
+ warn:"Не плутайте чисельник і знаменник: log_a(b) = log(b)/log(a), а не навпаки.",
+ lec:"logarythmy2.html",ln:"7.2 Властивості логарифмів"},
+
+// ━━━━━━━━━ АЛГЕБРА: Прогресії ━━━━━━━━━
+{s:"Алгебра",icon:"∑",g:"Прогресії",t:"n-й член арифметичної прогресії",f:"aₙ = a₁ + (n − 1)·d",
+ sec:"Алгебра → Прогресії",def:"Визначає будь-який член АП через перший член a₁ та різницю d.",
+ use:"Нарахування зарплати з щорічним приростом, розрахунок кроків, лінійні послідовності.",
+ ex:"a₁ = 3, d = 5: a₁₀ = 3 + 9·5 = 48",
+ tip:"d = aₙ₊₁ − aₙ — різниця між сусідніми членами. Якщо d > 0, прогресія зростає.",
+ warn:"n − 1, а не n! Для 10-го члена множимо d на 9, не на 10.",
+ lec:"prohresii1.html",ln:"6.1 Арифметична прогресія"},
+
+{s:"Алгебра",icon:"∑",g:"Прогресії",t:"Сума n членів АП",f:"Sₙ = n·(a₁ + aₙ)/2",
+ sec:"Алгебра → Прогресії",def:"Сума перших n членів арифметичної прогресії — це кількість членів, помножена на середнє арифметичне першого і останнього.",
+ use:"Знаменита задача Гауса (сума 1+2+…+100), фінансове планування рівними частинами.",
+ ex:"Сума від 1 до 100: S₁₀₀ = 100·(1+100)/2 = 5050",
+ tip:"Альтернативна формула: Sₙ = n·(2a₁ + (n−1)d)/2, якщо aₙ невідоме.",
+ warn:"Переконайтесь, що послідовність — справді АП (різниця стала), інакше формула не працює.",
+ lec:"prohresii1.html",ln:"6.1 Арифметична прогресія"},
+
+{s:"Алгебра",icon:"∑",g:"Прогресії",t:"n-й член геометричної прогресії",f:"bₙ = b₁ · qⁿ⁻¹",
+ sec:"Алгебра → Прогресії",def:"Визначає будь-який член ГП через перший член b₁ та знаменник q.",
+ use:"Складні відсотки, радіоактивний розпад, біологічне зростання, фрактали.",
+ ex:"b₁ = 2, q = 3: b₅ = 2·3⁴ = 2·81 = 162",
+ tip:"q = bₙ₊₁/bₙ — відношення сусідніх членів. Якщо |q| < 1, прогресія згасає.",
+ warn:"Показник n−1, а не n. Перший член множиться на q⁰ = 1 (без зміни).",
+ lec:"prohresii2.html",ln:"6.2 Геометрична прогресія"},
+
+{s:"Алгебра",icon:"∑",g:"Прогресії",t:"Сума нескінченної спадної ГП",f:"S = b₁ / (1 − q),  |q| < 1",
+ sec:"Алгебра → Прогресії",def:"Сума нескінченної ГП зі знаменником |q| < 1 збігається до скінченного значення.",
+ use:"Періодичні десяткові дроби (0.333… = 1/3), фізика (загасання коливань), економіка (мультиплікатор).",
+ ex:"b₁ = 1, q = 1/2: S = 1/(1 − 0.5) = 2",
+ tip:"Формула працює лише при |q| < 1. Чим ближче |q| до 0, тим швидше збігається ряд.",
+ warn:"При |q| ≥ 1 сума розбігається (нескінченна). Формулу застосовувати НЕ можна.",
+ lec:"prohresii2.html",ln:"6.2 Геометрична прогресія"},
+
+// ━━━━━━━━━ АЛГЕБРА: Функції ━━━━━━━━━
+{s:"Алгебра",icon:"∑",g:"Функції",t:"Вершина параболи",f:"x₀ = −b/(2a),  y₀ = f(x₀)",
+ sec:"Алгебра → Функції та їх властивості",def:"Координати вершини параболи y = ax² + bx + c. Точка мінімуму (a > 0) або максимуму (a < 0).",
+ use:"Задачі на оптимізацію (максимальний прибуток, мінімальна вартість), траєкторія кинутого тіла.",
+ ex:"y = 2x² − 8x + 3: x₀ = 8/4 = 2, y₀ = 2·4−16+3 = −5. Вершина (2; −5)",
+ tip:"Можна також y₀ = −D/(4a), де D = b²−4ac.",
+ warn:"Знак a визначає напрямок: a > 0 — «усмішка» (мінімум), a < 0 — «капелюх» (максимум).",
+ lec:"funktsiyi3.html",ln:"5.3 Основні функції"},
+
+// ━━━━━━━━━ ГЕОМЕТРІЯ ━━━━━━━━━
+{s:"Геометрія",icon:"△",g:"Трикутники",t:"Теорема Піфагора",f:"c² = a² + b²",
+ sec:"Геометрія → Трикутники",def:"У прямокутному трикутнику квадрат гіпотенузи дорівнює сумі квадратів катетів.",
+ use:"Обчислення відстаней, будівництво (перевірка прямого кута), навігація, комп'ютерна графіка.",
+ ex:"a = 3, b = 4: c = √(9+16) = √25 = 5",
+ tip:"Піфагорові трійки: (3,4,5), (5,12,13), (8,15,17), (7,24,25). Будь-яке кратне — теж трійка.",
+ warn:"Формула тільки для ПРЯМОКУТНОГО трикутника. c — найдовша сторона (гіпотенуза, навпроти прямого кута).",
+ lec:"geo2_1.html",ln:"9. Трикутники"},
+
+{s:"Геометрія",icon:"△",g:"Трикутники",t:"Площа трикутника (основна)",f:"S = ½ · a · h",
+ sec:"Геометрія → Площі фігур",def:"Площа трикутника — половина добутку основи на відповідну висоту.",
+ use:"Землемірство, архітектура, розрахунок матеріалів, фізика (робота сили).",
+ ex:"a = 10, h = 6: S = ½·10·6 = 30",
+ tip:"Висота h — перпендикуляр від вершини до основи (або її продовження). Будь-яку сторону можна взяти за основу.",
+ warn:"Висота — це ПЕРПЕНДИКУЛЯР, а не бічна сторона. Для тупокутного трикутника висота може падати на продовження основи.",
+ lec:"geo5_1.html",ln:"12. Площі фігур"},
+
+{s:"Геометрія",icon:"△",g:"Трикутники",t:"Площа через дві сторони та кут",f:"S = ½ · a · b · sin(C)",
+ sec:"Геометрія → Площі фігур",def:"Площа через довжини двох сторін та синус кута між ними.",
+ use:"Коли висота невідома, але є кут. Навігація, геодезія, фізика (момент сили).",
+ ex:"a = 5, b = 8, C = 30°: S = ½·5·8·sin30° = ½·5·8·0.5 = 10",
+ tip:"Кут має бути між вибраними сторонами, а не будь-який кут трикутника.",
+ warn:"Кут у градусах чи радіанах? Переконайтесь, що калькулятор у правильному режимі.",
+ lec:"geo5_1.html",ln:"12. Площі фігур"},
+
+{s:"Геометрія",icon:"△",g:"Трикутники",t:"Формула Герона",f:"S = √(p(p−a)(p−b)(p−c)),  p = (a+b+c)/2",
+ sec:"Геометрія → Площі фігур",def:"Обчислює площу трикутника за трьома сторонами через півпериметр.",
+ use:"Коли відомі тільки сторони (без кутів і висот). Геодезія, картографія.",
+ ex:"a=3, b=4, c=5: p=6, S=√(6·3·2·1)=√36=6",
+ tip:"Перевірте нерівність трикутника (a+b > c) перш ніж обчислювати — інакше вираз під коренем від'ємний.",
+ warn:"p — це ПІВПЕРИМЕТР, а не периметр. Поширена помилка — забути поділити на 2.",
+ lec:"geo5_1.html",ln:"12. Площі фігур"},
+
+{s:"Геометрія",icon:"△",g:"Трикутники",t:"Теорема синусів",f:"a/sin(A) = b/sin(B) = c/sin(C) = 2R",
+ sec:"Геометрія → Трикутники",def:"Відношення сторони до синуса протилежного кута однакове для всіх сторін і дорівнює діаметру описаного кола.",
+ use:"Знаходження невідомих сторін і кутів, навігація, астрономія, тріангуляція.",
+ ex:"a = 10, A = 30°, B = 45°: b = 10·sin45°/sin30° = 10·0.707/0.5 ≈ 14.14",
+ tip:"Зручна, коли відомі кут і протилежна сторона. Для знаходження кута використовуйте arcsin.",
+ warn:"arcsin може дати два кути (гострий і тупий). Перевіряйте, який підходить за сумою кутів.",
+ lec:"geo2_1.html",ln:"9. Трикутники"},
+
+{s:"Геометрія",icon:"△",g:"Трикутники",t:"Теорема косинусів",f:"c² = a² + b² − 2ab·cos(C)",
+ sec:"Геометрія → Трикутники",def:"Узагальнення теореми Піфагора для довільного трикутника. При C=90° перетворюється на теорему Піфагора.",
+ use:"Знаходження третьої сторони за двома сторонами і кутом, або кута за трьома сторонами.",
+ ex:"a=5, b=7, C=60°: c²=25+49−2·5·7·0.5=74−35=39, c≈6.24",
+ tip:"Для знаходження кута: cos(C) = (a²+b²−c²)/(2ab).",
+ warn:"Мінус перед 2ab·cos(C)! Якщо C тупий, cos(C) < 0, тому −2ab·cos(C) стає додатним.",
+ lec:"geo2_1.html",ln:"9. Трикутники"},
+
+{s:"Геометрія",icon:"△",g:"Коло",t:"Довжина кола",f:"C = 2πr = πd",
+ sec:"Геометрія → Коло та круг",def:"Периметр (довжина) кола через радіус r або діаметр d.",
+ use:"Обчислення довжини огорожі, стрічки, протяжності доріжок, розміру коліс.",
+ ex:"r = 7: C = 2π·7 = 14π ≈ 43.98",
+ tip:"π ≈ 3.14159. Для грубої оцінки: C ≈ 3d (довжина кола приблизно 3 діаметри).",
+ warn:"Не плутайте r (радіус) і d (діаметр): d = 2r. Використання одного замість іншого подвоює або ділить результат.",
+ lec:"geo4_1.html",ln:"11. Коло та круг"},
+
+{s:"Геометрія",icon:"△",g:"Коло",t:"Площа круга",f:"S = πr²",
+ sec:"Геометрія → Коло та круг",def:"Площа круга через радіус.",
+ use:"Площа поперечного перерізу труб, піци, клумб, оптичних лінз.",
+ ex:"r = 5: S = π·25 ≈ 78.54",
+ tip:"Площа пропорційна квадрату радіуса. Подвоєння r збільшує площу в 4 рази.",
+ warn:"S = πr², НЕ S = πd². Якщо дано діаметр, спочатку знайдіть r = d/2.",
+ lec:"geo4_1.html",ln:"11. Коло та круг"},
+
+{s:"Геометрія",icon:"△",g:"Стереометрія",t:"Об'єм кулі",f:"V = (4/3)πr³",
+ sec:"Геометрія → Стереометрія",def:"Об'єм кулі з радіусом r.",
+ use:"Розрахунок об'єму резервуарів, планет, крапель, атомних моделей.",
+ ex:"r = 3: V = (4/3)π·27 = 36π ≈ 113.1",
+ tip:"Об'єм пропорційний кубу радіуса. Подвоєння r збільшує об'єм у 8 разів.",
+ warn:"Коефіцієнт 4/3, а не 3/4 і не 4/3π. Обчислюйте покроково: спочатку r³, потім ×4, потім ÷3, потім ×π.",
+ lec:"geo6_1.html",ln:"13. Стереометрія"},
+
+{s:"Геометрія",icon:"△",g:"Стереометрія",t:"Площа поверхні кулі",f:"S = 4πr²",
+ sec:"Геометрія → Стереометрія",def:"Повна площа поверхні кулі з радіусом r.",
+ use:"Фарбування сферичних об'єктів, теплообмін, астрономія (яскравість зір).",
+ ex:"r = 5: S = 4π·25 = 100π ≈ 314.16",
+ tip:"Площа кулі = рівно 4 площі великого кола (4·πr²). Архімед дуже цим пишався.",
+ warn:"Площа ПОВЕРХНІ, а не перерізу. Площа перерізу (кола) = πr².",
+ lec:"geo6_1.html",ln:"13. Стереометрія"},
+
+{s:"Геометрія",icon:"△",g:"Стереометрія",t:"Об'єм циліндра",f:"V = πr²h",
+ sec:"Геометрія → Стереометрія",def:"Об'єм прямого циліндра — площа основи (круга), помножена на висоту.",
+ use:"Об'єм бочок, труб, стаканів, поршнів двигунів.",
+ ex:"r = 4, h = 10: V = π·16·10 = 160π ≈ 502.65",
+ tip:"Формула працює і для похилого циліндра, якщо h — перпендикулярна відстань між основами.",
+ warn:"r — радіус основи, h — висота (не твірна, якщо циліндр похилий).",
+ lec:"geo6_1.html",ln:"13. Стереометрія"},
+
+{s:"Геометрія",icon:"△",g:"Стереометрія",t:"Об'єм конуса",f:"V = (1/3)πr²h",
+ sec:"Геометрія → Стереометрія",def:"Об'єм конуса — третина об'єму циліндра з тією ж основою і висотою.",
+ use:"Воронки, купольні конструкції, конусні ємності.",
+ ex:"r = 3, h = 12: V = (1/3)π·9·12 = 36π ≈ 113.1",
+ tip:"Запам'ятайте: конус = ⅓ циліндра, піраміда = ⅓ призми (однакове правило ⅓).",
+ warn:"Коефіцієнт 1/3! Без нього отримаєте об'єм циліндра, а не конуса.",
+ lec:"geo6_1.html",ln:"13. Стереометрія"},
+
+// ━━━━━━━━━ ТРИГОНОМЕТРІЯ ━━━━━━━━━
+{s:"Тригонометрія",icon:"∿",g:"Основні тотожності",t:"Основна тригонометрична тотожність",f:"sin²α + cos²α = 1",
+ sec:"Тригонометрія → Формули",def:"Фундаментальний зв'язок між синусом і косинусом будь-якого кута. Випливає з теореми Піфагора.",
+ use:"Спрощення тригонометричних виразів, доведення тотожностей, перехід між sin і cos.",
+ ex:"sin α = 0.6 → cos²α = 1 − 0.36 = 0.64 → cos α = ±0.8",
+ tip:"Знак cos α залежить від чверті. Якщо α в I чверті — обидва додатні.",
+ warn:"Не забувайте «±» при добуванні кореня. Чверть кута визначає знак.",
+ lec:"tr2_1.html",ln:"15. Формули тригонометрії"},
+
+{s:"Тригонометрія",icon:"∿",g:"Основні тотожності",t:"Тангенс і котангенс",f:"tg α = sin α / cos α,  ctg α = cos α / sin α",
+ sec:"Тригонометрія → Формули",def:"Тангенс — відношення синуса до косинуса. Котангенс — обернене відношення.",
+ use:"Обчислення кутів нахилу, уклону доріг, кута піднесення, задачі на висоту.",
+ ex:"sin 45° = cos 45° = √2/2 → tg 45° = 1",
+ tip:"tg α · ctg α = 1 (завжди, де обидва визначені).",
+ warn:"tg α не визначений при cos α = 0 (α = 90°, 270°…). ctg α не визначений при sin α = 0.",
+ lec:"tr2_1.html",ln:"15. Формули тригонометрії"},
+
+{s:"Тригонометрія",icon:"∿",g:"Основні тотожності",t:"1 + tg²α",f:"1 + tg²α = 1/cos²α",
+ sec:"Тригонометрія → Формули",def:"Зв'язує тангенс і косинус. Виводиться діленням основної тотожності на cos²α.",
+ use:"Перехід від tg до cos і навпаки, спрощення виразів із тангенсами.",
+ ex:"tg α = 2 → cos²α = 1/(1+4) = 1/5 → cos α = ±1/√5",
+ tip:"Аналогічно: 1 + ctg²α = 1/sin²α.",
+ warn:"Формула не працює при cos α = 0 (tg α не визначений).",
+ lec:"tr2_1.html",ln:"15. Формули тригонометрії"},
+
+{s:"Тригонометрія",icon:"∿",g:"Формули додавання",t:"Синус суми та різниці",f:"sin(α ± β) = sin α·cos β ± cos α·sin β",
+ sec:"Тригонометрія → Формули",def:"Розкладає синус суми (різниці) кутів через синуси та косинуси окремих кутів.",
+ use:"Обчислення точних значень sin 75°, sin 15°, хвильова інтерференція, обробка сигналів.",
+ ex:"sin 75° = sin(45°+30°) = sin45°·cos30° + cos45°·sin30° = (√6+√2)/4",
+ tip:"Мнемоніка: SIN = sin·cos + cos·sin (перемінне множення). Знак ± збігається.",
+ warn:"Не плутайте порядок: sin(α+β) ≠ sin α + sin β. Це НЕ лінійна функція.",
+ lec:"tr2_1.html",ln:"15. Формули тригонометрії"},
+
+{s:"Тригонометрія",icon:"∿",g:"Формули додавання",t:"Косинус суми та різниці",f:"cos(α ± β) = cos α·cos β ∓ sin α·sin β",
+ sec:"Тригонометрія → Формули",def:"Розкладає косинус суми (різниці) кутів.",
+ use:"Обертання координат, скалярний добуток векторів, фазові зсуви.",
+ ex:"cos 60° = cos(90°−30°) = cos90°·cos30° + sin90°·sin30° = 0 + 1·0.5 = 0.5",
+ tip:"Мнемоніка: COS = cos·cos − sin·sin. Знак ∓ = протилежний до ±.",
+ warn:"Знак протилежний: cos(α+β) має мінус, cos(α−β) має плюс. Навпаки до синуса.",
+ lec:"tr2_1.html",ln:"15. Формули тригонометрії"},
+
+{s:"Тригонометрія",icon:"∿",g:"Подвійний кут",t:"Синус подвійного кута",f:"sin 2α = 2·sin α·cos α",
+ sec:"Тригонометрія → Формули",def:"Синус подвійного кута через синус і косинус одинарного.",
+ use:"Спрощення виразів, інтегрування тригонометричних функцій, фізика коливань.",
+ ex:"sin 60° = 2·sin 30°·cos 30° = 2·0.5·(√3/2) = √3/2 ✓",
+ tip:"Найпростіша з формул подвійного кута. Виводиться з sin(α+α).",
+ warn:"sin 2α ≠ 2·sin α. Забутий cos α — критична помилка.",
+ lec:"tr2_1.html#part3",ln:"15. Формули тригонометрії"},
+
+{s:"Тригонометрія",icon:"∿",g:"Подвійний кут",t:"Косинус подвійного кута",f:"cos 2α = cos²α − sin²α = 2cos²α − 1 = 1 − 2sin²α",
+ sec:"Тригонометрія → Формули",def:"Три рівносильні форми косинуса подвійного кута.",
+ use:"Пониження степеня тригонометричних виразів, обчислення інтегралів sin² і cos².",
+ ex:"cos 60° = 2cos²30° − 1 = 2·(3/4) − 1 = 1/2 ✓",
+ tip:"Вибирайте форму залежно від того, що дано: якщо відомий sin — беріть 1−2sin²α, якщо cos — 2cos²α−1.",
+ warn:"Три форми дають ОДИН результат. Не змішуйте частини різних форм.",
+ lec:"tr2_1.html#part3",ln:"15. Формули тригонометрії"},
+
+{s:"Тригонометрія",icon:"∿",g:"Рівняння",t:"Найпростіше тригонометричне рівняння (sin)",f:"sin x = a  ⟹  x = (−1)ⁿ·arcsin a + πn",
+ sec:"Тригонометрія → Рівняння",def:"Загальний розв'язок найпростішого рівняння з синусом, |a| ≤ 1.",
+ use:"Знаходження всіх кутів із заданим значенням синуса, коливання, хвильові процеси.",
+ ex:"sin x = 1/2 ⟹ x = (−1)ⁿ·π/6 + πn, n∈ℤ",
+ tip:"Окремі випадки: sin x = 0 → x = πn; sin x = 1 → x = π/2 + 2πn; sin x = −1 → x = −π/2 + 2πn.",
+ warn:"|a| > 1 — рівняння не має розв'язків, бо −1 ≤ sin x ≤ 1.",
+ lec:"tr3_1.html",ln:"16. Тригонометричні рівняння"},
+
+{s:"Тригонометрія",icon:"∿",g:"Рівняння",t:"Найпростіше тригонометричне рівняння (cos)",f:"cos x = a  ⟹  x = ± arccos a + 2πn",
+ sec:"Тригонометрія → Рівняння",def:"Загальний розв'язок найпростішого рівняння з косинусом, |a| ≤ 1.",
+ use:"Визначення фазових зсувів, кутів обертання, періодичних процесів.",
+ ex:"cos x = 1/2 ⟹ x = ±π/3 + 2πn, n∈ℤ",
+ tip:"Окремі випадки: cos x = 0 → x = π/2 + πn; cos x = 1 → x = 2πn; cos x = −1 → x = π + 2πn.",
+ warn:"Період 2πn (не πn як у тангенса). Знак ± дає дві серії розв'язків.",
+ lec:"tr3_1.html",ln:"16. Тригонометричні рівняння"},
+
+// ━━━━━━━━━ ВЕКТОРИ ━━━━━━━━━
+{s:"Вектори",icon:"→",g:"Дії з векторами",t:"Довжина вектора",f:"|a⃗| = √(x² + y²)",
+ sec:"Аналітична геометрія → Вектори",def:"Обчислює довжину (модуль) вектора за його координатами.",
+ use:"Відстані, швидкості, сили — будь-які фізичні величини з напрямком.",
+ ex:"a⃗ = (3; 4): |a⃗| = √(9+16) = 5",
+ tip:"У просторі: |a⃗| = √(x²+y²+z²) — додається третя координата.",
+ warn:"Координати можуть бути від'ємними, але довжина завжди ≥ 0.",
+ lec:"v5_1.html",ln:"18. Вектори"},
+
+{s:"Вектори",icon:"→",g:"Дії з векторами",t:"Скалярний добуток",f:"a⃗ · b⃗ = x₁x₂ + y₁y₂ = |a⃗|·|b⃗|·cos φ",
+ sec:"Аналітична геометрія → Вектори",def:"Число, що характеризує взаємне розташування векторів. Через координати або через кут.",
+ use:"Перевірка перпендикулярності, кут між напрямками, робота сили в фізиці, проекція вектора.",
+ ex:"a⃗=(1;2), b⃗=(3;−1): a⃗·b⃗ = 3−2 = 1",
+ tip:"Якщо a⃗·b⃗ = 0, вектори перпендикулярні. Швидкий тест без обчислення кута.",
+ warn:"Скалярний добуток — ЧИСЛО, а не вектор. Не плутайте з векторним добутком.",
+ lec:"v5_1.html#part3",ln:"18. Вектори"},
+
+{s:"Вектори",icon:"→",g:"Координатна геометрія",t:"Відстань між двома точками",f:"d = √((x₂−x₁)² + (y₂−y₁)²)",
+ sec:"Аналітична геометрія → Координати",def:"Обчислює відстань між точками A(x₁;y₁) та B(x₂;y₂) на площині.",
+ use:"Геометричні побудови, навігація, комп'ютерна графіка, ГІС.",
+ ex:"A(1;2), B(4;6): d = √(9+16) = 5",
+ tip:"Порядок віднімання не важливий: (x₂−x₁)² = (x₁−x₂)².",
+ warn:"Не забувайте корінь! d² = … — це квадрат відстані, не сама відстань.",
+ lec:"v6_1.html",ln:"19. Координатна геометрія"},
+
+{s:"Вектори",icon:"→",g:"Координатна геометрія",t:"Рівняння кола",f:"(x − a)² + (y − b)² = R²",
+ sec:"Аналітична геометрія → Координати",def:"Множина точок на відстані R від центра (a; b).",
+ use:"Радари, зони покриття, криві руху, обмеження в оптимізації.",
+ ex:"Центр (2;3), R=5: (x−2)²+(y−3)²=25",
+ tip:"Якщо центр у початку координат: x²+y² = R².",
+ warn:"Права частина — R² (квадрат радіуса), не R. Радіус = √(права частина).",
+ lec:"v6_1.html#part3",ln:"19. Координатна геометрія"},
+
+// ━━━━━━━━━ КОМБІНАТОРИКА ━━━━━━━━━
+{s:"Аналіз",icon:"∫",g:"Комбінаторика",t:"Кількість перестановок",f:"Pₙ = n!",
+ sec:"Аналіз → Комбінаторика",def:"Кількість способів розставити n різних елементів у рядок.",
+ use:"Кількість варіантів черги, порядку виступів, розсадки за столом.",
+ ex:"P₄ = 4! = 24 (4 особи можна розставити 24 способами)",
+ tip:"0! = 1 за означенням. 1! = 1. Факторіал зростає дуже швидко: 10! = 3 628 800.",
+ warn:"Перестановки — коли ПОРЯДОК важливий і беремо ВСІ елементи.",
+ lec:"m1_1.html",ln:"22. Комбінаторика"},
+
+{s:"Аналіз",icon:"∫",g:"Комбінаторика",t:"Кількість комбінацій",f:"Cₙᵏ = n! / (k!(n−k)!)",
+ sec:"Аналіз → Комбінаторика",def:"Кількість способів вибрати k елементів з n, коли порядок не важливий.",
+ use:"Лотереї, формування команд, біноміальні коефіцієнти, теорія ймовірностей.",
+ ex:"C₅² = 5!/(2!·3!) = 120/(2·6) = 10",
+ tip:"Cₙᵏ = Cₙⁿ⁻ᵏ (симетрія). Вибрати 2 з 5 = не вибрати 3 з 5.",
+ warn:"Комбінації — порядок НЕ важливий. Якщо важливий — це розміщення: Aₙᵏ = n!/(n−k)!.",
+ lec:"m1_1.html#part2",ln:"22. Комбінаторика"},
+
+{s:"Аналіз",icon:"∫",g:"Ймовірність",t:"Класична ймовірність",f:"P(A) = m / n",
+ sec:"Аналіз → Теорія ймовірностей",def:"Відношення кількості сприятливих результатів (m) до загальної кількості рівноможливих результатів (n).",
+ use:"Ігри, статистика, оцінка ризиків, страхування, медична діагностика.",
+ ex:"Кидаємо кубик, P(парне) = 3/6 = 1/2",
+ tip:"0 ≤ P(A) ≤ 1 завжди. P(A) = 0 — неможлива подія, P(A) = 1 — достовірна.",
+ warn:"Формула працює ТІЛЬКИ для рівноможливих результатів. Монета з зміщеним центром — не класична модель.",
+ lec:"m2_1.html",ln:"23. Теорія ймовірностей"},
+
+// ━━━━━━━━━ АНАЛІЗ ━━━━━━━━━
+{s:"Аналіз",icon:"∫",g:"Похідна",t:"Означення похідної",f:"f'(x) = lim[Δx→0] (f(x+Δx) − f(x)) / Δx",
+ sec:"Аналіз → Границі та похідна",def:"Швидкість зміни функції в точці. Границя відношення приросту функції до приросту аргумента.",
+ use:"Швидкість руху, швидкість хімічної реакції, нахил дотичної, оптимізація.",
+ ex:"f(x) = x²: f'(x) = lim (2xΔx+Δx²)/Δx = lim (2x+Δx) = 2x",
+ tip:"Геометрично: f'(a) = тангенс кута нахилу дотичної до графіка в точці x = a.",
+ warn:"Похідна може не існувати в точках злому, розриву або вертикальної дотичної.",
+ lec:"m3_1.html#part2",ln:"24. Границі та похідна"},
+
+{s:"Аналіз",icon:"∫",g:"Похідна",t:"Похідна степеневої функції",f:"(xⁿ)' = n·xⁿ⁻¹",
+ sec:"Аналіз → Границі та похідна",def:"Основне правило диференціювання степеневої функції для будь-якого дійсного n.",
+ use:"Базове правило для обчислення більшості похідних. Фундамент диференціального числення.",
+ ex:"(x⁵)' = 5x⁴,  (√x)' = (x^(1/2))' = 1/(2√x),  (1/x)' = (x⁻¹)' = −1/x²",
+ tip:"Працює і для дробових та від'ємних показників. Перетворіть корені та дроби в степені.",
+ warn:"(xⁿ)' = nxⁿ⁻¹, але (aˣ)' ≠ x·aˣ⁻¹. Не плутайте змінну основу зі змінним показником.",
+ lec:"m3_1.html#part2",ln:"24. Границі та похідна"},
+
+{s:"Аналіз",icon:"∫",g:"Похідна",t:"Похідна добутку",f:"(f·g)' = f'·g + f·g'",
+ sec:"Аналіз → Границі та похідна",def:"Похідна добутку двох функцій — не добуток похідних, а сума двох доданків.",
+ use:"Диференціювання складних виразів типу x²·sin x, eˣ·ln x.",
+ ex:"(x²·sin x)' = 2x·sin x + x²·cos x",
+ tip:"Мнемоніка: «похідна першого × друге + перше × похідна другого».",
+ warn:"(f·g)' ≠ f'·g'. Це найпоширеніша помилка при диференціюванні.",
+ lec:"m3_1.html#part2",ln:"24. Границі та похідна"},
+
+{s:"Аналіз",icon:"∫",g:"Інтеграл",t:"Первісна степеневої функції",f:"∫xⁿ dx = xⁿ⁺¹/(n+1) + C  (n ≠ −1)",
+ sec:"Аналіз → Інтеграл",def:"Обернена операція до диференціювання степеневої функції.",
+ use:"Обчислення площ, об'ємів, роботи, переміщення за швидкістю.",
+ ex:"∫x³ dx = x⁴/4 + C,  ∫√x dx = ∫x^(1/2) dx = (2/3)x^(3/2) + C",
+ tip:"Перевірка: продиференціюйте результат — повинні отримати підінтегральну функцію.",
+ warn:"Не забувайте + C (стала інтегрування) для невизначеного інтеграла. При n = −1: ∫dx/x = ln|x| + C.",
+ lec:"m4_1.html",ln:"25. Інтеграл"},
+
+{s:"Аналіз",icon:"∫",g:"Інтеграл",t:"Формула Ньютона–Лейбніца",f:"∫ₐᵇ f(x)dx = F(b) − F(a)",
+ sec:"Аналіз → Інтеграл",def:"Визначений інтеграл дорівнює різниці значень первісної на кінцях проміжку.",
+ use:"Обчислення площі під кривою, роботи змінної сили, маси тіла з нерівномірною густиною.",
+ ex:"∫₁³ x² dx = [x³/3]₁³ = 27/3 − 1/3 = 26/3",
+ tip:"У визначеному інтегралі стала C скорочується: (F(b)+C) − (F(a)+C) = F(b)−F(a).",
+ warn:"Верхня межа (b) МІНУС нижня (a), не навпаки. ∫ₐᵇ = −∫ᵇₐ.",
+ lec:"m4_1.html#part3",ln:"25. Інтеграл"},
+];
+
+/* ═══ SECTIONS ═══ */
+const SECTIONS = [
+  {id:'all', name:'Усі', icon:'📐'},
+  {id:'Алгебра', name:'Алгебра', icon:'∑'},
+  {id:'Геометрія', name:'Геометрія', icon:'△'},
+  {id:'Тригонометрія', name:'Тригоном.', icon:'∿'},
+  {id:'Вектори', name:'Вектори', icon:'→'},
+  {id:'Аналіз', name:'Аналіз', icon:'∫'},
+];
+
+let activeSection = 'all';
+
+/* ═══ RENDER ═══ */
+function render() {
+  const search = document.getElementById('fSearch').value.toLowerCase().trim();
+  const area = document.getElementById('formulaArea');
+
+  // filter
+  let items = F;
+  if (activeSection !== 'all') items = items.filter(f => f.s === activeSection);
+  if (search) items = items.filter(f =>
+    f.t.toLowerCase().includes(search) ||
+    f.f.toLowerCase().includes(search) ||
+    f.g.toLowerCase().includes(search) ||
+    f.def.toLowerCase().includes(search)
+  );
+
+  // group by section+group
+  const groups = [];
+  let lastKey = '';
+  items.forEach(f => {
+    const key = f.s + '|' + f.g;
+    if (key !== lastKey) {
+      groups.push({ section: f.s, group: f.g, icon: f.icon, items: [] });
+      lastKey = key;
+    }
+    groups[groups.length-1].items.push(f);
+  });
+
+  // stats
+  document.getElementById('fStats').textContent = `${items.length} формул у довіднику`;
+
+  let h = '';
+  groups.forEach(gr => {
+    h += `<div class="formula-section">`;
+    h += `<div class="formula-section-title"><span class="fs-icon">${gr.icon}</span> ${gr.section}: ${gr.group}</div>`;
+    gr.items.forEach((f,i) => {
+      h += `<div class="f-card" data-idx="${i}">`;
+      h += `<div class="f-head">`;
+      h += `<span class="f-expand">▶</span>`;
+      h += `<span class="f-title">${esc(f.t)}</span>`;
+      h += `<span class="f-expr">${esc(f.f)}</span>`;
+      h += `</div>`;
+      h += `<div class="f-body">`;
+      h += row('📂','section', 'Розділ', f.sec, f.lec, f.ln);
+      h += row('🎯','defines','Визначає', f.def);
+      h += row('🔧','usage',  'Застосування', f.use);
+      h += rowEx(f.ex);
+      h += rowTip(f.tip);
+      h += rowWarn(f.warn);
+      h += `</div></div>`;
+    });
+    h += `</div>`;
+  });
+
+  if (items.length === 0) {
+    h = '<div style="text-align:center;padding:40px;color:var(--text-muted)">Формул не знайдено</div>';
+  }
+
+  area.innerHTML = h;
+
+  // attach card toggles
+  area.querySelectorAll('.f-head').forEach(hd => {
+    hd.addEventListener('click', () => hd.closest('.f-card').classList.toggle('open'));
+  });
+}
+
+function row(icon, cls, label, text, lec, ln) {
+  let extra = '';
+  if (lec) extra = `<br><a class="f-lecture" href="${esc(lec)}">📖 Теорія: ${esc(ln)}</a>`;
+  return `<div class="f-row"><div class="f-label f-label-${cls}">${icon}</div><div class="f-text"><strong>${label}:</strong> ${esc(text)}${extra}</div></div>`;
+}
+function rowEx(text) {
+  return `<div class="f-row"><div class="f-label f-label-example">📝</div><div class="f-text"><strong>Приклад:</strong><div class="f-example-box">${esc(text)}</div></div></div>`;
+}
+function rowTip(text) {
+  return `<div class="f-row"><div class="f-label f-label-tip">💡</div><div class="f-text"><strong>Рекомендація:</strong><div class="f-tip-box">${esc(text)}</div></div></div>`;
+}
+function rowWarn(text) {
+  return `<div class="f-row"><div class="f-label f-label-warn">⚠️</div><div class="f-text"><strong>Застереження:</strong><div class="f-warn-box">${esc(text)}</div></div></div>`;
+}
+
+function esc(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ═══ Section nav ═══ */
+const navEl = document.getElementById('sectionNav');
+let nh = '';
+SECTIONS.forEach(s => {
+  nh += `<button class="section-pill${s.id==='all'?' active':''}" data-sid="${s.id}">${s.icon} ${s.name}</button>`;
+});
+navEl.innerHTML = nh;
+navEl.querySelectorAll('.section-pill').forEach(p => {
+  p.addEventListener('click', () => {
+    navEl.querySelectorAll('.section-pill').forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeSection = p.dataset.sid;
+    render();
+  });
+});
+
+/* ═══ Search ═══ */
+document.getElementById('fSearch').addEventListener('input', render);
+
+/* ═══ Init ═══ */
+render();
+
+})();
+</script>
+</body>
+</html>

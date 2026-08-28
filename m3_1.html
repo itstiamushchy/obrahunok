@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Границі та похідна — Обрахунок</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html">
+      <span class="icon">∑</span>
+      <span>Обрахунок</span>
+    </a>
+    <div class="topbar-controls">
+      <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+      <button class="menu-toggle" id="menuToggle" title="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="tabbar">
+    <a class="tabbar-btn active" href="index.html">Теорія</a>
+    <a class="tabbar-btn" href="formuly.html">Формули</a>
+    <a class="tabbar-btn" href="#">Глосарій</a>
+    <a class="tabbar-btn" href="zadachnyk.html">Задачник</a>
+    <a class="tabbar-btn" href="#">Обране</a>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-section="algebra">
+<button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="chysla1.html">1. Числа та дії</a>
+<a class="sidebar-topic" href="chysla1.html" style="padding-left:40px;font-size:.75rem">1.1 ЧИСЛА ТА ДІЇ З НИМИ</a>
+<a class="sidebar-topic" href="chysla2.html" style="padding-left:40px;font-size:.75rem">1.2 ДРОБИ</a>
+<a class="sidebar-topic" href="chysla3.html" style="padding-left:40px;font-size:.75rem">1.3 ПОДІЛЬНІСТЬ. НСД І НСК</a>
+<a class="sidebar-topic" href="chysla4.html" style="padding-left:40px;font-size:.75rem">1.4 СТЕПЕНІ ТА КОРЕНІ</a>
+<a class="sidebar-topic" href="chysla5.html" style="padding-left:40px;font-size:.75rem">1.5 ВІДСОТКИ ТА ПРОПОРЦІЇ</a>
+<a class="sidebar-topic" href="vyrazy1.html">2. Вирази та тотожності</a>
+<a class="sidebar-topic" href="vyrazy1.html" style="padding-left:40px;font-size:.75rem">2.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="vyrazy2.html" style="padding-left:40px;font-size:.75rem">2.2 ТРИ ЗАКОНИ АРИФМЕТИКИ</a>
+<a class="sidebar-topic" href="vyrazy3.html" style="padding-left:40px;font-size:.75rem">2.3 ТЕХНІКИ ПЕРЕТВОРЕННЯ ВИРАЗІВ</a>
+<a class="sidebar-topic" href="vyrazy4.html" style="padding-left:40px;font-size:.75rem">2.4 ФОРМУЛИ СКОРОЧЕНОГО МНОЖЕННЯ</a>
+<a class="sidebar-topic" href="vyrazy5.html" style="padding-left:40px;font-size:.75rem">2.5 РОЗКЛАДАННЯ НА МНОЖНИКИ</a>
+<a class="sidebar-topic" href="vyrazy6.html" style="padding-left:40px;font-size:.75rem">2.6 НАСКРІЗНІ ПРИКЛАДИ</a>
+<a class="sidebar-topic" href="nerivnosti1.html">3. Нерівності</a>
+<a class="sidebar-topic" href="nerivnosti1.html" style="padding-left:40px;font-size:.75rem">3.1 ЧИСЛОВІ НЕРІВНОСТІ ТА ЇХ ВЛАСТИВОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti2.html" style="padding-left:40px;font-size:.75rem">3.2 ЛІНІЙНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti3.html" style="padding-left:40px;font-size:.75rem">3.3 КВАДРАТНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti4.html" style="padding-left:40px;font-size:.75rem">3.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="rivnyannya1.html">4. Рівняння та системи</a>
+<a class="sidebar-topic" href="rivnyannya1.html" style="padding-left:40px;font-size:.75rem">4.1 ЩО ТАКЕ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya2.html" style="padding-left:40px;font-size:.75rem">4.2 ЛІНІЙНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya3.html" style="padding-left:40px;font-size:.75rem">4.3 КВАДРАТНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya4.html" style="padding-left:40px;font-size:.75rem">4.4 РАЦІОНАЛЬНІ ТА ІРРАЦІОНАЛЬНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya5.html" style="padding-left:40px;font-size:.75rem">4.5 ПОКАЗНИКОВІ ТА ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya6.html" style="padding-left:40px;font-size:.75rem">4.6 ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya7.html" style="padding-left:40px;font-size:.75rem">4.7 СИСТЕМИ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="rivnyannya8.html" style="padding-left:40px;font-size:.75rem">4.8 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="funktsiyi1.html">5. Функції та їх властивості</a>
+<a class="sidebar-topic" href="funktsiyi1.html" style="padding-left:40px;font-size:.75rem">5.1 ПОНЯТТЯ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="funktsiyi2.html" style="padding-left:40px;font-size:.75rem">5.2 ВЛАСТИВОСТІ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="funktsiyi3.html" style="padding-left:40px;font-size:.75rem">5.3 ОСНОВНІ ФУНКЦІЇ ТА ЇХ ГРАФІКИ</a>
+<a class="sidebar-topic" href="funktsiyi4.html" style="padding-left:40px;font-size:.75rem">5.4 ПЕРЕТВОРЕННЯ ГРАФІКІВ</a>
+<a class="sidebar-topic" href="funktsiyi5.html" style="padding-left:40px;font-size:.75rem">5.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="prohresii1.html">6. Прогресії</a>
+<a class="sidebar-topic" href="prohresii1.html" style="padding-left:40px;font-size:.75rem">6.1 АРИФМЕТИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii2.html" style="padding-left:40px;font-size:.75rem">6.2 ГЕОМЕТРИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii3.html" style="padding-left:40px;font-size:.75rem">6.3 ПОРІВНЯННЯ АП ТА ГП</a>
+<a class="sidebar-topic" href="prohresii4.html" style="padding-left:40px;font-size:.75rem">6.4 ЗАСТОСУВАННЯ</a>
+<a class="sidebar-topic" href="logarythmy1.html">7. Логарифми</a>
+<a class="sidebar-topic" href="logarythmy1.html" style="padding-left:40px;font-size:.75rem">7.1 ЩО ТАКЕ ЛОГАРИФМ?</a>
+<a class="sidebar-topic" href="logarythmy2.html" style="padding-left:40px;font-size:.75rem">7.2 ВЛАСТИВОСТІ ЛОГАРИФМІВ</a>
+<a class="sidebar-topic" href="logarythmy3.html" style="padding-left:40px;font-size:.75rem">7.3 ОБЧИСЛЕННЯ З ЛОГАРИФМАМИ</a>
+<a class="sidebar-topic" href="logarythmy4.html" style="padding-left:40px;font-size:.75rem">7.4 ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="logarythmy5.html" style="padding-left:40px;font-size:.75rem">7.5 ЛОГАРИФМІЧНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="logarythmy6.html" style="padding-left:40px;font-size:.75rem">7.6 ПОКАЗНИКОВІ РІВНЯННЯ ЧЕРЕЗ ЛОГАРИФМ</a>
+</div></div>
+<div class="sidebar-section" data-section="geometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Геометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="geo1_1.html">8. Основи геометрії. Кути та прямі</a>
+<a class="sidebar-topic" href="geo1_1.html" style="padding-left:40px;font-size:.75rem">8.1 ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part2" style="padding-left:40px;font-size:.75rem">8.2 КУТИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part3" style="padding-left:40px;font-size:.75rem">8.3 ПРЯМІ НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="geo1_1.html#part4" style="padding-left:40px;font-size:.75rem">8.4 ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</a>
+<a class="sidebar-topic" href="geo1_1.html#part5" style="padding-left:40px;font-size:.75rem">8.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo2_1.html">9. Трикутники</a>
+<a class="sidebar-topic" href="geo2_1.html" style="padding-left:40px;font-size:.75rem">9.1 ОСНОВИ</a>
+<a class="sidebar-topic" href="geo2_1.html#part2" style="padding-left:40px;font-size:.75rem">9.2 ОЗНАКИ РІВНОСТІ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part3" style="padding-left:40px;font-size:.75rem">9.3 ОСОБЛИВІ ЛІНІЇ ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part4" style="padding-left:40px;font-size:.75rem">9.4 ПОДІБНІСТЬ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part5" style="padding-left:40px;font-size:.75rem">9.5 ТЕОРЕМА ПІФАГОРА</a>
+<a class="sidebar-topic" href="geo2_1.html#part6" style="padding-left:40px;font-size:.75rem">9.6 ТРИГОНОМЕТРІЯ ПРЯМОКУТНОГО ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part7" style="padding-left:40px;font-size:.75rem">9.7 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo3_1.html">10. Чотирикутники та многокутники</a>
+<a class="sidebar-topic" href="geo3_1.html" style="padding-left:40px;font-size:.75rem">10.1 ЗАГАЛЬНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo3_1.html#part2" style="padding-left:40px;font-size:.75rem">10.2 ЧОТИРИКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part3" style="padding-left:40px;font-size:.75rem">10.3 ПРАВИЛЬНІ МНОГОКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part4" style="padding-left:40px;font-size:.75rem">10.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo4_1.html">11. Коло та круг</a>
+<a class="sidebar-topic" href="geo4_1.html" style="padding-left:40px;font-size:.75rem">11.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo4_1.html#part2" style="padding-left:40px;font-size:.75rem">11.2 ВЛАСТИВОСТІ КУТІВ І ХОРД</a>
+<a class="sidebar-topic" href="geo4_1.html#part3" style="padding-left:40px;font-size:.75rem">11.3 ВПИСАНІ ТА ОПИСАНІ КОЛА</a>
+<a class="sidebar-topic" href="geo4_1.html#part4" style="padding-left:40px;font-size:.75rem">11.4 ДОВЖИНА КОЛА І ПЛОЩА КРУГА</a>
+<a class="sidebar-topic" href="geo4_1.html#part5" style="padding-left:40px;font-size:.75rem">11.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo5_1.html">12. Площі фігур</a>
+<a class="sidebar-topic" href="geo5_1.html" style="padding-left:40px;font-size:.75rem">12.1 ПЛОЩА ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo5_1.html#part2" style="padding-left:40px;font-size:.75rem">12.2 ПЛОЩА ЧОТИРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo5_1.html#part3" style="padding-left:40px;font-size:.75rem">12.3 ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</a>
+<a class="sidebar-topic" href="geo5_1.html#part4" style="padding-left:40px;font-size:.75rem">12.4 ЗАДАЧІ НА ПЛОЩУ</a>
+<a class="sidebar-topic" href="geo5_1.html#part5" style="padding-left:40px;font-size:.75rem">12.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+<a class="sidebar-topic" href="geo6_1.html">13. Стереометрія</a>
+<a class="sidebar-topic" href="geo6_1.html" style="padding-left:40px;font-size:.75rem">13.1 ОСНОВИ СТЕРЕОМЕТРІЇ</a>
+<a class="sidebar-topic" href="geo6_1.html#part2" style="padding-left:40px;font-size:.75rem">13.2 МНОГОГРАННИКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part3" style="padding-left:40px;font-size:.75rem">13.3 ТІЛА ОБЕРТАННЯ</a>
+<a class="sidebar-topic" href="geo6_1.html#part4" style="padding-left:40px;font-size:.75rem">13.4 ПЕРЕРІЗИ І РОЗГОРТКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part5" style="padding-left:40px;font-size:.75rem">13.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+</div></div>
+<div class="sidebar-section" data-section="trigonometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Тригонометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="tr1_1.html">14. Одиничне коло</a>
+<a class="sidebar-topic" href="tr1_1.html" style="padding-left:40px;font-size:.75rem">14.1 ЩО ТАКЕ ОДИНИЧНЕ КОЛО</a>
+<a class="sidebar-topic" href="tr1_1.html#part2" style="padding-left:40px;font-size:.75rem">14.2 ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="tr1_1.html#part3" style="padding-left:40px;font-size:.75rem">14.3 ПІДСУМОК</a>
+<a class="sidebar-topic" href="tr2_1.html">15. Формули тригонометрії</a>
+<a class="sidebar-topic" href="tr2_1.html" style="padding-left:40px;font-size:.75rem">15.1 ОСНОВНІ ТОТОЖНОСТІ</a>
+<a class="sidebar-topic" href="tr2_1.html#part2" style="padding-left:40px;font-size:.75rem">15.2 ФОРМУЛИ СУМИ І РІЗНИЦІ КУТІВ</a>
+<a class="sidebar-topic" href="tr2_1.html#part3" style="padding-left:40px;font-size:.75rem">15.3 ФОРМУЛИ ПОДВІЙНОГО КУТА</a>
+<a class="sidebar-topic" href="tr2_1.html#part4" style="padding-left:40px;font-size:.75rem">15.4 ПОНИЖЕННЯ СТЕПЕНЯ ТА ПЕРЕТВОРЕННЯ</a>
+<a class="sidebar-topic" href="tr2_1.html#part5" style="padding-left:40px;font-size:.75rem">15.5 ПІДСУМОК — НАЙВАЖЛИВІШІ ФОРМУЛИ</a>
+<a class="sidebar-topic" href="tr3_1.html">16. Тригонометричні рівняння</a>
+<a class="sidebar-topic" href="tr3_1.html" style="padding-left:40px;font-size:.75rem">16.1 ПРОСТІ ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="tr3_1.html#part2" style="padding-left:40px;font-size:.75rem">16.2 МЕТОДИ РОЗВ&#x27;ЯЗАННЯ СКЛАДНИХ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="tr3_1.html#part3" style="padding-left:40px;font-size:.75rem">16.3 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="tr4_1.html">17. Обернені функції</a>
+<a class="sidebar-topic" href="tr4_1.html" style="padding-left:40px;font-size:.75rem">17.1 ЩО ТАКЕ ОБЕРНЕНА ФУНКЦІЯ</a>
+<a class="sidebar-topic" href="tr4_1.html#part2" style="padding-left:40px;font-size:.75rem">17.2 ОБЕРНЕНІ ТРИГОНОМЕТРИЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part3" style="padding-left:40px;font-size:.75rem">17.3 ОБЕРНЕНІ АЛГЕБРАЇЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part4" style="padding-left:40px;font-size:.75rem">17.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analytic">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналітична геометрія та вектори</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="v5_1.html">18. Вектори</a>
+<a class="sidebar-topic" href="v5_1.html" style="padding-left:40px;font-size:.75rem">18.1 ПОНЯТТЯ ВЕКТОРА</a>
+<a class="sidebar-topic" href="v5_1.html#part2" style="padding-left:40px;font-size:.75rem">18.2 ДІЇ З ВЕКТОРАМИ</a>
+<a class="sidebar-topic" href="v5_1.html#part3" style="padding-left:40px;font-size:.75rem">18.3 СКАЛЯРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part4" style="padding-left:40px;font-size:.75rem">18.4 ВЕКТОРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part5" style="padding-left:40px;font-size:.75rem">18.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v6_1.html">19. Координатна геометрія</a>
+<a class="sidebar-topic" href="v6_1.html" style="padding-left:40px;font-size:.75rem">19.1 ВІДСТАНІ ТА СЕРЕДИНИ</a>
+<a class="sidebar-topic" href="v6_1.html#part2" style="padding-left:40px;font-size:.75rem">19.2 ПРЯМА НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="v6_1.html#part3" style="padding-left:40px;font-size:.75rem">19.3 КОЛО ТА ІНШІ КРИВІ</a>
+<a class="sidebar-topic" href="v6_1.html#part4" style="padding-left:40px;font-size:.75rem">19.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v7_1.html">20. Конічні перерізи</a>
+<a class="sidebar-topic" href="v7_1.html" style="padding-left:40px;font-size:.75rem">20.1 ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</a>
+<a class="sidebar-topic" href="v7_1.html#part2" style="padding-left:40px;font-size:.75rem">20.2 ЕЛІПС</a>
+<a class="sidebar-topic" href="v7_1.html#part3" style="padding-left:40px;font-size:.75rem">20.3 ГІПЕРБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part4" style="padding-left:40px;font-size:.75rem">20.4 ПАРАБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part5" style="padding-left:40px;font-size:.75rem">20.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v8_1.html">21. Координати у просторі</a>
+<a class="sidebar-topic" href="v8_1.html" style="padding-left:40px;font-size:.75rem">21.1 СИСТЕМА КООРДИНАТ У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part2" style="padding-left:40px;font-size:.75rem">21.2 ПРЯМА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part3" style="padding-left:40px;font-size:.75rem">21.3 ПЛОЩИНА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part4" style="padding-left:40px;font-size:.75rem">21.4 ІНШІ СИСТЕМИ КООРДИНАТ</a>
+<a class="sidebar-topic" href="v8_1.html#part5" style="padding-left:40px;font-size:.75rem">21.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analysis">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналіз та дискретна математика</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="m1_1.html">22. Комбінаторика</a>
+<a class="sidebar-topic" href="m1_1.html" style="padding-left:40px;font-size:.75rem">22.1 ПРИНЦИПИ ЛІЧБИ</a>
+<a class="sidebar-topic" href="m1_1.html#part2" style="padding-left:40px;font-size:.75rem">22.2 ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</a>
+<a class="sidebar-topic" href="m1_1.html#part3" style="padding-left:40px;font-size:.75rem">22.3 ВЛАСТИВОСТІ КОМБІНАЦІЙ</a>
+<a class="sidebar-topic" href="m1_1.html#part4" style="padding-left:40px;font-size:.75rem">22.4 БІНІМАЛЬНА ТЕОРЕМА</a>
+<a class="sidebar-topic" href="m1_1.html#part5" style="padding-left:40px;font-size:.75rem">22.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m2_1.html">23. Теорія ймовірностей</a>
+<a class="sidebar-topic" href="m2_1.html" style="padding-left:40px;font-size:.75rem">23.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="m2_1.html#part2" style="padding-left:40px;font-size:.75rem">23.2 ОПЕРАЦІЇ НАД ПОДІЯМИ</a>
+<a class="sidebar-topic" href="m2_1.html#part3" style="padding-left:40px;font-size:.75rem">23.3 УМОВНА ЙМОВІРНІСТЬ</a>
+<a class="sidebar-topic" href="m2_1.html#part4" style="padding-left:40px;font-size:.75rem">23.4 ДИСКРЕТНІ РОЗПОДІЛИ</a>
+<a class="sidebar-topic" href="m2_1.html#part5" style="padding-left:40px;font-size:.75rem">23.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic active" href="m3_1.html">24. Границі та похідна</a>
+<a class="sidebar-topic" href="m3_1.html" style="padding-left:40px;font-size:.75rem">24.1 ГРАНИЦІ</a>
+<a class="sidebar-topic" href="m3_1.html#part2" style="padding-left:40px;font-size:.75rem">24.2 ПОХІДНА</a>
+<a class="sidebar-topic" href="m3_1.html#part3" style="padding-left:40px;font-size:.75rem">24.3 ЗАСТОСУВАННЯ ПОХІДНОЇ</a>
+<a class="sidebar-topic" href="m3_1.html#part4" style="padding-left:40px;font-size:.75rem">24.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m4_1.html">25. Інтеграл</a>
+<a class="sidebar-topic" href="m4_1.html" style="padding-left:40px;font-size:.75rem">25.1 НЕВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part2" style="padding-left:40px;font-size:.75rem">25.2 МЕТОДИ ІНТЕГРУВАННЯ</a>
+<a class="sidebar-topic" href="m4_1.html#part3" style="padding-left:40px;font-size:.75rem">25.3 ВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part4" style="padding-left:40px;font-size:.75rem">25.4 ЗАСТОСУВАННЯ ІНТЕГРАЛА</a>
+<a class="sidebar-topic" href="m4_1.html#part5" style="padding-left:40px;font-size:.75rem">25.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m5_1.html">26. Ряди та послідовності</a>
+<a class="sidebar-topic" href="m5_1.html" style="padding-left:40px;font-size:.75rem">26.1 ЧИСЛОВІ ПОСЛІДОВНОСТІ</a>
+<a class="sidebar-topic" href="m5_1.html#part2" style="padding-left:40px;font-size:.75rem">26.2 ЧИСЛОВІ РЯДИ</a>
+<a class="sidebar-topic" href="m5_1.html#part3" style="padding-left:40px;font-size:.75rem">26.3 ОЗНАКИ ЗБІЖНОСТІ РЯДІВ</a>
+<a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
+<a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+  </aside>
+
+  <main class="main">
+    <div class="lecture">
+      <h1>ГРАНИЦІ ТА ПОХІДНА</h1>
+<p class="subtitle"><em>Математичний аналіз · Границі · Неперервність · Похідна · Правила диференціювання · Застосування</em></p>
+<div id="part1" class="block-part"><h2>ЧАСТИНА 1. ГРАНИЦІ</h2></div>
+<p>Границя — це відповідь на питання «до чого наближається функція?». Без границь неможливо визначити похідну, а без похідної — досліджувати функції на зростання, спадання, екстремуми. Це фундамент математичного аналізу.</p>
+<h3>1. Поняття границі</h3>
+<p><strong>Границя функції</strong> в точці a — це значення, до якого наближається f(x) при x → a (але x ≠ a):</p>
+<div class="block-example"><p><strong>lim f(x) = L  при x→a</strong></p></div>
+<p><em>Це не обов&#x27;язково значення f(a) — функція може навіть бути не визначена в точці a</em></p>
+<div class="block-note"><p><strong>Аналогія: Дорога до міста</strong></p>
+<p>Границя — це куди ви їдете (ціль), а не те, де зупинились. Можна наближатись до міста нескінченно, але не доїхати — границя все одно є.</p></div>
+<table><tr class="row-even"><td><strong>Однобічні границі</strong></td><td>Ліва: lim f(x) при x→a⁻ (наближаємось зліва)<br>Права: lim f(x) при x→a⁺ (наближаємось справа)<br>Границя існує ⟺ ліва = права</td></tr>
+<tr class="row-odd"><td><strong>Границя = ∞</strong></td><td>Якщо f(x) необмежено зростає: lim f(x) = +∞<br>Або: lim f(x) = −∞ (необмежено спадає)</td></tr>
+<tr class="row-even"><td><strong>Границя на нескінченності</strong></td><td>lim f(x) при x→∞ — поведінка при великих x</td></tr></table>
+<h3>2. Властивості границь</h3>
+<table><tr class="row-even"><td><strong>Сума/різниця</strong></td><td><strong>lim(f±g) = lim f ± lim g</strong></td></tr>
+<tr class="row-odd"><td><strong>Добуток</strong></td><td><strong>lim(f·g) = lim f · lim g</strong></td></tr>
+<tr class="row-even"><td><strong>Частка</strong></td><td><strong>lim(f/g) = lim f / lim g</strong>   (якщо lim g ≠ 0)</td></tr>
+<tr class="row-odd"><td><strong>Константа</strong></td><td><strong>lim c = c</strong>   та   <strong>lim(c·f) = c·lim f</strong></td></tr>
+<tr class="row-even"><td><strong>Неперервна функція</strong></td><td><strong>lim f(g(x)) = f(lim g(x))</strong>   (якщо f неперервна)</td></tr></table>
+<h3>3. Перший та другий чудові границі</h3>
+<div class="block-example"><p><strong>Перша чудова границя:</strong></p>
+<p><strong>lim (sin x)/x = 1   при x→0</strong></p>
+<p><strong>Друга чудова границя:</strong></p>
+<p><strong>lim (1 + 1/n)ⁿ = e ≈ 2,71828…   при n→∞</strong></p>
+<p><strong>Або: </strong>lim (1+x)^(1/x) = e  при x→0</p></div>
+<h3>4. Розкриття невизначеностей</h3>
+<table><tr class="row-even"><td><strong>0/0</strong></td><td>Розкласти чисельник і знаменник на множники, скоротити.<br>Приклад: lim(x²−4)/(x−2) = lim(x+2)(x−2)/(x−2) = lim(x+2) = 4</td></tr>
+<tr class="row-odd"><td><strong>∞/∞</strong></td><td>Поділити числ. і знам. на старший степінь.<br>Приклад: lim(3x²+1)/(x²−5) = lim(3+1/x²)/(1−5/x²) = 3/1 = 3</td></tr>
+<tr class="row-even"><td><strong>∞−∞</strong></td><td>Множити на спряжений вираз або виносити спільний множник.</td></tr>
+<tr class="row-odd"><td><strong>1^∞, 0⁰, ∞⁰</strong></td><td>Зводити до e через формулу: lim f(x)^g(x) = e^(lim g(x)·ln f(x))</td></tr></table>
+<div id="part2" class="block-part"><h2>ЧАСТИНА 2. ПОХІДНА</h2></div>
+<h3>5. Визначення похідної</h3>
+<p><strong>Похідна</strong> f&#x27;(x) — миттєва швидкість зміни функції в точці x:</p>
+<div class="block-example"><p><strong>f&#x27;(x) = lim [f(x+Δx)−f(x)] / Δx   при Δx→0</strong></p></div>
+<div class="svg-container" id="derivative-widget">
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;width:100%;display:block;margin:1em auto;font-family:inherit;">
+  <defs>
+    <clipPath id="graph-clip"><rect x="30" y="10" width="360" height="240"/></clipPath>
+  </defs>
+  <!-- Axes -->
+  <line x1="40" y1="230" x2="380" y2="230" stroke="var(--border)" stroke-width="1"/>
+  <line x1="40" y1="230" x2="40" y2="20" stroke="var(--border)" stroke-width="1"/>
+  <text x="385" y="234" fill="var(--text-muted)" font-size="11">x</text>
+  <text x="44" y="16" fill="var(--text-muted)" font-size="11">y</text>
+  <!-- Curve y = -0.004(x-200)^2 + 180, mapped to viewBox -->
+  <path d="M40,210 Q120,40 200,60 Q280,80 360,200" fill="none" stroke="var(--heading-section)" stroke-width="2.5" clip-path="url(#graph-clip)"/>
+  <text x="355" y="195" fill="var(--heading-section)" font-size="11" font-weight="bold">f(x)</text>
+  <!-- Point x₀ -->
+  <circle id="der-p0" cx="160" cy="52" r="5" fill="var(--accent)" stroke="var(--bg)" stroke-width="2"/>
+  <text id="der-p0-label" x="150" y="44" fill="var(--accent)" font-size="11" font-weight="bold">x₀</text>
+  <!-- Point x₀ + Δx -->
+  <circle id="der-p1" cx="260" cy="76" r="4" fill="var(--block-warn-bg)" stroke="var(--bg)" stroke-width="2"/>
+  <text id="der-p1-label" x="265" y="68" fill="var(--block-warn-bg)" font-size="11">x₀+Δx</text>
+  <!-- Secant line -->
+  <line id="der-secant" x1="80" y1="20" x2="340" y2="108" stroke="var(--block-warn-bg)" stroke-width="1.5" stroke-dasharray="5,4" opacity=".7"/>
+  <text id="der-sec-label" x="310" y="100" fill="var(--block-warn-bg)" font-size="10">січна</text>
+  <!-- Tangent line (hidden initially) -->
+  <line id="der-tangent" x1="60" y1="76" x2="300" y2="28" stroke="var(--accent)" stroke-width="2" opacity="0"/>
+  <text id="der-tan-label" x="290" y="24" fill="var(--accent)" font-size="11" font-weight="bold" opacity="0">дотична</text>
+  <!-- Δx bracket -->
+  <line id="der-dx1" x1="160" y1="240" x2="260" y2="240" stroke="var(--text-muted)" stroke-width="1"/>
+  <text id="der-dx-label" x="210" y="256" fill="var(--text-muted)" font-size="11" text-anchor="middle">Δx</text>
+</svg>
+<div style="text-align:center;margin-top:8px;">
+  <input type="range" id="der-slider" min="5" max="100" value="100" style="width:70%;max-width:280px;accent-color:var(--accent);">
+  <div style="color:var(--text-muted);font-size:.85rem;margin-top:4px;">
+    ← зменшуй Δx, щоб побачити, як січна стає дотичною
+  </div>
+</div>
+</div>
+<script>
+(function(){
+  var sl=document.getElementById('der-slider');
+  // Curve: quadratic through (40,210),(160,52),(200,60),(260,76),(360,200)
+  // Simplified: use parabola y = a(x-h)^2 + k
+  function curveY(x){
+    // approximate: y = 0.005*(x-180)^2 + 48
+    return 0.005*(x-180)*(x-180)+48;
+  }
+  var x0=160, y0=curveY(x0);
+  function update(pct){
+    var dx = pct; // 5..100 maps to Δx pixel offset
+    var x1=x0+dx, y1=curveY(x1);
+    // Update P1
+    document.getElementById('der-p1').setAttribute('cx',x1);
+    document.getElementById('der-p1').setAttribute('cy',y1);
+    document.getElementById('der-p1-label').setAttribute('x',x1+5);
+    document.getElementById('der-p1-label').setAttribute('y',y1-8);
+    // Secant slope
+    var slope=(y1-y0)/(x1-x0);
+    var sx1=60, sy1=y0+slope*(sx1-x0);
+    var sx2=340, sy2=y0+slope*(sx2-x0);
+    document.getElementById('der-secant').setAttribute('x1',sx1);
+    document.getElementById('der-secant').setAttribute('y1',sy1);
+    document.getElementById('der-secant').setAttribute('x2',sx2);
+    document.getElementById('der-secant').setAttribute('y2',sy2);
+    document.getElementById('der-sec-label').setAttribute('x',sx2-30);
+    document.getElementById('der-sec-label').setAttribute('y',sy2-6);
+    // Dx label
+    document.getElementById('der-dx1').setAttribute('x2',x1);
+    document.getElementById('der-dx-label').setAttribute('x',(x0+x1)/2);
+    // When Δx is small, show tangent
+    var t=dx<=10?1:(dx<=20?(20-dx)/10:0);
+    document.getElementById('der-tangent').setAttribute('opacity',t);
+    document.getElementById('der-tan-label').setAttribute('opacity',t);
+    // Tangent at x0: derivative of 0.005(x-180)^2+48 at x=160 is 0.01*(160-180) = -0.2
+    if(t>0){
+      var ts=0.01*(x0-180);
+      var tx1=60,ty1=y0+ts*(tx1-x0);
+      var tx2=300,ty2=y0+ts*(tx2-x0);
+      document.getElementById('der-tangent').setAttribute('x1',tx1);
+      document.getElementById('der-tangent').setAttribute('y1',ty1);
+      document.getElementById('der-tangent').setAttribute('x2',tx2);
+      document.getElementById('der-tangent').setAttribute('y2',ty2);
+    }
+    document.getElementById('der-p1-label').textContent = dx<=10?'':'x₀+Δx';
+  }
+  sl.addEventListener('input',function(){update(parseInt(this.value));});
+  update(100);
+})();
+</script>
+<p><em>Геометричний зміст: кутовий коефіцієнт дотичної до графіка f(x) в точці x</em></p>
+<p><em>Фізичний зміст: миттєва швидкість (якщо f(t) — шлях, то f&#x27;(t) — швидкість)</em></p>
+<h3>6. Таблиця похідних</h3>
+<table><tr class="row-even"><td><strong>f(x)</strong></td><td><strong>f&#x27;(x)</strong></td><td><strong>Примітка</strong></td></tr>
+<tr class="row-odd"><td><strong>c (константа)</strong></td><td>0</td><td>Константа не змінюється</td></tr>
+<tr class="row-even"><td><strong>xⁿ</strong></td><td>n·xⁿ⁻¹</td><td>Степенева функція</td></tr>
+<tr class="row-odd"><td><strong>√x = x^(1/2)</strong></td><td>1/(2√x)</td><td>Частковий випадок xⁿ</td></tr>
+<tr class="row-even"><td><strong>1/x = x⁻¹</strong></td><td>−1/x²</td><td>Частковий випадок xⁿ</td></tr>
+<tr class="row-odd"><td><strong>eˣ</strong></td><td>eˣ</td><td>Похідна = сама функція!</td></tr>
+<tr class="row-even"><td><strong>aˣ</strong></td><td>aˣ·ln a</td><td>a &gt; 0, a ≠ 1</td></tr>
+<tr class="row-odd"><td><strong>ln x</strong></td><td>1/x</td><td>x &gt; 0</td></tr>
+<tr class="row-even"><td><strong>logₐx</strong></td><td>1/(x·ln a)</td><td>a &gt; 0, a ≠ 1</td></tr>
+<tr class="row-odd"><td><strong>sin x</strong></td><td>cos x</td><td>—</td></tr>
+<tr class="row-even"><td><strong>cos x</strong></td><td>−sin x</td><td>Знак мінус!</td></tr>
+<tr class="row-odd"><td><strong>tg x</strong></td><td>1/cos²x</td><td>або sec²x</td></tr>
+<tr class="row-even"><td><strong>ctg x</strong></td><td>−1/sin²x</td><td>або −csc²x</td></tr>
+<tr class="row-odd"><td><strong>arcsin x</strong></td><td>1/√(1−x²)</td><td>|x| &lt; 1</td></tr>
+<tr class="row-even"><td><strong>arccos x</strong></td><td>−1/√(1−x²)</td><td>|x| &lt; 1, знак мінус!</td></tr>
+<tr class="row-odd"><td><strong>arctg x</strong></td><td>1/(1+x²)</td><td>x ∈ ℝ</td></tr></table>
+<h3>7. Правила диференціювання</h3>
+<table><tr class="row-even"><td><strong>Константа</strong></td><td><strong>(c·f)&#x27; = c·f&#x27;</strong></td></tr>
+<tr class="row-odd"><td><strong>Сума/різниця</strong></td><td><strong>(f±g)&#x27; = f&#x27;±g&#x27;</strong></td></tr>
+<tr class="row-even"><td><strong>Добуток</strong></td><td><strong>(f·g)&#x27; = f&#x27;·g + f·g&#x27;</strong></td></tr>
+<tr class="row-odd"><td><strong>Частка</strong></td><td><strong>(f/g)&#x27; = (f&#x27;·g − f·g&#x27;) / g²</strong></td></tr>
+<tr class="row-even"><td><strong>Складена функція<br>(правило ланцюжка)</strong></td><td><strong>(f(g(x)))&#x27; = f&#x27;(g(x))·g&#x27;(x)</strong><br>Приклад: (sin(x²))&#x27; = cos(x²)·2x</td></tr></table>
+<div id="part3" class="block-part"><h2>ЧАСТИНА 3. ЗАСТОСУВАННЯ ПОХІДНОЇ</h2></div>
+<h3>8. Дотична до графіка</h3>
+<div class="block-example"><p><strong>y − y₀ = f&#x27;(x₀)·(x − x₀)</strong></p></div>
+<p><em>де (x₀; y₀) — точка на графіку, f&#x27;(x₀) — кутовий коефіцієнт дотичної</em></p>
+<h3>9. Монотонність та екстремуми</h3>
+<table><tr class="row-even"><td><strong>f&#x27;(x) &gt; 0 на (a;b)</strong></td><td>f — зростає на (a;b)</td></tr>
+<tr class="row-odd"><td><strong>f&#x27;(x) &lt; 0 на (a;b)</strong></td><td>f — спадає на (a;b)</td></tr>
+<tr class="row-even"><td><strong>f&#x27;(x₀) = 0</strong></td><td>Точка x₀ — підозріла на екстремум (критична точка)</td></tr>
+<tr class="row-odd"><td><strong>Максимум</strong></td><td>f&#x27;(x₀)=0 і f&#x27; змінює знак з + на − при проходженні x₀</td></tr>
+<tr class="row-even"><td><strong>Мінімум</strong></td><td>f&#x27;(x₀)=0 і f&#x27; змінює знак з − на + при проходженні x₀</td></tr></table>
+<h3>10. Друга похідна — опуклість та точки перегину</h3>
+<table><tr class="row-even"><td><strong>f&#x27;&#x27;(x) &gt; 0 на (a;b)</strong></td><td>f — опукла донизу (посміхається ∪) на (a;b)</td></tr>
+<tr class="row-odd"><td><strong>f&#x27;&#x27;(x) &lt; 0 на (a;b)</strong></td><td>f — опукла догори (хмуриться ∩) на (a;b)</td></tr>
+<tr class="row-even"><td><strong>f&#x27;&#x27;(x₀) = 0</strong></td><td>Підозріла на точку перегину (де змінюється напрямок опуклості)</td></tr>
+<tr class="row-odd"><td><strong>Максимум через f&#x27;&#x27;</strong></td><td>Якщо f&#x27;(x₀)=0 і f&#x27;&#x27;(x₀)&lt;0 — максимум</td></tr>
+<tr class="row-even"><td><strong>Мінімум через f&#x27;&#x27;</strong></td><td>Якщо f&#x27;(x₀)=0 і f&#x27;&#x27;(x₀)&gt;0 — мінімум</td></tr></table>
+<h3>11. Правило Лопіталя</h3>
+<p>При невизначеностях 0/0 або ∞/∞ можна диференціювати числівник і знаменник окремо:</p>
+<div class="block-note"><p><strong>lim f(x)/g(x) = lim f&#x27;(x)/g&#x27;(x)   (якщо права частина існує)</strong></p></div>
+<p><strong>Приклад: lim(sinx)/x при x→0</strong></p>
+<p>Невизначеність 0/0. Правило Лопіталя:<br>lim(sinx)/x = lim(cosx)/1 = cos0 = 1</p>
+<div id="part4" class="block-part"><h2>ПІДСУМОК — ПАМ&#x27;ЯТКА</h2></div>
+<table><tr class="row-even"><td><strong>Поняття</strong></td><td><strong>Формула/Правило</strong></td><td><strong>Пам&#x27;ятка</strong></td></tr>
+<tr class="row-odd"><td><strong>Похідна (визначення)</strong></td><td>lim Δf/Δx при Δx→0</td><td>Миттєва швидкість</td></tr>
+<tr class="row-even"><td><strong>(xⁿ)&#x27;</strong></td><td>nxⁿ⁻¹</td><td>Знижуємо степінь на 1</td></tr>
+<tr class="row-odd"><td><strong>(eˣ)&#x27;</strong></td><td>eˣ</td><td>Незмінна!</td></tr>
+<tr class="row-even"><td><strong>(sinx)&#x27;</strong></td><td>cosx</td><td>(cosx)&#x27; = −sinx (мінус!)</td></tr>
+<tr class="row-odd"><td><strong>(f·g)&#x27;</strong></td><td>f&#x27;g + fg&#x27;</td><td>Не (f&#x27;g&#x27;)</td></tr>
+<tr class="row-even"><td><strong>f&#x27;(x)&gt;0</strong></td><td>Функція зростає</td><td>Шукаємо де +</td></tr>
+<tr class="row-odd"><td><strong>f&#x27;(x₀)=0</strong></td><td>Критична точка</td><td>Перевірити знак f&#x27; навколо</td></tr>
+<tr class="row-even"><td><strong>f&#x27;&#x27;(x)&gt;0</strong></td><td>Опукла донизу ∪</td><td>f&#x27;&#x27;&lt;0 — опукла догори ∩</td></tr></table>
+
+<h3>Алгоритм дослідження функції</h3>
+<div class="block-note"><p>1. Знайти D(f)<br>
+2. Парність/непарність<br>
+3. Знайти f'(x)<br>
+4. Критичні точки: f'(x) = 0<br>
+5. Знак f' на проміжках → зростання/спадання<br>
+6. Зміна знака f' → max/min<br>
+7. f''(x) → опуклість, точки перегину<br>
+8. Поведінка при x → ±∞, асимптоти<br>
+9. Побудувати графік</p></div>
+
+<h3>Типові помилки</h3>
+<div class="block-warning-body">
+<p><strong>1. Плутають (f·g)' і f'·g'.</strong><br>
+(f·g)' = f'·g + f·g' (правило добутку). Це НЕ f'·g'. Наприклад: (x²·sinx)' = 2x·sinx + x²·cosx, а не 2x·cosx.</p>
+<p><strong>2. Забувають мінус у (cosx)' = −sinx.</strong><br>
+(sinx)' = cosx (без мінуса). (cosx)' = <strong>−</strong>sinx (з мінусом!). Одна з найчастіших помилок.</p>
+<p><strong>3. f'(x₀) = 0 ще не означає екстремум.</strong><br>
+f(x) = x³: f'(0) = 0, але це не екстремум (точка перегину). Потрібно перевірити зміну знака f' або використати f''.</p>
+<p><strong>4. Забувають внутрішню похідну (ланцюжкове правило).</strong><br>
+(sin(3x))' = cos(3x)·<strong>3</strong>, а не просто cos(3x). (e^(x²))' = e^(x²)·<strong>2x</strong>. Множити на похідну внутрішньої функції!</p>
+</div>
+
+<p><em>Похідна — це швидкість. Інтеграл — це площа.</em></p>
+    </div>
+  
+<nav class="page-nav"><a class="page-nav-btn page-nav-prev" href="m2_1.html">← 23. Теорія ймовірностей</a><a class="page-nav-btn page-nav-next" href="m4_1.html">25. Інтеграл →</a></nav>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span class="footer-version">v 0.5.7</span>
+    <span class="footer-copy">© 2026 Хоменко Олексій Григорович</span>
+    <span class="footer-links">
+      <a href="mailto:itstiamushchy@gmail.com">itstiamushchy@gmail.com</a>
+      <span class="footer-sep">·</span>
+      <span>ITS_tiamushchy</span>
+    </span>
+  </div>
+</footer>
+</main>
+
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+(function(){
+  const saved = localStorage.getItem('obrahunok-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('obrahunok-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  overlay.addEventListener('click', () => sidebar.classList.remove('open'));
+  document.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
+  });
+})();
+</script>
+</body>
+</html>

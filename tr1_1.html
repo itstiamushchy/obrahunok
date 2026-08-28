@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Одиничне коло — Обрахунок</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html">
+      <span class="icon">∑</span>
+      <span>Обрахунок</span>
+    </a>
+    <div class="topbar-controls">
+      <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+      <button class="menu-toggle" id="menuToggle" title="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="tabbar">
+    <a class="tabbar-btn active" href="index.html">Теорія</a>
+    <a class="tabbar-btn" href="formuly.html">Формули</a>
+    <a class="tabbar-btn" href="#">Глосарій</a>
+    <a class="tabbar-btn" href="zadachnyk.html">Задачник</a>
+    <a class="tabbar-btn" href="#">Обране</a>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-section="algebra">
+<button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="chysla1.html">1. Числа та дії</a>
+<a class="sidebar-topic" href="chysla1.html" style="padding-left:40px;font-size:.75rem">1.1 ЧИСЛА ТА ДІЇ З НИМИ</a>
+<a class="sidebar-topic" href="chysla2.html" style="padding-left:40px;font-size:.75rem">1.2 ДРОБИ</a>
+<a class="sidebar-topic" href="chysla3.html" style="padding-left:40px;font-size:.75rem">1.3 ПОДІЛЬНІСТЬ. НСД І НСК</a>
+<a class="sidebar-topic" href="chysla4.html" style="padding-left:40px;font-size:.75rem">1.4 СТЕПЕНІ ТА КОРЕНІ</a>
+<a class="sidebar-topic" href="chysla5.html" style="padding-left:40px;font-size:.75rem">1.5 ВІДСОТКИ ТА ПРОПОРЦІЇ</a>
+<a class="sidebar-topic" href="vyrazy1.html">2. Вирази та тотожності</a>
+<a class="sidebar-topic" href="vyrazy1.html" style="padding-left:40px;font-size:.75rem">2.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="vyrazy2.html" style="padding-left:40px;font-size:.75rem">2.2 ТРИ ЗАКОНИ АРИФМЕТИКИ</a>
+<a class="sidebar-topic" href="vyrazy3.html" style="padding-left:40px;font-size:.75rem">2.3 ТЕХНІКИ ПЕРЕТВОРЕННЯ ВИРАЗІВ</a>
+<a class="sidebar-topic" href="vyrazy4.html" style="padding-left:40px;font-size:.75rem">2.4 ФОРМУЛИ СКОРОЧЕНОГО МНОЖЕННЯ</a>
+<a class="sidebar-topic" href="vyrazy5.html" style="padding-left:40px;font-size:.75rem">2.5 РОЗКЛАДАННЯ НА МНОЖНИКИ</a>
+<a class="sidebar-topic" href="vyrazy6.html" style="padding-left:40px;font-size:.75rem">2.6 НАСКРІЗНІ ПРИКЛАДИ</a>
+<a class="sidebar-topic" href="nerivnosti1.html">3. Нерівності</a>
+<a class="sidebar-topic" href="nerivnosti1.html" style="padding-left:40px;font-size:.75rem">3.1 ЧИСЛОВІ НЕРІВНОСТІ ТА ЇХ ВЛАСТИВОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti2.html" style="padding-left:40px;font-size:.75rem">3.2 ЛІНІЙНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti3.html" style="padding-left:40px;font-size:.75rem">3.3 КВАДРАТНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti4.html" style="padding-left:40px;font-size:.75rem">3.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="rivnyannya1.html">4. Рівняння та системи</a>
+<a class="sidebar-topic" href="rivnyannya1.html" style="padding-left:40px;font-size:.75rem">4.1 ЩО ТАКЕ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya2.html" style="padding-left:40px;font-size:.75rem">4.2 ЛІНІЙНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya3.html" style="padding-left:40px;font-size:.75rem">4.3 КВАДРАТНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya4.html" style="padding-left:40px;font-size:.75rem">4.4 РАЦІОНАЛЬНІ ТА ІРРАЦІОНАЛЬНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya5.html" style="padding-left:40px;font-size:.75rem">4.5 ПОКАЗНИКОВІ ТА ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya6.html" style="padding-left:40px;font-size:.75rem">4.6 ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya7.html" style="padding-left:40px;font-size:.75rem">4.7 СИСТЕМИ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="rivnyannya8.html" style="padding-left:40px;font-size:.75rem">4.8 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="funktsiyi1.html">5. Функції та їх властивості</a>
+<a class="sidebar-topic" href="funktsiyi1.html" style="padding-left:40px;font-size:.75rem">5.1 ПОНЯТТЯ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="funktsiyi2.html" style="padding-left:40px;font-size:.75rem">5.2 ВЛАСТИВОСТІ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="funktsiyi3.html" style="padding-left:40px;font-size:.75rem">5.3 ОСНОВНІ ФУНКЦІЇ ТА ЇХ ГРАФІКИ</a>
+<a class="sidebar-topic" href="funktsiyi4.html" style="padding-left:40px;font-size:.75rem">5.4 ПЕРЕТВОРЕННЯ ГРАФІКІВ</a>
+<a class="sidebar-topic" href="funktsiyi5.html" style="padding-left:40px;font-size:.75rem">5.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="prohresii1.html">6. Прогресії</a>
+<a class="sidebar-topic" href="prohresii1.html" style="padding-left:40px;font-size:.75rem">6.1 АРИФМЕТИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii2.html" style="padding-left:40px;font-size:.75rem">6.2 ГЕОМЕТРИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii3.html" style="padding-left:40px;font-size:.75rem">6.3 ПОРІВНЯННЯ АП ТА ГП</a>
+<a class="sidebar-topic" href="prohresii4.html" style="padding-left:40px;font-size:.75rem">6.4 ЗАСТОСУВАННЯ</a>
+<a class="sidebar-topic" href="logarythmy1.html">7. Логарифми</a>
+<a class="sidebar-topic" href="logarythmy1.html" style="padding-left:40px;font-size:.75rem">7.1 ЩО ТАКЕ ЛОГАРИФМ?</a>
+<a class="sidebar-topic" href="logarythmy2.html" style="padding-left:40px;font-size:.75rem">7.2 ВЛАСТИВОСТІ ЛОГАРИФМІВ</a>
+<a class="sidebar-topic" href="logarythmy3.html" style="padding-left:40px;font-size:.75rem">7.3 ОБЧИСЛЕННЯ З ЛОГАРИФМАМИ</a>
+<a class="sidebar-topic" href="logarythmy4.html" style="padding-left:40px;font-size:.75rem">7.4 ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="logarythmy5.html" style="padding-left:40px;font-size:.75rem">7.5 ЛОГАРИФМІЧНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="logarythmy6.html" style="padding-left:40px;font-size:.75rem">7.6 ПОКАЗНИКОВІ РІВНЯННЯ ЧЕРЕЗ ЛОГАРИФМ</a>
+</div></div>
+<div class="sidebar-section" data-section="geometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Геометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="geo1_1.html">8. Основи геометрії. Кути та прямі</a>
+<a class="sidebar-topic" href="geo1_1.html" style="padding-left:40px;font-size:.75rem">8.1 ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part2" style="padding-left:40px;font-size:.75rem">8.2 КУТИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part3" style="padding-left:40px;font-size:.75rem">8.3 ПРЯМІ НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="geo1_1.html#part4" style="padding-left:40px;font-size:.75rem">8.4 ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</a>
+<a class="sidebar-topic" href="geo1_1.html#part5" style="padding-left:40px;font-size:.75rem">8.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo2_1.html">9. Трикутники</a>
+<a class="sidebar-topic" href="geo2_1.html" style="padding-left:40px;font-size:.75rem">9.1 ОСНОВИ</a>
+<a class="sidebar-topic" href="geo2_1.html#part2" style="padding-left:40px;font-size:.75rem">9.2 ОЗНАКИ РІВНОСТІ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part3" style="padding-left:40px;font-size:.75rem">9.3 ОСОБЛИВІ ЛІНІЇ ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part4" style="padding-left:40px;font-size:.75rem">9.4 ПОДІБНІСТЬ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part5" style="padding-left:40px;font-size:.75rem">9.5 ТЕОРЕМА ПІФАГОРА</a>
+<a class="sidebar-topic" href="geo2_1.html#part6" style="padding-left:40px;font-size:.75rem">9.6 ТРИГОНОМЕТРІЯ ПРЯМОКУТНОГО ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part7" style="padding-left:40px;font-size:.75rem">9.7 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo3_1.html">10. Чотирикутники та многокутники</a>
+<a class="sidebar-topic" href="geo3_1.html" style="padding-left:40px;font-size:.75rem">10.1 ЗАГАЛЬНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo3_1.html#part2" style="padding-left:40px;font-size:.75rem">10.2 ЧОТИРИКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part3" style="padding-left:40px;font-size:.75rem">10.3 ПРАВИЛЬНІ МНОГОКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part4" style="padding-left:40px;font-size:.75rem">10.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo4_1.html">11. Коло та круг</a>
+<a class="sidebar-topic" href="geo4_1.html" style="padding-left:40px;font-size:.75rem">11.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo4_1.html#part2" style="padding-left:40px;font-size:.75rem">11.2 ВЛАСТИВОСТІ КУТІВ І ХОРД</a>
+<a class="sidebar-topic" href="geo4_1.html#part3" style="padding-left:40px;font-size:.75rem">11.3 ВПИСАНІ ТА ОПИСАНІ КОЛА</a>
+<a class="sidebar-topic" href="geo4_1.html#part4" style="padding-left:40px;font-size:.75rem">11.4 ДОВЖИНА КОЛА І ПЛОЩА КРУГА</a>
+<a class="sidebar-topic" href="geo4_1.html#part5" style="padding-left:40px;font-size:.75rem">11.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo5_1.html">12. Площі фігур</a>
+<a class="sidebar-topic" href="geo5_1.html" style="padding-left:40px;font-size:.75rem">12.1 ПЛОЩА ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo5_1.html#part2" style="padding-left:40px;font-size:.75rem">12.2 ПЛОЩА ЧОТИРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo5_1.html#part3" style="padding-left:40px;font-size:.75rem">12.3 ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</a>
+<a class="sidebar-topic" href="geo5_1.html#part4" style="padding-left:40px;font-size:.75rem">12.4 ЗАДАЧІ НА ПЛОЩУ</a>
+<a class="sidebar-topic" href="geo5_1.html#part5" style="padding-left:40px;font-size:.75rem">12.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+<a class="sidebar-topic" href="geo6_1.html">13. Стереометрія</a>
+<a class="sidebar-topic" href="geo6_1.html" style="padding-left:40px;font-size:.75rem">13.1 ОСНОВИ СТЕРЕОМЕТРІЇ</a>
+<a class="sidebar-topic" href="geo6_1.html#part2" style="padding-left:40px;font-size:.75rem">13.2 МНОГОГРАННИКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part3" style="padding-left:40px;font-size:.75rem">13.3 ТІЛА ОБЕРТАННЯ</a>
+<a class="sidebar-topic" href="geo6_1.html#part4" style="padding-left:40px;font-size:.75rem">13.4 ПЕРЕРІЗИ І РОЗГОРТКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part5" style="padding-left:40px;font-size:.75rem">13.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+</div></div>
+<div class="sidebar-section" data-section="trigonometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Тригонометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic active" href="tr1_1.html">14. Одиничне коло</a>
+<a class="sidebar-topic" href="tr1_1.html" style="padding-left:40px;font-size:.75rem">14.1 ЩО ТАКЕ ОДИНИЧНЕ КОЛО</a>
+<a class="sidebar-topic" href="tr1_1.html#part2" style="padding-left:40px;font-size:.75rem">14.2 ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="tr1_1.html#part3" style="padding-left:40px;font-size:.75rem">14.3 ПІДСУМОК</a>
+<a class="sidebar-topic" href="tr2_1.html">15. Формули тригонометрії</a>
+<a class="sidebar-topic" href="tr2_1.html" style="padding-left:40px;font-size:.75rem">15.1 ОСНОВНІ ТОТОЖНОСТІ</a>
+<a class="sidebar-topic" href="tr2_1.html#part2" style="padding-left:40px;font-size:.75rem">15.2 ФОРМУЛИ СУМИ І РІЗНИЦІ КУТІВ</a>
+<a class="sidebar-topic" href="tr2_1.html#part3" style="padding-left:40px;font-size:.75rem">15.3 ФОРМУЛИ ПОДВІЙНОГО КУТА</a>
+<a class="sidebar-topic" href="tr2_1.html#part4" style="padding-left:40px;font-size:.75rem">15.4 ПОНИЖЕННЯ СТЕПЕНЯ ТА ПЕРЕТВОРЕННЯ</a>
+<a class="sidebar-topic" href="tr2_1.html#part5" style="padding-left:40px;font-size:.75rem">15.5 ПІДСУМОК — НАЙВАЖЛИВІШІ ФОРМУЛИ</a>
+<a class="sidebar-topic" href="tr3_1.html">16. Тригонометричні рівняння</a>
+<a class="sidebar-topic" href="tr3_1.html" style="padding-left:40px;font-size:.75rem">16.1 ПРОСТІ ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="tr3_1.html#part2" style="padding-left:40px;font-size:.75rem">16.2 МЕТОДИ РОЗВ&#x27;ЯЗАННЯ СКЛАДНИХ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="tr3_1.html#part3" style="padding-left:40px;font-size:.75rem">16.3 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="tr4_1.html">17. Обернені функції</a>
+<a class="sidebar-topic" href="tr4_1.html" style="padding-left:40px;font-size:.75rem">17.1 ЩО ТАКЕ ОБЕРНЕНА ФУНКЦІЯ</a>
+<a class="sidebar-topic" href="tr4_1.html#part2" style="padding-left:40px;font-size:.75rem">17.2 ОБЕРНЕНІ ТРИГОНОМЕТРИЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part3" style="padding-left:40px;font-size:.75rem">17.3 ОБЕРНЕНІ АЛГЕБРАЇЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part4" style="padding-left:40px;font-size:.75rem">17.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analytic">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналітична геометрія та вектори</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="v5_1.html">18. Вектори</a>
+<a class="sidebar-topic" href="v5_1.html" style="padding-left:40px;font-size:.75rem">18.1 ПОНЯТТЯ ВЕКТОРА</a>
+<a class="sidebar-topic" href="v5_1.html#part2" style="padding-left:40px;font-size:.75rem">18.2 ДІЇ З ВЕКТОРАМИ</a>
+<a class="sidebar-topic" href="v5_1.html#part3" style="padding-left:40px;font-size:.75rem">18.3 СКАЛЯРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part4" style="padding-left:40px;font-size:.75rem">18.4 ВЕКТОРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part5" style="padding-left:40px;font-size:.75rem">18.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v6_1.html">19. Координатна геометрія</a>
+<a class="sidebar-topic" href="v6_1.html" style="padding-left:40px;font-size:.75rem">19.1 ВІДСТАНІ ТА СЕРЕДИНИ</a>
+<a class="sidebar-topic" href="v6_1.html#part2" style="padding-left:40px;font-size:.75rem">19.2 ПРЯМА НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="v6_1.html#part3" style="padding-left:40px;font-size:.75rem">19.3 КОЛО ТА ІНШІ КРИВІ</a>
+<a class="sidebar-topic" href="v6_1.html#part4" style="padding-left:40px;font-size:.75rem">19.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v7_1.html">20. Конічні перерізи</a>
+<a class="sidebar-topic" href="v7_1.html" style="padding-left:40px;font-size:.75rem">20.1 ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</a>
+<a class="sidebar-topic" href="v7_1.html#part2" style="padding-left:40px;font-size:.75rem">20.2 ЕЛІПС</a>
+<a class="sidebar-topic" href="v7_1.html#part3" style="padding-left:40px;font-size:.75rem">20.3 ГІПЕРБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part4" style="padding-left:40px;font-size:.75rem">20.4 ПАРАБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part5" style="padding-left:40px;font-size:.75rem">20.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v8_1.html">21. Координати у просторі</a>
+<a class="sidebar-topic" href="v8_1.html" style="padding-left:40px;font-size:.75rem">21.1 СИСТЕМА КООРДИНАТ У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part2" style="padding-left:40px;font-size:.75rem">21.2 ПРЯМА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part3" style="padding-left:40px;font-size:.75rem">21.3 ПЛОЩИНА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part4" style="padding-left:40px;font-size:.75rem">21.4 ІНШІ СИСТЕМИ КООРДИНАТ</a>
+<a class="sidebar-topic" href="v8_1.html#part5" style="padding-left:40px;font-size:.75rem">21.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analysis">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналіз та дискретна математика</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="m1_1.html">22. Комбінаторика</a>
+<a class="sidebar-topic" href="m1_1.html" style="padding-left:40px;font-size:.75rem">22.1 ПРИНЦИПИ ЛІЧБИ</a>
+<a class="sidebar-topic" href="m1_1.html#part2" style="padding-left:40px;font-size:.75rem">22.2 ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</a>
+<a class="sidebar-topic" href="m1_1.html#part3" style="padding-left:40px;font-size:.75rem">22.3 ВЛАСТИВОСТІ КОМБІНАЦІЙ</a>
+<a class="sidebar-topic" href="m1_1.html#part4" style="padding-left:40px;font-size:.75rem">22.4 БІНІМАЛЬНА ТЕОРЕМА</a>
+<a class="sidebar-topic" href="m1_1.html#part5" style="padding-left:40px;font-size:.75rem">22.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m2_1.html">23. Теорія ймовірностей</a>
+<a class="sidebar-topic" href="m2_1.html" style="padding-left:40px;font-size:.75rem">23.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="m2_1.html#part2" style="padding-left:40px;font-size:.75rem">23.2 ОПЕРАЦІЇ НАД ПОДІЯМИ</a>
+<a class="sidebar-topic" href="m2_1.html#part3" style="padding-left:40px;font-size:.75rem">23.3 УМОВНА ЙМОВІРНІСТЬ</a>
+<a class="sidebar-topic" href="m2_1.html#part4" style="padding-left:40px;font-size:.75rem">23.4 ДИСКРЕТНІ РОЗПОДІЛИ</a>
+<a class="sidebar-topic" href="m2_1.html#part5" style="padding-left:40px;font-size:.75rem">23.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m3_1.html">24. Границі та похідна</a>
+<a class="sidebar-topic" href="m3_1.html" style="padding-left:40px;font-size:.75rem">24.1 ГРАНИЦІ</a>
+<a class="sidebar-topic" href="m3_1.html#part2" style="padding-left:40px;font-size:.75rem">24.2 ПОХІДНА</a>
+<a class="sidebar-topic" href="m3_1.html#part3" style="padding-left:40px;font-size:.75rem">24.3 ЗАСТОСУВАННЯ ПОХІДНОЇ</a>
+<a class="sidebar-topic" href="m3_1.html#part4" style="padding-left:40px;font-size:.75rem">24.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m4_1.html">25. Інтеграл</a>
+<a class="sidebar-topic" href="m4_1.html" style="padding-left:40px;font-size:.75rem">25.1 НЕВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part2" style="padding-left:40px;font-size:.75rem">25.2 МЕТОДИ ІНТЕГРУВАННЯ</a>
+<a class="sidebar-topic" href="m4_1.html#part3" style="padding-left:40px;font-size:.75rem">25.3 ВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part4" style="padding-left:40px;font-size:.75rem">25.4 ЗАСТОСУВАННЯ ІНТЕГРАЛА</a>
+<a class="sidebar-topic" href="m4_1.html#part5" style="padding-left:40px;font-size:.75rem">25.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m5_1.html">26. Ряди та послідовності</a>
+<a class="sidebar-topic" href="m5_1.html" style="padding-left:40px;font-size:.75rem">26.1 ЧИСЛОВІ ПОСЛІДОВНОСТІ</a>
+<a class="sidebar-topic" href="m5_1.html#part2" style="padding-left:40px;font-size:.75rem">26.2 ЧИСЛОВІ РЯДИ</a>
+<a class="sidebar-topic" href="m5_1.html#part3" style="padding-left:40px;font-size:.75rem">26.3 ОЗНАКИ ЗБІЖНОСТІ РЯДІВ</a>
+<a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
+<a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+  </aside>
+
+  <main class="main">
+    <div class="lecture">
+      <h1>ОДИНИЧНЕ КОЛО</h1>
+<p class="subtitle"><em>Тригонометрія · Визначення sin і cos через коло · Кути · Чверті · Знаки функцій</em></p>
+<div id="part1" class="block-part"><h2>ЧАСТИНА 1. ЩО ТАКЕ ОДИНИЧНЕ КОЛО</h2></div>
+<p>Одиничне коло — це фундамент тригонометрії. Замість заучувати значення sin і cos для кожного кута окремо, достатньо зрозуміти одну картинку: точка рухається по колу, її координати — це cos і sin. Решта — наслідки.</p>
+<h3>1. Визначення</h3>
+<p><strong>Одиничне коло</strong> — коло з радіусом 1 і центром у початку координат O(0;0). Будь-яка точка на колі має координати <strong>(cos α; sin α)</strong>, де α — кут між додатним напрямком осі OX і радіусом до цієї точки.</p>
+<div class="block-note"><p><strong>Аналогія: Годинник з радіусом 1</strong></p>
+<p>Уявіть годинникову стрілку довжиною 1. Кут α — скільки вона повернулась від положення «3 години» проти годинникової стрілки. Кінець стрілки — точка (cos α; sin α).</p></div>
+<table><tr class="row-even"><td><strong>cos α</strong></td><td>x-координата точки на одиничному колі при куті α (горизонтальна складова)</td></tr>
+<tr class="row-odd"><td><strong>sin α</strong></td><td>y-координата точки на одиничному колі при куті α (вертикальна складова)</td></tr>
+<tr class="row-even"><td><strong>Від&#x27;ємний кут</strong></td><td>Рух за годинниковою стрілкою. α &lt; 0.</td></tr>
+<tr class="row-odd"><td><strong>Кут &gt; 2π або &gt; 360°</strong></td><td>Повний оберт і більше. Функції повторюються: sin(α+2π) = sin α</td></tr></table>
+<div class="svg-container" id="unit-circle-widget">
+<svg viewBox="-180 -180 360 360" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;width:100%;display:block;margin:1em auto;font-family:inherit;">
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="var(--text)" stroke-width="1"/>
+    </marker>
+  </defs>
+  <line x1="-160" y1="0" x2="160" y2="0" stroke="var(--border)" stroke-width="1" marker-end="url(#ah)"/>
+  <line x1="0" y1="160" x2="0" y2="-160" stroke="var(--border)" stroke-width="1" marker-end="url(#ah)"/>
+  <text x="155" y="15" fill="var(--text-muted)" font-size="12">x</text>
+  <text x="8" y="-150" fill="var(--text-muted)" font-size="12">y</text>
+  <circle cx="0" cy="0" r="120" fill="none" stroke="var(--heading-section)" stroke-width="2"/>
+  <line x1="120" y1="-4" x2="120" y2="4" stroke="var(--text)" stroke-width="1"/>
+  <text x="120" y="18" fill="var(--text-muted)" font-size="10" text-anchor="middle">1</text>
+  <line x1="-120" y1="-4" x2="-120" y2="4" stroke="var(--text)" stroke-width="1"/>
+  <text x="-120" y="18" fill="var(--text-muted)" font-size="10" text-anchor="middle">-1</text>
+  <line x1="-4" y1="-120" x2="4" y2="-120" stroke="var(--text)" stroke-width="1"/>
+  <text x="14" y="-116" fill="var(--text-muted)" font-size="10">1</text>
+  <line x1="-4" y1="120" x2="4" y2="120" stroke="var(--text)" stroke-width="1"/>
+  <text x="14" y="124" fill="var(--text-muted)" font-size="10">-1</text>
+  <line id="uc-cos-line" x1="0" y1="0" x2="103.9" y2="0" stroke="var(--block-warn-bg)" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <line id="uc-sin-line" x1="103.9" y1="0" x2="103.9" y2="-60" stroke="var(--heading-section)" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <line id="uc-radius" x1="0" y1="0" x2="103.9" y2="-60" stroke="var(--text)" stroke-width="2"/>
+  <path id="uc-arc" d="" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+  <circle id="uc-point" cx="103.9" cy="-60" r="5" fill="var(--accent)" stroke="var(--bg)" stroke-width="2" style="cursor:pointer"/>
+  <text id="uc-cos-label" x="52" y="16" fill="var(--block-warn-bg)" font-size="12" font-weight="bold" text-anchor="middle">cos α</text>
+  <text id="uc-sin-label" x="118" y="-30" fill="var(--heading-section)" font-size="12" font-weight="bold">sin α</text>
+  <text id="uc-angle-label" x="32" y="-8" fill="var(--accent)" font-size="11">α</text>
+  <text id="uc-coords" x="0" y="170" fill="var(--text)" font-size="12" text-anchor="middle">(cos 30° = 0.87;  sin 30° = 0.50)</text>
+</svg>
+<div style="text-align:center;margin-top:8px;">
+  <input type="range" id="uc-slider" min="0" max="360" value="30" style="width:80%;max-width:320px;accent-color:var(--accent);">
+  <div id="uc-angle-display" style="color:var(--text-muted);font-size:.85rem;margin-top:4px;">α = 30° = π/6</div>
+</div>
+</div>
+<script>
+(function(){
+  var sl=document.getElementById('uc-slider'),R=120;
+  var sp={0:'0',30:'π/6',45:'π/4',60:'π/3',90:'π/2',120:'2π/3',135:'3π/4',150:'5π/6',180:'π',210:'7π/6',225:'5π/4',240:'4π/3',270:'3π/2',300:'5π/3',315:'7π/4',330:'11π/6',360:'2π'};
+  function u(d){
+    var r=d*Math.PI/180,cx=R*Math.cos(r),cy=-R*Math.sin(r);
+    document.getElementById('uc-point').setAttribute('cx',cx);
+    document.getElementById('uc-point').setAttribute('cy',cy);
+    document.getElementById('uc-radius').setAttribute('x2',cx);
+    document.getElementById('uc-radius').setAttribute('y2',cy);
+    document.getElementById('uc-cos-line').setAttribute('x2',cx);
+    document.getElementById('uc-sin-line').setAttribute('x1',cx);
+    document.getElementById('uc-sin-line').setAttribute('x2',cx);
+    document.getElementById('uc-sin-line').setAttribute('y2',cy);
+    document.getElementById('uc-cos-label').setAttribute('x',cx/2);
+    document.getElementById('uc-sin-label').setAttribute('x',cx+(cx>=0?8:-40));
+    document.getElementById('uc-sin-label').setAttribute('y',cy/2);
+    var ar=30;
+    if(d>0&&d<=360){var ex=ar*Math.cos(r),ey=-ar*Math.sin(r),lf=d>180?1:0;
+      document.getElementById('uc-arc').setAttribute('d','M'+ar+',0 A'+ar+','+ar+' 0 '+lf+',0 '+ex+','+ey);
+    }else{document.getElementById('uc-arc').setAttribute('d','');}
+    document.getElementById('uc-coords').textContent='(cos '+d+'° = '+Math.cos(r).toFixed(2)+';  sin '+d+'° = '+Math.sin(r).toFixed(2)+')';
+    document.getElementById('uc-angle-display').textContent='α = '+d+'° = '+(sp[d]||(d*Math.PI/180).toFixed(2)+' рад');
+  }
+  sl.addEventListener('input',function(){u(parseInt(this.value));});
+  var svg=document.querySelector('#unit-circle-widget svg'),dr=false;
+  var pt=document.getElementById('uc-point');
+  pt.addEventListener('mousedown',function(e){dr=true;e.preventDefault();});
+  pt.addEventListener('touchstart',function(){dr=true;});
+  function ga(e){var rc=svg.getBoundingClientRect(),cx=(e.clientX||e.touches[0].clientX)-rc.left-rc.width/2,cy=(e.clientY||e.touches[0].clientY)-rc.top-rc.height/2,a=Math.atan2(-cy,cx)*180/Math.PI;if(a<0)a+=360;return Math.round(a);}
+  document.addEventListener('mousemove',function(e){if(dr){var a=ga(e);sl.value=a;u(a);}});
+  document.addEventListener('touchmove',function(e){if(dr){var a=ga(e);sl.value=a;u(a);}});
+  document.addEventListener('mouseup',function(){dr=false;});
+  document.addEventListener('touchend',function(){dr=false;});
+  u(30);
+})();
+</script>
+<h3>2. Таблиця значень — обов&#x27;язково знати</h3>
+<div class="block-note"><p><strong>Мнемоніка для sin (0°–90°):</strong> значення sin — це √0/2, √1/2, √2/2, √3/2, √4/2, тобто: 0, ½, √2/2, √3/2, 1. Для cos — та сама послідовність у зворотному порядку: 1, √3/2, √2/2, ½, 0.</p></div>
+<table><tr class="row-even"><td><strong>α (°)</strong></td><td><strong>α (рад)</strong></td><td><strong>sin α</strong></td><td><strong>cos α</strong></td></tr>
+<tr class="row-odd"><td>0°</td><td>0</td><td>0</td><td>1</td></tr>
+<tr class="row-even"><td>30°</td><td>π/6</td><td>1/2</td><td>√3/2</td></tr>
+<tr class="row-odd"><td>45°</td><td>π/4</td><td>√2/2</td><td>√2/2</td></tr>
+<tr class="row-even"><td>60°</td><td>π/3</td><td>√3/2</td><td>1/2</td></tr>
+<tr class="row-odd"><td>90°</td><td>π/2</td><td>1</td><td>0</td></tr>
+<tr class="row-even"><td>120°</td><td>2π/3</td><td>√3/2</td><td>−1/2</td></tr>
+<tr class="row-odd"><td>135°</td><td>3π/4</td><td>√2/2</td><td>−√2/2</td></tr>
+<tr class="row-even"><td>150°</td><td>5π/6</td><td>1/2</td><td>−√3/2</td></tr>
+<tr class="row-odd"><td>180°</td><td>π</td><td>0</td><td>−1</td></tr>
+<tr class="row-even"><td>210°</td><td>7π/6</td><td>−1/2</td><td>−√3/2</td></tr>
+<tr class="row-odd"><td>240°</td><td>4π/3</td><td>−√3/2</td><td>−1/2</td></tr>
+<tr class="row-even"><td>270°</td><td>3π/2</td><td>−1</td><td>0</td></tr>
+<tr class="row-odd"><td>300°</td><td>5π/3</td><td>−√3/2</td><td>1/2</td></tr>
+<tr class="row-even"><td>315°</td><td>7π/4</td><td>−√2/2</td><td>√2/2</td></tr>
+<tr class="row-odd"><td>330°</td><td>11π/6</td><td>−1/2</td><td>√3/2</td></tr>
+<tr class="row-even"><td>360°</td><td>2π</td><td>0</td><td>1</td></tr></table>
+<div id="part2" class="block-part"><h2>ЧАСТИНА 2. ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</h2></div>
+<h3>3. Чотири чверті (квадранти)</h3>
+<p>Одиничне коло ділиться на 4 чверті осями координат. Знаки sin і cos в кожній чверті:</p>
+<div class="svg-container">
+<svg viewBox="-170 -170 340 340" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;width:100%;display:block;margin:1em auto;font-family:inherit;">
+  <!-- Axes -->
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="var(--border)" stroke-width="1"/>
+  <line x1="0" y1="150" x2="0" y2="-150" stroke="var(--border)" stroke-width="1"/>
+  <!-- Circle -->
+  <circle cx="0" cy="0" r="120" fill="none" stroke="var(--heading-section)" stroke-width="1.5" opacity=".3"/>
+  <!-- Quadrant fills -->
+  <path d="M0,0 L120,0 A120,120 0 0,0 0,-120 Z" fill="var(--accent)" opacity=".08"/>
+  <path d="M0,0 L0,-120 A120,120 0 0,0 -120,0 Z" fill="var(--block-note-border)" opacity=".08"/>
+  <path d="M0,0 L-120,0 A120,120 0 0,0 0,120 Z" fill="var(--block-warn-bg)" opacity=".08"/>
+  <path d="M0,0 L0,120 A120,120 0 0,0 120,0 Z" fill="var(--heading-section)" opacity=".08"/>
+  <!-- Labels -->
+  <text x="50" y="-50" fill="var(--accent)" font-size="13" font-weight="bold" text-anchor="middle">I</text>
+  <text x="50" y="-32" fill="var(--text)" font-size="10" text-anchor="middle">sin + cos +</text>
+  <text x="50" y="-20" fill="var(--text)" font-size="10" text-anchor="middle">tg +</text>
+  <text x="-50" y="-50" fill="var(--block-note-border)" font-size="13" font-weight="bold" text-anchor="middle">II</text>
+  <text x="-50" y="-32" fill="var(--text)" font-size="10" text-anchor="middle">sin + cos −</text>
+  <text x="-50" y="-20" fill="var(--text)" font-size="10" text-anchor="middle">tg −</text>
+  <text x="-50" y="50" fill="var(--block-warn-bg)" font-size="13" font-weight="bold" text-anchor="middle">III</text>
+  <text x="-50" y="68" fill="var(--text)" font-size="10" text-anchor="middle">sin − cos −</text>
+  <text x="-50" y="80" fill="var(--text)" font-size="10" text-anchor="middle">tg +</text>
+  <text x="50" y="50" fill="var(--heading-section)" font-size="13" font-weight="bold" text-anchor="middle">IV</text>
+  <text x="50" y="68" fill="var(--text)" font-size="10" text-anchor="middle">sin − cos +</text>
+  <text x="50" y="80" fill="var(--text)" font-size="10" text-anchor="middle">tg −</text>
+  <!-- Key angles -->
+  <text x="128" y="14" fill="var(--text-muted)" font-size="9">0°</text>
+  <text x="6" y="-126" fill="var(--text-muted)" font-size="9">90°</text>
+  <text x="-142" y="14" fill="var(--text-muted)" font-size="9">180°</text>
+  <text x="6" y="134" fill="var(--text-muted)" font-size="9">270°</text>
+</svg>
+</div>
+<table><tr class="row-even"><td><strong>Чверть</strong></td><td><strong>Кути</strong></td><td><strong>Знаки</strong></td></tr>
+<tr class="row-odd"><td><strong>I (права верхня)</strong></td><td>0° − 90°   (0 − π/2)</td><td>sin &gt; 0,  cos &gt; 0,  tg &gt; 0</td></tr>
+<tr class="row-even"><td><strong>II (ліва верхня)</strong></td><td>90° − 180°   (π/2 − π)</td><td>sin &gt; 0,  cos &lt; 0,  tg &lt; 0</td></tr>
+<tr class="row-odd"><td><strong>III (ліва нижня)</strong></td><td>180° − 270°   (π − 3π/2)</td><td>sin &lt; 0,  cos &lt; 0,  tg &gt; 0</td></tr>
+<tr class="row-even"><td><strong>IV (права нижня)</strong></td><td>270° − 360°   (3π/2 − 2π)</td><td>sin &lt; 0,  cos &gt; 0,  tg &lt; 0</td></tr></table>
+<div class="block-note"><p><strong>Мнемоніка «All Students Take Calculus» (ASTC):</strong></p>
+<p>I чверть — All (всі додатні)<br>II чверть — Sin (тільки sin &gt; 0)<br>III чверть — Tan (tg і ctg &gt; 0)<br>IV чверть — Cos (тільки cos &gt; 0)</p></div>
+<h3>4. Симетрія одиничного кола — зведення кутів</h3>
+<table><tr class="row-even"><td><strong>π − α   (180° − α)</strong></td><td>sin(π−α) = sin α;   cos(π−α) = −cos α<br>Точка симетрична відносно осі OY</td></tr>
+<tr class="row-odd"><td><strong>π + α   (180° + α)</strong></td><td>sin(π+α) = −sin α;   cos(π+α) = −cos α<br>Точка симетрична відносно початку O</td></tr>
+<tr class="row-even"><td><strong>2π − α   (360° − α)</strong></td><td>sin(2π−α) = −sin α;   cos(2π−α) = cos α<br>Точка симетрична відносно осі OX</td></tr>
+<tr class="row-odd"><td><strong>−α</strong></td><td>sin(−α) = −sin α;   cos(−α) = cos α<br>Відображення по горизонталі</td></tr>
+<tr class="row-even"><td><strong>π/2 − α   (90° − α)</strong></td><td>sin(π/2−α) = cos α;   cos(π/2−α) = sin α<br>«Зведення» через доповняльні кути</td></tr></table>
+
+<p><strong>Приклад:</strong> Обчислити sin 240°.</p>
+<ol>
+<li>240° = 180° + 60° → третя чверть (sin від'ємний)</li>
+<li>sin(180° + 60°) = −sin 60° = −√3/2 ≈ −0.87</li>
+</ol>
+<p><em>Перевірка повзунком:</em> поставте α = 240° на інтерактивному колі вище — y-координата ≈ −0.87 ✓</p>
+
+<p><strong>Приклад:</strong> Обчислити cos 315°.</p>
+<ol>
+<li>315° = 360° − 45° → четверта чверть (cos додатний)</li>
+<li>cos(360° − 45°) = cos 45° = √2/2 ≈ 0.71</li>
+</ol>
+<div id="part3" class="block-part"><h2>ПІДСУМОК</h2></div>
+<table><tr class="row-even"><td><strong>Кут</strong></td><td><strong>sin</strong></td><td><strong>cos</strong></td></tr>
+<tr class="row-odd"><td>0</td><td>0</td><td>1</td></tr>
+<tr class="row-even"><td>π/6</td><td>½</td><td>√3/2</td></tr>
+<tr class="row-odd"><td>π/4</td><td>√2/2</td><td>√2/2</td></tr>
+<tr class="row-even"><td>π/3</td><td>√3/2</td><td>½</td></tr>
+<tr class="row-odd"><td>π/2</td><td>1</td><td>0</td></tr>
+<tr class="row-even"><td>π</td><td>0</td><td>−1</td></tr>
+<tr class="row-odd"><td>3π/2</td><td>−1</td><td>0</td></tr></table>
+
+<h3>Типові помилки</h3>
+<div class="block-warning-body">
+<p><strong>1. Плутають sin і cos.</strong><br>
+sin — це <strong>y</strong>-координата (вертикальна). cos — це <strong>x</strong>-координата (горизонтальна). Мнемоніка: <strong>cos</strong> — <strong>c</strong>oordinate x (перша координата), <strong>sin</strong> — друга.</p>
+<p><strong>2. Забувають знак при зведенні кута.</strong><br>
+sin 240° = −√3/2, а не +√3/2. Третя чверть — sin від'ємний! Спершу визначте чверть → потім знак → потім значення.</p>
+<p><strong>3. Плутають π/2 − α і π − α.</strong><br>
+π/2 − α (90° − α) змінює sin ↔ cos (доповняльні кути). π − α (180° − α) змінює лише знак cos. Це різні формули!</p>
+</div>
+
+<p><em>Одиничне коло — серце тригонометрії.</em></p>
+    </div>
+  
+<nav class="page-nav"><a class="page-nav-btn page-nav-prev" href="geo6_1.html">← 13. Стереометрія</a><a class="page-nav-btn page-nav-next" href="tr2_1.html">15. Формули тригонометрії →</a></nav>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span class="footer-version">v 0.5.7</span>
+    <span class="footer-copy">© 2026 Хоменко Олексій Григорович</span>
+    <span class="footer-links">
+      <a href="mailto:itstiamushchy@gmail.com">itstiamushchy@gmail.com</a>
+      <span class="footer-sep">·</span>
+      <span>ITS_tiamushchy</span>
+    </span>
+  </div>
+</footer>
+</main>
+
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+(function(){
+  const saved = localStorage.getItem('obrahunok-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('obrahunok-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  overlay.addEventListener('click', () => sidebar.classList.remove('open'));
+  document.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
+  });
+})();
+</script>
+</body>
+</html>

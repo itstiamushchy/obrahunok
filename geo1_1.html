@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Основи геометрії. Кути та прямі — Обрахунок</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html">
+      <span class="icon">∑</span>
+      <span>Обрахунок</span>
+    </a>
+    <div class="topbar-controls">
+      <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+      <button class="menu-toggle" id="menuToggle" title="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="tabbar">
+    <a class="tabbar-btn active" href="index.html">Теорія</a>
+    <a class="tabbar-btn" href="formuly.html">Формули</a>
+    <a class="tabbar-btn" href="#">Глосарій</a>
+    <a class="tabbar-btn" href="zadachnyk.html">Задачник</a>
+    <a class="tabbar-btn" href="#">Обране</a>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-section="algebra">
+<button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="chysla1.html">1. Числа та дії</a>
+<a class="sidebar-topic" href="chysla1.html" style="padding-left:40px;font-size:.75rem">1.1 ЧИСЛА ТА ДІЇ З НИМИ</a>
+<a class="sidebar-topic" href="chysla2.html" style="padding-left:40px;font-size:.75rem">1.2 ДРОБИ</a>
+<a class="sidebar-topic" href="chysla3.html" style="padding-left:40px;font-size:.75rem">1.3 ПОДІЛЬНІСТЬ. НСД І НСК</a>
+<a class="sidebar-topic" href="chysla4.html" style="padding-left:40px;font-size:.75rem">1.4 СТЕПЕНІ ТА КОРЕНІ</a>
+<a class="sidebar-topic" href="chysla5.html" style="padding-left:40px;font-size:.75rem">1.5 ВІДСОТКИ ТА ПРОПОРЦІЇ</a>
+<a class="sidebar-topic" href="vyrazy1.html">2. Вирази та тотожності</a>
+<a class="sidebar-topic" href="vyrazy1.html" style="padding-left:40px;font-size:.75rem">2.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="vyrazy2.html" style="padding-left:40px;font-size:.75rem">2.2 ТРИ ЗАКОНИ АРИФМЕТИКИ</a>
+<a class="sidebar-topic" href="vyrazy3.html" style="padding-left:40px;font-size:.75rem">2.3 ТЕХНІКИ ПЕРЕТВОРЕННЯ ВИРАЗІВ</a>
+<a class="sidebar-topic" href="vyrazy4.html" style="padding-left:40px;font-size:.75rem">2.4 ФОРМУЛИ СКОРОЧЕНОГО МНОЖЕННЯ</a>
+<a class="sidebar-topic" href="vyrazy5.html" style="padding-left:40px;font-size:.75rem">2.5 РОЗКЛАДАННЯ НА МНОЖНИКИ</a>
+<a class="sidebar-topic" href="vyrazy6.html" style="padding-left:40px;font-size:.75rem">2.6 НАСКРІЗНІ ПРИКЛАДИ</a>
+<a class="sidebar-topic" href="nerivnosti1.html">3. Нерівності</a>
+<a class="sidebar-topic" href="nerivnosti1.html" style="padding-left:40px;font-size:.75rem">3.1 ЧИСЛОВІ НЕРІВНОСТІ ТА ЇХ ВЛАСТИВОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti2.html" style="padding-left:40px;font-size:.75rem">3.2 ЛІНІЙНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti3.html" style="padding-left:40px;font-size:.75rem">3.3 КВАДРАТНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti4.html" style="padding-left:40px;font-size:.75rem">3.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="rivnyannya1.html">4. Рівняння та системи</a>
+<a class="sidebar-topic" href="rivnyannya1.html" style="padding-left:40px;font-size:.75rem">4.1 ЩО ТАКЕ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya2.html" style="padding-left:40px;font-size:.75rem">4.2 ЛІНІЙНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya3.html" style="padding-left:40px;font-size:.75rem">4.3 КВАДРАТНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya4.html" style="padding-left:40px;font-size:.75rem">4.4 РАЦІОНАЛЬНІ ТА ІРРАЦІОНАЛЬНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya5.html" style="padding-left:40px;font-size:.75rem">4.5 ПОКАЗНИКОВІ ТА ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya6.html" style="padding-left:40px;font-size:.75rem">4.6 ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya7.html" style="padding-left:40px;font-size:.75rem">4.7 СИСТЕМИ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="rivnyannya8.html" style="padding-left:40px;font-size:.75rem">4.8 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="funktsiyi1.html">5. Функції та їх властивості</a>
+<a class="sidebar-topic" href="funktsiyi1.html" style="padding-left:40px;font-size:.75rem">5.1 ПОНЯТТЯ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="funktsiyi2.html" style="padding-left:40px;font-size:.75rem">5.2 ВЛАСТИВОСТІ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="funktsiyi3.html" style="padding-left:40px;font-size:.75rem">5.3 ОСНОВНІ ФУНКЦІЇ ТА ЇХ ГРАФІКИ</a>
+<a class="sidebar-topic" href="funktsiyi4.html" style="padding-left:40px;font-size:.75rem">5.4 ПЕРЕТВОРЕННЯ ГРАФІКІВ</a>
+<a class="sidebar-topic" href="funktsiyi5.html" style="padding-left:40px;font-size:.75rem">5.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="prohresii1.html">6. Прогресії</a>
+<a class="sidebar-topic" href="prohresii1.html" style="padding-left:40px;font-size:.75rem">6.1 АРИФМЕТИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii2.html" style="padding-left:40px;font-size:.75rem">6.2 ГЕОМЕТРИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii3.html" style="padding-left:40px;font-size:.75rem">6.3 ПОРІВНЯННЯ АП ТА ГП</a>
+<a class="sidebar-topic" href="prohresii4.html" style="padding-left:40px;font-size:.75rem">6.4 ЗАСТОСУВАННЯ</a>
+<a class="sidebar-topic" href="logarythmy1.html">7. Логарифми</a>
+<a class="sidebar-topic" href="logarythmy1.html" style="padding-left:40px;font-size:.75rem">7.1 ЩО ТАКЕ ЛОГАРИФМ?</a>
+<a class="sidebar-topic" href="logarythmy2.html" style="padding-left:40px;font-size:.75rem">7.2 ВЛАСТИВОСТІ ЛОГАРИФМІВ</a>
+<a class="sidebar-topic" href="logarythmy3.html" style="padding-left:40px;font-size:.75rem">7.3 ОБЧИСЛЕННЯ З ЛОГАРИФМАМИ</a>
+<a class="sidebar-topic" href="logarythmy4.html" style="padding-left:40px;font-size:.75rem">7.4 ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="logarythmy5.html" style="padding-left:40px;font-size:.75rem">7.5 ЛОГАРИФМІЧНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="logarythmy6.html" style="padding-left:40px;font-size:.75rem">7.6 ПОКАЗНИКОВІ РІВНЯННЯ ЧЕРЕЗ ЛОГАРИФМ</a>
+</div></div>
+<div class="sidebar-section" data-section="geometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Геометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic active" href="geo1_1.html">8. Основи геометрії. Кути та прямі</a>
+<a class="sidebar-topic" href="geo1_1.html" style="padding-left:40px;font-size:.75rem">8.1 ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part2" style="padding-left:40px;font-size:.75rem">8.2 КУТИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part3" style="padding-left:40px;font-size:.75rem">8.3 ПРЯМІ НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="geo1_1.html#part4" style="padding-left:40px;font-size:.75rem">8.4 ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</a>
+<a class="sidebar-topic" href="geo1_1.html#part5" style="padding-left:40px;font-size:.75rem">8.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo2_1.html">9. Трикутники</a>
+<a class="sidebar-topic" href="geo2_1.html" style="padding-left:40px;font-size:.75rem">9.1 ОСНОВИ</a>
+<a class="sidebar-topic" href="geo2_1.html#part2" style="padding-left:40px;font-size:.75rem">9.2 ОЗНАКИ РІВНОСТІ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part3" style="padding-left:40px;font-size:.75rem">9.3 ОСОБЛИВІ ЛІНІЇ ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part4" style="padding-left:40px;font-size:.75rem">9.4 ПОДІБНІСТЬ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part5" style="padding-left:40px;font-size:.75rem">9.5 ТЕОРЕМА ПІФАГОРА</a>
+<a class="sidebar-topic" href="geo2_1.html#part6" style="padding-left:40px;font-size:.75rem">9.6 ТРИГОНОМЕТРІЯ ПРЯМОКУТНОГО ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part7" style="padding-left:40px;font-size:.75rem">9.7 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo3_1.html">10. Чотирикутники та многокутники</a>
+<a class="sidebar-topic" href="geo3_1.html" style="padding-left:40px;font-size:.75rem">10.1 ЗАГАЛЬНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo3_1.html#part2" style="padding-left:40px;font-size:.75rem">10.2 ЧОТИРИКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part3" style="padding-left:40px;font-size:.75rem">10.3 ПРАВИЛЬНІ МНОГОКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part4" style="padding-left:40px;font-size:.75rem">10.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo4_1.html">11. Коло та круг</a>
+<a class="sidebar-topic" href="geo4_1.html" style="padding-left:40px;font-size:.75rem">11.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo4_1.html#part2" style="padding-left:40px;font-size:.75rem">11.2 ВЛАСТИВОСТІ КУТІВ І ХОРД</a>
+<a class="sidebar-topic" href="geo4_1.html#part3" style="padding-left:40px;font-size:.75rem">11.3 ВПИСАНІ ТА ОПИСАНІ КОЛА</a>
+<a class="sidebar-topic" href="geo4_1.html#part4" style="padding-left:40px;font-size:.75rem">11.4 ДОВЖИНА КОЛА І ПЛОЩА КРУГА</a>
+<a class="sidebar-topic" href="geo4_1.html#part5" style="padding-left:40px;font-size:.75rem">11.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo5_1.html">12. Площі фігур</a>
+<a class="sidebar-topic" href="geo5_1.html" style="padding-left:40px;font-size:.75rem">12.1 ПЛОЩА ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo5_1.html#part2" style="padding-left:40px;font-size:.75rem">12.2 ПЛОЩА ЧОТИРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo5_1.html#part3" style="padding-left:40px;font-size:.75rem">12.3 ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</a>
+<a class="sidebar-topic" href="geo5_1.html#part4" style="padding-left:40px;font-size:.75rem">12.4 ЗАДАЧІ НА ПЛОЩУ</a>
+<a class="sidebar-topic" href="geo5_1.html#part5" style="padding-left:40px;font-size:.75rem">12.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+<a class="sidebar-topic" href="geo6_1.html">13. Стереометрія</a>
+<a class="sidebar-topic" href="geo6_1.html" style="padding-left:40px;font-size:.75rem">13.1 ОСНОВИ СТЕРЕОМЕТРІЇ</a>
+<a class="sidebar-topic" href="geo6_1.html#part2" style="padding-left:40px;font-size:.75rem">13.2 МНОГОГРАННИКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part3" style="padding-left:40px;font-size:.75rem">13.3 ТІЛА ОБЕРТАННЯ</a>
+<a class="sidebar-topic" href="geo6_1.html#part4" style="padding-left:40px;font-size:.75rem">13.4 ПЕРЕРІЗИ І РОЗГОРТКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part5" style="padding-left:40px;font-size:.75rem">13.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+</div></div>
+<div class="sidebar-section" data-section="trigonometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Тригонометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="tr1_1.html">14. Одиничне коло</a>
+<a class="sidebar-topic" href="tr1_1.html" style="padding-left:40px;font-size:.75rem">14.1 ЩО ТАКЕ ОДИНИЧНЕ КОЛО</a>
+<a class="sidebar-topic" href="tr1_1.html#part2" style="padding-left:40px;font-size:.75rem">14.2 ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="tr1_1.html#part3" style="padding-left:40px;font-size:.75rem">14.3 ПІДСУМОК</a>
+<a class="sidebar-topic" href="tr2_1.html">15. Формули тригонометрії</a>
+<a class="sidebar-topic" href="tr2_1.html" style="padding-left:40px;font-size:.75rem">15.1 ОСНОВНІ ТОТОЖНОСТІ</a>
+<a class="sidebar-topic" href="tr2_1.html#part2" style="padding-left:40px;font-size:.75rem">15.2 ФОРМУЛИ СУМИ І РІЗНИЦІ КУТІВ</a>
+<a class="sidebar-topic" href="tr2_1.html#part3" style="padding-left:40px;font-size:.75rem">15.3 ФОРМУЛИ ПОДВІЙНОГО КУТА</a>
+<a class="sidebar-topic" href="tr2_1.html#part4" style="padding-left:40px;font-size:.75rem">15.4 ПОНИЖЕННЯ СТЕПЕНЯ ТА ПЕРЕТВОРЕННЯ</a>
+<a class="sidebar-topic" href="tr2_1.html#part5" style="padding-left:40px;font-size:.75rem">15.5 ПІДСУМОК — НАЙВАЖЛИВІШІ ФОРМУЛИ</a>
+<a class="sidebar-topic" href="tr3_1.html">16. Тригонометричні рівняння</a>
+<a class="sidebar-topic" href="tr3_1.html" style="padding-left:40px;font-size:.75rem">16.1 ПРОСТІ ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="tr3_1.html#part2" style="padding-left:40px;font-size:.75rem">16.2 МЕТОДИ РОЗВ&#x27;ЯЗАННЯ СКЛАДНИХ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="tr3_1.html#part3" style="padding-left:40px;font-size:.75rem">16.3 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="tr4_1.html">17. Обернені функції</a>
+<a class="sidebar-topic" href="tr4_1.html" style="padding-left:40px;font-size:.75rem">17.1 ЩО ТАКЕ ОБЕРНЕНА ФУНКЦІЯ</a>
+<a class="sidebar-topic" href="tr4_1.html#part2" style="padding-left:40px;font-size:.75rem">17.2 ОБЕРНЕНІ ТРИГОНОМЕТРИЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part3" style="padding-left:40px;font-size:.75rem">17.3 ОБЕРНЕНІ АЛГЕБРАЇЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part4" style="padding-left:40px;font-size:.75rem">17.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analytic">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналітична геометрія та вектори</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="v5_1.html">18. Вектори</a>
+<a class="sidebar-topic" href="v5_1.html" style="padding-left:40px;font-size:.75rem">18.1 ПОНЯТТЯ ВЕКТОРА</a>
+<a class="sidebar-topic" href="v5_1.html#part2" style="padding-left:40px;font-size:.75rem">18.2 ДІЇ З ВЕКТОРАМИ</a>
+<a class="sidebar-topic" href="v5_1.html#part3" style="padding-left:40px;font-size:.75rem">18.3 СКАЛЯРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part4" style="padding-left:40px;font-size:.75rem">18.4 ВЕКТОРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part5" style="padding-left:40px;font-size:.75rem">18.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v6_1.html">19. Координатна геометрія</a>
+<a class="sidebar-topic" href="v6_1.html" style="padding-left:40px;font-size:.75rem">19.1 ВІДСТАНІ ТА СЕРЕДИНИ</a>
+<a class="sidebar-topic" href="v6_1.html#part2" style="padding-left:40px;font-size:.75rem">19.2 ПРЯМА НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="v6_1.html#part3" style="padding-left:40px;font-size:.75rem">19.3 КОЛО ТА ІНШІ КРИВІ</a>
+<a class="sidebar-topic" href="v6_1.html#part4" style="padding-left:40px;font-size:.75rem">19.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v7_1.html">20. Конічні перерізи</a>
+<a class="sidebar-topic" href="v7_1.html" style="padding-left:40px;font-size:.75rem">20.1 ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</a>
+<a class="sidebar-topic" href="v7_1.html#part2" style="padding-left:40px;font-size:.75rem">20.2 ЕЛІПС</a>
+<a class="sidebar-topic" href="v7_1.html#part3" style="padding-left:40px;font-size:.75rem">20.3 ГІПЕРБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part4" style="padding-left:40px;font-size:.75rem">20.4 ПАРАБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part5" style="padding-left:40px;font-size:.75rem">20.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v8_1.html">21. Координати у просторі</a>
+<a class="sidebar-topic" href="v8_1.html" style="padding-left:40px;font-size:.75rem">21.1 СИСТЕМА КООРДИНАТ У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part2" style="padding-left:40px;font-size:.75rem">21.2 ПРЯМА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part3" style="padding-left:40px;font-size:.75rem">21.3 ПЛОЩИНА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part4" style="padding-left:40px;font-size:.75rem">21.4 ІНШІ СИСТЕМИ КООРДИНАТ</a>
+<a class="sidebar-topic" href="v8_1.html#part5" style="padding-left:40px;font-size:.75rem">21.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analysis">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналіз та дискретна математика</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="m1_1.html">22. Комбінаторика</a>
+<a class="sidebar-topic" href="m1_1.html" style="padding-left:40px;font-size:.75rem">22.1 ПРИНЦИПИ ЛІЧБИ</a>
+<a class="sidebar-topic" href="m1_1.html#part2" style="padding-left:40px;font-size:.75rem">22.2 ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</a>
+<a class="sidebar-topic" href="m1_1.html#part3" style="padding-left:40px;font-size:.75rem">22.3 ВЛАСТИВОСТІ КОМБІНАЦІЙ</a>
+<a class="sidebar-topic" href="m1_1.html#part4" style="padding-left:40px;font-size:.75rem">22.4 БІНІМАЛЬНА ТЕОРЕМА</a>
+<a class="sidebar-topic" href="m1_1.html#part5" style="padding-left:40px;font-size:.75rem">22.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m2_1.html">23. Теорія ймовірностей</a>
+<a class="sidebar-topic" href="m2_1.html" style="padding-left:40px;font-size:.75rem">23.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="m2_1.html#part2" style="padding-left:40px;font-size:.75rem">23.2 ОПЕРАЦІЇ НАД ПОДІЯМИ</a>
+<a class="sidebar-topic" href="m2_1.html#part3" style="padding-left:40px;font-size:.75rem">23.3 УМОВНА ЙМОВІРНІСТЬ</a>
+<a class="sidebar-topic" href="m2_1.html#part4" style="padding-left:40px;font-size:.75rem">23.4 ДИСКРЕТНІ РОЗПОДІЛИ</a>
+<a class="sidebar-topic" href="m2_1.html#part5" style="padding-left:40px;font-size:.75rem">23.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m3_1.html">24. Границі та похідна</a>
+<a class="sidebar-topic" href="m3_1.html" style="padding-left:40px;font-size:.75rem">24.1 ГРАНИЦІ</a>
+<a class="sidebar-topic" href="m3_1.html#part2" style="padding-left:40px;font-size:.75rem">24.2 ПОХІДНА</a>
+<a class="sidebar-topic" href="m3_1.html#part3" style="padding-left:40px;font-size:.75rem">24.3 ЗАСТОСУВАННЯ ПОХІДНОЇ</a>
+<a class="sidebar-topic" href="m3_1.html#part4" style="padding-left:40px;font-size:.75rem">24.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m4_1.html">25. Інтеграл</a>
+<a class="sidebar-topic" href="m4_1.html" style="padding-left:40px;font-size:.75rem">25.1 НЕВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part2" style="padding-left:40px;font-size:.75rem">25.2 МЕТОДИ ІНТЕГРУВАННЯ</a>
+<a class="sidebar-topic" href="m4_1.html#part3" style="padding-left:40px;font-size:.75rem">25.3 ВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part4" style="padding-left:40px;font-size:.75rem">25.4 ЗАСТОСУВАННЯ ІНТЕГРАЛА</a>
+<a class="sidebar-topic" href="m4_1.html#part5" style="padding-left:40px;font-size:.75rem">25.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m5_1.html">26. Ряди та послідовності</a>
+<a class="sidebar-topic" href="m5_1.html" style="padding-left:40px;font-size:.75rem">26.1 ЧИСЛОВІ ПОСЛІДОВНОСТІ</a>
+<a class="sidebar-topic" href="m5_1.html#part2" style="padding-left:40px;font-size:.75rem">26.2 ЧИСЛОВІ РЯДИ</a>
+<a class="sidebar-topic" href="m5_1.html#part3" style="padding-left:40px;font-size:.75rem">26.3 ОЗНАКИ ЗБІЖНОСТІ РЯДІВ</a>
+<a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
+<a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+  </aside>
+
+  <main class="main">
+    <div class="lecture">
+      <h1>ОСНОВИ ГЕОМЕТРІЇ. КУТИ ТА ПРЯМІ</h1>
+<p class="subtitle"><em>Геометрія · Точки · Прямі · Відрізки · Кути · Паралельні та перпендикулярні прямі · Аксіоми</em></p>
+<div id="part1" class="block-part"><h2>ЧАСТИНА 1. ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</h2></div>
+<p>Геометрія — це розділ математики про форми, розміри та взаємне розташування фігур. Вона починається з найпростіших понять: точка, пряма, площина. З них, як з цеглин, будується все інше — кути, трикутники, кола, многокутники.</p>
+<h3>1. Точка, пряма, площина — фундамент геометрії</h3>
+<p>Геометрія починається з трьох понять, які <strong>не визначаються через простіші</strong> — вони приймаються як первинні (аксіоматичні):</p>
+<table><tr class="row-even"><td><strong>Точка</strong></td><td>Не має розмірів — ні довжини, ні ширини, ні висоти. Позначається великою літерою: A, B, C.<br>Аналогія: крапка від олівця — найменше, що можна намалювати.</td></tr>
+<tr class="row-odd"><td><strong>Пряма</strong></td><td>Не має товщини, тягнеться в обидва боки нескінченно. Позначається малими літерами a, b або двома точками: AB.<br>Аналогія: натягнута нитка без початку і кінця.</td></tr>
+<tr class="row-even"><td><strong>Площина</strong></td><td>Плоска поверхня без товщини, що тягнеться в усі боки нескінченно. Позначається грецькими літерами α, β, γ.<br>Аналогія: поверхня стола, розтягнута до нескінченності.</td></tr></table>
+<h3>2. Відрізок, промінь, ламана</h3>
+<table><tr class="row-even"><td><strong>Відрізок AB</strong></td><td>Частина прямої між двома точками A і B. Має довжину — відстань між кінцями.<br>Позначення: |AB| або просто AB</td></tr>
+<tr class="row-odd"><td><strong>Промінь</strong></td><td>Частина прямої, що має початок (точку) і необмежено продовжується в один бік.</td></tr>
+<tr class="row-even"><td><strong>Ламана</strong></td><td>Послідовність відрізків, з&#x27;єднаних кінцями під кутом.</td></tr>
+<tr class="row-odd"><td><strong>Середина відрізка</strong></td><td>Точка M — середина AB, якщо AM = MB = AB/2.</td></tr></table>
+<h3>3. Основні аксіоми</h3>
+<div class="block-note"><p><strong>Аксіоми — це твердження, які приймаються без доведення</strong></p>
+<p><strong>Аксіома 1: </strong>Через будь-які дві точки проходить єдина пряма.</p>
+<p><strong>Аксіома 2: </strong>На будь-якому відрізку між двома точками існує третя точка (між будь-якими двома точками можна поставити ще одну).</p>
+<p><strong>Аксіома 3 (паралельності Евкліда): </strong>Через точку, що не лежить на прямій, можна провести єдину пряму, паралельну даній.</p></div>
+<div id="part2" class="block-part"><h2>ЧАСТИНА 2. КУТИ</h2></div>
+<h3>4. Що таке кут?</h3>
+<p><strong>Кут</strong> — геометрична фігура, утворена двома <strong>променями (сторонами кута)</strong>, що виходять з однієї точки — <strong>вершини кута</strong>. Позначення: ∠ABC (вершина — середня буква) або ∠α.</p>
+<div class="block-example"><p><strong>Одиниці вимірювання кутів</strong></p>
+<p><strong>Градуси: </strong>повний кут = 360°, прямий = 90°. Позначення: °</p>
+<p><strong>Радіани: </strong>повний кут = 2π рад. 1 рад = 180°/π ≈ 57,3°. Формула переводу: α(рад) = α(°)·π/180</p></div>
+<h3>5. Види кутів</h3>
+<table><tr class="row-even"><td><strong>Нульовий</strong></td><td>0° — сторони збігаються</td></tr>
+<tr class="row-odd"><td><strong>Гострий</strong></td><td>0° &lt; α &lt; 90° — менший за прямий</td></tr>
+<tr class="row-even"><td><strong>Прямий</strong></td><td>α = 90° — сторони перпендикулярні. Позначається квадратиком □</td></tr>
+<tr class="row-odd"><td><strong>Тупий</strong></td><td>90° &lt; α &lt; 180° — більший за прямий, менший за розгорнутий</td></tr>
+<tr class="row-even"><td><strong>Розгорнутий</strong></td><td>α = 180° — сторони утворюють пряму</td></tr>
+<tr class="row-odd"><td><strong>Опуклий (більший за розгорнутий)</strong></td><td>180° &lt; α &lt; 360°</td></tr>
+<tr class="row-even"><td><strong>Повний</strong></td><td>α = 360° — повний оберт</td></tr></table>
+<h3>6. Пари кутів — спеціальні назви</h3>
+<table><tr class="row-even"><td><strong>Суміжні кути</strong></td><td>Мають спільну вершину і спільну сторону, а дві інші сторони утворюють пряму.<br><strong>Сума суміжних кутів = 180°<br></strong><em>Приклад: ∠AOB і ∠BOC, де A, O, C на одній прямій</em></td></tr>
+<tr class="row-odd"><td><strong>Вертикальні кути</strong></td><td>Утворюються при перетині двох прямих — протилежні кути.<br><strong>Вертикальні кути рівні між собою.<br></strong><em>Якщо прямі перетинаються, виникають 2 пари вертикальних кутів</em></td></tr>
+<tr class="row-even"><td><strong>Доповняльні кути</strong></td><td>Два кути, сума яких = 90°<br><em>Приклад: 30° і 60°</em></td></tr>
+<tr class="row-odd"><td><strong>Супліментарні кути</strong></td><td>Два кути, сума яких = 180°<br><em>Це те саме, що й суміжні кути</em></td></tr></table>
+<h3>7. Бісектриса кута</h3>
+<p><strong>Бісектриса кута</strong> — промінь, що виходить з вершини кута і ділить його на два рівних кути. Бісектриса ∠AOB ділить його так, що ∠AOM = ∠MOB = ∠AOB/2.</p>
+<p><strong>Властивість:</strong> будь-яка точка бісектриси рівновіддалена від обох сторін кута. Це означає, що перпендикуляри від точки на бісектрисі до обох сторін — однакової довжини.</p>
+<p><em>Приклад:</em> ∠AOB = 70°. Бісектриса OM ділить його на ∠AOM = 35° і ∠MOB = 35°.</p>
+<div id="part3" class="block-part"><h2>ЧАСТИНА 3. ПРЯМІ НА ПЛОЩИНІ</h2></div>
+<h3>8. Взаємне розміщення двох прямих</h3>
+<table><tr class="row-even"><td><strong>Паралельні прямі</strong></td><td>Не перетинаються, лежать в одній площині, мають однакове «спрямування».<br>Позначення: a ∥ b<br>Властивість: відстань між ними скрізь однакова</td></tr>
+<tr class="row-odd"><td><strong>Прямі, що перетинаються</strong></td><td>Мають одну спільну точку — точку перетину.<br>При перетині утворюють 4 кути (2 пари вертикальних, 2 пари суміжних)</td></tr>
+<tr class="row-even"><td><strong>Перпендикулярні прямі</strong></td><td>Особливий випадок перетину — під прямим кутом (90°).<br>Позначення: a ⊥ b</td></tr></table>
+<h3>9. Паралельні прямі та секуща</h3>
+<p><strong>Секуща</strong> — пряма, що перетинає дві або більше прямих. При перетині секущої з двома паралельними прямими утворюються пари кутів зі спеціальними властивостями:</p>
+<table><tr class="row-even"><td><strong>Відповідні кути<br>(однойменні)</strong></td><td>Лежать по один бік від секущої, один між прямими — другий зовні.<br><strong>Відповідні кути рівні: ∠1 = ∠5</strong></td></tr>
+<tr class="row-odd"><td><strong>Кути між прямими<br>(внутрішні навхрест лежачі)</strong></td><td>Лежать між паралельними прямими по різні боки від секущої.<br><strong>Навхрест лежачі кути рівні: ∠3 = ∠6</strong></td></tr>
+<tr class="row-even"><td><strong>Односторонні внутрішні кути</strong></td><td>Лежать між прямими по один бік від секущої.<br><strong>Їхня сума = 180°: ∠3 + ∠5 = 180°</strong></td></tr></table>
+<div class="block-note"><p><strong>Ознаки паралельності прямих (зворотне твердження):</strong></p>
+<p>Якщо при перетині двох прямих секущою:<br>• відповідні кути рівні, АБО<br>• навхрест лежачі кути рівні, АБО<br>• сума односторонніх внутрішніх кутів = 180°,<br>то ці прямі — паралельні.</p></div>
+
+<p><strong>Приклад.</strong> Дві паралельні прямі a ∥ b перетнуті секущою. Один із кутів = 65°. Знайти решту.</p>
+<p>Відповідний кут = 65° (рівні). Навхрест лежачий = 65° (рівні). Суміжний = 180° − 65° = 115°. Односторонній = 180° − 65° = 115°. Отже, кути: 65°, 65°, 115°, 115° (і так на обох прямих).</p>
+<h3>10. Перпендикуляр і відстань від точки до прямої</h3>
+<table><tr class="row-even"><td><strong>Перпендикуляр</strong></td><td>Відрізок з точки до прямої, що утворює прямий кут з цією прямою.</td></tr>
+<tr class="row-odd"><td><strong>Відстань від точки до прямої</strong></td><td>Довжина перпендикуляра з цієї точки на пряму. Це найкоротша відстань від точки до прямої.</td></tr>
+<tr class="row-even"><td><strong>Відстань між паралельними прямими</strong></td><td>Довжина спільного перпендикуляра (однакова в будь-якій точці).</td></tr></table>
+<div class="svg-container">
+<svg viewBox="0 0 340 230" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;width:100%;display:block;margin:1em auto;font-family:inherit;">
+  <!-- Parallel line a -->
+  <line x1="20" y1="70" x2="300" y2="70" stroke="var(--heading-section)" stroke-width="2"/>
+  <text x="308" y="75" fill="var(--heading-section)" font-size="13" font-weight="bold">a</text>
+  <!-- Parallel line b -->
+  <line x1="20" y1="150" x2="300" y2="150" stroke="var(--heading-section)" stroke-width="2"/>
+  <text x="308" y="155" fill="var(--heading-section)" font-size="13" font-weight="bold">b</text>
+  <!-- Parallel marks -->
+  <text x="280" y="64" fill="var(--text-muted)" font-size="9">▸▸</text>
+  <text x="280" y="144" fill="var(--text-muted)" font-size="9">▸▸</text>
+  <!-- Transversal c -->
+  <line x1="112" y1="13" x2="173" y2="207" stroke="var(--accent)" stroke-width="2"/>
+  <text x="177" y="211" fill="var(--accent)" font-size="13" font-weight="bold">c</text>
+  <!-- Angle arc at A -->
+  <path d="M155.0,70.0 A25,25 0 0,1 137.5,93.9" fill="none" stroke="var(--block-warn-bg)" stroke-width="2"/>
+  <text x="160" y="88" fill="var(--block-warn-bg)" font-size="13" font-weight="bold">α</text>
+  <!-- Angle arc at B -->
+  <path d="M180.0,150.0 A25,25 0 0,1 162.5,173.9" fill="none" stroke="var(--block-warn-bg)" stroke-width="2"/>
+  <text x="185" y="168" fill="var(--block-warn-bg)" font-size="13" font-weight="bold">α</text>
+  <!-- Intersection dots -->
+  <circle cx="130" cy="70" r="3" fill="var(--accent)"/>
+  <circle cx="155" cy="150" r="3" fill="var(--accent)"/>
+  <!-- Label -->
+  <text x="170" y="220" fill="var(--text-muted)" font-size="11" text-anchor="middle">Відповідні кути при паралельних прямих рівні: α = α</text>
+</svg>
+</div>
+<div id="part4" class="block-part"><h2>ЧАСТИНА 4. ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</h2></div>
+<h3>11. Градусна міра кута — переведення</h3>
+<table><tr class="row-even"><td><strong>Градуси</strong></td><td><strong>Радіани</strong></td><td><strong>Дроб від π</strong></td></tr>
+<tr class="row-odd"><td>0°</td><td>0</td><td>0</td></tr>
+<tr class="row-even"><td>30°</td><td>π/6</td><td>≈ 0,524</td></tr>
+<tr class="row-odd"><td>45°</td><td>π/4</td><td>≈ 0,785</td></tr>
+<tr class="row-even"><td>60°</td><td>π/3</td><td>≈ 1,047</td></tr>
+<tr class="row-odd"><td>90°</td><td>π/2</td><td>≈ 1,571</td></tr>
+<tr class="row-even"><td>120°</td><td>2π/3</td><td>≈ 2,094</td></tr>
+<tr class="row-odd"><td>180°</td><td>π</td><td>≈ 3,14</td></tr>
+<tr class="row-even"><td>270°</td><td>3π/2</td><td>≈ 4,712</td></tr>
+<tr class="row-odd"><td>360°</td><td>2π</td><td>≈ 6,283</td></tr></table>
+<div class="block-example"><p><strong>α(рад) = α(°) · π/180       α(°) = α(рад) · 180/π</strong></p></div>
+<p><strong>Приклад:</strong> Перевести 150° в радіани: 150 · π/180 = 5π/6 ≈ 2.618 рад.</p>
+<p><strong>Приклад:</strong> Перевести 3π/4 рад у градуси: (3π/4) · 180/π = 3·180/4 = 135°.</p>
+<h3>12. Побудови циркулем і лінійкою</h3>
+<table><tr class="row-even"><td><strong>Бісектриса кута</strong></td><td>Проводимо дугу з вершини, що перетинає обидві сторони. З точок перетину проводимо рівні дуги — їх перетин і вершина визначають бісектрису.</td></tr>
+<tr class="row-odd"><td><strong>Середина відрізка</strong></td><td>Проводимо дуги радіусом &gt; AB/2 з обох кінців — їх перетини дають вісь симетрії відрізка.</td></tr>
+<tr class="row-even"><td><strong>Перпендикуляр до прямої</strong></td><td>З точки P дугою перетинаємо пряму в двох точках, потім будуємо бісектрису кута з P.</td></tr>
+<tr class="row-odd"><td><strong>Паралельна пряма через точку</strong></td><td>Переносимо кут: будуємо рівний кут відповідних позицій за аксіомою паралельності.</td></tr></table>
+<div id="part5" class="block-part"><h2>ПІДСУМОК — ПАМ&#x27;ЯТКА</h2></div>
+<table><tr class="row-even"><td><strong>Поняття</strong></td><td><strong>Визначення/Формула</strong></td><td><strong>Ключова властивість</strong></td></tr>
+<tr class="row-odd"><td><strong>Суміжні кути</strong></td><td>Спільна сторона + пряма</td><td>Сума = 180°</td></tr>
+<tr class="row-even"><td><strong>Вертикальні кути</strong></td><td>При перетині прямих — навпроти</td><td>Рівні між собою</td></tr>
+<tr class="row-odd"><td><strong>Паралельні прямі</strong></td><td>a ∥ b, не перетинаються</td><td>Відстань = const</td></tr>
+<tr class="row-even"><td><strong>Перпендикулярні</strong></td><td>a ⊥ b, кут = 90°</td><td>Найкоротша відстань</td></tr>
+<tr class="row-odd"><td><strong>Відп. кути (∥)</strong></td><td>По один бік від секущої</td><td>Рівні</td></tr>
+<tr class="row-even"><td><strong>Навхрест лежачі (∥)</strong></td><td>По різні боки між прямими</td><td>Рівні</td></tr>
+<tr class="row-odd"><td><strong>Односторонні (∥)</strong></td><td>По один бік між прямими</td><td>Сума = 180°</td></tr>
+<tr class="row-even"><td><strong>Переведення кутів</strong></td><td>α(рад) = α°·π/180</td><td>π рад = 180°</td></tr></table>
+
+<h3>Типові помилки</h3>
+<div class="block-warning-body">
+<p><strong>1. Плутають суміжні і вертикальні кути.</strong><br>
+Суміжні — поруч (спільна сторона), сума = 180°. Вертикальні — навпроти (при перетині прямих), рівні між собою. Це різні пари!</p>
+<p><strong>2. Плутають навхрест лежачі та відповідні кути.</strong><br>
+Навхрест лежачі — по різні боки від секущої, між прямими. Відповідні — по один бік, але один між прямими, інший зовні. Обидві пари рівні при паралельних прямих, але це різні кути.</p>
+<p><strong>3. Забувають, що ознаки паралельності працюють в обидва боки.</strong><br>
+Якщо прямі паралельні → кути рівні. Але і навпаки: якщо кути рівні → прямі паралельні. Це використовується для доведення паралельності.</p>
+<p><strong>4. При переведенні градусів у радіани множать на 180/π замість π/180.</strong><br>
+Градуси → радіани: множимо на π/180 (число зменшується, бо радіан «більший» за градус). Радіани → градуси: множимо на 180/π.</p>
+</div>
+
+<p><em>Геометрія — це мистецтво правильного мислення на неправильних малюнках.</em></p>
+    </div>
+  
+<nav class="page-nav"><a class="page-nav-btn page-nav-prev" href="logarythmy6.html">← 7.6 Показникові</a><a class="page-nav-btn page-nav-next" href="geo2_1.html">9. Трикутники →</a></nav>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span class="footer-version">v 0.5.7</span>
+    <span class="footer-copy">© 2026 Хоменко Олексій Григорович</span>
+    <span class="footer-links">
+      <a href="mailto:itstiamushchy@gmail.com">itstiamushchy@gmail.com</a>
+      <span class="footer-sep">·</span>
+      <span>ITS_tiamushchy</span>
+    </span>
+  </div>
+</footer>
+</main>
+
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+(function(){
+  const saved = localStorage.getItem('obrahunok-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('obrahunok-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  overlay.addEventListener('click', () => sidebar.classList.remove('open'));
+  document.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
+  });
+})();
+</script>
+</body>
+</html>

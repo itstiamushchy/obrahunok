@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Комбінаторика — Обрахунок</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html">
+      <span class="icon">∑</span>
+      <span>Обрахунок</span>
+    </a>
+    <div class="topbar-controls">
+      <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+      <button class="menu-toggle" id="menuToggle" title="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="tabbar">
+    <a class="tabbar-btn active" href="index.html">Теорія</a>
+    <a class="tabbar-btn" href="formuly.html">Формули</a>
+    <a class="tabbar-btn" href="#">Глосарій</a>
+    <a class="tabbar-btn" href="zadachnyk.html">Задачник</a>
+    <a class="tabbar-btn" href="#">Обране</a>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-section="algebra">
+<button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="chysla1.html">1. Числа та дії</a>
+<a class="sidebar-topic" href="chysla1.html" style="padding-left:40px;font-size:.75rem">1.1 ЧИСЛА ТА ДІЇ З НИМИ</a>
+<a class="sidebar-topic" href="chysla2.html" style="padding-left:40px;font-size:.75rem">1.2 ДРОБИ</a>
+<a class="sidebar-topic" href="chysla3.html" style="padding-left:40px;font-size:.75rem">1.3 ПОДІЛЬНІСТЬ. НСД І НСК</a>
+<a class="sidebar-topic" href="chysla4.html" style="padding-left:40px;font-size:.75rem">1.4 СТЕПЕНІ ТА КОРЕНІ</a>
+<a class="sidebar-topic" href="chysla5.html" style="padding-left:40px;font-size:.75rem">1.5 ВІДСОТКИ ТА ПРОПОРЦІЇ</a>
+<a class="sidebar-topic" href="vyrazy1.html">2. Вирази та тотожності</a>
+<a class="sidebar-topic" href="vyrazy1.html" style="padding-left:40px;font-size:.75rem">2.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="vyrazy2.html" style="padding-left:40px;font-size:.75rem">2.2 ТРИ ЗАКОНИ АРИФМЕТИКИ</a>
+<a class="sidebar-topic" href="vyrazy3.html" style="padding-left:40px;font-size:.75rem">2.3 ТЕХНІКИ ПЕРЕТВОРЕННЯ ВИРАЗІВ</a>
+<a class="sidebar-topic" href="vyrazy4.html" style="padding-left:40px;font-size:.75rem">2.4 ФОРМУЛИ СКОРОЧЕНОГО МНОЖЕННЯ</a>
+<a class="sidebar-topic" href="vyrazy5.html" style="padding-left:40px;font-size:.75rem">2.5 РОЗКЛАДАННЯ НА МНОЖНИКИ</a>
+<a class="sidebar-topic" href="vyrazy6.html" style="padding-left:40px;font-size:.75rem">2.6 НАСКРІЗНІ ПРИКЛАДИ</a>
+<a class="sidebar-topic" href="nerivnosti1.html">3. Нерівності</a>
+<a class="sidebar-topic" href="nerivnosti1.html" style="padding-left:40px;font-size:.75rem">3.1 ЧИСЛОВІ НЕРІВНОСТІ ТА ЇХ ВЛАСТИВОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti2.html" style="padding-left:40px;font-size:.75rem">3.2 ЛІНІЙНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti3.html" style="padding-left:40px;font-size:.75rem">3.3 КВАДРАТНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti4.html" style="padding-left:40px;font-size:.75rem">3.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="rivnyannya1.html">4. Рівняння та системи</a>
+<a class="sidebar-topic" href="rivnyannya1.html" style="padding-left:40px;font-size:.75rem">4.1 ЩО ТАКЕ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya2.html" style="padding-left:40px;font-size:.75rem">4.2 ЛІНІЙНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya3.html" style="padding-left:40px;font-size:.75rem">4.3 КВАДРАТНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya4.html" style="padding-left:40px;font-size:.75rem">4.4 РАЦІОНАЛЬНІ ТА ІРРАЦІОНАЛЬНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya5.html" style="padding-left:40px;font-size:.75rem">4.5 ПОКАЗНИКОВІ ТА ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya6.html" style="padding-left:40px;font-size:.75rem">4.6 ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya7.html" style="padding-left:40px;font-size:.75rem">4.7 СИСТЕМИ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="rivnyannya8.html" style="padding-left:40px;font-size:.75rem">4.8 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="funktsiyi1.html">5. Функції та їх властивості</a>
+<a class="sidebar-topic" href="funktsiyi1.html" style="padding-left:40px;font-size:.75rem">5.1 ПОНЯТТЯ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="funktsiyi2.html" style="padding-left:40px;font-size:.75rem">5.2 ВЛАСТИВОСТІ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="funktsiyi3.html" style="padding-left:40px;font-size:.75rem">5.3 ОСНОВНІ ФУНКЦІЇ ТА ЇХ ГРАФІКИ</a>
+<a class="sidebar-topic" href="funktsiyi4.html" style="padding-left:40px;font-size:.75rem">5.4 ПЕРЕТВОРЕННЯ ГРАФІКІВ</a>
+<a class="sidebar-topic" href="funktsiyi5.html" style="padding-left:40px;font-size:.75rem">5.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="prohresii1.html">6. Прогресії</a>
+<a class="sidebar-topic" href="prohresii1.html" style="padding-left:40px;font-size:.75rem">6.1 АРИФМЕТИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii2.html" style="padding-left:40px;font-size:.75rem">6.2 ГЕОМЕТРИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii3.html" style="padding-left:40px;font-size:.75rem">6.3 ПОРІВНЯННЯ АП ТА ГП</a>
+<a class="sidebar-topic" href="prohresii4.html" style="padding-left:40px;font-size:.75rem">6.4 ЗАСТОСУВАННЯ</a>
+<a class="sidebar-topic" href="logarythmy1.html">7. Логарифми</a>
+<a class="sidebar-topic" href="logarythmy1.html" style="padding-left:40px;font-size:.75rem">7.1 ЩО ТАКЕ ЛОГАРИФМ?</a>
+<a class="sidebar-topic" href="logarythmy2.html" style="padding-left:40px;font-size:.75rem">7.2 ВЛАСТИВОСТІ ЛОГАРИФМІВ</a>
+<a class="sidebar-topic" href="logarythmy3.html" style="padding-left:40px;font-size:.75rem">7.3 ОБЧИСЛЕННЯ З ЛОГАРИФМАМИ</a>
+<a class="sidebar-topic" href="logarythmy4.html" style="padding-left:40px;font-size:.75rem">7.4 ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="logarythmy5.html" style="padding-left:40px;font-size:.75rem">7.5 ЛОГАРИФМІЧНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="logarythmy6.html" style="padding-left:40px;font-size:.75rem">7.6 ПОКАЗНИКОВІ РІВНЯННЯ ЧЕРЕЗ ЛОГАРИФМ</a>
+</div></div>
+<div class="sidebar-section" data-section="geometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Геометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="geo1_1.html">8. Основи геометрії. Кути та прямі</a>
+<a class="sidebar-topic" href="geo1_1.html" style="padding-left:40px;font-size:.75rem">8.1 ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part2" style="padding-left:40px;font-size:.75rem">8.2 КУТИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part3" style="padding-left:40px;font-size:.75rem">8.3 ПРЯМІ НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="geo1_1.html#part4" style="padding-left:40px;font-size:.75rem">8.4 ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</a>
+<a class="sidebar-topic" href="geo1_1.html#part5" style="padding-left:40px;font-size:.75rem">8.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo2_1.html">9. Трикутники</a>
+<a class="sidebar-topic" href="geo2_1.html" style="padding-left:40px;font-size:.75rem">9.1 ОСНОВИ</a>
+<a class="sidebar-topic" href="geo2_1.html#part2" style="padding-left:40px;font-size:.75rem">9.2 ОЗНАКИ РІВНОСТІ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part3" style="padding-left:40px;font-size:.75rem">9.3 ОСОБЛИВІ ЛІНІЇ ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part4" style="padding-left:40px;font-size:.75rem">9.4 ПОДІБНІСТЬ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part5" style="padding-left:40px;font-size:.75rem">9.5 ТЕОРЕМА ПІФАГОРА</a>
+<a class="sidebar-topic" href="geo2_1.html#part6" style="padding-left:40px;font-size:.75rem">9.6 ТРИГОНОМЕТРІЯ ПРЯМОКУТНОГО ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part7" style="padding-left:40px;font-size:.75rem">9.7 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo3_1.html">10. Чотирикутники та многокутники</a>
+<a class="sidebar-topic" href="geo3_1.html" style="padding-left:40px;font-size:.75rem">10.1 ЗАГАЛЬНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo3_1.html#part2" style="padding-left:40px;font-size:.75rem">10.2 ЧОТИРИКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part3" style="padding-left:40px;font-size:.75rem">10.3 ПРАВИЛЬНІ МНОГОКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part4" style="padding-left:40px;font-size:.75rem">10.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo4_1.html">11. Коло та круг</a>
+<a class="sidebar-topic" href="geo4_1.html" style="padding-left:40px;font-size:.75rem">11.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo4_1.html#part2" style="padding-left:40px;font-size:.75rem">11.2 ВЛАСТИВОСТІ КУТІВ І ХОРД</a>
+<a class="sidebar-topic" href="geo4_1.html#part3" style="padding-left:40px;font-size:.75rem">11.3 ВПИСАНІ ТА ОПИСАНІ КОЛА</a>
+<a class="sidebar-topic" href="geo4_1.html#part4" style="padding-left:40px;font-size:.75rem">11.4 ДОВЖИНА КОЛА І ПЛОЩА КРУГА</a>
+<a class="sidebar-topic" href="geo4_1.html#part5" style="padding-left:40px;font-size:.75rem">11.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo5_1.html">12. Площі фігур</a>
+<a class="sidebar-topic" href="geo5_1.html" style="padding-left:40px;font-size:.75rem">12.1 ПЛОЩА ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo5_1.html#part2" style="padding-left:40px;font-size:.75rem">12.2 ПЛОЩА ЧОТИРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo5_1.html#part3" style="padding-left:40px;font-size:.75rem">12.3 ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</a>
+<a class="sidebar-topic" href="geo5_1.html#part4" style="padding-left:40px;font-size:.75rem">12.4 ЗАДАЧІ НА ПЛОЩУ</a>
+<a class="sidebar-topic" href="geo5_1.html#part5" style="padding-left:40px;font-size:.75rem">12.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+<a class="sidebar-topic" href="geo6_1.html">13. Стереометрія</a>
+<a class="sidebar-topic" href="geo6_1.html" style="padding-left:40px;font-size:.75rem">13.1 ОСНОВИ СТЕРЕОМЕТРІЇ</a>
+<a class="sidebar-topic" href="geo6_1.html#part2" style="padding-left:40px;font-size:.75rem">13.2 МНОГОГРАННИКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part3" style="padding-left:40px;font-size:.75rem">13.3 ТІЛА ОБЕРТАННЯ</a>
+<a class="sidebar-topic" href="geo6_1.html#part4" style="padding-left:40px;font-size:.75rem">13.4 ПЕРЕРІЗИ І РОЗГОРТКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part5" style="padding-left:40px;font-size:.75rem">13.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+</div></div>
+<div class="sidebar-section" data-section="trigonometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Тригонометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="tr1_1.html">14. Одиничне коло</a>
+<a class="sidebar-topic" href="tr1_1.html" style="padding-left:40px;font-size:.75rem">14.1 ЩО ТАКЕ ОДИНИЧНЕ КОЛО</a>
+<a class="sidebar-topic" href="tr1_1.html#part2" style="padding-left:40px;font-size:.75rem">14.2 ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="tr1_1.html#part3" style="padding-left:40px;font-size:.75rem">14.3 ПІДСУМОК</a>
+<a class="sidebar-topic" href="tr2_1.html">15. Формули тригонометрії</a>
+<a class="sidebar-topic" href="tr2_1.html" style="padding-left:40px;font-size:.75rem">15.1 ОСНОВНІ ТОТОЖНОСТІ</a>
+<a class="sidebar-topic" href="tr2_1.html#part2" style="padding-left:40px;font-size:.75rem">15.2 ФОРМУЛИ СУМИ І РІЗНИЦІ КУТІВ</a>
+<a class="sidebar-topic" href="tr2_1.html#part3" style="padding-left:40px;font-size:.75rem">15.3 ФОРМУЛИ ПОДВІЙНОГО КУТА</a>
+<a class="sidebar-topic" href="tr2_1.html#part4" style="padding-left:40px;font-size:.75rem">15.4 ПОНИЖЕННЯ СТЕПЕНЯ ТА ПЕРЕТВОРЕННЯ</a>
+<a class="sidebar-topic" href="tr2_1.html#part5" style="padding-left:40px;font-size:.75rem">15.5 ПІДСУМОК — НАЙВАЖЛИВІШІ ФОРМУЛИ</a>
+<a class="sidebar-topic" href="tr3_1.html">16. Тригонометричні рівняння</a>
+<a class="sidebar-topic" href="tr3_1.html" style="padding-left:40px;font-size:.75rem">16.1 ПРОСТІ ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="tr3_1.html#part2" style="padding-left:40px;font-size:.75rem">16.2 МЕТОДИ РОЗВ&#x27;ЯЗАННЯ СКЛАДНИХ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="tr3_1.html#part3" style="padding-left:40px;font-size:.75rem">16.3 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="tr4_1.html">17. Обернені функції</a>
+<a class="sidebar-topic" href="tr4_1.html" style="padding-left:40px;font-size:.75rem">17.1 ЩО ТАКЕ ОБЕРНЕНА ФУНКЦІЯ</a>
+<a class="sidebar-topic" href="tr4_1.html#part2" style="padding-left:40px;font-size:.75rem">17.2 ОБЕРНЕНІ ТРИГОНОМЕТРИЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part3" style="padding-left:40px;font-size:.75rem">17.3 ОБЕРНЕНІ АЛГЕБРАЇЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part4" style="padding-left:40px;font-size:.75rem">17.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analytic">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналітична геометрія та вектори</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="v5_1.html">18. Вектори</a>
+<a class="sidebar-topic" href="v5_1.html" style="padding-left:40px;font-size:.75rem">18.1 ПОНЯТТЯ ВЕКТОРА</a>
+<a class="sidebar-topic" href="v5_1.html#part2" style="padding-left:40px;font-size:.75rem">18.2 ДІЇ З ВЕКТОРАМИ</a>
+<a class="sidebar-topic" href="v5_1.html#part3" style="padding-left:40px;font-size:.75rem">18.3 СКАЛЯРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part4" style="padding-left:40px;font-size:.75rem">18.4 ВЕКТОРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part5" style="padding-left:40px;font-size:.75rem">18.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v6_1.html">19. Координатна геометрія</a>
+<a class="sidebar-topic" href="v6_1.html" style="padding-left:40px;font-size:.75rem">19.1 ВІДСТАНІ ТА СЕРЕДИНИ</a>
+<a class="sidebar-topic" href="v6_1.html#part2" style="padding-left:40px;font-size:.75rem">19.2 ПРЯМА НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="v6_1.html#part3" style="padding-left:40px;font-size:.75rem">19.3 КОЛО ТА ІНШІ КРИВІ</a>
+<a class="sidebar-topic" href="v6_1.html#part4" style="padding-left:40px;font-size:.75rem">19.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v7_1.html">20. Конічні перерізи</a>
+<a class="sidebar-topic" href="v7_1.html" style="padding-left:40px;font-size:.75rem">20.1 ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</a>
+<a class="sidebar-topic" href="v7_1.html#part2" style="padding-left:40px;font-size:.75rem">20.2 ЕЛІПС</a>
+<a class="sidebar-topic" href="v7_1.html#part3" style="padding-left:40px;font-size:.75rem">20.3 ГІПЕРБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part4" style="padding-left:40px;font-size:.75rem">20.4 ПАРАБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part5" style="padding-left:40px;font-size:.75rem">20.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v8_1.html">21. Координати у просторі</a>
+<a class="sidebar-topic" href="v8_1.html" style="padding-left:40px;font-size:.75rem">21.1 СИСТЕМА КООРДИНАТ У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part2" style="padding-left:40px;font-size:.75rem">21.2 ПРЯМА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part3" style="padding-left:40px;font-size:.75rem">21.3 ПЛОЩИНА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part4" style="padding-left:40px;font-size:.75rem">21.4 ІНШІ СИСТЕМИ КООРДИНАТ</a>
+<a class="sidebar-topic" href="v8_1.html#part5" style="padding-left:40px;font-size:.75rem">21.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analysis">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналіз та дискретна математика</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic active" href="m1_1.html">22. Комбінаторика</a>
+<a class="sidebar-topic" href="m1_1.html" style="padding-left:40px;font-size:.75rem">22.1 ПРИНЦИПИ ЛІЧБИ</a>
+<a class="sidebar-topic" href="m1_1.html#part2" style="padding-left:40px;font-size:.75rem">22.2 ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</a>
+<a class="sidebar-topic" href="m1_1.html#part3" style="padding-left:40px;font-size:.75rem">22.3 ВЛАСТИВОСТІ КОМБІНАЦІЙ</a>
+<a class="sidebar-topic" href="m1_1.html#part4" style="padding-left:40px;font-size:.75rem">22.4 БІНІМАЛЬНА ТЕОРЕМА</a>
+<a class="sidebar-topic" href="m1_1.html#part5" style="padding-left:40px;font-size:.75rem">22.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m2_1.html">23. Теорія ймовірностей</a>
+<a class="sidebar-topic" href="m2_1.html" style="padding-left:40px;font-size:.75rem">23.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="m2_1.html#part2" style="padding-left:40px;font-size:.75rem">23.2 ОПЕРАЦІЇ НАД ПОДІЯМИ</a>
+<a class="sidebar-topic" href="m2_1.html#part3" style="padding-left:40px;font-size:.75rem">23.3 УМОВНА ЙМОВІРНІСТЬ</a>
+<a class="sidebar-topic" href="m2_1.html#part4" style="padding-left:40px;font-size:.75rem">23.4 ДИСКРЕТНІ РОЗПОДІЛИ</a>
+<a class="sidebar-topic" href="m2_1.html#part5" style="padding-left:40px;font-size:.75rem">23.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m3_1.html">24. Границі та похідна</a>
+<a class="sidebar-topic" href="m3_1.html" style="padding-left:40px;font-size:.75rem">24.1 ГРАНИЦІ</a>
+<a class="sidebar-topic" href="m3_1.html#part2" style="padding-left:40px;font-size:.75rem">24.2 ПОХІДНА</a>
+<a class="sidebar-topic" href="m3_1.html#part3" style="padding-left:40px;font-size:.75rem">24.3 ЗАСТОСУВАННЯ ПОХІДНОЇ</a>
+<a class="sidebar-topic" href="m3_1.html#part4" style="padding-left:40px;font-size:.75rem">24.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m4_1.html">25. Інтеграл</a>
+<a class="sidebar-topic" href="m4_1.html" style="padding-left:40px;font-size:.75rem">25.1 НЕВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part2" style="padding-left:40px;font-size:.75rem">25.2 МЕТОДИ ІНТЕГРУВАННЯ</a>
+<a class="sidebar-topic" href="m4_1.html#part3" style="padding-left:40px;font-size:.75rem">25.3 ВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part4" style="padding-left:40px;font-size:.75rem">25.4 ЗАСТОСУВАННЯ ІНТЕГРАЛА</a>
+<a class="sidebar-topic" href="m4_1.html#part5" style="padding-left:40px;font-size:.75rem">25.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m5_1.html">26. Ряди та послідовності</a>
+<a class="sidebar-topic" href="m5_1.html" style="padding-left:40px;font-size:.75rem">26.1 ЧИСЛОВІ ПОСЛІДОВНОСТІ</a>
+<a class="sidebar-topic" href="m5_1.html#part2" style="padding-left:40px;font-size:.75rem">26.2 ЧИСЛОВІ РЯДИ</a>
+<a class="sidebar-topic" href="m5_1.html#part3" style="padding-left:40px;font-size:.75rem">26.3 ОЗНАКИ ЗБІЖНОСТІ РЯДІВ</a>
+<a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
+<a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+  </aside>
+
+  <main class="main">
+    <div class="lecture">
+      <h1>КОМБІНАТОРИКА</h1>
+<p class="subtitle"><em>Математика · Факторіал · Перестановки · Розміщення · Комбінації · Біноміальна теорема · Принципи лічби</em></p>
+<div id="part1" class="block-part"><h2>ЧАСТИНА 1. ПРИНЦИПИ ЛІЧБИ</h2></div>
+<p>Комбінаторика відповідає на питання «скількома способами?» — без перебору всіх варіантів. Скільки паролів можна скласти? Скількома способами обрати команду? На НМТ головне — правильно визначити тип задачі: перестановка, розміщення чи комбінація.</p>
+<h3>1. Правило множення і правило суми</h3>
+<table><tr class="row-even"><td><strong>Правило множення</strong></td><td>Якщо дія A може бути виконана m способами, а після неї дія B — n способами, то обидві дії разом виконуються <strong>m · n</strong> способами.<br><em>Приклад: вибрати сорочку (5 видів) і штани (3 види) → 5·3 = 15 комбінацій</em></td></tr>
+<tr class="row-odd"><td><strong>Правило суми</strong></td><td>Якщо дія A може бути виконана m способами АБО дія B — n способами (взаємовиключно), то — <strong>m + n</strong> способами.<br><em>Приклад: вибрати книгу: 5 детективів або 3 романи → 5+3 = 8 варіантів</em></td></tr></table>
+<h3>2. Факторіал</h3>
+<p><strong>Факторіал числа n</strong> (позначення: <strong>n!</strong>) — добуток усіх натуральних чисел від 1 до n:</p>
+<div class="block-example"><p><strong>n! = 1 · 2 · 3 · … · n</strong></p></div>
+<div class="block-note"><p><strong>Важливо знати:</strong></p>
+<p>0! = 1  (за означенням)<br>1! = 1<br>2! = 2<br>3! = 6<br>4! = 24<br>5! = 120<br>6! = 720<br>10! = 3 628 800</p></div>
+<div class="block-example"><p><strong>Властивість: </strong>n! = n · (n−1)!</p></div>
+<div id="part2" class="block-part"><h2>ЧАСТИНА 2. ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</h2></div>
+<h3>3. Перестановки</h3>
+<p><strong>Перестановка</strong> — упорядкований набір усіх n елементів множини. Відрізняються лише порядком елементів.</p>
+<div class="block-example"><p><strong>Pₙ = n!</strong></p></div>
+<p><strong>Приклад: скільки способів розставити 4 книги на полиці?</strong></p>
+<p>P₄ = 4! = 24 способи</p>
+<h3>4. Розміщення</h3>
+<p><strong>Розміщення</strong> — упорядкований вибір k елементів з n різних (порядок важливий):</p>
+<div class="block-example"><p><strong>Aₙᵏ = n! / (n−k)!   =   n·(n−1)·…·(n−k+1)</strong></p></div>
+<p><strong>Приклад: скільки 3-цифрових чисел без повторень з цифр {1,2,3,4,5}?</strong></p>
+<p>A₅³ = 5!/(5−3)! = 120/2 = 60</p>
+<div class="block-tip"><p><strong>  ! Різниця від перестановки  </strong></p></div>
+<div class="block-note"><p><strong>Перестановка: </strong>усі n елементів, лише різний порядок.<br><strong>Розміщення: </strong>вибираємо k з n, порядок важливий.</p></div>
+<h3>5. Комбінації</h3>
+<p><strong>Комбінація</strong> — невпорядкований вибір k елементів з n різних (порядок НЕ важливий):</p>
+<div class="block-example"><p><strong>Cₙᵏ = n! / (k! · (n−k)!)</strong></p></div>
+<p><em>Читається: «n вибрати k». Також позначається C(n,k) або (n над k)</em></p>
+<p><strong>Приклад: скільки комітетів з 3 осіб з 7 кандидатів?</strong></p>
+<p>C₇³ = 7!/(3!·4!) = 5040/(6·24) = 5040/144 = 35</p>
+<h3>6. Порівняльна таблиця</h3>
+<table><tr class="row-even"><td><strong>Тип</strong></td><td><strong>Формула</strong></td><td><strong>Порядок важливий?</strong></td></tr>
+<tr class="row-odd"><td><strong>Перестановка</strong></td><td>Pₙ = n!</td><td>Так (усі n елементи)</td></tr>
+<tr class="row-even"><td><strong>Розміщення Aₙᵏ</strong></td><td>n!/(n−k)!</td><td>Так (вибираємо k з n)</td></tr>
+<tr class="row-odd"><td><strong>Комбінація Cₙᵏ</strong></td><td>n!/(k!·(n−k)!)</td><td>Ні (вибираємо k з n)</td></tr>
+<tr class="row-even"><td><strong>Зв&#x27;язок</strong></td><td>Aₙᵏ = Cₙᵏ · k!</td><td>Розміщ. = Комб. × Перест.</td></tr></table>
+<div id="part3" class="block-part"><h2>ЧАСТИНА 3. ВЛАСТИВОСТІ КОМБІНАЦІЙ</h2></div>
+<h3>7. Ключові властивості</h3>
+<table><tr class="row-even"><td><strong>Симетрія</strong></td><td><strong>Cₙᵏ = Cₙⁿ⁻ᵏ</strong><br>Приклад: C₁₀³ = C₁₀⁷ = 120</td></tr>
+<tr class="row-odd"><td><strong>Крайні значення</strong></td><td><strong>Cₙ⁰ = Cₙⁿ = 1</strong><br>Вибрати 0 або всі n — єдиний спосіб</td></tr>
+<tr class="row-even"><td><strong>Рекурентна формула<br>(трикутник Паскаля)</strong></td><td><strong>Cₙ₊₁ᵏ = Cₙᵏ⁻¹ + Cₙᵏ</strong><br>Кожен елемент = сума двох вище</td></tr>
+<tr class="row-odd"><td><strong>Сума рядка</strong></td><td><strong>C₀ⁿ + C₁ⁿ + … + Cₙⁿ = 2ⁿ</strong><br>Сума всіх комбінацій = 2ⁿ</td></tr></table>
+<div class="svg-container">
+<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;width:100%;display:block;margin:1em auto;font-family:inherit;">
+  <style>.pt{fill:var(--text);font-size:13px;text-anchor:middle;font-weight:bold;} .pc{fill:var(--accent);opacity:.12;}</style>
+  <!-- Row 0 -->
+  <circle cx="180" cy="20" r="16" class="pc"/><text x="180" y="25" class="pt">1</text>
+  <!-- Row 1 -->
+  <circle cx="160" cy="52" r="16" class="pc"/><text x="160" y="57" class="pt">1</text>
+  <circle cx="200" cy="52" r="16" class="pc"/><text x="200" y="57" class="pt">1</text>
+  <!-- Row 2 -->
+  <circle cx="140" cy="84" r="16" class="pc"/><text x="140" y="89" class="pt">1</text>
+  <circle cx="180" cy="84" r="16" class="pc"/><text x="180" y="89" class="pt">2</text>
+  <circle cx="220" cy="84" r="16" class="pc"/><text x="220" y="89" class="pt">1</text>
+  <!-- Row 3 -->
+  <circle cx="120" cy="116" r="16" class="pc"/><text x="120" y="121" class="pt">1</text>
+  <circle cx="160" cy="116" r="16" class="pc"/><text x="160" y="121" class="pt">3</text>
+  <circle cx="200" cy="116" r="16" class="pc"/><text x="200" y="121" class="pt">3</text>
+  <circle cx="240" cy="116" r="16" class="pc"/><text x="240" y="121" class="pt">1</text>
+  <!-- Row 4 -->
+  <circle cx="100" cy="148" r="16" class="pc"/><text x="100" y="153" class="pt">1</text>
+  <circle cx="140" cy="148" r="16" class="pc"/><text x="140" y="153" class="pt">4</text>
+  <circle cx="180" cy="148" r="16" class="pc"/><text x="180" y="153" class="pt">6</text>
+  <circle cx="220" cy="148" r="16" class="pc"/><text x="220" y="153" class="pt">4</text>
+  <circle cx="260" cy="148" r="16" class="pc"/><text x="260" y="153" class="pt">1</text>
+  <!-- Row 5 -->
+  <circle cx="80" cy="180" r="16" class="pc"/><text x="80" y="185" class="pt">1</text>
+  <circle cx="120" cy="180" r="16" class="pc"/><text x="120" y="185" class="pt">5</text>
+  <circle cx="160" cy="180" r="16" class="pc"/><text x="160" y="185" class="pt">10</text>
+  <circle cx="200" cy="180" r="16" class="pc"/><text x="200" y="185" class="pt">10</text>
+  <circle cx="240" cy="180" r="16" class="pc"/><text x="240" y="185" class="pt">5</text>
+  <circle cx="280" cy="180" r="16" class="pc"/><text x="280" y="185" class="pt">1</text>
+  <!-- Row labels -->
+  <text x="20" y="25" fill="var(--text-muted)" font-size="10">(a+b)⁰</text>
+  <text x="20" y="57" fill="var(--text-muted)" font-size="10">(a+b)¹</text>
+  <text x="20" y="89" fill="var(--text-muted)" font-size="10">(a+b)²</text>
+  <text x="20" y="121" fill="var(--text-muted)" font-size="10">(a+b)³</text>
+  <text x="20" y="153" fill="var(--text-muted)" font-size="10">(a+b)⁴</text>
+  <text x="20" y="185" fill="var(--text-muted)" font-size="10">(a+b)⁵</text>
+</svg>
+</div>e>
+<h3>8. Трикутник Паскаля</h3>
+<div class="block-example"><p>            1<br>          1   1<br>        1   2   1<br>      1   3   3   1<br>    1   4   6   4   1<br>  1   5  10  10   5   1<br>1   6  15  20  15   6   1</p>
+<p>Рядок n (починаючи з n=0) містить коефіцієнти Cₙ⁰, Cₙ¹, …, Cₙⁿ</p></div>
+<div id="part4" class="block-part"><h2>ЧАСТИНА 4. БІНІМАЛЬНА ТЕОРЕМА</h2></div>
+<h3>9. Біноміальна теорема</h3>
+<p>Розкладання <strong>(a + b)ⁿ</strong> у суму:</p>
+<div class="block-example"><p><strong>(a+b)ⁿ = Σ Cₙᵏ · aⁿ⁻ᵏ · bᵏ  (k від 0 до n)</strong></p></div>
+<p><strong>Загальний член: </strong><strong>Tₖ₊₁ = Cₙᵏ · aⁿ⁻ᵏ · bᵏ</strong></p>
+<p><strong>Приклад: розкласти (x+2)³</strong></p>
+<p>(x+2)³ = C₃⁰·x³ + C₃¹·x²·2 + C₃²·x·4 + C₃³·8<br>= x³ + 3·2x² + 3·4x + 8<br>= x³ + 6x² + 12x + 8</p>
+<div class="block-note"><p><strong>Коефіцієнти — рядок трикутника Паскаля!</strong></p>
+<p>(a+b)⁰: 1<br>(a+b)¹: 1  1<br>(a+b)²: 1  2  1<br>(a+b)³: 1  3  3  1<br>(a+b)⁴: 1  4  6  4  1</p></div>
+<div id="part5" class="block-part"><h2>ПІДСУМОК — ПАМ&#x27;ЯТКА</h2></div>
+<table><tr class="row-even"><td><strong>Формула</strong></td><td><strong>Коли застосовувати</strong></td><td><strong>Приклад</strong></td></tr>
+<tr class="row-odd"><td><strong>n!</strong></td><td>Факторіал — основа всіх формул</td><td>5!=120</td></tr>
+<tr class="row-even"><td><strong>Pₙ = n!</strong></td><td>Усі n елементи, різний порядок</td><td>P₄=24</td></tr>
+<tr class="row-odd"><td><strong>Aₙᵏ = n!/(n-k)!</strong></td><td>k з n елементів, порядок важливий</td><td>A₅³=60</td></tr>
+<tr class="row-even"><td><strong>Cₙᵏ = n!/(k!(n-k)!)</strong></td><td>k з n елементів, порядок НЕ важливий</td><td>C₇³=35</td></tr>
+<tr class="row-odd"><td><strong>Cₙᵏ = Cₙⁿ⁻ᵏ</strong></td><td>Симетрія комбінацій</td><td>C₁₀³=C₁₀⁷</td></tr>
+<tr class="row-even"><td><strong>(a+b)ⁿ</strong></td><td>Біноміальна теорема — розкладання</td><td>(x+1)³=x³+3x²+3x+1</td></tr></table>
+
+<h3>Як обрати формулу</h3>
+<table>
+<tr class="row-even"><td><strong>Запитання в задачі</strong></td><td><strong>Формула</strong></td><td><strong>Ключ</strong></td></tr>
+<tr class="row-odd"><td>Скільки способів розставити ВСІ елементи?</td><td>Pₙ = n!</td><td>Усі, порядок важливий</td></tr>
+<tr class="row-even"><td>Скільки «кодів/паролів/рейтингів» з k елементів?</td><td>Aₙᵏ</td><td>Частина, порядок важливий</td></tr>
+<tr class="row-odd"><td>Скільки «команд/комітетів/груп» з k елементів?</td><td>Cₙᵏ</td><td>Частина, порядок НЕ важливий</td></tr>
+<tr class="row-even"><td>І те, і інше / або те, або інше?</td><td>Множення / Додавання</td><td>«і» → ×, «або» → +</td></tr>
+</table>
+<div class="block-note"><p><strong>Підказка:</strong> якщо зміна порядку створює НОВИЙ варіант (код 123 ≠ 321) — розміщення. Якщо ні (команда {А,Б,В} = {В,Б,А}) — комбінація.</p></div>
+
+<h3>Типові помилки</h3>
+<div class="block-warning-body">
+<p><strong>1. Плутають розміщення і комбінації.</strong><br>
+«Обрати 3 з 10 для нагородження 1-е, 2-е, 3-е місце» — розміщення A₁₀³ = 720 (порядок важливий). «Обрати 3 з 10 у команду» — комбінація C₁₀³ = 120 (порядок не важливий). Різниця в 6 разів (= 3!).</p>
+<p><strong>2. Забувають 0! = 1.</strong><br>
+Cₙⁿ = n!/(n!·0!) = 1. Якщо не знати, що 0! = 1, результат невизначений.</p>
+<p><strong>3. У біноміальній теоремі плутають номер члена і степінь.</strong><br>
+Tₖ₊₁ = Cₙᵏ·aⁿ⁻ᵏ·bᵏ. Третій член (T₃) відповідає k = 2, а не k = 3!</p>
+<p><strong>4. Плутають «і» та «або» в задачах.</strong><br>
+«Сорочку І штани» → множення (5·3=15). «Сорочку АБО штани» → додавання (5+3=8). Ключове слово визначає операцію.</p>
+</div>
+
+<p><em>Комбінаторика — мистецтво рахувати, не рахуючи все підряд.</em></p>
+    </div>
+  
+<nav class="page-nav"><a class="page-nav-btn page-nav-prev" href="v8_1.html">← 21. Координати у просторі</a><a class="page-nav-btn page-nav-next" href="m2_1.html">23. Теорія ймовірностей →</a></nav>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span class="footer-version">v 0.5.7</span>
+    <span class="footer-copy">© 2026 Хоменко Олексій Григорович</span>
+    <span class="footer-links">
+      <a href="mailto:itstiamushchy@gmail.com">itstiamushchy@gmail.com</a>
+      <span class="footer-sep">·</span>
+      <span>ITS_tiamushchy</span>
+    </span>
+  </div>
+</footer>
+</main>
+
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+(function(){
+  const saved = localStorage.getItem('obrahunok-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('obrahunok-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  overlay.addEventListener('click', () => sidebar.classList.remove('open'));
+  document.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
+  });
+})();
+</script>
+</body>
+</html>

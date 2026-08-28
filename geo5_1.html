@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Площі фігур — Обрахунок</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html">
+      <span class="icon">∑</span>
+      <span>Обрахунок</span>
+    </a>
+    <div class="topbar-controls">
+      <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+      <button class="menu-toggle" id="menuToggle" title="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="tabbar">
+    <a class="tabbar-btn active" href="index.html">Теорія</a>
+    <a class="tabbar-btn" href="formuly.html">Формули</a>
+    <a class="tabbar-btn" href="#">Глосарій</a>
+    <a class="tabbar-btn" href="zadachnyk.html">Задачник</a>
+    <a class="tabbar-btn" href="#">Обране</a>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-section="algebra">
+<button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="chysla1.html">1. Числа та дії</a>
+<a class="sidebar-topic" href="chysla1.html" style="padding-left:40px;font-size:.75rem">1.1 ЧИСЛА ТА ДІЇ З НИМИ</a>
+<a class="sidebar-topic" href="chysla2.html" style="padding-left:40px;font-size:.75rem">1.2 ДРОБИ</a>
+<a class="sidebar-topic" href="chysla3.html" style="padding-left:40px;font-size:.75rem">1.3 ПОДІЛЬНІСТЬ. НСД І НСК</a>
+<a class="sidebar-topic" href="chysla4.html" style="padding-left:40px;font-size:.75rem">1.4 СТЕПЕНІ ТА КОРЕНІ</a>
+<a class="sidebar-topic" href="chysla5.html" style="padding-left:40px;font-size:.75rem">1.5 ВІДСОТКИ ТА ПРОПОРЦІЇ</a>
+<a class="sidebar-topic" href="vyrazy1.html">2. Вирази та тотожності</a>
+<a class="sidebar-topic" href="vyrazy1.html" style="padding-left:40px;font-size:.75rem">2.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="vyrazy2.html" style="padding-left:40px;font-size:.75rem">2.2 ТРИ ЗАКОНИ АРИФМЕТИКИ</a>
+<a class="sidebar-topic" href="vyrazy3.html" style="padding-left:40px;font-size:.75rem">2.3 ТЕХНІКИ ПЕРЕТВОРЕННЯ ВИРАЗІВ</a>
+<a class="sidebar-topic" href="vyrazy4.html" style="padding-left:40px;font-size:.75rem">2.4 ФОРМУЛИ СКОРОЧЕНОГО МНОЖЕННЯ</a>
+<a class="sidebar-topic" href="vyrazy5.html" style="padding-left:40px;font-size:.75rem">2.5 РОЗКЛАДАННЯ НА МНОЖНИКИ</a>
+<a class="sidebar-topic" href="vyrazy6.html" style="padding-left:40px;font-size:.75rem">2.6 НАСКРІЗНІ ПРИКЛАДИ</a>
+<a class="sidebar-topic" href="nerivnosti1.html">3. Нерівності</a>
+<a class="sidebar-topic" href="nerivnosti1.html" style="padding-left:40px;font-size:.75rem">3.1 ЧИСЛОВІ НЕРІВНОСТІ ТА ЇХ ВЛАСТИВОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti2.html" style="padding-left:40px;font-size:.75rem">3.2 ЛІНІЙНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti3.html" style="padding-left:40px;font-size:.75rem">3.3 КВАДРАТНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti4.html" style="padding-left:40px;font-size:.75rem">3.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="rivnyannya1.html">4. Рівняння та системи</a>
+<a class="sidebar-topic" href="rivnyannya1.html" style="padding-left:40px;font-size:.75rem">4.1 ЩО ТАКЕ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya2.html" style="padding-left:40px;font-size:.75rem">4.2 ЛІНІЙНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya3.html" style="padding-left:40px;font-size:.75rem">4.3 КВАДРАТНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya4.html" style="padding-left:40px;font-size:.75rem">4.4 РАЦІОНАЛЬНІ ТА ІРРАЦІОНАЛЬНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya5.html" style="padding-left:40px;font-size:.75rem">4.5 ПОКАЗНИКОВІ ТА ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya6.html" style="padding-left:40px;font-size:.75rem">4.6 ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya7.html" style="padding-left:40px;font-size:.75rem">4.7 СИСТЕМИ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="rivnyannya8.html" style="padding-left:40px;font-size:.75rem">4.8 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="funktsiyi1.html">5. Функції та їх властивості</a>
+<a class="sidebar-topic" href="funktsiyi1.html" style="padding-left:40px;font-size:.75rem">5.1 ПОНЯТТЯ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="funktsiyi2.html" style="padding-left:40px;font-size:.75rem">5.2 ВЛАСТИВОСТІ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="funktsiyi3.html" style="padding-left:40px;font-size:.75rem">5.3 ОСНОВНІ ФУНКЦІЇ ТА ЇХ ГРАФІКИ</a>
+<a class="sidebar-topic" href="funktsiyi4.html" style="padding-left:40px;font-size:.75rem">5.4 ПЕРЕТВОРЕННЯ ГРАФІКІВ</a>
+<a class="sidebar-topic" href="funktsiyi5.html" style="padding-left:40px;font-size:.75rem">5.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="prohresii1.html">6. Прогресії</a>
+<a class="sidebar-topic" href="prohresii1.html" style="padding-left:40px;font-size:.75rem">6.1 АРИФМЕТИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii2.html" style="padding-left:40px;font-size:.75rem">6.2 ГЕОМЕТРИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii3.html" style="padding-left:40px;font-size:.75rem">6.3 ПОРІВНЯННЯ АП ТА ГП</a>
+<a class="sidebar-topic" href="prohresii4.html" style="padding-left:40px;font-size:.75rem">6.4 ЗАСТОСУВАННЯ</a>
+<a class="sidebar-topic" href="logarythmy1.html">7. Логарифми</a>
+<a class="sidebar-topic" href="logarythmy1.html" style="padding-left:40px;font-size:.75rem">7.1 ЩО ТАКЕ ЛОГАРИФМ?</a>
+<a class="sidebar-topic" href="logarythmy2.html" style="padding-left:40px;font-size:.75rem">7.2 ВЛАСТИВОСТІ ЛОГАРИФМІВ</a>
+<a class="sidebar-topic" href="logarythmy3.html" style="padding-left:40px;font-size:.75rem">7.3 ОБЧИСЛЕННЯ З ЛОГАРИФМАМИ</a>
+<a class="sidebar-topic" href="logarythmy4.html" style="padding-left:40px;font-size:.75rem">7.4 ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="logarythmy5.html" style="padding-left:40px;font-size:.75rem">7.5 ЛОГАРИФМІЧНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="logarythmy6.html" style="padding-left:40px;font-size:.75rem">7.6 ПОКАЗНИКОВІ РІВНЯННЯ ЧЕРЕЗ ЛОГАРИФМ</a>
+</div></div>
+<div class="sidebar-section" data-section="geometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Геометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="geo1_1.html">8. Основи геометрії. Кути та прямі</a>
+<a class="sidebar-topic" href="geo1_1.html" style="padding-left:40px;font-size:.75rem">8.1 ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part2" style="padding-left:40px;font-size:.75rem">8.2 КУТИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part3" style="padding-left:40px;font-size:.75rem">8.3 ПРЯМІ НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="geo1_1.html#part4" style="padding-left:40px;font-size:.75rem">8.4 ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</a>
+<a class="sidebar-topic" href="geo1_1.html#part5" style="padding-left:40px;font-size:.75rem">8.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo2_1.html">9. Трикутники</a>
+<a class="sidebar-topic" href="geo2_1.html" style="padding-left:40px;font-size:.75rem">9.1 ОСНОВИ</a>
+<a class="sidebar-topic" href="geo2_1.html#part2" style="padding-left:40px;font-size:.75rem">9.2 ОЗНАКИ РІВНОСТІ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part3" style="padding-left:40px;font-size:.75rem">9.3 ОСОБЛИВІ ЛІНІЇ ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part4" style="padding-left:40px;font-size:.75rem">9.4 ПОДІБНІСТЬ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part5" style="padding-left:40px;font-size:.75rem">9.5 ТЕОРЕМА ПІФАГОРА</a>
+<a class="sidebar-topic" href="geo2_1.html#part6" style="padding-left:40px;font-size:.75rem">9.6 ТРИГОНОМЕТРІЯ ПРЯМОКУТНОГО ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part7" style="padding-left:40px;font-size:.75rem">9.7 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo3_1.html">10. Чотирикутники та многокутники</a>
+<a class="sidebar-topic" href="geo3_1.html" style="padding-left:40px;font-size:.75rem">10.1 ЗАГАЛЬНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo3_1.html#part2" style="padding-left:40px;font-size:.75rem">10.2 ЧОТИРИКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part3" style="padding-left:40px;font-size:.75rem">10.3 ПРАВИЛЬНІ МНОГОКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part4" style="padding-left:40px;font-size:.75rem">10.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo4_1.html">11. Коло та круг</a>
+<a class="sidebar-topic" href="geo4_1.html" style="padding-left:40px;font-size:.75rem">11.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo4_1.html#part2" style="padding-left:40px;font-size:.75rem">11.2 ВЛАСТИВОСТІ КУТІВ І ХОРД</a>
+<a class="sidebar-topic" href="geo4_1.html#part3" style="padding-left:40px;font-size:.75rem">11.3 ВПИСАНІ ТА ОПИСАНІ КОЛА</a>
+<a class="sidebar-topic" href="geo4_1.html#part4" style="padding-left:40px;font-size:.75rem">11.4 ДОВЖИНА КОЛА І ПЛОЩА КРУГА</a>
+<a class="sidebar-topic" href="geo4_1.html#part5" style="padding-left:40px;font-size:.75rem">11.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic active" href="geo5_1.html">12. Площі фігур</a>
+<a class="sidebar-topic" href="geo5_1.html" style="padding-left:40px;font-size:.75rem">12.1 ПЛОЩА ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo5_1.html#part2" style="padding-left:40px;font-size:.75rem">12.2 ПЛОЩА ЧОТИРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo5_1.html#part3" style="padding-left:40px;font-size:.75rem">12.3 ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</a>
+<a class="sidebar-topic" href="geo5_1.html#part4" style="padding-left:40px;font-size:.75rem">12.4 ЗАДАЧІ НА ПЛОЩУ</a>
+<a class="sidebar-topic" href="geo5_1.html#part5" style="padding-left:40px;font-size:.75rem">12.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+<a class="sidebar-topic" href="geo6_1.html">13. Стереометрія</a>
+<a class="sidebar-topic" href="geo6_1.html" style="padding-left:40px;font-size:.75rem">13.1 ОСНОВИ СТЕРЕОМЕТРІЇ</a>
+<a class="sidebar-topic" href="geo6_1.html#part2" style="padding-left:40px;font-size:.75rem">13.2 МНОГОГРАННИКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part3" style="padding-left:40px;font-size:.75rem">13.3 ТІЛА ОБЕРТАННЯ</a>
+<a class="sidebar-topic" href="geo6_1.html#part4" style="padding-left:40px;font-size:.75rem">13.4 ПЕРЕРІЗИ І РОЗГОРТКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part5" style="padding-left:40px;font-size:.75rem">13.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+</div></div>
+<div class="sidebar-section" data-section="trigonometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Тригонометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="tr1_1.html">14. Одиничне коло</a>
+<a class="sidebar-topic" href="tr1_1.html" style="padding-left:40px;font-size:.75rem">14.1 ЩО ТАКЕ ОДИНИЧНЕ КОЛО</a>
+<a class="sidebar-topic" href="tr1_1.html#part2" style="padding-left:40px;font-size:.75rem">14.2 ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="tr1_1.html#part3" style="padding-left:40px;font-size:.75rem">14.3 ПІДСУМОК</a>
+<a class="sidebar-topic" href="tr2_1.html">15. Формули тригонометрії</a>
+<a class="sidebar-topic" href="tr2_1.html" style="padding-left:40px;font-size:.75rem">15.1 ОСНОВНІ ТОТОЖНОСТІ</a>
+<a class="sidebar-topic" href="tr2_1.html#part2" style="padding-left:40px;font-size:.75rem">15.2 ФОРМУЛИ СУМИ І РІЗНИЦІ КУТІВ</a>
+<a class="sidebar-topic" href="tr2_1.html#part3" style="padding-left:40px;font-size:.75rem">15.3 ФОРМУЛИ ПОДВІЙНОГО КУТА</a>
+<a class="sidebar-topic" href="tr2_1.html#part4" style="padding-left:40px;font-size:.75rem">15.4 ПОНИЖЕННЯ СТЕПЕНЯ ТА ПЕРЕТВОРЕННЯ</a>
+<a class="sidebar-topic" href="tr2_1.html#part5" style="padding-left:40px;font-size:.75rem">15.5 ПІДСУМОК — НАЙВАЖЛИВІШІ ФОРМУЛИ</a>
+<a class="sidebar-topic" href="tr3_1.html">16. Тригонометричні рівняння</a>
+<a class="sidebar-topic" href="tr3_1.html" style="padding-left:40px;font-size:.75rem">16.1 ПРОСТІ ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="tr3_1.html#part2" style="padding-left:40px;font-size:.75rem">16.2 МЕТОДИ РОЗВ&#x27;ЯЗАННЯ СКЛАДНИХ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="tr3_1.html#part3" style="padding-left:40px;font-size:.75rem">16.3 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="tr4_1.html">17. Обернені функції</a>
+<a class="sidebar-topic" href="tr4_1.html" style="padding-left:40px;font-size:.75rem">17.1 ЩО ТАКЕ ОБЕРНЕНА ФУНКЦІЯ</a>
+<a class="sidebar-topic" href="tr4_1.html#part2" style="padding-left:40px;font-size:.75rem">17.2 ОБЕРНЕНІ ТРИГОНОМЕТРИЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part3" style="padding-left:40px;font-size:.75rem">17.3 ОБЕРНЕНІ АЛГЕБРАЇЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part4" style="padding-left:40px;font-size:.75rem">17.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analytic">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналітична геометрія та вектори</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="v5_1.html">18. Вектори</a>
+<a class="sidebar-topic" href="v5_1.html" style="padding-left:40px;font-size:.75rem">18.1 ПОНЯТТЯ ВЕКТОРА</a>
+<a class="sidebar-topic" href="v5_1.html#part2" style="padding-left:40px;font-size:.75rem">18.2 ДІЇ З ВЕКТОРАМИ</a>
+<a class="sidebar-topic" href="v5_1.html#part3" style="padding-left:40px;font-size:.75rem">18.3 СКАЛЯРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part4" style="padding-left:40px;font-size:.75rem">18.4 ВЕКТОРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part5" style="padding-left:40px;font-size:.75rem">18.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v6_1.html">19. Координатна геометрія</a>
+<a class="sidebar-topic" href="v6_1.html" style="padding-left:40px;font-size:.75rem">19.1 ВІДСТАНІ ТА СЕРЕДИНИ</a>
+<a class="sidebar-topic" href="v6_1.html#part2" style="padding-left:40px;font-size:.75rem">19.2 ПРЯМА НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="v6_1.html#part3" style="padding-left:40px;font-size:.75rem">19.3 КОЛО ТА ІНШІ КРИВІ</a>
+<a class="sidebar-topic" href="v6_1.html#part4" style="padding-left:40px;font-size:.75rem">19.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v7_1.html">20. Конічні перерізи</a>
+<a class="sidebar-topic" href="v7_1.html" style="padding-left:40px;font-size:.75rem">20.1 ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</a>
+<a class="sidebar-topic" href="v7_1.html#part2" style="padding-left:40px;font-size:.75rem">20.2 ЕЛІПС</a>
+<a class="sidebar-topic" href="v7_1.html#part3" style="padding-left:40px;font-size:.75rem">20.3 ГІПЕРБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part4" style="padding-left:40px;font-size:.75rem">20.4 ПАРАБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part5" style="padding-left:40px;font-size:.75rem">20.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v8_1.html">21. Координати у просторі</a>
+<a class="sidebar-topic" href="v8_1.html" style="padding-left:40px;font-size:.75rem">21.1 СИСТЕМА КООРДИНАТ У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part2" style="padding-left:40px;font-size:.75rem">21.2 ПРЯМА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part3" style="padding-left:40px;font-size:.75rem">21.3 ПЛОЩИНА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part4" style="padding-left:40px;font-size:.75rem">21.4 ІНШІ СИСТЕМИ КООРДИНАТ</a>
+<a class="sidebar-topic" href="v8_1.html#part5" style="padding-left:40px;font-size:.75rem">21.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analysis">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналіз та дискретна математика</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="m1_1.html">22. Комбінаторика</a>
+<a class="sidebar-topic" href="m1_1.html" style="padding-left:40px;font-size:.75rem">22.1 ПРИНЦИПИ ЛІЧБИ</a>
+<a class="sidebar-topic" href="m1_1.html#part2" style="padding-left:40px;font-size:.75rem">22.2 ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</a>
+<a class="sidebar-topic" href="m1_1.html#part3" style="padding-left:40px;font-size:.75rem">22.3 ВЛАСТИВОСТІ КОМБІНАЦІЙ</a>
+<a class="sidebar-topic" href="m1_1.html#part4" style="padding-left:40px;font-size:.75rem">22.4 БІНІМАЛЬНА ТЕОРЕМА</a>
+<a class="sidebar-topic" href="m1_1.html#part5" style="padding-left:40px;font-size:.75rem">22.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m2_1.html">23. Теорія ймовірностей</a>
+<a class="sidebar-topic" href="m2_1.html" style="padding-left:40px;font-size:.75rem">23.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="m2_1.html#part2" style="padding-left:40px;font-size:.75rem">23.2 ОПЕРАЦІЇ НАД ПОДІЯМИ</a>
+<a class="sidebar-topic" href="m2_1.html#part3" style="padding-left:40px;font-size:.75rem">23.3 УМОВНА ЙМОВІРНІСТЬ</a>
+<a class="sidebar-topic" href="m2_1.html#part4" style="padding-left:40px;font-size:.75rem">23.4 ДИСКРЕТНІ РОЗПОДІЛИ</a>
+<a class="sidebar-topic" href="m2_1.html#part5" style="padding-left:40px;font-size:.75rem">23.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m3_1.html">24. Границі та похідна</a>
+<a class="sidebar-topic" href="m3_1.html" style="padding-left:40px;font-size:.75rem">24.1 ГРАНИЦІ</a>
+<a class="sidebar-topic" href="m3_1.html#part2" style="padding-left:40px;font-size:.75rem">24.2 ПОХІДНА</a>
+<a class="sidebar-topic" href="m3_1.html#part3" style="padding-left:40px;font-size:.75rem">24.3 ЗАСТОСУВАННЯ ПОХІДНОЇ</a>
+<a class="sidebar-topic" href="m3_1.html#part4" style="padding-left:40px;font-size:.75rem">24.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m4_1.html">25. Інтеграл</a>
+<a class="sidebar-topic" href="m4_1.html" style="padding-left:40px;font-size:.75rem">25.1 НЕВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part2" style="padding-left:40px;font-size:.75rem">25.2 МЕТОДИ ІНТЕГРУВАННЯ</a>
+<a class="sidebar-topic" href="m4_1.html#part3" style="padding-left:40px;font-size:.75rem">25.3 ВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part4" style="padding-left:40px;font-size:.75rem">25.4 ЗАСТОСУВАННЯ ІНТЕГРАЛА</a>
+<a class="sidebar-topic" href="m4_1.html#part5" style="padding-left:40px;font-size:.75rem">25.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m5_1.html">26. Ряди та послідовності</a>
+<a class="sidebar-topic" href="m5_1.html" style="padding-left:40px;font-size:.75rem">26.1 ЧИСЛОВІ ПОСЛІДОВНОСТІ</a>
+<a class="sidebar-topic" href="m5_1.html#part2" style="padding-left:40px;font-size:.75rem">26.2 ЧИСЛОВІ РЯДИ</a>
+<a class="sidebar-topic" href="m5_1.html#part3" style="padding-left:40px;font-size:.75rem">26.3 ОЗНАКИ ЗБІЖНОСТІ РЯДІВ</a>
+<a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
+<a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+  </aside>
+
+  <main class="main">
+    <div class="lecture">
+      <h1>ПЛОЩІ ФІГУР</h1>
+<p class="subtitle"><em>Геометрія · Трикутник · Чотирикутники · Правильні многокутники · Коло · Задачі на площу</em></p>
+<div id="part1" class="block-part"><h2>ЧАСТИНА 1. ПЛОЩА ТРИКУТНИКА</h2></div>
+<p>Площа — це кількісна міра поверхні фігури. Уміння обчислювати площу — одне з найпрактичніших у математиці: від ремонту кімнати до земельних ділянок. Рухайте повзунки, щоб побачити, як зміна параметрів впливає на площу.</p>
+
+<h3>1. Формули площі трикутника</h3>
+<table><tr class="row-even"><td><strong>Формула</strong></td><td><strong>Умова застосування</strong></td><td><strong>Приклад</strong></td></tr>
+<tr class="row-odd"><td><strong>S = ½·a·h</strong></td><td>Основа a і висота h до неї</td><td>a=6, h=4 → S=12</td></tr>
+<tr class="row-even"><td><strong>S = ½·a·b·sinC</strong></td><td>Дві сторони a,b і кут C між ними</td><td>a=5,b=4,C=30°→S=5</td></tr>
+<tr class="row-odd"><td><strong>S = √(p(p-a)(p-b)(p-c))</strong></td><td>Формула Герона, всі три сторони</td><td>p — напівпериметр</td></tr>
+<tr class="row-even"><td><strong>S = r·p</strong></td><td>Радіус вписаного кола r і напівпериметр p</td><td>r=2,p=9→S=18</td></tr>
+<tr class="row-odd"><td><strong>S = abc/(4R)</strong></td><td>Три сторони і радіус описаного кола R</td><td>Через теор. синусів</td></tr></table>
+
+<p><strong>Спробуйте:</strong> змінюйте основу і висоту — дивіться, як змінюється площа:</p>
+<div style="background:var(--card-bg,#f8f9fa);border:1px solid var(--border,#ddd);border-radius:8px;padding:16px;margin:1em 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:80px;">основа a = <span id="trAv">6</span></label>
+<input type="range" id="trAsl" min="1" max="12" step="0.5" value="6" style="flex:1;min-width:100px;">
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:80px;">висота h = <span id="trHv">4</span></label>
+<input type="range" id="trHsl" min="1" max="10" step="0.5" value="4" style="flex:1;min-width:100px;">
+</div>
+<canvas id="trCv" width="400" height="220" style="width:100%;max-width:420px;display:block;margin:0 auto;border-radius:4px;"></canvas>
+<p id="trTx" style="margin:8px 0 0;font-size:.9em;font-weight:600;"></p>
+</div>
+
+<script>
+var _G={
+  colors:function(){var s=getComputedStyle(document.documentElement);return{text:s.getPropertyValue('--text').trim()||'#222',border:s.getPropertyValue('--border').trim()||'#ccc',accent:s.getPropertyValue('--accent').trim()||'#2563eb',warn:'#e74c3c',fill:'rgba(37,99,235,0.15)'};}
+};
+(function(){
+var G=_G,as=document.getElementById('trAsl'),hs=document.getElementById('trHsl');
+var av=document.getElementById('trAv'),hv=document.getElementById('trHv'),cv=document.getElementById('trCv'),tx=document.getElementById('trTx');
+function draw(){
+  var a=parseFloat(as.value),h=parseFloat(hs.value);av.textContent=a;hv.textContent=h;
+  var ctx=cv.getContext('2d'),W=cv.width,H=cv.height,col=G.colors();
+  ctx.clearRect(0,0,W,H);
+  var sc=20,mx=60,my=H-30;
+  var x1=mx,y1=my,x2=mx+a*sc,y2=my,x3=mx+a*sc*0.4,y3=my-h*sc;
+  // fill
+  ctx.fillStyle=col.fill;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x3,y3);ctx.closePath();ctx.fill();
+  // outline
+  ctx.strokeStyle=col.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x3,y3);ctx.closePath();ctx.stroke();
+  // height
+  ctx.setLineDash([4,4]);ctx.strokeStyle=col.warn;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x3,y3);ctx.lineTo(x3,my);ctx.stroke();ctx.setLineDash([]);
+  // labels
+  ctx.fillStyle=col.text;ctx.font='bold 13px sans-serif';
+  ctx.fillText('a = '+a,(x1+x2)/2-15,my+18);
+  ctx.fillStyle=col.warn;ctx.fillText('h = '+h,x3+8,(y3+my)/2+4);
+  // right angle
+  ctx.strokeStyle=col.warn;ctx.lineWidth=1;var rs=8;ctx.beginPath();ctx.moveTo(x3+rs,my);ctx.lineTo(x3+rs,my-rs);ctx.lineTo(x3,my-rs);ctx.stroke();
+  var S=0.5*a*h;
+  tx.innerHTML='S = ½ · '+a+' · '+h+' = <strong>'+S.toFixed(1)+'</strong> кв.од.';
+}
+as.addEventListener('input',draw);hs.addEventListener('input',draw);draw();
+})();
+</script>
+<h4>Прямокутний трикутник — спрощені формули</h4>
+<p><strong>S = ½·a·b</strong></p>
+<p><em>де a і b — катети</em></p>
+<h4>Рівносторонній трикутник</h4>
+<div class="block-example"><p><strong>S = (a²√3)/4</strong></p>
+<p><em>Приклад: a=6 → S = 36√3/4 = 9√3 ≈ 15,6</em></p></div>
+<div id="part2" class="block-part"><h2>ЧАСТИНА 2. ПЛОЩА ЧОТИРИКУТНИКІВ</h2></div>
+
+<h3>2. Паралелограм, прямокутник, ромб, квадрат</h3>
+<table><tr class="row-even"><td><strong>Фігура</strong></td><td><strong>Формула</strong></td><td><strong>Пояснення</strong></td></tr>
+<tr class="row-odd"><td><strong>Прямокутник</strong></td><td><strong>S = a · b</strong></td><td>a,b — сторони</td></tr>
+<tr class="row-even"><td><strong>Квадрат</strong></td><td><strong>S = a² = d²/2</strong></td><td>a — сторона, d — діагональ</td></tr>
+<tr class="row-odd"><td><strong>Паралелограм</strong></td><td><strong>S = a · h = a·b·sinα</strong></td><td>h — висота, α — кут між сторонами</td></tr>
+<tr class="row-even"><td><strong>Ромб</strong></td><td><strong>S = a²·sinα = d₁·d₂/2</strong></td><td>d₁,d₂ — діагоналі</td></tr></table>
+
+<p><strong>Спробуйте:</strong> змінюйте сторони і кут паралелограма — при 90° він стає прямокутником:</p>
+<div style="background:var(--card-bg,#f8f9fa);border:1px solid var(--border,#ddd);border-radius:8px;padding:16px;margin:1em 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:80px;">a = <span id="prAv">6</span></label>
+<input type="range" id="prAsl" min="2" max="12" step="0.5" value="6" style="flex:1;min-width:100px;">
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:80px;">b = <span id="prBv">4</span></label>
+<input type="range" id="prBsl" min="2" max="8" step="0.5" value="4" style="flex:1;min-width:100px;">
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:80px;">α = <span id="prAlv">90</span>°</label>
+<input type="range" id="prAlsl" min="20" max="160" step="1" value="90" style="flex:1;min-width:100px;">
+</div>
+<canvas id="prCv" width="400" height="220" style="width:100%;max-width:420px;display:block;margin:0 auto;border-radius:4px;"></canvas>
+<p id="prTx" style="margin:8px 0 0;font-size:.9em;font-weight:600;"></p>
+</div>
+
+<script>
+(function(){
+var G=_G;
+var as=document.getElementById('prAsl'),bs=document.getElementById('prBsl'),als=document.getElementById('prAlsl');
+var av=document.getElementById('prAv'),bv=document.getElementById('prBv'),alv=document.getElementById('prAlv');
+var cv=document.getElementById('prCv'),tx=document.getElementById('prTx');
+function draw(){
+  var a=parseFloat(as.value),b=parseFloat(bs.value),al=parseFloat(als.value);
+  av.textContent=a;bv.textContent=b;alv.textContent=al;
+  var ctx=cv.getContext('2d'),W=cv.width,H=cv.height,col=G.colors();
+  ctx.clearRect(0,0,W,H);
+  var sc=22,mx=80,my=H-30;
+  var rad=al*Math.PI/180;
+  var dx=b*sc*Math.cos(rad),dy=b*sc*Math.sin(rad);
+  var x1=mx,y1=my,x2=mx+a*sc,y2=my,x3=x2+dx,y3=my-dy,x4=mx+dx,y4=my-dy;
+  ctx.fillStyle=col.fill;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x3,y3);ctx.lineTo(x4,y4);ctx.closePath();ctx.fill();
+  ctx.strokeStyle=col.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x3,y3);ctx.lineTo(x4,y4);ctx.closePath();ctx.stroke();
+  // height
+  ctx.setLineDash([4,4]);ctx.strokeStyle=col.warn;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x4,y4);ctx.lineTo(x4,my);ctx.stroke();ctx.setLineDash([]);
+  var ht=b*Math.sin(rad);
+  ctx.fillStyle=col.text;ctx.font='bold 12px sans-serif';ctx.fillText('a='+a,(x1+x2)/2-10,my+18);
+  ctx.fillText('b='+b,(x1+x4)/2-20,(y1+y4)/2);
+  ctx.fillStyle=col.warn;ctx.fillText('h='+ht.toFixed(1),x4+6,(y4+my)/2+4);
+  // angle arc
+  ctx.strokeStyle=col.text;ctx.lineWidth=1;ctx.beginPath();ctx.arc(x1,y1,20,- rad,0);ctx.stroke();
+  ctx.fillStyle=col.text;ctx.font='11px sans-serif';ctx.fillText(al+'°',x1+22,y1-6);
+  var S=a*ht;
+  tx.innerHTML='S = '+a+' · '+b+' · sin'+al+'° = '+a+' · '+ht.toFixed(1)+' = <strong>'+S.toFixed(1)+'</strong> кв.од.';
+}
+as.addEventListener('input',draw);bs.addEventListener('input',draw);als.addEventListener('input',draw);draw();
+})();
+</script>
+<h3>3. Трапеція</h3>
+<p><strong>S = (a + b)/2 · h</strong></p>
+<p><em>де a і b — основи (паралельні сторони), h — висота (відстань між основами)</em></p>
+
+<div style="background:var(--card-bg,#f8f9fa);border:1px solid var(--border,#ddd);border-radius:8px;padding:16px;margin:1em 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:100px;">основа a = <span id="tzAv">10</span></label>
+<input type="range" id="tzAsl" min="3" max="14" step="0.5" value="10" style="flex:1;min-width:100px;">
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:100px;">основа b = <span id="tzBv">6</span></label>
+<input type="range" id="tzBsl" min="1" max="12" step="0.5" value="6" style="flex:1;min-width:100px;">
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:100px;">висота h = <span id="tzHv">4</span></label>
+<input type="range" id="tzHsl" min="1" max="8" step="0.5" value="4" style="flex:1;min-width:100px;">
+</div>
+<canvas id="tzCv" width="400" height="220" style="width:100%;max-width:420px;display:block;margin:0 auto;border-radius:4px;"></canvas>
+<p id="tzTx" style="margin:8px 0 0;font-size:.9em;font-weight:600;"></p>
+</div>
+
+<script>
+(function(){
+var G=_G;
+var as=document.getElementById('tzAsl'),bs=document.getElementById('tzBsl'),hs=document.getElementById('tzHsl');
+var av=document.getElementById('tzAv'),bvv=document.getElementById('tzBv'),hv=document.getElementById('tzHv');
+var cv=document.getElementById('tzCv'),tx=document.getElementById('tzTx');
+function draw(){
+  var a=parseFloat(as.value),b=parseFloat(bs.value),h=parseFloat(hs.value);
+  av.textContent=a;bvv.textContent=b;hv.textContent=h;
+  var ctx=cv.getContext('2d'),W=cv.width,H=cv.height,col=G.colors();
+  ctx.clearRect(0,0,W,H);
+  var sc=22,mx=40,my=H-30;
+  var off=(a-b)*sc/2;
+  var x1=mx,y1=my,x2=mx+a*sc,y2=my,x3=mx+off+b*sc,y3=my-h*sc,x4=mx+off,y4=my-h*sc;
+  ctx.fillStyle=col.fill;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x3,y3);ctx.lineTo(x4,y4);ctx.closePath();ctx.fill();
+  ctx.strokeStyle=col.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x3,y3);ctx.lineTo(x4,y4);ctx.closePath();ctx.stroke();
+  // height
+  ctx.setLineDash([4,4]);ctx.strokeStyle=col.warn;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x4,y4);ctx.lineTo(x4,my);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle=col.text;ctx.font='bold 12px sans-serif';
+  ctx.fillText('a = '+a,(x1+x2)/2-15,my+18);
+  ctx.fillText('b = '+b,(x4+x3)/2-10,y4-10);
+  ctx.fillStyle=col.warn;ctx.fillText('h = '+h,x4+8,(y4+my)/2+4);
+  var S=(a+b)/2*h;
+  tx.innerHTML='S = ('+a+' + '+b+') / 2 · '+h+' = '+(( a+b)/2).toFixed(1)+' · '+h+' = <strong>'+S.toFixed(1)+'</strong> кв.од.';
+}
+as.addEventListener('input',draw);bs.addEventListener('input',draw);hs.addEventListener('input',draw);draw();
+})();
+</script>
+<div class="block-example"><p><strong>Формула через середню лінію m = (a+b)/2:</strong></p>
+<p><strong>S = m · h</strong></p></div>
+<h3>4. Довільний чотирикутник</h3>
+<div class="block-example"><p><strong>S = ½ · d₁ · d₂ · sinφ</strong></p></div>
+<p><em>де d₁, d₂ — діагоналі, φ — кут між ними. Для ромба і квадрата φ = 90°, тому sinφ = 1</em></p>
+<div id="part3" class="block-part"><h2>ЧАСТИНА 3. ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</h2></div>
+<h3>5. Правильний многокутник</h3>
+<div class="block-example"><p><strong>S = ½ · P · r = ½ · n · a · r</strong></p></div>
+<p><em>де P — периметр, r — радіус вписаного кола (апофема), n — кількість сторін, a — сторона</em></p>
+<table><tr class="row-even"><td><strong>Правил. трикутник</strong></td><td><strong>S = a²√3/4</strong></td><td>a=6→S=9√3</td></tr>
+<tr class="row-odd"><td><strong>Квадрат</strong></td><td><strong>S = a²</strong></td><td>a=5→S=25</td></tr>
+<tr class="row-even"><td><strong>Правил. шестикутник</strong></td><td><strong>S = 3a²√3/2</strong></td><td>a=4→S=24√3</td></tr></table>
+<h3>6. Круг і його частини</h3>
+<table><tr class="row-even"><td><strong>Фігура</strong></td><td><strong>Формула</strong></td><td><strong>α в радіанах</strong></td></tr>
+<tr class="row-odd"><td><strong>Площа круга</strong></td><td><strong>S = πR²</strong></td><td>—</td></tr>
+<tr class="row-even"><td><strong>Площа сектора</strong></td><td><strong>S = αR²/2</strong></td><td>α в рад: α=2π → S=πR²</td></tr>
+<tr class="row-odd"><td><strong>Площа сегмента</strong></td><td><strong>S = R²(α−sinα)/2</strong></td><td>α — центр. кут дуги</td></tr>
+<tr class="row-even"><td><strong>Площа кільця</strong></td><td><strong>S = π(R²−r²)</strong></td><td>R — зовн., r — внутр.</td></tr></table>
+
+<p><strong>Спробуйте:</strong> змінюйте радіус і кут сектора:</p>
+<div style="background:var(--card-bg,#f8f9fa);border:1px solid var(--border,#ddd);border-radius:8px;padding:16px;margin:1em 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:80px;">R = <span id="crRv">5</span></label>
+<input type="range" id="crRsl" min="1" max="8" step="0.5" value="5" style="flex:1;min-width:100px;">
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:80px;">α = <span id="crAlv">90</span>°</label>
+<input type="range" id="crAlsl" min="10" max="360" step="5" value="90" style="flex:1;min-width:100px;">
+</div>
+<canvas id="crCv" width="400" height="250" style="width:100%;max-width:420px;display:block;margin:0 auto;border-radius:4px;"></canvas>
+<p id="crTx" style="margin:8px 0 0;font-size:.9em;font-weight:600;"></p>
+</div>
+
+<script>
+(function(){
+var G=_G;
+var rs=document.getElementById('crRsl'),als=document.getElementById('crAlsl');
+var rv=document.getElementById('crRv'),alv=document.getElementById('crAlv');
+var cv=document.getElementById('crCv'),tx=document.getElementById('crTx');
+function draw(){
+  var R=parseFloat(rs.value),al=parseFloat(als.value);
+  rv.textContent=R;alv.textContent=al;
+  var ctx=cv.getContext('2d'),W=cv.width,H=cv.height,col=G.colors();
+  ctx.clearRect(0,0,W,H);
+  var cx=200,cy=130,sc=22,rPx=R*sc;
+  var rad=al*Math.PI/180;
+  // full circle outline
+  ctx.strokeStyle=col.border;ctx.lineWidth=1;ctx.beginPath();ctx.arc(cx,cy,rPx,0,Math.PI*2);ctx.stroke();
+  // sector fill
+  ctx.fillStyle=col.fill;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,rPx,-rad,0);ctx.closePath();ctx.fill();
+  ctx.strokeStyle=col.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,rPx,-rad,0);ctx.closePath();ctx.stroke();
+  // radius label
+  ctx.fillStyle=col.accent;ctx.font='bold 12px sans-serif';
+  ctx.fillText('R='+R,cx+rPx*0.5+5,cy+15);
+  // angle arc
+  ctx.strokeStyle=col.warn;ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(cx,cy,25,-rad,0);ctx.stroke();
+  ctx.fillStyle=col.warn;ctx.font='11px sans-serif';
+  var mAng=-rad/2;ctx.fillText(al+'°',cx+35*Math.cos(mAng)-5,cy+35*Math.sin(mAng)+4);
+  // center
+  ctx.fillStyle=col.text;ctx.beginPath();ctx.arc(cx,cy,3,0,Math.PI*2);ctx.fill();
+  var Scircle=Math.PI*R*R;
+  var aRad=al*Math.PI/180;
+  var Ssector=aRad*R*R/2;
+  tx.innerHTML='Площа круга: πR² = π·'+R+'² = <strong>'+(Scircle).toFixed(1)+'</strong> &nbsp; | &nbsp; Площа сектора ('+al+'°): <strong>'+Ssector.toFixed(1)+'</strong> кв.од.';
+}
+rs.addEventListener('input',draw);als.addEventListener('input',draw);draw();
+})();
+</script>
+<div id="part4" class="block-part"><h2>ЧАСТИНА 4. ЗАДАЧІ НА ПЛОЩУ</h2></div>
+
+<h3>Як обрати формулу (трикутник)</h3>
+<table>
+<tr class="row-even"><td><strong>Що дано</strong></td><td><strong>Формула</strong></td></tr>
+<tr class="row-odd"><td>Основа і висота</td><td>S = ½·a·h</td></tr>
+<tr class="row-even"><td>Дві сторони і кут між ними</td><td>S = ½·a·b·sinC</td></tr>
+<tr class="row-odd"><td>Три сторони</td><td>Герон: S = √(p(p−a)(p−b)(p−c))</td></tr>
+<tr class="row-even"><td>r і периметр</td><td>S = r·p</td></tr>
+<tr class="row-odd"><td>Два катети (прямокутний)</td><td>S = ½·a·b</td></tr>
+</table>
+
+<h3>7. Алгоритм розв&#x27;язання</h3>
+<div class="block-note"><p><strong>Порядок дій при знаходженні площі:</strong></p>
+<p>1. Визначити тип фігури<br>2. Вибрати формулу (за тим, що дано — див. таблицю вище)<br>3. Знайти всі необхідні елементи (основу, висоту, кути тощо)<br>4. Підставити та обчислити<br>5. Перевірити одиниці виміру (см², м², км²)</p></div>
+<h4>Приклад 1: Площа трапеції</h4>
+<p><strong>Дано: </strong>a = 10, b = 6, h = 4<br><strong>Розв&#x27;язок: </strong>S = (10+6)/2 · 4 = 8 · 4 = <strong>32 кв.од.</strong></p>
+<h4>Приклад 2: Площа трикутника через дві сторони і кут</h4>
+<p><strong>Дано: </strong>a = 8, b = 5, C = 60°<br><strong>Розв&#x27;язок: </strong>S = ½·8·5·sin60° = 20·(√3/2) = <strong>10√3 ≈ 17,3 кв.од.</strong></p>
+<h4>Приклад 3: Формула Герона</h4>
+<p><strong>Дано: </strong>a=13, b=14, c=15<br><strong>p = </strong>(13+14+15)/2 = 21<br><strong>S = </strong>√(21·8·7·6) = √7056 = <strong>84 кв.од.</strong></p>
+<p><em>Перевірка іншим способом:</em> висота до сторони a=13: h = 2S/a = 168/13 ≈ 12.92. S = ½·13·12.92 ≈ 84 ✓</p>
+<div id="part5" class="block-part"><h2>ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</h2></div>
+<table><tr class="row-even"><td><strong>Фігура</strong></td><td><strong>Формула площі</strong></td><td><strong>Де використовується</strong></td></tr>
+<tr class="row-odd"><td><strong>Прямокутник</strong></td><td>a·b</td><td>Основна</td></tr>
+<tr class="row-even"><td><strong>Квадрат</strong></td><td>a² або d²/2</td><td>Якщо дана діагональ</td></tr>
+<tr class="row-odd"><td><strong>Паралелограм</strong></td><td>a·h або a·b·sinα</td><td>Якщо дана висота або кут</td></tr>
+<tr class="row-even"><td><strong>Ромб</strong></td><td>d₁·d₂/2 або a²sinα</td><td>Якщо дані діагоналі</td></tr>
+<tr class="row-odd"><td><strong>Трапеція</strong></td><td>(a+b)/2·h</td><td>Основи + висота</td></tr>
+<tr class="row-even"><td><strong>Трикутник (осн.)</strong></td><td>½·a·h</td><td>Основа + висота</td></tr>
+<tr class="row-odd"><td><strong>Трикутник (синус)</strong></td><td>½·a·b·sinC</td><td>Дві сторони + кут</td></tr>
+<tr class="row-even"><td><strong>Трикутник (Герон)</strong></td><td>√(p(p-a)(p-b)(p-c))</td><td>Три сторони</td></tr>
+<tr class="row-odd"><td><strong>Круг</strong></td><td>πR²</td><td>π≈3,14</td></tr>
+<tr class="row-even"><td><strong>Сектор</strong></td><td>αR²/2 (α в рад.)</td><td>Частина круга</td></tr></table>
+
+<h3>Типові помилки</h3>
+<div class="block-warning-body">
+<p><strong>1. Забувають ½ у формулі трикутника.</strong><br>
+S = a·h — це площа паралелограма! Для трикутника: S = <strong>½</strong>·a·h. Трикутник — це половина паралелограма.</p>
+<p><strong>2. У формулі Герона беруть периметр замість напівпериметра.</strong><br>
+p = (a+b+c)/<strong>2</strong>, а не p = a+b+c. Якщо підставити периметр — площа вийде вдвічі більшою.</p>
+<p><strong>3. У площі сектора підставляють градуси.</strong><br>
+S = αR²/2 працює тільки при α в радіанах. 90° → π/2 рад. Підставити 90 замість π/2 — помилка в ~57 разів.</p>
+</div>
+
+<p><em>Площа — це кількісна міра простору.</em></p>
+    </div>
+  
+<nav class="page-nav"><a class="page-nav-btn page-nav-prev" href="geo4_1.html">← 11. Коло та круг</a><a class="page-nav-btn page-nav-next" href="geo6_1.html">13. Стереометрія →</a></nav>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span class="footer-version">v 0.5.7</span>
+    <span class="footer-copy">© 2026 Хоменко Олексій Григорович</span>
+    <span class="footer-links">
+      <a href="mailto:itstiamushchy@gmail.com">itstiamushchy@gmail.com</a>
+      <span class="footer-sep">·</span>
+      <span>ITS_tiamushchy</span>
+    </span>
+  </div>
+</footer>
+</main>
+
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+(function(){
+  const saved = localStorage.getItem('obrahunok-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('obrahunok-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  overlay.addEventListener('click', () => sidebar.classList.remove('open'));
+  document.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
+  });
+})();
+</script>
+</body>
+</html>

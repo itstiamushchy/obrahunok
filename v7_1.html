@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Конічні перерізи — Обрахунок</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <a class="topbar-logo" href="index.html">
+      <span class="icon">∑</span>
+      <span>Обрахунок</span>
+    </a>
+    <div class="topbar-controls">
+      <button class="theme-toggle" id="themeToggle" title="Змінити тему">🌙</button>
+      <button class="menu-toggle" id="menuToggle" title="Меню">☰</button>
+    </div>
+  </header>
+
+  <nav class="tabbar">
+    <a class="tabbar-btn active" href="index.html">Теорія</a>
+    <a class="tabbar-btn" href="formuly.html">Формули</a>
+    <a class="tabbar-btn" href="#">Глосарій</a>
+    <a class="tabbar-btn" href="zadachnyk.html">Задачник</a>
+    <a class="tabbar-btn" href="#">Обране</a>
+  </nav>
+
+  <aside class="sidebar" id="sidebar">
+<div class="sidebar-section" data-section="algebra">
+<button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="chysla1.html">1. Числа та дії</a>
+<a class="sidebar-topic" href="chysla1.html" style="padding-left:40px;font-size:.75rem">1.1 ЧИСЛА ТА ДІЇ З НИМИ</a>
+<a class="sidebar-topic" href="chysla2.html" style="padding-left:40px;font-size:.75rem">1.2 ДРОБИ</a>
+<a class="sidebar-topic" href="chysla3.html" style="padding-left:40px;font-size:.75rem">1.3 ПОДІЛЬНІСТЬ. НСД І НСК</a>
+<a class="sidebar-topic" href="chysla4.html" style="padding-left:40px;font-size:.75rem">1.4 СТЕПЕНІ ТА КОРЕНІ</a>
+<a class="sidebar-topic" href="chysla5.html" style="padding-left:40px;font-size:.75rem">1.5 ВІДСОТКИ ТА ПРОПОРЦІЇ</a>
+<a class="sidebar-topic" href="vyrazy1.html">2. Вирази та тотожності</a>
+<a class="sidebar-topic" href="vyrazy1.html" style="padding-left:40px;font-size:.75rem">2.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="vyrazy2.html" style="padding-left:40px;font-size:.75rem">2.2 ТРИ ЗАКОНИ АРИФМЕТИКИ</a>
+<a class="sidebar-topic" href="vyrazy3.html" style="padding-left:40px;font-size:.75rem">2.3 ТЕХНІКИ ПЕРЕТВОРЕННЯ ВИРАЗІВ</a>
+<a class="sidebar-topic" href="vyrazy4.html" style="padding-left:40px;font-size:.75rem">2.4 ФОРМУЛИ СКОРОЧЕНОГО МНОЖЕННЯ</a>
+<a class="sidebar-topic" href="vyrazy5.html" style="padding-left:40px;font-size:.75rem">2.5 РОЗКЛАДАННЯ НА МНОЖНИКИ</a>
+<a class="sidebar-topic" href="vyrazy6.html" style="padding-left:40px;font-size:.75rem">2.6 НАСКРІЗНІ ПРИКЛАДИ</a>
+<a class="sidebar-topic" href="nerivnosti1.html">3. Нерівності</a>
+<a class="sidebar-topic" href="nerivnosti1.html" style="padding-left:40px;font-size:.75rem">3.1 ЧИСЛОВІ НЕРІВНОСТІ ТА ЇХ ВЛАСТИВОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti2.html" style="padding-left:40px;font-size:.75rem">3.2 ЛІНІЙНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti3.html" style="padding-left:40px;font-size:.75rem">3.3 КВАДРАТНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="nerivnosti4.html" style="padding-left:40px;font-size:.75rem">3.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="rivnyannya1.html">4. Рівняння та системи</a>
+<a class="sidebar-topic" href="rivnyannya1.html" style="padding-left:40px;font-size:.75rem">4.1 ЩО ТАКЕ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya2.html" style="padding-left:40px;font-size:.75rem">4.2 ЛІНІЙНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya3.html" style="padding-left:40px;font-size:.75rem">4.3 КВАДРАТНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya4.html" style="padding-left:40px;font-size:.75rem">4.4 РАЦІОНАЛЬНІ ТА ІРРАЦІОНАЛЬНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya5.html" style="padding-left:40px;font-size:.75rem">4.5 ПОКАЗНИКОВІ ТА ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya6.html" style="padding-left:40px;font-size:.75rem">4.6 ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="rivnyannya7.html" style="padding-left:40px;font-size:.75rem">4.7 СИСТЕМИ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="rivnyannya8.html" style="padding-left:40px;font-size:.75rem">4.8 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="funktsiyi1.html">5. Функції та їх властивості</a>
+<a class="sidebar-topic" href="funktsiyi1.html" style="padding-left:40px;font-size:.75rem">5.1 ПОНЯТТЯ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="funktsiyi2.html" style="padding-left:40px;font-size:.75rem">5.2 ВЛАСТИВОСТІ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="funktsiyi3.html" style="padding-left:40px;font-size:.75rem">5.3 ОСНОВНІ ФУНКЦІЇ ТА ЇХ ГРАФІКИ</a>
+<a class="sidebar-topic" href="funktsiyi4.html" style="padding-left:40px;font-size:.75rem">5.4 ПЕРЕТВОРЕННЯ ГРАФІКІВ</a>
+<a class="sidebar-topic" href="funktsiyi5.html" style="padding-left:40px;font-size:.75rem">5.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="prohresii1.html">6. Прогресії</a>
+<a class="sidebar-topic" href="prohresii1.html" style="padding-left:40px;font-size:.75rem">6.1 АРИФМЕТИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii2.html" style="padding-left:40px;font-size:.75rem">6.2 ГЕОМЕТРИЧНА ПРОГРЕСІЯ</a>
+<a class="sidebar-topic" href="prohresii3.html" style="padding-left:40px;font-size:.75rem">6.3 ПОРІВНЯННЯ АП ТА ГП</a>
+<a class="sidebar-topic" href="prohresii4.html" style="padding-left:40px;font-size:.75rem">6.4 ЗАСТОСУВАННЯ</a>
+<a class="sidebar-topic" href="logarythmy1.html">7. Логарифми</a>
+<a class="sidebar-topic" href="logarythmy1.html" style="padding-left:40px;font-size:.75rem">7.1 ЩО ТАКЕ ЛОГАРИФМ?</a>
+<a class="sidebar-topic" href="logarythmy2.html" style="padding-left:40px;font-size:.75rem">7.2 ВЛАСТИВОСТІ ЛОГАРИФМІВ</a>
+<a class="sidebar-topic" href="logarythmy3.html" style="padding-left:40px;font-size:.75rem">7.3 ОБЧИСЛЕННЯ З ЛОГАРИФМАМИ</a>
+<a class="sidebar-topic" href="logarythmy4.html" style="padding-left:40px;font-size:.75rem">7.4 ЛОГАРИФМІЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="logarythmy5.html" style="padding-left:40px;font-size:.75rem">7.5 ЛОГАРИФМІЧНІ НЕРІВНОСТІ</a>
+<a class="sidebar-topic" href="logarythmy6.html" style="padding-left:40px;font-size:.75rem">7.6 ПОКАЗНИКОВІ РІВНЯННЯ ЧЕРЕЗ ЛОГАРИФМ</a>
+</div></div>
+<div class="sidebar-section" data-section="geometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Геометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="geo1_1.html">8. Основи геометрії. Кути та прямі</a>
+<a class="sidebar-topic" href="geo1_1.html" style="padding-left:40px;font-size:.75rem">8.1 ОСНОВНІ ГЕОМЕТРИЧНІ ФІГУРИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part2" style="padding-left:40px;font-size:.75rem">8.2 КУТИ</a>
+<a class="sidebar-topic" href="geo1_1.html#part3" style="padding-left:40px;font-size:.75rem">8.3 ПРЯМІ НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="geo1_1.html#part4" style="padding-left:40px;font-size:.75rem">8.4 ВИМІРЮВАННЯ КУТІВ І ВІДРІЗКІВ</a>
+<a class="sidebar-topic" href="geo1_1.html#part5" style="padding-left:40px;font-size:.75rem">8.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo2_1.html">9. Трикутники</a>
+<a class="sidebar-topic" href="geo2_1.html" style="padding-left:40px;font-size:.75rem">9.1 ОСНОВИ</a>
+<a class="sidebar-topic" href="geo2_1.html#part2" style="padding-left:40px;font-size:.75rem">9.2 ОЗНАКИ РІВНОСТІ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part3" style="padding-left:40px;font-size:.75rem">9.3 ОСОБЛИВІ ЛІНІЇ ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part4" style="padding-left:40px;font-size:.75rem">9.4 ПОДІБНІСТЬ ТРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo2_1.html#part5" style="padding-left:40px;font-size:.75rem">9.5 ТЕОРЕМА ПІФАГОРА</a>
+<a class="sidebar-topic" href="geo2_1.html#part6" style="padding-left:40px;font-size:.75rem">9.6 ТРИГОНОМЕТРІЯ ПРЯМОКУТНОГО ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo2_1.html#part7" style="padding-left:40px;font-size:.75rem">9.7 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo3_1.html">10. Чотирикутники та многокутники</a>
+<a class="sidebar-topic" href="geo3_1.html" style="padding-left:40px;font-size:.75rem">10.1 ЗАГАЛЬНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo3_1.html#part2" style="padding-left:40px;font-size:.75rem">10.2 ЧОТИРИКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part3" style="padding-left:40px;font-size:.75rem">10.3 ПРАВИЛЬНІ МНОГОКУТНИКИ</a>
+<a class="sidebar-topic" href="geo3_1.html#part4" style="padding-left:40px;font-size:.75rem">10.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo4_1.html">11. Коло та круг</a>
+<a class="sidebar-topic" href="geo4_1.html" style="padding-left:40px;font-size:.75rem">11.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="geo4_1.html#part2" style="padding-left:40px;font-size:.75rem">11.2 ВЛАСТИВОСТІ КУТІВ І ХОРД</a>
+<a class="sidebar-topic" href="geo4_1.html#part3" style="padding-left:40px;font-size:.75rem">11.3 ВПИСАНІ ТА ОПИСАНІ КОЛА</a>
+<a class="sidebar-topic" href="geo4_1.html#part4" style="padding-left:40px;font-size:.75rem">11.4 ДОВЖИНА КОЛА І ПЛОЩА КРУГА</a>
+<a class="sidebar-topic" href="geo4_1.html#part5" style="padding-left:40px;font-size:.75rem">11.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="geo5_1.html">12. Площі фігур</a>
+<a class="sidebar-topic" href="geo5_1.html" style="padding-left:40px;font-size:.75rem">12.1 ПЛОЩА ТРИКУТНИКА</a>
+<a class="sidebar-topic" href="geo5_1.html#part2" style="padding-left:40px;font-size:.75rem">12.2 ПЛОЩА ЧОТИРИКУТНИКІВ</a>
+<a class="sidebar-topic" href="geo5_1.html#part3" style="padding-left:40px;font-size:.75rem">12.3 ПЛОЩА ПРАВИЛЬНИХ МНОГОКУТНИКІВ І КОЛА</a>
+<a class="sidebar-topic" href="geo5_1.html#part4" style="padding-left:40px;font-size:.75rem">12.4 ЗАДАЧІ НА ПЛОЩУ</a>
+<a class="sidebar-topic" href="geo5_1.html#part5" style="padding-left:40px;font-size:.75rem">12.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+<a class="sidebar-topic" href="geo6_1.html">13. Стереометрія</a>
+<a class="sidebar-topic" href="geo6_1.html" style="padding-left:40px;font-size:.75rem">13.1 ОСНОВИ СТЕРЕОМЕТРІЇ</a>
+<a class="sidebar-topic" href="geo6_1.html#part2" style="padding-left:40px;font-size:.75rem">13.2 МНОГОГРАННИКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part3" style="padding-left:40px;font-size:.75rem">13.3 ТІЛА ОБЕРТАННЯ</a>
+<a class="sidebar-topic" href="geo6_1.html#part4" style="padding-left:40px;font-size:.75rem">13.4 ПЕРЕРІЗИ І РОЗГОРТКИ</a>
+<a class="sidebar-topic" href="geo6_1.html#part5" style="padding-left:40px;font-size:.75rem">13.5 ПІДСУМОК — ПАМ&#x27;ЯТКА ФОРМУЛ</a>
+</div></div>
+<div class="sidebar-section" data-section="trigonometry">
+<button class="sidebar-heading"><span class="arrow">▼</span> Тригонометрія</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="tr1_1.html">14. Одиничне коло</a>
+<a class="sidebar-topic" href="tr1_1.html" style="padding-left:40px;font-size:.75rem">14.1 ЩО ТАКЕ ОДИНИЧНЕ КОЛО</a>
+<a class="sidebar-topic" href="tr1_1.html#part2" style="padding-left:40px;font-size:.75rem">14.2 ЧВЕРТІ ТА ЗНАКИ ФУНКЦІЙ</a>
+<a class="sidebar-topic" href="tr1_1.html#part3" style="padding-left:40px;font-size:.75rem">14.3 ПІДСУМОК</a>
+<a class="sidebar-topic" href="tr2_1.html">15. Формули тригонометрії</a>
+<a class="sidebar-topic" href="tr2_1.html" style="padding-left:40px;font-size:.75rem">15.1 ОСНОВНІ ТОТОЖНОСТІ</a>
+<a class="sidebar-topic" href="tr2_1.html#part2" style="padding-left:40px;font-size:.75rem">15.2 ФОРМУЛИ СУМИ І РІЗНИЦІ КУТІВ</a>
+<a class="sidebar-topic" href="tr2_1.html#part3" style="padding-left:40px;font-size:.75rem">15.3 ФОРМУЛИ ПОДВІЙНОГО КУТА</a>
+<a class="sidebar-topic" href="tr2_1.html#part4" style="padding-left:40px;font-size:.75rem">15.4 ПОНИЖЕННЯ СТЕПЕНЯ ТА ПЕРЕТВОРЕННЯ</a>
+<a class="sidebar-topic" href="tr2_1.html#part5" style="padding-left:40px;font-size:.75rem">15.5 ПІДСУМОК — НАЙВАЖЛИВІШІ ФОРМУЛИ</a>
+<a class="sidebar-topic" href="tr3_1.html">16. Тригонометричні рівняння</a>
+<a class="sidebar-topic" href="tr3_1.html" style="padding-left:40px;font-size:.75rem">16.1 ПРОСТІ ТРИГОНОМЕТРИЧНІ РІВНЯННЯ</a>
+<a class="sidebar-topic" href="tr3_1.html#part2" style="padding-left:40px;font-size:.75rem">16.2 МЕТОДИ РОЗВ&#x27;ЯЗАННЯ СКЛАДНИХ РІВНЯНЬ</a>
+<a class="sidebar-topic" href="tr3_1.html#part3" style="padding-left:40px;font-size:.75rem">16.3 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="tr4_1.html">17. Обернені функції</a>
+<a class="sidebar-topic" href="tr4_1.html" style="padding-left:40px;font-size:.75rem">17.1 ЩО ТАКЕ ОБЕРНЕНА ФУНКЦІЯ</a>
+<a class="sidebar-topic" href="tr4_1.html#part2" style="padding-left:40px;font-size:.75rem">17.2 ОБЕРНЕНІ ТРИГОНОМЕТРИЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part3" style="padding-left:40px;font-size:.75rem">17.3 ОБЕРНЕНІ АЛГЕБРАЇЧНІ ФУНКЦІЇ</a>
+<a class="sidebar-topic" href="tr4_1.html#part4" style="padding-left:40px;font-size:.75rem">17.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analytic">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналітична геометрія та вектори</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="v5_1.html">18. Вектори</a>
+<a class="sidebar-topic" href="v5_1.html" style="padding-left:40px;font-size:.75rem">18.1 ПОНЯТТЯ ВЕКТОРА</a>
+<a class="sidebar-topic" href="v5_1.html#part2" style="padding-left:40px;font-size:.75rem">18.2 ДІЇ З ВЕКТОРАМИ</a>
+<a class="sidebar-topic" href="v5_1.html#part3" style="padding-left:40px;font-size:.75rem">18.3 СКАЛЯРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part4" style="padding-left:40px;font-size:.75rem">18.4 ВЕКТОРНИЙ ДОБУТОК</a>
+<a class="sidebar-topic" href="v5_1.html#part5" style="padding-left:40px;font-size:.75rem">18.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v6_1.html">19. Координатна геометрія</a>
+<a class="sidebar-topic" href="v6_1.html" style="padding-left:40px;font-size:.75rem">19.1 ВІДСТАНІ ТА СЕРЕДИНИ</a>
+<a class="sidebar-topic" href="v6_1.html#part2" style="padding-left:40px;font-size:.75rem">19.2 ПРЯМА НА ПЛОЩИНІ</a>
+<a class="sidebar-topic" href="v6_1.html#part3" style="padding-left:40px;font-size:.75rem">19.3 КОЛО ТА ІНШІ КРИВІ</a>
+<a class="sidebar-topic" href="v6_1.html#part4" style="padding-left:40px;font-size:.75rem">19.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic active" href="v7_1.html">20. Конічні перерізи</a>
+<a class="sidebar-topic" href="v7_1.html" style="padding-left:40px;font-size:.75rem">20.1 ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</a>
+<a class="sidebar-topic" href="v7_1.html#part2" style="padding-left:40px;font-size:.75rem">20.2 ЕЛІПС</a>
+<a class="sidebar-topic" href="v7_1.html#part3" style="padding-left:40px;font-size:.75rem">20.3 ГІПЕРБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part4" style="padding-left:40px;font-size:.75rem">20.4 ПАРАБОЛА</a>
+<a class="sidebar-topic" href="v7_1.html#part5" style="padding-left:40px;font-size:.75rem">20.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="v8_1.html">21. Координати у просторі</a>
+<a class="sidebar-topic" href="v8_1.html" style="padding-left:40px;font-size:.75rem">21.1 СИСТЕМА КООРДИНАТ У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part2" style="padding-left:40px;font-size:.75rem">21.2 ПРЯМА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part3" style="padding-left:40px;font-size:.75rem">21.3 ПЛОЩИНА У ПРОСТОРІ</a>
+<a class="sidebar-topic" href="v8_1.html#part4" style="padding-left:40px;font-size:.75rem">21.4 ІНШІ СИСТЕМИ КООРДИНАТ</a>
+<a class="sidebar-topic" href="v8_1.html#part5" style="padding-left:40px;font-size:.75rem">21.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+<div class="sidebar-section" data-section="analysis">
+<button class="sidebar-heading"><span class="arrow">▼</span> Аналіз та дискретна математика</button>
+<div class="sidebar-topics">
+<a class="sidebar-topic" href="m1_1.html">22. Комбінаторика</a>
+<a class="sidebar-topic" href="m1_1.html" style="padding-left:40px;font-size:.75rem">22.1 ПРИНЦИПИ ЛІЧБИ</a>
+<a class="sidebar-topic" href="m1_1.html#part2" style="padding-left:40px;font-size:.75rem">22.2 ПЕРЕСТАНОВКИ, РОЗМІЩЕННЯ, КОМБІНАЦІЇ</a>
+<a class="sidebar-topic" href="m1_1.html#part3" style="padding-left:40px;font-size:.75rem">22.3 ВЛАСТИВОСТІ КОМБІНАЦІЙ</a>
+<a class="sidebar-topic" href="m1_1.html#part4" style="padding-left:40px;font-size:.75rem">22.4 БІНІМАЛЬНА ТЕОРЕМА</a>
+<a class="sidebar-topic" href="m1_1.html#part5" style="padding-left:40px;font-size:.75rem">22.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m2_1.html">23. Теорія ймовірностей</a>
+<a class="sidebar-topic" href="m2_1.html" style="padding-left:40px;font-size:.75rem">23.1 ОСНОВНІ ПОНЯТТЯ</a>
+<a class="sidebar-topic" href="m2_1.html#part2" style="padding-left:40px;font-size:.75rem">23.2 ОПЕРАЦІЇ НАД ПОДІЯМИ</a>
+<a class="sidebar-topic" href="m2_1.html#part3" style="padding-left:40px;font-size:.75rem">23.3 УМОВНА ЙМОВІРНІСТЬ</a>
+<a class="sidebar-topic" href="m2_1.html#part4" style="padding-left:40px;font-size:.75rem">23.4 ДИСКРЕТНІ РОЗПОДІЛИ</a>
+<a class="sidebar-topic" href="m2_1.html#part5" style="padding-left:40px;font-size:.75rem">23.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m3_1.html">24. Границі та похідна</a>
+<a class="sidebar-topic" href="m3_1.html" style="padding-left:40px;font-size:.75rem">24.1 ГРАНИЦІ</a>
+<a class="sidebar-topic" href="m3_1.html#part2" style="padding-left:40px;font-size:.75rem">24.2 ПОХІДНА</a>
+<a class="sidebar-topic" href="m3_1.html#part3" style="padding-left:40px;font-size:.75rem">24.3 ЗАСТОСУВАННЯ ПОХІДНОЇ</a>
+<a class="sidebar-topic" href="m3_1.html#part4" style="padding-left:40px;font-size:.75rem">24.4 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m4_1.html">25. Інтеграл</a>
+<a class="sidebar-topic" href="m4_1.html" style="padding-left:40px;font-size:.75rem">25.1 НЕВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part2" style="padding-left:40px;font-size:.75rem">25.2 МЕТОДИ ІНТЕГРУВАННЯ</a>
+<a class="sidebar-topic" href="m4_1.html#part3" style="padding-left:40px;font-size:.75rem">25.3 ВИЗНАЧЕНИЙ ІНТЕГРАЛ</a>
+<a class="sidebar-topic" href="m4_1.html#part4" style="padding-left:40px;font-size:.75rem">25.4 ЗАСТОСУВАННЯ ІНТЕГРАЛА</a>
+<a class="sidebar-topic" href="m4_1.html#part5" style="padding-left:40px;font-size:.75rem">25.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+<a class="sidebar-topic" href="m5_1.html">26. Ряди та послідовності</a>
+<a class="sidebar-topic" href="m5_1.html" style="padding-left:40px;font-size:.75rem">26.1 ЧИСЛОВІ ПОСЛІДОВНОСТІ</a>
+<a class="sidebar-topic" href="m5_1.html#part2" style="padding-left:40px;font-size:.75rem">26.2 ЧИСЛОВІ РЯДИ</a>
+<a class="sidebar-topic" href="m5_1.html#part3" style="padding-left:40px;font-size:.75rem">26.3 ОЗНАКИ ЗБІЖНОСТІ РЯДІВ</a>
+<a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
+<a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
+</div></div>
+  </aside>
+
+  <main class="main">
+    <div class="lecture">
+      <h1>КОНІЧНІ ПЕРЕРІЗИ</h1>
+<p class="subtitle"><em>Геометрія · Еліпс · Гіпербола · Парабола · Фокуси · Канонічні рівняння</em></p>
+<div id="part1" class="block-part"><h2>ЧАСТИНА 1. ЩО ТАКЕ КОНІЧНІ ПЕРЕРІЗИ</h2></div>
+<p>Конічні перерізи — три криві (еліпс, гіпербола, парабола), які виникають при перетині конуса площиною. Вони описують орбіти планет, форму мостів, траєкторії снарядів. На НМТ — потрібно знати їх рівняння, фокуси та ексцентриситет.</p>
+
+<h3>1. Загальна класифікація</h3>
+<table>
+<tr class="row-even"><td><strong>Крива</strong></td><td><strong>Визначення</strong></td><td><strong>e</strong></td></tr>
+<tr class="row-odd"><td><strong>Коло</strong></td><td>Усі точки рівновіддалені від центра</td><td>e = 0</td></tr>
+<tr class="row-even"><td><strong>Еліпс</strong></td><td>Сума відстаней до двох фокусів = const</td><td>0 &lt; e &lt; 1</td></tr>
+<tr class="row-odd"><td><strong>Парабола</strong></td><td>Відстань до фокуса = відстань до директриси</td><td>e = 1</td></tr>
+<tr class="row-even"><td><strong>Гіпербола</strong></td><td>Різниця відстаней до двох фокусів = const</td><td>e &gt; 1</td></tr>
+</table>
+
+<div id="part2" class="block-part"><h2>ЧАСТИНА 2. ЕЛІПС</h2></div>
+<h3>2. Еліпс: x²/a² + y²/b² = 1</h3>
+<p><strong>Еліпс</strong> — множина точок, сума відстаней від яких до фокусів F₁ і F₂ дорівнює 2a.</p>
+<table>
+<tr class="row-even"><td><strong>Фокуси</strong></td><td>F(±c; 0), де <strong>c = √(a² − b²)</strong></td></tr>
+<tr class="row-odd"><td><strong>Ексцентриситет</strong></td><td>e = c/a (0 &lt; e &lt; 1). Ближче до 0 → коло. Ближче до 1 → витягнутий</td></tr>
+<tr class="row-even"><td><strong>Вершини</strong></td><td>A(±a; 0), B(0; ±b)</td></tr>
+<tr class="row-odd"><td><strong>Зв'язок</strong></td><td><strong>a² = b² + c²</strong></td></tr>
+</table>
+
+<p><strong>Спробуйте:</strong> змінюйте a і b — дивіться, як еліпс розтягується і де переміщуються фокуси:</p>
+<div style="background:var(--card-bg,#f8f9fa);border:1px solid var(--border,#ddd);border-radius:8px;padding:16px;margin:1em 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:60px;">a = <span id="elAv">5</span></label>
+<input type="range" id="elAsl" min="1" max="7" step="0.5" value="5" style="flex:1;min-width:100px;">
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:60px;">b = <span id="elBv">3</span></label>
+<input type="range" id="elBsl" min="1" max="7" step="0.5" value="3" style="flex:1;min-width:100px;">
+</div>
+<canvas id="elCv" width="400" height="280" style="width:100%;max-width:420px;display:block;margin:0 auto;border-radius:4px;"></canvas>
+<p id="elTx" style="margin:8px 0 0;font-size:.85em;"></p>
+</div>
+
+<script>
+var _G={colors:function(){var s=getComputedStyle(document.documentElement);return{text:s.getPropertyValue('--text').trim()||'#222',border:s.getPropertyValue('--border').trim()||'#ccc',accent:s.getPropertyValue('--accent').trim()||'#2563eb',warn:'#e74c3c',fill:'rgba(37,99,235,0.1)'};}};
+(function(){
+var G=_G,as=document.getElementById('elAsl'),bs=document.getElementById('elBsl'),cv=document.getElementById('elCv');
+var av=document.getElementById('elAv'),bvv=document.getElementById('elBv'),tx=document.getElementById('elTx');
+function draw(){
+  var a=parseFloat(as.value),b=parseFloat(bs.value);av.textContent=a;bvv.textContent=b;
+  var ctx=cv.getContext('2d'),W=cv.width,H=cv.height,col=G.colors();
+  ctx.clearRect(0,0,W,H);var cx=200,cy=140,sc=25;
+  // axes
+  ctx.strokeStyle=col.border;ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.stroke();ctx.beginPath();ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();
+  ctx.fillStyle=col.text;ctx.font='11px sans-serif';ctx.fillText('x',W-12,cy-6);ctx.fillText('y',cx+6,12);
+  // ellipse
+  ctx.strokeStyle=col.accent;ctx.lineWidth=2.5;ctx.beginPath();ctx.ellipse(cx,cy,a*sc,b*sc,0,0,Math.PI*2);ctx.stroke();
+  ctx.fillStyle=col.fill;ctx.beginPath();ctx.ellipse(cx,cy,a*sc,b*sc,0,0,Math.PI*2);ctx.fill();
+  // foci
+  var aa=Math.max(a,b),bb=Math.min(a,b);var c2=aa*aa-bb*bb;var c=Math.sqrt(c2);
+  if(a>=b){
+    ctx.fillStyle=col.warn;ctx.beginPath();ctx.arc(cx-c*sc,cy,5,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(cx+c*sc,cy,5,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=col.warn;ctx.font='bold 11px sans-serif';ctx.fillText('F₁',cx-c*sc-8,cy-10);ctx.fillText('F₂',cx+c*sc+4,cy-10);
+  }else{
+    ctx.fillStyle=col.warn;ctx.beginPath();ctx.arc(cx,cy-c*sc,5,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(cx,cy+c*sc,5,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=col.warn;ctx.font='bold 11px sans-serif';ctx.fillText('F₁',cx+8,cy-c*sc-4);ctx.fillText('F₂',cx+8,cy+c*sc+12);
+  }
+  // vertices
+  ctx.fillStyle=col.accent;ctx.font='10px sans-serif';
+  ctx.fillText('('+a+';0)',cx+a*sc+4,cy-6);ctx.fillText('(0;'+b+')',cx+6,cy-b*sc-4);
+  var e=c/aa;
+  tx.innerHTML='x²/'+a+'² + y²/'+b+'² = 1 &nbsp; c = √('+aa+'²−'+bb+'²) = √'+(aa*aa-bb*bb).toFixed(0)+' = <strong>'+c.toFixed(2)+'</strong> &nbsp; e = '+c.toFixed(2)+'/'+aa+' = <strong>'+e.toFixed(3)+'</strong>'+(Math.abs(a-b)<0.1?' — коло!':'');
+}
+as.addEventListener('input',draw);bs.addEventListener('input',draw);draw();
+})();
+</script>
+
+<p><strong>Приклад:</strong> x²/25 + y²/9 = 1 → a=5, b=3, c=√(25−9)=4. Фокуси: (±4; 0). e = 4/5 = 0.8.</p>
+
+<div id="part3" class="block-part"><h2>ЧАСТИНА 3. ГІПЕРБОЛА</h2></div>
+<h3>3. Гіпербола: x²/a² − y²/b² = 1</h3>
+<p><strong>Гіпербола</strong> — множина точок, різниця відстаней від яких до фокусів = 2a.</p>
+<table>
+<tr class="row-even"><td><strong>Фокуси</strong></td><td>F(±c; 0), де <strong>c = √(a² + b²)</strong> — зверніть: плюс!</td></tr>
+<tr class="row-odd"><td><strong>Ексцентриситет</strong></td><td>e = c/a &gt; 1</td></tr>
+<tr class="row-even"><td><strong>Асимптоти</strong></td><td><strong>y = ±(b/a)·x</strong></td></tr>
+<tr class="row-odd"><td><strong>Вершини</strong></td><td>A(±a; 0)</td></tr>
+</table>
+
+<p><strong>Спробуйте:</strong> змінюйте a і b — дивіться форму гіперболи та асимптоти:</p>
+<div style="background:var(--card-bg,#f8f9fa);border:1px solid var(--border,#ddd);border-radius:8px;padding:16px;margin:1em 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:60px;">a = <span id="hyAv">3</span></label>
+<input type="range" id="hyAsl" min="1" max="6" step="0.5" value="3" style="flex:1;min-width:100px;">
+</div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:60px;">b = <span id="hyBv">2</span></label>
+<input type="range" id="hyBsl" min="1" max="6" step="0.5" value="2" style="flex:1;min-width:100px;">
+</div>
+<canvas id="hyCv" width="400" height="280" style="width:100%;max-width:420px;display:block;margin:0 auto;border-radius:4px;"></canvas>
+<p id="hyTx" style="margin:8px 0 0;font-size:.85em;"></p>
+</div>
+
+<script>
+(function(){
+var G=_G,as=document.getElementById('hyAsl'),bs=document.getElementById('hyBsl'),cv=document.getElementById('hyCv');
+var av=document.getElementById('hyAv'),bvv=document.getElementById('hyBv'),tx=document.getElementById('hyTx');
+function draw(){
+  var a=parseFloat(as.value),b=parseFloat(bs.value);av.textContent=a;bvv.textContent=b;
+  var ctx=cv.getContext('2d'),W=cv.width,H=cv.height,col=G.colors();
+  ctx.clearRect(0,0,W,H);var cx=200,cy=140,sc=25;
+  ctx.strokeStyle=col.border;ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.stroke();ctx.beginPath();ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();
+  // asymptotes
+  ctx.setLineDash([5,5]);ctx.strokeStyle=col.border;ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(cx-200,cy+200*b/a);ctx.lineTo(cx+200,cy-200*b/a);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx-200,cy-200*b/a);ctx.lineTo(cx+200,cy+200*b/a);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle=col.border;ctx.font='10px sans-serif';ctx.fillText('y='+( b/a).toFixed(1)+'x',cx+120,cy-120*b/a-6);
+  // hyperbola branches
+  ctx.strokeStyle=col.accent;ctx.lineWidth=2.5;
+  for(var sg=-1;sg<=1;sg+=2){ctx.beginPath();var first=true;
+    for(var t=-3;t<=3;t+=0.02){var xx=a*Math.cosh(t)*sg,yy=b*Math.sinh(t);var sx=cx+xx*sc,sy=cy-yy*sc;if(sx<-10||sx>W+10||sy<-10||sy>H+10){first=true;continue;}if(first){ctx.moveTo(sx,sy);first=false;}else ctx.lineTo(sx,sy);}ctx.stroke();}
+  // foci
+  var c=Math.sqrt(a*a+b*b);
+  ctx.fillStyle=col.warn;ctx.beginPath();ctx.arc(cx-c*sc,cy,5,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(cx+c*sc,cy,5,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle=col.warn;ctx.font='bold 11px sans-serif';ctx.fillText('F₁',cx-c*sc-8,cy-10);ctx.fillText('F₂',cx+c*sc+4,cy-10);
+  // vertices
+  ctx.fillStyle='#2ecc71';ctx.beginPath();ctx.arc(cx-a*sc,cy,4,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(cx+a*sc,cy,4,0,Math.PI*2);ctx.fill();
+  var e=c/a;
+  tx.innerHTML='x²/'+a+'² − y²/'+b+'² = 1 &nbsp; c = √('+a+'²+'+b+'²) = <strong>'+c.toFixed(2)+'</strong> &nbsp; e = <strong>'+e.toFixed(2)+'</strong> &nbsp; Асимптоти: y = ±'+(b/a).toFixed(2)+'x';
+}
+as.addEventListener('input',draw);bs.addEventListener('input',draw);draw();
+})();
+</script>
+
+<p><strong>Приклад:</strong> x²/9 − y²/16 = 1 → a=3, b=4, c=√(9+16)=5. Фокуси: (±5; 0). e = 5/3 ≈ 1.67. Асимптоти: y = ±(4/3)x.</p>
+
+<div id="part4" class="block-part"><h2>ЧАСТИНА 4. ПАРАБОЛА</h2></div>
+<h3>4. Парабола: y² = 2px або y = ax²</h3>
+<p><strong>Парабола</strong> — множина точок, рівновіддалених від фокуса F і директриси.</p>
+<table>
+<tr class="row-even"><td><strong>Форма y² = 2px</strong></td><td>Фокус: F(p/2; 0). Директриса: x = −p/2</td></tr>
+<tr class="row-odd"><td><strong>Форма y = ax²</strong></td><td>Фокус: F(0; 1/(4a)). Директриса: y = −1/(4a)</td></tr>
+<tr class="row-even"><td><strong>Вершина</strong></td><td>O(0; 0) для канонічної форми</td></tr>
+<tr class="row-odd"><td><strong>Вісь симетрії</strong></td><td>OX для y²=2px. OY для y=ax²</td></tr>
+</table>
+
+<p><strong>Спробуйте:</strong> змінюйте параметр a — парабола розтягується, фокус переміщується:</p>
+<div style="background:var(--card-bg,#f8f9fa);border:1px solid var(--border,#ddd);border-radius:8px;padding:16px;margin:1em 0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+<label style="font-weight:600;min-width:60px;">a = <span id="paAv">0.5</span></label>
+<input type="range" id="paAsl" min="-2" max="2" step="0.1" value="0.5" style="flex:1;min-width:120px;">
+</div>
+<canvas id="paCv" width="400" height="280" style="width:100%;max-width:420px;display:block;margin:0 auto;border-radius:4px;"></canvas>
+<p id="paTx" style="margin:8px 0 0;font-size:.85em;"></p>
+</div>
+
+<script>
+(function(){
+var G=_G,as=document.getElementById('paAsl'),cv=document.getElementById('paCv'),av=document.getElementById('paAv'),tx=document.getElementById('paTx');
+function draw(){
+  var a=parseFloat(as.value);av.textContent=a.toFixed(1);
+  var ctx=cv.getContext('2d'),W=cv.width,H=cv.height,col=G.colors();
+  ctx.clearRect(0,0,W,H);var cx=200,cy=200,sc=25;
+  ctx.strokeStyle=col.border;ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.stroke();ctx.beginPath();ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();
+  if(Math.abs(a)<0.05){tx.innerHTML='a = 0 → не парабола';return;}
+  // parabola y=ax²
+  ctx.strokeStyle=col.accent;ctx.lineWidth=2.5;ctx.beginPath();var first=true;
+  for(var px=-7;px<=7;px+=0.05){var py=a*px*px;var sy=cy-py*sc;if(sy<-20||sy>H+20){first=true;continue;}if(first){ctx.moveTo(cx+px*sc,sy);first=false;}else ctx.lineTo(cx+px*sc,sy);}ctx.stroke();
+  // focus
+  var fy=1/(4*a);
+  if(Math.abs(fy*sc)<H){ctx.fillStyle=col.warn;ctx.beginPath();ctx.arc(cx,cy-fy*sc,5,0,Math.PI*2);ctx.fill();ctx.fillStyle=col.warn;ctx.font='bold 11px sans-serif';ctx.fillText('F(0; '+(fy).toFixed(2)+')',cx+10,cy-fy*sc-8);}
+  // directrix
+  ctx.setLineDash([5,5]);ctx.strokeStyle=col.warn;ctx.lineWidth=1;var dy=-fy;
+  if(Math.abs(dy*sc)<H){ctx.beginPath();ctx.moveTo(0,cy-dy*sc);ctx.lineTo(W,cy-dy*sc);ctx.stroke();}ctx.setLineDash([]);
+  ctx.fillStyle=col.warn;ctx.font='10px sans-serif';if(Math.abs(dy*sc)<H)ctx.fillText('директриса y='+(dy).toFixed(2),10,cy-dy*sc-6);
+  // vertex
+  ctx.fillStyle='#2ecc71';ctx.beginPath();ctx.arc(cx,cy,4,0,Math.PI*2);ctx.fill();
+  tx.innerHTML='y = '+a.toFixed(1)+'x² &nbsp; Фокус: (0; '+(fy).toFixed(2)+') &nbsp; Директриса: y = '+(- fy).toFixed(2)+' &nbsp; '+(a>0?'Гілки вгору':'Гілки вниз');
+}
+as.addEventListener('input',draw);draw();
+})();
+</script>
+
+<div id="part5" class="block-part"><h2>ПІДСУМОК — ПАМ'ЯТКА</h2></div>
+<table>
+<tr class="row-even"><td></td><td><strong>Еліпс</strong></td><td><strong>Гіпербола</strong></td><td><strong>Парабола</strong></td></tr>
+<tr class="row-odd"><td><strong>Рівняння</strong></td><td>x²/a²+y²/b²=1</td><td>x²/a²−y²/b²=1</td><td>y=ax² або y²=2px</td></tr>
+<tr class="row-even"><td><strong>c²</strong></td><td>a²<strong>−</strong>b²</td><td>a²<strong>+</strong>b²</td><td>—</td></tr>
+<tr class="row-odd"><td><strong>e</strong></td><td>&lt; 1</td><td>&gt; 1</td><td>= 1</td></tr>
+<tr class="row-even"><td><strong>Асимптоти</strong></td><td>Немає</td><td>y=±(b/a)x</td><td>Немає</td></tr>
+<tr class="row-odd"><td><strong>Визначення</strong></td><td>Сума відстаней=2a</td><td>Різниця=2a</td><td>Рівновіддалена від F і d</td></tr>
+</table>
+
+<h3>Типові помилки</h3>
+<div class="block-warning-body">
+<p><strong>1. Плутають c² = a²−b² (еліпс) і c² = a²+b² (гіпербола).</strong><br>
+Еліпс: <strong>мінус</strong> (c &lt; a, фокуси всередині). Гіпербола: <strong>плюс</strong> (c &gt; a, фокуси ззовні).</p>
+<p><strong>2. Плутають + і − у рівнянні.</strong><br>
+x²/a² <strong>+</strong> y²/b² = 1 → еліпс. x²/a² <strong>−</strong> y²/b² = 1 → гіпербола. Один знак — а форма зовсім інша.</p>
+<p><strong>3. Забувають, що a ≥ b для еліпса.</strong><br>
+У канонічному записі a — більша піввісь. Якщо b &gt; a, фокуси на осі OY, і формула c² = b²−a².</p>
+<p><strong>4. Плутають фокус параболи y=ax² з вершиною.</strong><br>
+Вершина — в (0;0). Фокус — у (0; 1/(4a)). Це різні точки!</p>
+</div>
+
+<p><em>Конічні перерізи — геометрія космосу і оптики.</em></p>
+    </div>
+  
+<nav class="page-nav"><a class="page-nav-btn page-nav-prev" href="v6_1.html">← 19. Координатна геометрія</a><a class="page-nav-btn page-nav-next" href="v8_1.html">21. Координати у просторі →</a></nav>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span class="footer-version">v 0.5.7</span>
+    <span class="footer-copy">© 2026 Хоменко Олексій Григорович</span>
+    <span class="footer-links">
+      <a href="mailto:itstiamushchy@gmail.com">itstiamushchy@gmail.com</a>
+      <span class="footer-sep">·</span>
+      <span>ITS_tiamushchy</span>
+    </span>
+  </div>
+</footer>
+</main>
+
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<script>
+(function(){
+  const saved = localStorage.getItem('obrahunok-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('themeToggle');
+  btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('obrahunok-theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  overlay.addEventListener('click', () => sidebar.classList.remove('open'));
+  document.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
+  });
+})();
+</script>
+</body>
+</html>
