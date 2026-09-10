@@ -247,6 +247,20 @@
   color: var(--text);
 }
 
+/* ── Task images ── */
+.task-image {
+  margin: 10px 0 14px;
+  text-align: center;
+}
+.task-image img {
+  max-width: 100%;
+  max-height: 320px;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  padding: 8px;
+}
+[data-theme="dark"] .task-image img { filter: invert(0.88) hue-rotate(180deg); }
+
 .task-actions {
   display: flex;
   flex-wrap: wrap;
@@ -770,6 +784,17 @@ end of original theory nav -->
         { file: 'topic9_13.json', title: '9.13 Теорема синусів', lecture: 'geo2_1.html#part6', lectureName: '9.6 Тригонометрія прямокутного трикутника' },
         { file: 'topic9_14.json', title: '9.14 Теорема косинусів', lecture: 'geo2_1.html#part6', lectureName: '9.6 Тригонометрія прямокутного трикутника' },
       ]},
+      { id: 10, name: '10. Чотирикутники та многокутники', subs: [
+        { file: 'topic10_1.json', title: '10.1 Многокутники, діагоналі', lecture: 'geo3_1.html', lectureName: '10.1 Загальні поняття' },
+        { file: 'topic10_2.json', title: '10.2 Паралелограм', lecture: 'geo3_1.html#part2', lectureName: '10.2 Чотирикутники' },
+        { file: 'topic10_3.json', title: '10.3 Прямокутник', lecture: 'geo3_1.html#part2', lectureName: '10.2 Чотирикутники' },
+        { file: 'topic10_4.json', title: '10.4 Ромб', lecture: 'geo3_1.html#part2', lectureName: '10.2 Чотирикутники' },
+        { file: 'topic10_5.json', title: '10.5 Квадрат', lecture: 'geo3_1.html#part2', lectureName: '10.2 Чотирикутники' },
+        { file: 'topic10_6.json', title: '10.6 Трапеція', lecture: 'geo3_1.html#part2', lectureName: '10.2 Чотирикутники' },
+        { file: 'topic10_7.json', title: '10.7 Зв'язки між чотирикутниками', lecture: 'geo3_1.html#part2', lectureName: '10.2 Чотирикутники' },
+        { file: 'topic10_8.json', title: '10.8 Правильні многокутники', lecture: 'geo3_1.html#part3', lectureName: '10.3 Правильні многокутники' },
+        { file: 'topic10_9.json', title: '10.9 Вписані та описані кола', lecture: 'geo3_1.html#part3', lectureName: '10.3 Правильні многокутники' },
+      ]},
     ]}
   ];
 
@@ -913,6 +938,9 @@ end of original theory nav -->
       h += `<div class="task-num lv${t.level}" title="${LEVEL_NAMES[t.level]}">${t.level}</div>`;
       h += `<div class="task-condition">${esc(t.condition)}</div>`;
       h += `</div>`;
+      if (t.image) {
+        h += `<div class="task-image"><img src="${t.image}" alt="Ілюстрація до задачі" loading="lazy"></div>`;
+      }
 
       /* actions */
       h += `<div class="task-actions">`;
