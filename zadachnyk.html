@@ -37,6 +37,37 @@
 }
 .topic-picker.open .topic-picker-body { display: block; }
 
+/* ── Sidebar task tree ── */
+.sb-chapter { margin-bottom: 2px; }
+.sb-chapter-title {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 10px 5px 20px;
+  font-size: .8rem; font-weight: 600;
+  color: var(--heading-accent);
+  cursor: pointer;
+  border-radius: var(--radius);
+  -webkit-user-select: none; user-select: none;
+}
+.sb-chapter-title:hover { background: var(--bg-hover); }
+.sb-chapter-title .arrow { font-size: .55rem; transition: transform .15s; }
+.sb-task-item {
+  display: block;
+  padding: 5px 10px 5px 36px;
+  font-size: .78rem;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: var(--radius);
+  border-left: 3px solid transparent;
+  transition: background .12s;
+}
+.sb-task-item:hover { background: var(--bg-hover); }
+.sb-task-item.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+  border-left-color: var(--accent);
+}
+
 .tp-section {
   margin-bottom: 6px;
 }
@@ -397,6 +428,8 @@
   </nav>
 
   <aside class="sidebar" id="sidebar">
+    <div id="sidebarTasks"><!-- filled by JS from TOPICS --></div>
+<!-- original theory nav preserved as comment
 <div class="sidebar-section" data-section="algebra">
 <button class="sidebar-heading"><span class="arrow">▼</span> Алгебра</button>
 <div class="sidebar-topics">
@@ -570,27 +603,17 @@
 <a class="sidebar-topic" href="m5_1.html#part4" style="padding-left:40px;font-size:.75rem">26.4 СТЕПЕНЕВІ РЯДИ І РЯД ТЕЙЛОРА</a>
 <a class="sidebar-topic" href="m5_1.html#part5" style="padding-left:40px;font-size:.75rem">26.5 ПІДСУМОК — ПАМ&#x27;ЯТКА</a>
 </div></div>
+end of original theory nav -->
   </aside>
 
   <main class="main">
     <div class="task-page">
 
-      <!-- ── Topic picker ── -->
-      <div class="topic-picker open" id="topicPicker">
-        <div class="topic-picker-header" id="tpToggle">
-          <span id="tpTitle">Оберіть тему</span>
-          <span class="tp-arrow">▼</span>
-        </div>
-        <div class="topic-picker-body" id="tpBody">
-          <!-- filled by JS -->
-        </div>
-      </div>
-
       <!-- ── Task area ── -->
       <div id="taskArea">
         <div class="task-welcome">
           <h2>📝 Задачник</h2>
-          <p>754 задачі з детальними поясненнями.<br>Оберіть тему вище, щоб розпочати.</p>
+          <p>754 задачі з детальними поясненнями.<br>Оберіть тему зліва, щоб розпочати.</p>
         </div>
       </div>
 
@@ -753,33 +776,43 @@
   const LEVEL_NAMES = ['','Початковий','Базовий','Середній','Складний','Олімпіадний'];
   const LEVEL_COLORS = ['','#43a047','#1e88e5','#fb8c00','#e53935','#6a1b9a'];
 
-  /* ═══ Build topic picker ═══ */
-  const tpBody = document.getElementById('tpBody');
+  /* ═══ Build sidebar task tree ═══ */
+  const sbTasks = document.getElementById('sidebarTasks');
   let html = '';
   TOPICS.forEach(sec => {
-    html += `<div class="tp-section">`;
-    html += `<div class="tp-section-title"><span class="arrow">▼</span> ${sec.section}</div>`;
-    html += `<div class="tp-items">`;
+    html += `<div class="sidebar-section">`;
+    html += `<button class="sidebar-heading"><span class="arrow">▼</span> ${sec.section}</button>`;
+    html += `<div class="sidebar-topics">`;
     sec.chapters.forEach(ch => {
-      html += `<div class="tp-chapter">${ch.name}</div>`;
+      html += `<div class="sb-chapter" data-chid="${ch.id}">`;
+      html += `<div class="sb-chapter-title"><span class="arrow">▶</span> ${ch.name}</div>`;
+      html += `<div class="sb-chapter-items" style="display:none">`;
       ch.subs.forEach(sub => {
-        html += `<div class="tp-item" data-file="${sub.file}" data-lecture="${sub.lecture}" data-lecname="${sub.lectureName}">`;
-        html += `<span>${sub.title}</span>`;
+        html += `<div class="sidebar-topic sb-task-item" data-file="${sub.file}" data-lecture="${sub.lecture}" data-lecname="${sub.lectureName}">`;
+        html += `${sub.title}`;
         html += `</div>`;
       });
+      html += `</div></div>`;
     });
     html += `</div></div>`;
   });
-  tpBody.innerHTML = html;
+  sbTasks.innerHTML = html;
 
-  /* ── Section collapse ── */
-  tpBody.querySelectorAll('.tp-section-title').forEach(t => {
-    t.addEventListener('click', () => t.closest('.tp-section').classList.toggle('collapsed'));
+  /* ── Section collapse (Алгебра / Геометрія) ── */
+  sbTasks.querySelectorAll('.sidebar-heading').forEach(b => {
+    b.addEventListener('click', () => b.closest('.sidebar-section').classList.toggle('collapsed'));
   });
 
-  /* ── Picker toggle ── */
-  document.getElementById('tpToggle').addEventListener('click', () => {
-    document.getElementById('topicPicker').classList.toggle('open');
+  /* ── Chapter collapse (розділи) ── */
+  sbTasks.querySelectorAll('.sb-chapter-title').forEach(t => {
+    t.addEventListener('click', () => {
+      const ch = t.closest('.sb-chapter');
+      const items = ch.querySelector('.sb-chapter-items');
+      const arrow = t.querySelector('.arrow');
+      const open = items.style.display !== 'none';
+      items.style.display = open ? 'none' : 'block';
+      arrow.textContent = open ? '▶' : '▼';
+    });
   });
 
   /* ═══ Load topic ═══ */
@@ -787,20 +820,20 @@
   let currentData = null;
   let currentMeta = null;
 
-  tpBody.querySelectorAll('.tp-item').forEach(item => {
-    item.addEventListener('click', () => {
-      tpBody.querySelectorAll('.tp-item').forEach(i => i.classList.remove('active'));
+  sbTasks.querySelectorAll('.sb-task-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      sbTasks.querySelectorAll('.sb-task-item').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
       currentMeta = {
         file: item.dataset.file,
         lecture: item.dataset.lecture,
         lecname: item.dataset.lecname,
-        title: item.querySelector('span').textContent
+        title: item.textContent.trim()
       };
-      document.getElementById('tpTitle').textContent = currentMeta.title;
-      // Collapse picker on mobile
+      // Close sidebar on mobile
       if (window.innerWidth <= 768) {
-        document.getElementById('topicPicker').classList.remove('open');
+        document.getElementById('sidebar').classList.remove('open');
       }
       loadTopic(currentMeta);
     });
