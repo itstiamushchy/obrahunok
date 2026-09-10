@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 340,250 250,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="40" y="268" font-family="serif" font-size="16">A</text>
+<text x="342" y="268" font-family="serif" font-size="16">B</text>
+<text x="252" y="50" font-family="serif" font-size="16">C</text>
+<path d="M95,250 A35,35 0 0,1 80,225" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="92" y="232" font-family="serif" font-size="14">45°</text>
+<path d="M305,250 A35,35 0 0,0 318,225" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="290" y="232" font-family="serif" font-size="14">60°</text>
+<text x="240" y="88" font-family="serif" font-size="16">?</text>
+</svg>

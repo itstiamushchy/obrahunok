@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="50" y1="270" x2="350" y2="70" stroke="black" stroke-width="2"/>
+<line x1="50" y1="70" x2="350" y2="270" stroke="black" stroke-width="2"/>
+<line x1="50" y1="170" x2="350" y2="170" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<line x1="200" y1="30" x2="200" y2="290" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<circle cx="200" cy="170" r="4" fill="black"/>
+<text x="355" y="68" font-family="serif" font-size="14">a</text>
+<text x="355" y="268" font-family="serif" font-size="14">b</text>
+<text x="270" y="165" font-family="serif" font-size="12">бісектриса 1</text>
+<text x="205" y="100" font-family="serif" font-size="12">біс. 2</text>
+</svg>

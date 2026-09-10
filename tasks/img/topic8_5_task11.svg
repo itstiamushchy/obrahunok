@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 340,250 280,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="40" y="268" font-family="serif" font-size="16">A</text>
+<text x="342" y="268" font-family="serif" font-size="16">B</text>
+<text x="282" y="50" font-family="serif" font-size="16">C</text>
+<text x="88" y="240" font-family="serif" font-size="14">α</text>
+<text x="305" y="240" font-family="serif" font-size="14">β</text>
+<text x="155" y="155" font-family="serif" font-size="14">b</text>
+<text x="310" y="165" font-family="serif" font-size="14">a</text>
+<text x="80" y="290" font-family="serif" font-size="14">α > β ⇒ a > b</text>
+</svg>

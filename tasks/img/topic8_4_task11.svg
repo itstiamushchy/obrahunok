@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="150" r="100" fill="none" stroke="black" stroke-width="2"/>
+<polygon points="300,150 273,210 227,250 173,250 127,210 100,150 127,90 173,50 227,50 273,90" fill="none" stroke="black" stroke-width="1.5"/>
+<line x1="200" y1="150" x2="300" y2="150" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="200" y1="150" x2="273" y2="90" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="240" y="145" font-family="serif" font-size="13">r</text>
+<path d="M250,150 A50,50 0 0,0 242,125" fill="none" stroke="black" stroke-width="1"/>
+<text x="250" y="138" font-family="serif" font-size="11">2π/n</text>
+<text x="80" y="290" font-family="serif" font-size="13">S = (n/2)r²sin(2π/n)</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="150" r="90" fill="none" stroke="black" stroke-width="2"/>
+<line x1="200" y1="150" x2="290" y2="150" stroke="black" stroke-width="2"/>
+<circle cx="290" cy="150" r="5" fill="black"/>
+<path d="M280,130 A20,20 0 0,1 275,165" fill="none" stroke="black" stroke-width="2" marker-end="url(#a84)"/>
+<defs><marker id="a84" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="black"/></marker></defs>
+<text x="260" y="125" font-family="serif" font-size="14">ω</text>
+<text x="230" y="155" font-family="serif" font-size="14">r</text>
+<text x="100" y="280" font-family="serif" font-size="14">ω = 2πn (рад/с)</text>
+</svg>

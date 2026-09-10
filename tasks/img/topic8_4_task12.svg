@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="200" r="5" fill="black"/><text x="40" y="225" font-family="serif" font-size="14">T</text>
+<line x1="60" y1="200" x2="360" y2="190" stroke="black" stroke-width="2"/>
+<line x1="60" y1="200" x2="360" y2="180" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<path d="M120,198 A60,60 0 0,0 118,194" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="130" y="192" font-family="serif" font-size="12">1″</text>
+<text x="320" y="175" font-family="serif" font-size="12">δ = ?</text>
+<line x1="360" y1="180" x2="360" y2="190" stroke="red" stroke-width="2"/>
+<text x="200" y="260" font-family="serif" font-size="14">d = 1 км</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="25" font-family="serif" font-size="14">Суміжні кути:</text>
+<line x1="30" y1="100" x2="200" y2="100" stroke="black" stroke-width="2"/>
+<line x1="110" y1="100" x2="160" y2="40" stroke="black" stroke-width="2"/>
+<path d="M130,100 A20,20 0 0,1 128,86" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="133" y="88" font-family="serif" font-size="12">117°</text>
+<path d="M95,100 A15,15 0 0,0 98,88" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="70" y="88" font-family="serif" font-size="12">63°</text>
+<text x="220" y="25" font-family="serif" font-size="14">Вертикальні кути:</text>
+<line x1="230" y1="130" x2="380" y2="60" stroke="black" stroke-width="2"/>
+<line x1="230" y1="60" x2="380" y2="130" stroke="black" stroke-width="2"/>
+<text x="310" y="78" font-family="serif" font-size="12">63°</text>
+<text x="280" y="118" font-family="serif" font-size="12">63°</text>
+<text x="60" y="200" font-family="serif" font-size="14">α + β = 180° (суміжні)</text>
+<text x="60" y="230" font-family="serif" font-size="14">верт. кут до 63° = 63°</text>
+</svg>

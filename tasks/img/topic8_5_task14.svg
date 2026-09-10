@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="200,30 330,80 370,200 280,280 120,280 30,200 70,80" fill="none" stroke="black" stroke-width="2" stroke-dasharray="8,4"/>
+<text x="195" y="25" font-family="serif" font-size="12">?</text>
+<text x="100" y="170" font-family="serif" font-size="16">n = ?</text>
+<text x="70" y="210" font-family="serif" font-size="14">(n−2)·180° = 1440°</text>
+</svg>

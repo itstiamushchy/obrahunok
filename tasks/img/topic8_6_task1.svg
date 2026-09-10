@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="25" font-family="serif" font-size="14">Суміжні: α+β=180°</text>
+<line x1="20" y1="80" x2="200" y2="80" stroke="black" stroke-width="2"/>
+<line x1="110" y1="80" x2="150" y2="30" stroke="black" stroke-width="2"/>
+<text x="120" y="68" font-family="serif" font-size="14">α</text><text x="85" y="68" font-family="serif" font-size="14">β</text>
+<text x="220" y="25" font-family="serif" font-size="14">Вертикальні: α=α</text>
+<line x1="230" y1="110" x2="380" y2="50" stroke="black" stroke-width="2"/>
+<line x1="230" y1="50" x2="380" y2="110" stroke="black" stroke-width="2"/>
+<text x="310" y="65" font-family="serif" font-size="14">α</text><text x="290" y="100" font-family="serif" font-size="14">α</text>
+<text x="255" y="80" font-family="serif" font-size="14">β</text><text x="340" y="82" font-family="serif" font-size="14">β</text>
+</svg>

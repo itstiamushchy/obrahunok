@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,260 340,260 330,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="40" y="278" font-family="serif" font-size="16">A</text>
+<text x="342" y="278" font-family="serif" font-size="16">B</text>
+<text x="335" y="52" font-family="serif" font-size="16">C</text>
+<text x="90" y="250" font-family="serif" font-size="14">2x</text>
+<text x="305" y="248" font-family="serif" font-size="14">3x</text>
+<text x="320" y="95" font-family="serif" font-size="14">7x</text>
+<text x="100" y="290" font-family="serif" font-size="14">2x+3x+7x = 180°</text>
+</svg>

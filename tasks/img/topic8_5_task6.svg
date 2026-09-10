@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 300,250 300,80" fill="none" stroke="black" stroke-width="2"/>
+<rect x="288" y="238" width="12" height="12" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="40" y="268" font-family="serif" font-size="16">A</text>
+<text x="305" y="268" font-family="serif" font-size="16">B</text>
+<text x="305" y="75" font-family="serif" font-size="16">C</text>
+<text x="100" y="243" font-family="serif" font-size="14">2α</text>
+<text x="292" y="115" font-family="serif" font-size="14">α</text>
+<text x="305" y="175" font-family="serif" font-size="12">90°</text>
+</svg>

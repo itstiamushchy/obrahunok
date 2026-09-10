@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="150" r="100" fill="none" stroke="black" stroke-width="2"/>
+<line x1="200" y1="150" x2="300" y2="150" stroke="black" stroke-width="2"/>
+<line x1="200" y1="150" x2="250" y2="63" stroke="black" stroke-width="2"/>
+<path d="M240,150 A40,40 0 0,0 230,117" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="248" y="138" font-family="serif" font-size="14">60°</text>
+<text x="150" y="25" font-family="serif" font-size="14">π рад = 180°</text>
+<text x="140" y="280" font-family="serif" font-size="14">1 рад ≈ 57.3°</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="200" y1="170" x2="330" y2="170" stroke="black" stroke-width="2"/>
+<line x1="200" y1="170" x2="292" y2="78" stroke="black" stroke-width="2"/>
+<path d="M330,170 A130,130 0 0,0 292,78" fill="none" stroke="red" stroke-width="3"/>
+<path d="M240,170 A40,40 0 0,0 232,145" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="243" y="160" font-family="serif" font-size="14">α</text>
+<text x="260" y="185" font-family="serif" font-size="14">r=4</text>
+<text x="340" y="130" font-family="serif" font-size="16" fill="red">l=6</text>
+<text x="80" y="260" font-family="serif" font-size="14">α = l/r, S = ½r²α</text>
+</svg>

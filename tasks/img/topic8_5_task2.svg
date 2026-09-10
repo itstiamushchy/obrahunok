@@ -1,0 +1,14 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="25" font-family="serif" font-size="14">Суміжний до 67°:</text>
+<line x1="20" y1="80" x2="180" y2="80" stroke="black" stroke-width="2"/>
+<line x1="100" y1="80" x2="140" y2="30" stroke="black" stroke-width="2"/>
+<text x="110" y="65" font-family="serif" font-size="13">67°</text>
+<text x="60" y="70" font-family="serif" font-size="13">?</text>
+<text x="20" y="140" font-family="serif" font-size="14">Додатковий до 23°:</text>
+<line x1="20" y1="190" x2="100" y2="190" stroke="black" stroke-width="2"/>
+<line x1="20" y1="190" x2="20" y2="140" stroke="black" stroke-width="2"/>
+<line x1="20" y1="190" x2="70" y2="155" stroke="black" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="40" y="180" font-family="serif" font-size="13">23°</text>
+<text x="30" y="168" font-family="serif" font-size="13">?</text>
+<rect x="20" y="178" width="10" height="10" fill="none" stroke="black" stroke-width="1"/>
+</svg>

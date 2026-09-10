@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,230 280,230 180,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="38" y="248" font-family="serif" font-size="16">A</text>
+<text x="282" y="248" font-family="serif" font-size="16">B</text>
+<text x="175" y="50" font-family="serif" font-size="16">C</text>
+<line x1="280" y1="230" x2="370" y2="230" stroke="black" stroke-width="2"/>
+<path d="M310,230 A30,30 0 0,0 298,207" fill="none" stroke="black" stroke-width="2"/>
+<text x="315" y="218" font-family="serif" font-size="14">δ</text>
+<text x="85" y="225" font-family="serif" font-size="14">α</text>
+<text x="185" y="90" font-family="serif" font-size="14">β</text>
+<text x="100" y="290" font-family="serif" font-size="14">δ = α + β</text>
+</svg>

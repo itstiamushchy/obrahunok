@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,260 340,260 200,40" fill="none" stroke="black" stroke-width="2"/>
+<text x="40" y="278" font-family="serif" font-size="16">A</text>
+<text x="342" y="278" font-family="serif" font-size="16">B</text>
+<text x="195" y="32" font-family="serif" font-size="16">C</text>
+<line x1="340" y1="260" x2="155" y2="108" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<line x1="200" y1="40" x2="200" y2="260" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<circle cx="200" cy="180" r="5" fill="red"/><text x="208" y="178" font-family="serif" font-size="15">I</text>
+<text x="100" y="290" font-family="serif" font-size="14">∠BIC = 90° + ∠A/2</text>
+</svg>

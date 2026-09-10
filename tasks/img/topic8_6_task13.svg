@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="100" x2="370" y2="100" stroke="black" stroke-width="2"/>
+<line x1="30" y1="210" x2="370" y2="210" stroke="black" stroke-width="2"/>
+<line x1="130" y1="30" x2="270" y2="280" stroke="black" stroke-width="2"/>
+<text x="168" y="118" font-family="serif" font-size="13">2x+15°</text>
+<text x="215" y="205" font-family="serif" font-size="13">3x−20°</text>
+<text x="15" y="155" font-family="serif" font-size="13">∥</text>
+</svg>

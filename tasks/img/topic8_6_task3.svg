@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="100" x2="370" y2="100" stroke="black" stroke-width="2"/><text x="375" y="98" font-family="serif" font-size="14">a</text>
+<line x1="30" y1="210" x2="370" y2="210" stroke="black" stroke-width="2"/><text x="375" y="208" font-family="serif" font-size="14">b</text>
+<line x1="120" y1="30" x2="280" y2="280" stroke="black" stroke-width="2"/><text x="283" y="278" font-family="serif" font-size="14">c</text>
+<text x="175" y="95" font-family="serif" font-size="13">1</text><text x="195" y="95" font-family="serif" font-size="13">2</text>
+<text x="175" y="115" font-family="serif" font-size="13">3</text><text x="195" y="115" font-family="serif" font-size="13">4</text>
+<text x="215" y="205" font-family="serif" font-size="13">5</text><text x="235" y="205" font-family="serif" font-size="13">6</text>
+<text x="215" y="225" font-family="serif" font-size="13">7</text><text x="235" y="225" font-family="serif" font-size="13">8</text>
+<text x="10" y="155" font-family="serif" font-size="12">a ∥ b</text>
+</svg>

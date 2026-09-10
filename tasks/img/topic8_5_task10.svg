@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="200,50 296,85 330,175 270,255 130,255 70,175 104,85" fill="none" stroke="black" stroke-width="2"/>
+<text x="140" y="30" font-family="serif" font-size="14">Правильний 7-кутник</text>
+<path d="M124,100 A20,20 0 0,1 100,100" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="70" y="110" font-family="serif" font-size="13">(n−2)·180°/n</text>
+</svg>
