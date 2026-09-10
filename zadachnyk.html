@@ -855,16 +855,20 @@
     /* ── Methods ── */
     if (d.methods && d.methods.length) {
       d.methods.forEach((met, mi) => {
-        h += `<div class="method-card" data-mi="${mi}">`;
-        h += `<div class="method-header"><span class="m-arrow">▶</span> Метод: ${esc(met.name)}</div>`;
-        h += `<div class="method-body">`;
-        met.steps.forEach(s => {
-          h += `<div class="method-step">`;
-          h += `<div class="ms-action">${esc(s.action)}</div>`;
-          h += `<div class="ms-result">→ ${esc(s.result)}</div>`;
-          h += `</div>`;
-        });
-        h += `</div></div>`;
+        if (typeof met === 'string') {
+          h += `<div class="method-card"><div class="method-header">${esc(met)}</div></div>`;
+        } else {
+          h += `<div class="method-card" data-mi="${mi}">`;
+          h += `<div class="method-header"><span class="m-arrow">▶</span> Метод: ${esc(met.name)}</div>`;
+          h += `<div class="method-body">`;
+          met.steps.forEach(s => {
+            h += `<div class="method-step">`;
+            h += `<div class="ms-action">${esc(s.action)}</div>`;
+            h += `<div class="ms-result">→ ${esc(s.result)}</div>`;
+            h += `</div>`;
+          });
+          h += `</div></div>`;
+        }
       });
     }
 
