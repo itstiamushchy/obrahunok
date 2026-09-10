@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="200" x2="300" y2="40" stroke="black" stroke-width="2"/>
+<text x="305" y="38" font-family="serif" font-size="12">y=3x+1</text>
+<line x1="100" y1="260" x2="370" y2="100" stroke="black" stroke-width="2"/>
+<text x="350" y="95" font-family="serif" font-size="12">y=3x−4</text>
+<line x1="180" y1="110" x2="250" y2="165" stroke="red" stroke-width="2"/>
+<text x="255" y="145" font-family="serif" font-size="14" fill="red">d?</text>
+<text x="15" y="155" font-family="serif" font-size="13">∥</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="200" x2="370" y2="200" stroke="black" stroke-width="2"/><text x="375" y="198" font-family="serif" font-size="14">l</text>
+<circle cx="100" cy="80" r="4" fill="black"/><text x="82" y="72" font-family="serif" font-size="13">P₁</text>
+<circle cx="200" cy="120" r="4" fill="black"/><text x="208" y="115" font-family="serif" font-size="13">P₂</text>
+<circle cx="300" cy="60" r="4" fill="black"/><text x="308" y="55" font-family="serif" font-size="13">P₃</text>
+<line x1="50" y1="80" x2="150" y2="80" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<line x1="150" y1="120" x2="260" y2="120" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<line x1="250" y1="60" x2="360" y2="60" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="100" y="260" font-family="serif" font-size="13">∀P: ∃! пряма ∥ l</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="50" y1="250" x2="370" y2="250" stroke="black" stroke-width="1.5" marker-end="url(#a89)"/>
+<line x1="50" y1="250" x2="50" y2="20" stroke="black" stroke-width="1.5" marker-end="url(#a89)"/>
+<circle cx="50" cy="250" r="5" fill="red"/><text x="30" y="270" font-family="serif" font-size="14">O</text>
+<circle cx="230" cy="250" r="4" fill="black"/><text x="218" y="272" font-family="serif" font-size="13">A(3,0)</text>
+<circle cx="50" cy="10" r="4" fill="black"/><text x="58" y="15" font-family="serif" font-size="13">B(0,4)</text>
+<line x1="230" y1="250" x2="50" y2="10" stroke="black" stroke-width="2"/>
+<line x1="50" y1="250" x2="150" y2="120" stroke="red" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="100" y="175" font-family="serif" font-size="13" fill="red">d?</text>
+</svg>

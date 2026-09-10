@@ -1,0 +1,13 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="10" y="25" font-family="serif" font-size="13">а) P на прямій</text>
+<line x1="10" y1="80" x2="190" y2="80" stroke="black" stroke-width="2"/>
+<circle cx="100" cy="80" r="4" fill="black"/><text x="95" y="100" font-family="serif" font-size="13">P</text>
+<line x1="100" y1="80" x2="100" y2="30" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<rect x="100" y="68" width="10" height="10" fill="none" stroke="black" stroke-width="1"/>
+<text x="210" y="25" font-family="serif" font-size="13">б) P поза прямою</text>
+<line x1="210" y1="120" x2="390" y2="120" stroke="black" stroke-width="2"/>
+<circle cx="300" cy="50" r="4" fill="black"/><text x="308" y="48" font-family="serif" font-size="13">P</text>
+<line x1="300" y1="50" x2="300" y2="120" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<rect x="300" y="108" width="10" height="10" fill="none" stroke="black" stroke-width="1"/>
+<text x="305" y="115" font-family="serif" font-size="13">H</text>
+</svg>

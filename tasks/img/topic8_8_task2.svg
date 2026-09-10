@@ -1,0 +1,7 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/><text x="375" y="178" font-family="serif" font-size="14">l</text>
+<circle cx="200" cy="100" r="5" fill="black"/><text x="208" y="95" font-family="serif" font-size="15">P</text>
+<line x1="30" y1="100" x2="370" y2="100" stroke="black" stroke-width="2" stroke-dasharray="6,3"/>
+<text x="335" y="92" font-family="serif" font-size="12">єдина ∥</text>
+<text x="80" y="250" font-family="serif" font-size="14">P ∉ l → рівно 1 пряма ∥ l</text>
+</svg>

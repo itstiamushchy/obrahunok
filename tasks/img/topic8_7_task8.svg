@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="50" x2="370" y2="260" stroke="black" stroke-width="2"/>
+<text x="340" y="275" font-family="serif" font-size="12">2x+3y−6=0</text>
+<circle cx="150" cy="180" r="5" fill="red"/><text x="100" y="178" font-family="serif" font-size="14">M(1,4)</text>
+<line x1="80" y1="250" x2="280" y2="100" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="270" y="95" font-family="serif" font-size="12">⊥ ?</text>
+<rect x="178" y="175" width="10" height="10" fill="none" stroke="black" stroke-width="1" transform="rotate(-34,178,175)"/>
+</svg>

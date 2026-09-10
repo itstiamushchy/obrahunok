@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/><text x="375" y="178" font-family="serif" font-size="14">l</text>
+<line x1="200" y1="180" x2="200" y2="40" stroke="black" stroke-width="2"/>
+<rect x="200" y="168" width="12" height="12" fill="none" stroke="black" stroke-width="1.5"/>
+<circle cx="200" cy="40" r="5" fill="black"/><text x="208" y="38" font-family="serif" font-size="15">P</text>
+<circle cx="200" cy="180" r="4" fill="black"/><text x="208" y="200" font-family="serif" font-size="14">H</text>
+<text x="215" y="120" font-family="serif" font-size="14">d = PH</text>
+<text x="60" y="260" font-family="serif" font-size="13">PH ⊥ l — найкоротший шлях</text>
+</svg>

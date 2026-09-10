@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="250" x2="370" y2="250" stroke="black" stroke-width="1.5" marker-end="url(#a87)"/>
+<line x1="30" y1="250" x2="30" y2="20" stroke="black" stroke-width="1.5" marker-end="url(#a87)"/>
+<defs><marker id="a87" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="black"/></marker></defs>
+<line x1="30" y1="200" x2="370" y2="60" stroke="black" stroke-width="2"/>
+<text x="360" y="55" font-family="serif" font-size="13">2x−y+1=0</text>
+<circle cx="180" cy="110" r="5" fill="red"/><text x="188" y="105" font-family="serif" font-size="14">P(3,2)</text>
+<line x1="180" y1="110" x2="152" y2="148" stroke="red" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="125" y="135" font-family="serif" font-size="13">d?</text>
+</svg>
