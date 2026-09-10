@@ -1,0 +1,20 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- axes -->
+<line x1="50" y1="270" x2="350" y2="270" stroke="black" stroke-width="2" marker-end="url(#a12)"/>
+<line x1="50" y1="270" x2="50" y2="30" stroke="black" stroke-width="2" marker-end="url(#a12)"/>
+<defs><marker id="a12" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="black"/></marker></defs>
+<text x="355" y="275" font-family="serif" font-size="14">x</text>
+<text x="38" y="25" font-family="serif" font-size="14">y</text>
+<!-- square 1unit=100px -->
+<polygon points="50,270 250,270 250,70 50,70" fill="none" stroke="black" stroke-width="2"/>
+<!-- diagonals -->
+<line x1="50" y1="270" x2="250" y2="70" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<line x1="250" y1="270" x2="50" y2="70" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<!-- labels -->
+<text x="30" y="288" font-family="serif" font-size="14">A(0,0)</text>
+<text x="252" y="288" font-family="serif" font-size="14">B(2,0)</text>
+<text x="252" y="65" font-family="serif" font-size="14">C(2,2)</text>
+<text x="10" y="65" font-family="serif" font-size="14">D(0,2)</text>
+<circle cx="50" cy="270" r="4" fill="black"/><circle cx="250" cy="270" r="4" fill="black"/>
+<circle cx="250" cy="70" r="4" fill="black"/><circle cx="50" cy="70" r="4" fill="black"/>
+</svg>

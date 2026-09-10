@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="80" cy="150" r="5" fill="black"/><text x="55" y="175" font-family="serif" font-size="15">A(2,−1)</text>
+<circle cx="220" cy="150" r="5" fill="red"/><text x="195" y="130" font-family="serif" font-size="15">M(5,3)</text>
+<circle cx="360" cy="150" r="5" fill="none" stroke="black" stroke-width="2"/><text x="340" y="175" font-family="serif" font-size="15">B = ?</text>
+<line x1="80" y1="150" x2="360" y2="150" stroke="black" stroke-width="2"/>
+<line x1="140" y1="155" x2="140" y2="165" stroke="black" stroke-width="1.5"/>
+<line x1="300" y1="155" x2="300" y2="165" stroke="black" stroke-width="1.5"/>
+<text x="135" y="180" font-family="serif" font-size="12">рівні</text><text x="295" y="180" font-family="serif" font-size="12">рівні</text>
+</svg>

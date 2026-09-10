@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="10" y="25" font-family="serif" font-size="13">а) Через 2 точки — 1 пряма</text>
+<circle cx="60" cy="55" r="3" fill="black"/><circle cx="150" cy="55" r="3" fill="black"/>
+<line x1="40" y1="55" x2="170" y2="55" stroke="black" stroke-width="2"/>
+<text x="10" y="105" font-family="serif" font-size="13">б) Вертикальні кути рівні</text>
+<line x1="20" y1="150" x2="170" y2="110" stroke="black" stroke-width="1.5"/>
+<line x1="20" y1="110" x2="170" y2="150" stroke="black" stroke-width="1.5"/>
+<text x="85" y="108" font-family="serif" font-size="12">α</text><text x="85" y="162" font-family="serif" font-size="12">α</text>
+<text x="10" y="200" font-family="serif" font-size="13">в) Сума кутів △ = 180°</text>
+<polygon points="30,270 170,270 100,220" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="85" y="290" font-family="serif" font-size="12">180°</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="100" y="25" font-family="serif" font-size="14">Аксіома Паша</text>
+<!-- triangle ABC -->
+<polygon points="60,250 340,250 200,50" fill="none" stroke="black" stroke-width="2"/>
+<text x="42" y="268" font-family="serif" font-size="16">A</text>
+<text x="342" y="268" font-family="serif" font-size="16">B</text>
+<text x="195" y="42" font-family="serif" font-size="16">C</text>
+<!-- secant line l crossing AB and BC -->
+<line x1="20" y1="230" x2="350" y2="100" stroke="black" stroke-width="2" stroke-dasharray="8,4"/>
+<text x="352" y="95" font-family="serif" font-size="16">l</text>
+<!-- intersection points -->
+<circle cx="120" cy="250" r="5" fill="black"/>
+<text x="110" y="275" font-family="serif" font-size="14">P</text>
+<circle cx="280" cy="135" r="5" fill="black"/>
+<text x="285" y="128" font-family="serif" font-size="14">Q</text>
+</svg>

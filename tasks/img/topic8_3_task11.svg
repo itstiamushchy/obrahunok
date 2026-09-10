@@ -1,0 +1,13 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect x="80" y="30" width="240" height="50" rx="8" fill="none" stroke="black" stroke-width="2"/>
+<text x="105" y="62" font-family="serif" font-size="14">Формальна система F</text>
+<line x1="200" y1="80" x2="200" y2="120" stroke="black" stroke-width="2" marker-end="url(#a83b)"/>
+<defs><marker id="a83b" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="black"/></marker></defs>
+<rect x="50" y="120" width="130" height="50" rx="8" fill="none" stroke="black" stroke-width="2"/>
+<text x="62" y="150" font-family="serif" font-size="13">Несуперечна</text>
+<rect x="220" y="120" width="130" height="50" rx="8" fill="none" stroke="black" stroke-width="2"/>
+<text x="237" y="150" font-family="serif" font-size="13">Достатньо сильна</text>
+<line x1="200" y1="170" x2="200" y2="210" stroke="black" stroke-width="2" marker-end="url(#a83b)"/>
+<rect x="60" y="210" width="280" height="50" rx="8" fill="none" stroke="black" stroke-width="2"/>
+<text x="70" y="240" font-family="serif" font-size="13">∃ істинне, але недовідне G</text>
+</svg>

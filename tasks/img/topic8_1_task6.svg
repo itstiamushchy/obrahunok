@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 100 L200 60 L380 100 L200 140 Z" fill="none" stroke="black" stroke-width="2"/>
+<text x="360" y="120" font-family="serif" font-size="16">α</text>
+<path d="M20 200 L200 100 L380 200 L200 280 Z" fill="none" stroke="black" stroke-width="2"/>
+<text x="360" y="225" font-family="serif" font-size="16">β</text>
+<circle cx="200" cy="100" r="5" fill="black"/>
+<text x="208" y="95" font-family="serif" font-size="16">P</text>
+<line x1="100" y1="120" x2="300" y2="120" stroke="black" stroke-width="2.5" stroke-dasharray="8,4"/>
+<text x="305" y="118" font-family="serif" font-size="16">l = α∩β</text>
+</svg>

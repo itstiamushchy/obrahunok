@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="40" cy="180" r="5" fill="black"/><text x="25" y="200" font-family="serif" font-size="15">A</text>
+<circle cx="360" cy="180" r="5" fill="black"/><text x="355" y="200" font-family="serif" font-size="15">B</text>
+<line x1="40" y1="180" x2="360" y2="180" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+<polyline points="40,180 100,100 170,200 240,90 310,190 360,180" fill="none" stroke="black" stroke-width="2"/>
+<text x="65" y="90" font-family="serif" font-size="12">l</text><text x="130" y="215" font-family="serif" font-size="12">l</text>
+<text x="205" y="82" font-family="serif" font-size="12">l</text><text x="275" y="205" font-family="serif" font-size="12">l</text>
+<text x="335" y="170" font-family="serif" font-size="12">l</text>
+<text x="130" y="270" font-family="serif" font-size="14">n ланок довжини l</text>
+</svg>

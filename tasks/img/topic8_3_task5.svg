@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="100" cy="150" r="5" fill="black"/><text x="88" y="140" font-family="serif" font-size="16">A</text>
+<circle cx="300" cy="150" r="5" fill="black"/><text x="305" y="140" font-family="serif" font-size="16">B</text>
+<line x1="40" y1="150" x2="360" y2="150" stroke="black" stroke-width="2"/>
+<path d="M40 130 Q200 80 360 130" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="200" y="85" font-family="serif" font-size="14">✗</text>
+<text x="80" y="240" font-family="serif" font-size="14">Єдина пряма через A і B</text>
+</svg>

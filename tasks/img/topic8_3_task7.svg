@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="120" x2="370" y2="120" stroke="black" stroke-width="2"/>
+<circle cx="100" cy="120" r="5" fill="black"/><text x="92" y="110" font-family="serif" font-size="16">A</text>
+<circle cx="200" cy="120" r="5" fill="black"/><text x="192" y="110" font-family="serif" font-size="16">B</text>
+<circle cx="300" cy="120" r="5" fill="black"/><text x="292" y="110" font-family="serif" font-size="16">C</text>
+<text x="80" y="170" font-family="serif" font-size="14">B між A і C</text>
+<text x="80" y="200" font-family="serif" font-size="14">⇒ A не між B і C</text>
+</svg>

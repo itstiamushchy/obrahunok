@@ -1,0 +1,17 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="10" y="20" font-family="serif" font-size="13">1) Три точки</text>
+<path d="M20 40 L110 40 L140 90 L50 90 Z" fill="none" stroke="black" stroke-width="2"/>
+<circle cx="50" cy="55" r="3" fill="black"/><circle cx="100" cy="55" r="3" fill="black"/><circle cx="75" cy="80" r="3" fill="black"/>
+<text x="40" y="50" font-family="serif" font-size="12">A</text><text x="103" y="50" font-family="serif" font-size="12">B</text><text x="78" y="78" font-family="serif" font-size="12">C</text>
+<text x="150" y="20" font-family="serif" font-size="13">2) Пряма і точка</text>
+<path d="M160 40 L250 40 L280 90 L190 90 Z" fill="none" stroke="black" stroke-width="2"/>
+<line x1="170" y1="70" x2="270" y2="70" stroke="black" stroke-width="2"/>
+<circle cx="220" cy="50" r="3" fill="black"/>
+<text x="225" y="48" font-family="serif" font-size="12">P</text><text x="272" y="75" font-family="serif" font-size="12">l</text>
+<text x="10" y="130" font-family="serif" font-size="13">3) Дві паралельні прямі</text>
+<path d="M20 150 L160 150 L190 220 L50 220 Z" fill="none" stroke="black" stroke-width="2"/>
+<line x1="40" y1="170" x2="170" y2="170" stroke="black" stroke-width="2"/>
+<line x1="50" y1="200" x2="180" y2="200" stroke="black" stroke-width="2"/>
+<text x="173" y="168" font-family="serif" font-size="12">a</text><text x="183" y="198" font-family="serif" font-size="12">b</text>
+<text x="130" y="185" font-family="serif" font-size="14">∥</text>
+</svg>

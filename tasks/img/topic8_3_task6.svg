@@ -1,0 +1,13 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="30,250 180,250 100,100" fill="none" stroke="black" stroke-width="2"/>
+<text x="15" y="268" font-family="serif" font-size="14">A</text><text x="182" y="268" font-family="serif" font-size="14">B</text><text x="92" y="92" font-family="serif" font-size="14">C</text>
+<text x="50" y="180" font-family="serif" font-size="13">a</text><text x="145" y="170" font-family="serif" font-size="13">b</text>
+<path d="M50,250 Q65,230 58,215" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="60" y="235" font-family="serif" font-size="12">γ</text>
+<polygon points="220,250 370,250 290,100" fill="none" stroke="black" stroke-width="2"/>
+<text x="205" y="268" font-family="serif" font-size="14">A′</text><text x="372" y="268" font-family="serif" font-size="14">B′</text><text x="282" y="92" font-family="serif" font-size="14">C′</text>
+<text x="240" y="180" font-family="serif" font-size="13">a</text><text x="335" y="170" font-family="serif" font-size="13">b</text>
+<path d="M240,250 Q255,230 248,215" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="250" y="235" font-family="serif" font-size="12">γ</text>
+<text x="185" y="180" font-family="serif" font-size="18">=</text>
+</svg>

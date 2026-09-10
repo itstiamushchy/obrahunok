@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="150" r="5" fill="black"/><text x="35" y="175" font-family="serif" font-size="15">A(0,0)</text>
+<circle cx="340" cy="150" r="5" fill="black"/><text x="315" y="175" font-family="serif" font-size="15">B(9,6)</text>
+<line x1="60" y1="150" x2="340" y2="150" stroke="black" stroke-width="2"/>
+<circle cx="247" cy="150" r="5" fill="red"/>
+<text x="230" y="130" font-family="serif" font-size="15">C = ?</text>
+<text x="120" y="140" font-family="serif" font-size="14">2</text>
+<text x="290" y="140" font-family="serif" font-size="14">1</text>
+<line x1="60" y1="160" x2="247" y2="160" stroke="black" stroke-width="1"/>
+<line x1="247" y1="160" x2="340" y2="160" stroke="black" stroke-width="1"/>
+</svg>

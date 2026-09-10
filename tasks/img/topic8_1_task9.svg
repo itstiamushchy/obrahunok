@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="120" cy="80" r="5" fill="black"/><text x="110" y="70" font-family="serif" font-size="15">A</text>
+<circle cx="300" cy="80" r="5" fill="black"/><text x="305" y="70" font-family="serif" font-size="15">B</text>
+<circle cx="200" cy="200" r="5" fill="black"/><text x="205" y="215" font-family="serif" font-size="15">C</text>
+<circle cx="200" cy="100" r="5" fill="black"/><text x="208" y="95" font-family="serif" font-size="15">D</text>
+<!-- 4 площини через трійки -->
+<polygon points="120,80 300,80 200,200" fill="none" stroke="black" stroke-width="1.5"/>
+<polygon points="120,80 300,80 200,100" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<polygon points="120,80 200,200 200,100" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="3,3"/>
+<polygon points="300,80 200,200 200,100" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="8,3"/>
+<text x="80" y="270" font-family="serif" font-size="14">4 точки → макс. 4 площини</text>
+</svg>

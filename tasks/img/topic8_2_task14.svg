@@ -1,0 +1,7 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="200" r="5" fill="black"/><text x="30" y="225" font-family="serif" font-size="15">A(1,2)</text>
+<circle cx="340" cy="80" r="5" fill="black"/><text x="300" y="72" font-family="serif" font-size="15">B(7,10)</text>
+<line x1="60" y1="200" x2="340" y2="80" stroke="black" stroke-width="2"/>
+<circle cx="247" cy="120" r="5" fill="red"/><text x="252" y="115" font-family="serif" font-size="15">C = ?</text>
+<text x="120" y="180" font-family="serif" font-size="13">AC = 2·CB</text>
+</svg>

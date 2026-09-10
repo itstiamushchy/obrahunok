@@ -1,0 +1,16 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="10" y="25" font-family="serif" font-size="14">а) На числовій осі</text>
+<line x1="30" y1="70" x2="370" y2="70" stroke="black" stroke-width="2" marker-end="url(#a82)"/>
+<defs><marker id="a82" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="black"/></marker></defs>
+<circle cx="80" cy="70" r="4" fill="black"/><text x="75" y="90" font-family="serif" font-size="14">1</text>
+<circle cx="320" cy="70" r="4" fill="black"/><text x="315" y="90" font-family="serif" font-size="14">7</text>
+<circle cx="200" cy="70" r="4" fill="red"/><text x="192" y="90" font-family="serif" font-size="14">M?</text>
+<text x="10" y="140" font-family="serif" font-size="14">б) На площині</text>
+<line x1="30" y1="280" x2="370" y2="280" stroke="black" stroke-width="2" marker-end="url(#a82)"/>
+<line x1="30" y1="280" x2="30" y2="150" stroke="black" stroke-width="2" marker-end="url(#a82)"/>
+<text x="375" y="285" font-family="serif" font-size="13">x</text><text x="18" y="148" font-family="serif" font-size="13">y</text>
+<circle cx="30" cy="280" r="4" fill="black"/><text x="10" y="296" font-family="serif" font-size="13">A(0,0)</text>
+<circle cx="270" cy="180" r="4" fill="black"/><text x="275" y="175" font-family="serif" font-size="13">B(6,8)</text>
+<line x1="30" y1="280" x2="270" y2="180" stroke="black" stroke-width="2"/>
+<circle cx="150" cy="230" r="4" fill="red"/><text x="155" y="228" font-family="serif" font-size="13">M?</text>
+</svg>

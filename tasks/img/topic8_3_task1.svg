@@ -1,0 +1,13 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect x="30" y="40" width="150" height="60" rx="8" fill="none" stroke="black" stroke-width="2"/>
+<text x="60" y="78" font-family="serif" font-size="16" font-weight="bold">Аксіома</text>
+<text x="35" y="130" font-family="serif" font-size="13">приймається без</text>
+<text x="35" y="148" font-family="serif" font-size="13">доведення</text>
+<rect x="220" y="40" width="150" height="60" rx="8" fill="none" stroke="black" stroke-width="2"/>
+<text x="248" y="78" font-family="serif" font-size="16" font-weight="bold">Теорема</text>
+<text x="225" y="130" font-family="serif" font-size="13">доводиться з</text>
+<text x="225" y="148" font-family="serif" font-size="13">аксіом і означень</text>
+<line x1="180" y1="70" x2="220" y2="70" stroke="black" stroke-width="2" marker-end="url(#a83)"/>
+<defs><marker id="a83" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="black"/></marker></defs>
+<text x="183" y="63" font-family="serif" font-size="11">⇒</text>
+</svg>

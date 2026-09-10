@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="220" r="5" fill="black"/><text x="40" y="245" font-family="serif" font-size="16">A</text>
+<circle cx="340" cy="220" r="5" fill="black"/><text x="345" y="245" font-family="serif" font-size="16">B</text>
+<circle cx="200" cy="60" r="5" fill="black"/><text x="208" y="55" font-family="serif" font-size="16">C</text>
+<line x1="60" y1="220" x2="340" y2="220" stroke="black" stroke-width="2"/>
+<line x1="60" y1="220" x2="200" y2="60" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<line x1="340" y1="220" x2="200" y2="60" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="130" y="240" font-family="serif" font-size="14">|AB|</text>
+<text x="100" y="130" font-family="serif" font-size="14">|AC|</text>
+<text x="280" y="130" font-family="serif" font-size="14">|CB|</text>
+<text x="80" y="285" font-family="serif" font-size="14">|AB| ≤ |AC| + |CB|</text>
+</svg>

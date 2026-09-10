@@ -1,0 +1,16 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="30" y="25" font-family="serif" font-size="14">Евклід: 1 паралельна</text>
+<line x1="30" y1="80" x2="180" y2="80" stroke="black" stroke-width="2"/>
+<line x1="30" y1="50" x2="180" y2="50" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<circle cx="100" cy="50" r="3" fill="black"/><text x="108" y="48" font-family="serif" font-size="12">P</text>
+<text x="230" y="25" font-family="serif" font-size="14">Лобачевський: ≥ 2</text>
+<line x1="230" y1="80" x2="380" y2="80" stroke="black" stroke-width="2"/>
+<line x1="230" y1="50" x2="380" y2="50" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<line x1="240" y1="40" x2="380" y2="60" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<circle cx="300" cy="50" r="3" fill="black"/><text x="308" y="48" font-family="serif" font-size="12">P</text>
+<!-- Poincaré disk -->
+<circle cx="200" cy="210" r="80" fill="none" stroke="black" stroke-width="2"/>
+<path d="M140 250 Q200 170 260 250" fill="none" stroke="black" stroke-width="1.5"/>
+<path d="M130 230 Q200 160 270 230" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="155" y="290" font-family="serif" font-size="12">модель Пуанкаре</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- cube bottom ABCD -->
+<polygon points="80,220 240,220 280,180 120,180" fill="none" stroke="black" stroke-width="2"/>
+<!-- cube top A'B'C'D' -->
+<polygon points="80,100 240,100 280,60 120,60" fill="none" stroke="black" stroke-width="2"/>
+<!-- vertical edges -->
+<line x1="80" y1="220" x2="80" y2="100" stroke="black" stroke-width="2"/>
+<line x1="240" y1="220" x2="240" y2="100" stroke="black" stroke-width="2"/>
+<line x1="280" y1="180" x2="280" y2="60" stroke="black" stroke-width="2"/>
+<line x1="120" y1="180" x2="120" y2="60" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<!-- labels bottom -->
+<text x="62" y="238" font-family="serif" font-size="15">A</text>
+<text x="242" y="238" font-family="serif" font-size="15">B</text>
+<text x="285" y="185" font-family="serif" font-size="15">C</text>
+<text x="102" y="185" font-family="serif" font-size="15">D</text>
+<!-- labels top -->
+<text x="62" y="96" font-family="serif" font-size="15">A′</text>
+<text x="242" y="96" font-family="serif" font-size="15">B′</text>
+<text x="285" y="56" font-family="serif" font-size="15">C′</text>
+<text x="102" y="56" font-family="serif" font-size="15">D′</text>
+</svg>

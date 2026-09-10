@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="230" x2="370" y2="70" stroke="black" stroke-width="2"/>
+<line x1="30" y1="70" x2="370" y2="230" stroke="black" stroke-width="2"/>
+<circle cx="200" cy="150" r="3" fill="black"/>
+<text x="205" y="120" font-family="serif" font-size="16">α</text>
+<text x="175" y="180" font-family="serif" font-size="16">α</text>
+<text x="215" y="165" font-family="serif" font-size="16">β</text>
+<text x="165" y="140" font-family="serif" font-size="16">β</text>
+<text x="100" y="280" font-family="serif" font-size="14">α + β = 180° ⇒ α = α</text>
+</svg>

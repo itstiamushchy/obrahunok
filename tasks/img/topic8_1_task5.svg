@@ -1,0 +1,18 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="10" y="20" font-family="serif" font-size="13">а) через пряму — ∞ площин</text>
+<line x1="30" y1="80" x2="170" y2="80" stroke="black" stroke-width="2"/>
+<path d="M30 50 L170 50 L190 110 L50 110 Z" fill="none" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+<path d="M20 70 L160 70 L200 100 L60 100 Z" fill="none" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="175" y="78" font-family="serif" font-size="12">l</text>
+<text x="200" y="20" font-family="serif" font-size="13">б) через 2 паралельні — 1</text>
+<line x1="220" y1="60" x2="370" y2="60" stroke="black" stroke-width="2"/>
+<line x1="220" y1="100" x2="370" y2="100" stroke="black" stroke-width="2"/>
+<path d="M210 40 L360 40 L380 120 L230 120 Z" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="375" y="58" font-family="serif" font-size="12">a</text>
+<text x="375" y="98" font-family="serif" font-size="12">b</text>
+<text x="10" y="155" font-family="serif" font-size="13">в) через 2 що перетинаються — 1</text>
+<line x1="60" y1="180" x2="200" y2="270" stroke="black" stroke-width="2"/>
+<line x1="40" y1="250" x2="220" y2="190" stroke="black" stroke-width="2"/>
+<path d="M20 175 L220 175 L240 280 L40 280 Z" fill="none" stroke="black" stroke-width="1.5"/>
+<circle cx="133" cy="227" r="4" fill="black"/>
+</svg>

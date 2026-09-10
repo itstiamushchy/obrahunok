@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 150 L200 100 L380 150 L200 200 Z" fill="none" stroke="black" stroke-width="2"/>
+<text x="360" y="175" font-family="serif" font-size="16">α</text>
+<line x1="60" y1="165" x2="340" y2="135" stroke="black" stroke-width="2"/>
+<text x="345" y="133" font-family="serif" font-size="16">l</text>
+<text x="85" y="175" font-family="serif" font-size="13">l ⊂ α</text>
+<circle cx="200" cy="50" r="5" fill="black"/>
+<text x="210" y="48" font-family="serif" font-size="16">P</text>
+<text x="220" y="65" font-family="serif" font-size="13">P ∉ α</text>
+<line x1="200" y1="50" x2="200" y2="148" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>

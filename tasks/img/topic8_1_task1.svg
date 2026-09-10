@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="30" y="30" font-family="serif" font-size="16" font-weight="bold">Первинні поняття</text>
+<circle cx="80" cy="100" r="4" fill="black"/><text x="90" y="105" font-family="serif" font-size="16">A — точка</text>
+<line x1="40" y1="170" x2="350" y2="170" stroke="black" stroke-width="2"/>
+<text x="355" y="175" font-family="serif" font-size="16">l — пряма</text>
+<path d="M40 220 L200 220 L280 280 L120 280 Z" fill="none" stroke="black" stroke-width="2"/>
+<text x="290" y="275" font-family="serif" font-size="16">α — площина</text>
+</svg>

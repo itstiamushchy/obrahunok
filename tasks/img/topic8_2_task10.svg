@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="80" cy="150" r="5" fill="black"/><text x="55" y="175" font-family="serif" font-size="15">A(0,0)</text>
+<circle cx="240" cy="150" r="5" fill="black"/><text x="215" y="175" font-family="serif" font-size="15">B(4,0)</text>
+<line x1="40" y1="150" x2="380" y2="150" stroke="black" stroke-width="2"/>
+<circle cx="320" cy="150" r="5" fill="red"/><text x="305" y="130" font-family="serif" font-size="15">P = ?</text>
+<text x="140" y="140" font-family="serif" font-size="13">AP</text>
+<text x="270" y="140" font-family="serif" font-size="13">PB</text>
+<text x="100" y="210" font-family="serif" font-size="14">AP:PB = 3:1 (зовнішньо)</text>
+</svg>

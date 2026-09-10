@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,220 160,60 340,60 240,220" fill="none" stroke="black" stroke-width="2"/>
+<text x="42" y="240" font-family="serif" font-size="16">A</text>
+<text x="148" y="52" font-family="serif" font-size="16">B</text>
+<text x="345" y="52" font-family="serif" font-size="16">C</text>
+<text x="242" y="240" font-family="serif" font-size="16">D</text>
+<line x1="60" y1="220" x2="340" y2="60" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<line x1="160" y1="60" x2="240" y2="220" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<circle cx="200" cy="140" r="5" fill="red"/><text x="208" y="135" font-family="serif" font-size="15">O</text>
+</svg>
