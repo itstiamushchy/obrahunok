@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="80,260 320,260 200,52" fill="none" stroke="black" stroke-width="2"/>
+<line x1="200" y1="52" x2="200" y2="260" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="205" y="165" font-family="serif" font-size="14">h</text>
+<text x="170" y="278" font-family="serif" font-size="14">a</text>
+<line x1="115" y1="155" x2="128" y2="145" stroke="black" stroke-width="2"/>
+<line x1="285" y1="155" x2="272" y2="145" stroke="black" stroke-width="2"/>
+<line x1="118" y1="160" x2="131" y2="150" stroke="black" stroke-width="2"/>
+<line x1="282" y1="160" x2="269" y2="150" stroke="black" stroke-width="2"/>
+<text x="80" y="290" font-family="serif" font-size="13">P = 3a, h = a√3/2</text>
+</svg>

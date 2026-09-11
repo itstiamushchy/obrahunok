@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 340,250 200,50" fill="none" stroke="black" stroke-width="2"/>
+<text x="42" y="268" font-family="serif" font-size="16">A</text><text x="342" y="268" font-family="serif" font-size="16">B</text><text x="195" y="42" font-family="serif" font-size="16">C</text>
+<text x="150" y="270" font-family="serif" font-size="13">AB=BC+3</text>
+<text x="100" y="145" font-family="serif" font-size="13">AC=2·BC</text>
+<text x="280" y="155" font-family="serif" font-size="13">BC</text>
+<text x="120" y="290" font-family="serif" font-size="14">P = 40</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,240 300,240 200,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="42" y="258" font-family="serif" font-size="15">A</text><text x="302" y="258" font-family="serif" font-size="15">B</text><text x="195" y="50" font-family="serif" font-size="15">C</text>
+<line x1="300" y1="240" x2="380" y2="240" stroke="black" stroke-width="2"/>
+<text x="88" y="230" font-family="serif" font-size="13">α</text>
+<text x="195" y="90" font-family="serif" font-size="13">β</text>
+<text x="325" y="228" font-family="serif" font-size="14">δ</text>
+<text x="100" y="290" font-family="serif" font-size="14">δ = α + β</text>
+</svg>

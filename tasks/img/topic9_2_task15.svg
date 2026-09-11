@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 340,250 200,50" fill="none" stroke="black" stroke-width="2"/>
+<text x="90" y="235" font-family="serif" font-size="13">α</text><text x="295" y="235" font-family="serif" font-size="13">β</text><text x="192" y="85" font-family="serif" font-size="13">γ</text>
+<text x="50" y="30" font-family="serif" font-size="13">Гаусс–Бонне: ∫∫K dA = 2πχ</text>
+<text x="50" y="55" font-family="serif" font-size="13">K=0 (площина) ⇒ α+β+γ=π</text>
+</svg>

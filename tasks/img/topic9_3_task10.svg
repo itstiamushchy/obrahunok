@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="10" y="20" font-family="serif" font-size="13">Гострокутний: O всередині</text>
+<polygon points="30,170 180,170 100,50" fill="none" stroke="black" stroke-width="1.5"/>
+<circle cx="105" cy="120" r="4" fill="red"/><text x="112" y="118" font-family="serif" font-size="11">O</text>
+<circle cx="105" cy="120" r="55" fill="none" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="210" y="20" font-family="serif" font-size="13">Тупокутний: O зовні</text>
+<polygon points="220,170 390,170 250,50" fill="none" stroke="black" stroke-width="1.5"/>
+<circle cx="310" cy="155" r="4" fill="red"/><text x="316" y="152" font-family="serif" font-size="11">O</text>
+<circle cx="310" cy="155" r="80" fill="none" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>

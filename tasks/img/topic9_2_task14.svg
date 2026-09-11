@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="150" r="100" fill="none" stroke="black" stroke-width="2"/>
+<path d="M130,80 A130,130 0 0,1 300,170 A130,130 0 0,1 150,230 A130,130 0 0,1 130,80" fill="none" stroke="black" stroke-width="2"/>
+<text x="118" y="72" font-family="serif" font-size="13">α</text>
+<text x="308" y="175" font-family="serif" font-size="13">β</text>
+<text x="140" y="242" font-family="serif" font-size="13">γ</text>
+<text x="60" y="290" font-family="serif" font-size="13">S = R²(α+β+γ−π)</text>
+</svg>

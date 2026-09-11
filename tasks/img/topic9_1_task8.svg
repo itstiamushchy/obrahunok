@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 340,250 200,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="42" y="268" font-family="serif" font-size="15">A</text><text x="342" y="268" font-family="serif" font-size="15">B</text><text x="195" y="50" font-family="serif" font-size="15">C</text>
+<text x="170" y="270" font-family="serif" font-size="13">5</text>
+<text x="280" y="150" font-family="serif" font-size="13">7</text>
+<text x="100" y="150" font-family="serif" font-size="13">AC=?</text>
+<path d="M300,250 A40,40 0 0,0 310,225" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="305" y="235" font-family="serif" font-size="13">60°</text>
+</svg>

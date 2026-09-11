@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="30" y1="270" x2="370" y2="270" stroke="black" stroke-width="1.5" marker-end="url(#a93)"/>
+<line x1="30" y1="270" x2="30" y2="20" stroke="black" stroke-width="1.5" marker-end="url(#a93)"/>
+<defs><marker id="a93" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10" fill="black"/></marker></defs>
+<text x="375" y="275" font-family="serif" font-size="14">A</text><text x="18" y="18" font-family="serif" font-size="14">B</text>
+<line x1="30" y1="270" x2="300" y2="20" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="270" y="30" font-family="serif" font-size="12">A+B=π</text>
+<polygon points="30,270 210,270 210,90" fill="none" stroke="black" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="100" y="200" font-family="serif" font-size="12">гостр.</text>
+<text x="140" y="250" font-family="serif" font-size="12">прям.</text>
+<text x="200" y="180" font-family="serif" font-size="12">туп.</text>
+</svg>

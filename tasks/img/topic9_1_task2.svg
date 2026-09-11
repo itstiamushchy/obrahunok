@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="50,250 350,250 220,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="32" y="268" font-family="serif" font-size="15">A</text><text x="352" y="268" font-family="serif" font-size="15">B</text><text x="222" y="52" font-family="serif" font-size="15">C</text>
+<text x="170" y="270" font-family="serif" font-size="14">11</text>
+<text x="105" y="150" font-family="serif" font-size="14">9</text>
+<text x="300" y="150" font-family="serif" font-size="14">7</text>
+<text x="120" y="290" font-family="serif" font-size="14">P = 7+9+11 = ?</text>
+</svg>

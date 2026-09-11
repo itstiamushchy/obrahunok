@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="80,220 340,220 120,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="62" y="238" font-family="serif" font-size="15">A</text><text x="342" y="238" font-family="serif" font-size="15">B</text><text x="108" y="52" font-family="serif" font-size="15">C</text>
+<line x1="120" y1="60" x2="50" y2="220" stroke="black" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="30" y="220" font-family="serif" font-size="13">H</text>
+<text x="70" y="140" font-family="serif" font-size="12">висота</text>
+<text x="60" y="130" font-family="serif" font-size="12">поза △</text>
+<text x="65" y="210" font-family="serif" font-size="13">>90°</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 340,250 340,80" fill="none" stroke="black" stroke-width="2"/>
+<rect x="328" y="238" width="12" height="12" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="42" y="268" font-family="serif" font-size="15">A</text><text x="342" y="268" font-family="serif" font-size="15">B</text><text x="345" y="75" font-family="serif" font-size="15">C</text>
+<text x="92" y="240" font-family="serif" font-size="14">37°</text>
+<text x="335" y="120" font-family="serif" font-size="14">?</text>
+<text x="310" y="200" font-family="serif" font-size="13">90°</text>
+</svg>

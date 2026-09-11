@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="80,250 320,250 200,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="62" y="268" font-family="serif" font-size="15">A</text><text x="322" y="268" font-family="serif" font-size="15">B</text><text x="195" y="50" font-family="serif" font-size="15">C</text>
+<text x="170" y="270" font-family="serif" font-size="13">основа</text>
+<text x="105" y="150" font-family="serif" font-size="13">бічна</text><text x="270" y="150" font-family="serif" font-size="13">бічна</text>
+<line x1="120" y1="155" x2="133" y2="145" stroke="black" stroke-width="2"/>
+<line x1="280" y1="155" x2="267" y2="145" stroke="black" stroke-width="2"/>
+<text x="100" y="290" font-family="serif" font-size="14">P = 32</text>
+</svg>

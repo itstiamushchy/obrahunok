@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 340,250 200,50" fill="none" stroke="black" stroke-width="2"/>
+<text x="42" y="268" font-family="serif" font-size="15">A</text><text x="342" y="268" font-family="serif" font-size="15">B</text><text x="195" y="42" font-family="serif" font-size="15">C</text>
+<text x="80" y="235" font-family="serif" font-size="12">cosA</text><text x="290" y="235" font-family="serif" font-size="12">cosB</text><text x="185" y="80" font-family="serif" font-size="12">cosC</text>
+<text x="60" y="290" font-family="serif" font-size="14">гострокутний ⇒ cosA·cosB·cosC > 0</text>
+</svg>

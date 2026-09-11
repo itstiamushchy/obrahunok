@@ -1,0 +1,7 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="60,250 340,250 200,60" fill="none" stroke="black" stroke-width="2"/>
+<text x="170" y="270" font-family="serif" font-size="13">||u⃗−v⃗||</text>
+<text x="90" y="155" font-family="serif" font-size="13">||v⃗||</text><text x="275" y="155" font-family="serif" font-size="13">||u⃗||</text>
+<text x="50" y="30" font-family="serif" font-size="13">||u⃗+v⃗|| ≤ ||u⃗|| + ||v⃗||</text>
+<text x="50" y="55" font-family="serif" font-size="13">⇒ Коші–Буняковський</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<text x="10" y="25" font-family="serif" font-size="13">а) 2, 5, 8</text>
+<line x1="10" y1="50" x2="50" y2="50" stroke="black" stroke-width="2"/>
+<line x1="60" y1="50" x2="160" y2="50" stroke="black" stroke-width="2"/>
+<line x1="170" y1="50" x2="330" y2="50" stroke="black" stroke-width="2"/>
+<text x="25" y="45" font-family="serif" font-size="10">2</text><text x="100" y="45" font-family="serif" font-size="10">5</text><text x="240" y="45" font-family="serif" font-size="10">8</text>
+<text x="340" y="50" font-family="serif" font-size="12">2+5 &lt; 8 ✗</text>
+<text x="10" y="105" font-family="serif" font-size="13">б) 6, 6, 6</text>
+<polygon points="30,180 150,180 90,130" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="80" y="200" font-family="serif" font-size="10">✓</text>
+<text x="170" y="105" font-family="serif" font-size="13">в) 3, 4, 6</text>
+<polygon points="190,180 310,180 210,130" fill="none" stroke="black" stroke-width="1.5"/>
+<text x="240" y="200" font-family="serif" font-size="10">3+4 > 6 ✓</text>
+</svg>

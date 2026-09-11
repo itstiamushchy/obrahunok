@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<polygon points="80,220 320,220 200,60" fill="none" stroke="black" stroke-width="2"/>
+<line x1="30" y1="60" x2="370" y2="60" stroke="black" stroke-width="1.5" stroke-dasharray="6,3"/>
+<text x="375" y="58" font-family="serif" font-size="12">l ∥ AB</text>
+<text x="100" y="210" font-family="serif" font-size="13">α</text><text x="285" y="210" font-family="serif" font-size="13">β</text>
+<text x="190" y="90" font-family="serif" font-size="13">γ</text>
+<text x="50" y="275" font-family="serif" font-size="13">α+β+γ=180° ⟺ 5-й постулат</text>
+</svg>
